@@ -130,6 +130,13 @@ p {
   font-weight: 600;
   letter-spacing: 0rem; }
 
+.form__header {
+  font-family: 'Montserrat-Black'; }
+
+.form__btn {
+  font-family: 'MavenPro-Bold';
+  font-size: 1.4rem; }
+
 .list__link {
   font-family: 'MavenPro-Bold';
   font-size: 1.2rem; }
@@ -141,6 +148,15 @@ p {
 .footer__header {
   font-family: 'Montserrat-Bold';
   letter-spacing: 0rem; }
+
+.footer__input {
+  font-family: 'Montserrat-Bold';
+  font-weight: normal; }
+
+.footer__link {
+  font-family: 'Montserrat-Bold';
+  font-weight: normal;
+  font-size: 1.4rem; }
 
 a:link, a:hover, a:focus, a:active {
   text-decoration: none; }
@@ -160,6 +176,9 @@ a:link, a:hover, a:focus, a:active {
 .color-grey {
   color: #00000029 !important; }
 
+.color-grey-1 {
+  color: #727272 !important; }
+
 .bg-white {
   background-color: #ffffff !important; }
 
@@ -174,6 +193,9 @@ a:link, a:hover, a:focus, a:active {
 
 .bg-grey {
   background-color: #00000029 !important; }
+
+.bg-grey-1 {
+  background-color: #727272 !important; }
 
 .bg-transparent {
   background-color: transparent !important; }
@@ -258,6 +280,55 @@ a:link, a:hover, a:focus, a:active {
   border: 0.13rem solid #FECC0A;
   border-radius: 5rem 5rem 0rem 5rem;
   text-decoration: none; }
+
+.form {
+  position: relative; }
+  .form__page-left {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/form-bg.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    padding: 4rem; }
+  .form__page-right {
+    padding: 6.9rem; }
+  .form__page-left, .form__page-right {
+    height: 100vh; }
+  .form__header {
+    margin-bottom: 5rem; }
+  .form__group {
+    margin-top: .5rem;
+    padding-bottom: 0px; }
+    .form__group:first-of-type {
+      margin-top: 3.6rem; }
+  .form__input, .form__textarea, .form__input--search {
+    outline: none; }
+  .form__input--search {
+    padding: .9rem 2rem;
+    background-color: transparent;
+    border: 1.2px solid #ffffff;
+    border-radius: 2.5rem; }
+  .form__input {
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
+    padding: 1.2rem 0rem;
+    border: none;
+    border-bottom: 0.15rem solid rgba(0, 0, 0, 0.05); }
+  .form__label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: .7rem;
+    transition: all .3s;
+    transform: translateY(-8.7rem); }
+  .form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4.7rem); }
+  .form__select {
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
+    padding: 1.2rem 2rem;
+    border-radius: .3rem;
+    background-color: rgba(255, 255, 255, 0.5); }
 
 .navbar {
   padding: 2rem 2.5rem; }
@@ -380,8 +451,3 @@ section,
 
 .footer__logo-text {
   line-height: 0rem; }
-
-.footer__heading {
-  font-size: 1.6rem;
-  font-weight: bold;
-  line-height: 2.5rem; }

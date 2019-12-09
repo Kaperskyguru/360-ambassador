@@ -108,6 +108,16 @@ p {
     }
 }
 
+.form {
+    &__header {
+        font-family: 'Montserrat-Black';
+    }
+    &__btn {
+        font-family: 'MavenPro-Bold';
+        font-size: 1.4rem;
+    }
+}
+
 .list {
     &__link {
         font-family: 'MavenPro-Bold';
@@ -123,5 +133,14 @@ p {
     &__header {
         font-family: 'Montserrat-Bold';
         letter-spacing: 0rem;
+    }
+    &__input {
+        font-family: 'Montserrat-Bold';
+        font-weight: normal;
+    }
+    &__link {
+        font-family: 'Montserrat-Bold';
+        font-weight: normal;
+        font-size: 1.4rem;
     }
 }
