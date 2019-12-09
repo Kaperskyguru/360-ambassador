@@ -118,6 +118,21 @@ p {
     }
 }
 
+.confirmation {
+    &__header {
+        font-family: 'Montserrat-Bold';
+    }
+    &__text {
+        font-family: 'Montserrat-Medium';
+        font-size: 1.6rem;
+        letter-spacing: 0rem;
+    }
+    &__link {
+        font-family: 'Montserrat-Medium';
+        font-size: 1.4rem;
+    }
+}
+
 .list {
     &__link {
         font-family: 'MavenPro-Bold';
