@@ -1,0 +1,63 @@
+.gallery {
+    &__card-wrapper {
+        position: relative;
+        margin-top: 1.5rem;
+        ;
+    }
+    &__card {
+        position: relative;
+        padding: 0rem;
+        backface-visibility: hidden;
+        transition: all .2s;
+        &:hover {
+            filter: blur(2px);
+        }
+    }
+    &__image {
+        width: 100%;
+    }
+    &__caption {
+        position: absolute;
+        top: 70%;
+        left: 0;
+        transform: translate(-0%, -30%);
+        background-color: rgba($color-black, .85);
+        color: $color-white;
+        text-align: center;
+        padding: 0rem;
+        &--name {
+            margin-top: .5rem;
+            padding: 0rem;
+            font-size: 1.4rem;
+            letter-spacing: .4rem;
+            font-weight: 800;
+        }
+        &--position {
+            font-size: 1.2rem;
+            letter-spacing: .1rem;
+            font-weight: 500;
+        }
+    }
+    &__button.button.button--white-curve {
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -0%);
+        font-size: 1.2rem;
+        opacity: 0;
+        visibility: hidden;
+        backface-visibility: hidden;
+        transition: all .35s;
+    }
+    &__card:hover~&__button {
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        visibility: visible;
+    }
+    &__card:hover~&__button:hover {
+        top: 50%;
+        transform: translate(-50%, -50%);
+        backface-visibility: hidden;
+    }
+}

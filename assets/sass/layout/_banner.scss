@@ -1,0 +1,10 @@
+.banner {
+    height: 60rem;
+    background-image: linear-gradient(to left, rgba($color-black, .5), rgba($color-black, .5)), url('../images/banner-2.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    & .row {
+        height: inherit;
+    }
+}

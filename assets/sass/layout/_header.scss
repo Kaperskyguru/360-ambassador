@@ -1,0 +1,29 @@
+.header {
+    height: 100vh;
+    padding: 0rem;
+    background-image: linear-gradient(to left, rgba($color-black, .5), rgba($color-black, .5)), url('../images/banner.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    &__text-box {
+        color: $color-white;
+    }
+}
+
+.heading-main {
+    margin-bottom: 4.5rem;
+    &--header {
+        display: block;
+        font-size: 7rem;
+        line-height: 9rem;
+        text-transform: capitalize;
+    }
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 3rem;
+    }
+}

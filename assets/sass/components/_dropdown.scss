@@ -1,0 +1,15 @@
+.dropdown {
+    &-toggle.btn {
+        &,
+        &:focus,
+        &:hover {
+            font-size: 1.4rem;
+            outline: none;
+            font-weight: 700;
+            color: $color-red-dark;
+        }
+    }
+    &-item {
+        font-size: 1.2rem;
+    }
+}
