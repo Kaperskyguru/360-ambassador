@@ -9,7 +9,7 @@
       <div class="row justify-content-center mt-5 mb-5">
         <div class="col-md-3 col-12 mr-md-1">
           <div class="col-12 text-center">
-            <img src="/assets/images/Mask1.png" alt="" class="img-fluid" />
+            <img src="~/assets/images/Mask1.png" alt="" class="img-fluid" />
           </div>
           <h6 class="color-blue col-12 p-0 text-center">
             Trusted By Consumers
@@ -20,7 +20,7 @@
         </div>
         <div class="col-md-3 col-12 mr-md-1">
           <div class="col-12 text-center">
-            <img src="/assets/images/Mask2.png" alt="" class="img-fluid" />
+            <img src="~/assets/images/Mask2.png" alt="" class="img-fluid" />
           </div>
           <h6 class="color-blue col-12 p-0 text-center">
             Award-Winning Authority
@@ -32,7 +32,7 @@
         </div>
         <div class="col-md-3 col-12">
           <div class="col-12 text-center">
-            <img src="/assets/images/Mask3.png" alt="" class="img-fluid" />
+            <img src="~/assets/images/Mask3.png" alt="" class="img-fluid" />
           </div>
 
           <h6 class="color-blue col-12 p-0 text-center">
@@ -56,9 +56,7 @@
           influences consumers at every stage of their purchase journey
         </h2>
         <div class="col-12 col-md-10 ml-4 mt-4 pl-4">
-          <a class="btn__bordered-square-curved--yellow color-white" href="#">
-            get started
-          </a>
+          <design-button :fill="false">get started</design-button>
         </div>
       </div>
     </section>
@@ -78,20 +76,9 @@
             and training. Just click below to get started!
           </p>
           <div class="col-12 mt-5 p-0">
-            <a
-              class="btn__curved--yellow color-blue text-bold mr-md-3"
-              href="#"
-              role="button"
-            >
-              START PROMOTING
-            </a>
-            <a
-              class="btn__bordered-curved--yellow color-blue text-bold"
-              href="#"
-              role="button"
-            >
-              LEARN MORE
-            </a>
+            <curved-button> START PROMOTING</curved-button>
+
+            <curved-button :fill="false">LEARN MORE</curved-button>
           </div>
         </div>
         <div class="col-md-1 col-12 display-none">
@@ -109,66 +96,24 @@
             out-of-pocket costs. Get full details by clicking below:
           </p>
           <div class="col-12 mt-5 p-0">
-            <a
-              class="btn__curved--yellow color-blue text-bold mr-md-3"
-              href="#"
-              role="button"
-            >
-              START SELLING
-            </a>
-            <a
-              class="btn__bordered-curved--yellow color-blue text-bold"
-              href="#"
-              role="button"
-            >
-              LEARN MORE
-            </a>
-          </div>
-        </div>
-        <div class="testimonial__card bg-white col-md-5 col-12 mt-5 mr-auto">
-          <div class="row align-items-start">
-            <span class="testimonial__quote color-blue col-1 p-0">“</span>
-            <p class="testimonial__text color-blue col-11">
-              “If you’re wanting to exponentially increase sales & work with
-              some of the best marketers in the business, 360 Ambassador is
-              where you need to be.”
-            </p>
-            <p class="col-11 color-blue ml-auto">
-              <img
-                src="assets/images/man-user.png"
-                alt=""
-                class="testimonial__image mr-3"
-              />
-              Tunde Akindele, Affiliate since Apr 2019.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-1 col-12 display-none"></div>
-        <div class="testimonial__card bg-white col-md-5 col-12 mt-5 ml-auto">
-          <div class="row align-items-start">
-            <span class="testimonial__quote color-blue col-1 p-0">“</span>
-            <p class="testimonial__text color-blue col-11">
-              “If you’re wanting to exponentially increase sales & work with
-              some of the best marketers in the business, 360 Ambassador is
-              where you need to be.”
-            </p>
-            <p class="col-11 color-blue ml-auto">
-              <img
-                src="assets/images/man-user.png"
-                alt=""
-                class="testimonial__image mr-3"
-              />
-              Oluwatope Dada, Advertiser since 2018.
-            </p>
+            <curved-button>START SELLING</curved-button>
+
+            <curved-button :fill="false">LEARN MORE</curved-button>
           </div>
         </div>
       </div>
+      <testimonials />
     </section>
   </div>
 </template>
 
 <script>
-export default {};
+import Testimonials from "~/components/partials/Testimonials";
+import CurvedButton from "~/components/commons/CurvedButton";
+import DesignButton from "~/components/commons/DesignButton";
+export default {
+  components: { Testimonials, CurvedButton, DesignButton }
+};
 </script>
 
 <style>

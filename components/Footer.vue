@@ -3,7 +3,7 @@
     <div class="row align-items-start">
       <div class="col-12 col-md-2 p-0">
         <div class="footer__logo-box col-12">
-          <img src="assets/images/logo.png" alt="" class="img-fluid" />
+          <logo />
         </div>
         <p class="footer__logo-text col-12 color-blue text-bold">AMBASSADOR</p>
       </div>
@@ -213,7 +213,12 @@
 </template>
 
 <script>
-export default {};
+import Logo from "~/components/commons/Logo";
+export default {
+  components: {
+    Logo
+  }
+};
 </script>
 
 <style>

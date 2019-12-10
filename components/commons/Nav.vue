@@ -1,12 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light w-100">
-    <a class="navbar-brand color-white" href="#">
-      <img
-        src="/assets/images/logo.png"
-        alt="360 ambassador logo"
-        class="img-fluid"
-      /><br />ambassador
-    </a>
+    <a class="navbar-brand color-white" href="#"> <logo /><br />ambassador </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -105,9 +99,7 @@
         </li>
         <li class="nav-item">
           <div class="nav-link mt-3 mt-lg-0">
-            <a class="btn__square-curved--yellow color-black" href="#"
-              >sign in</a
-            >
+            <Design-button>sign in</Design-button>
           </div>
         </li>
       </div>
@@ -116,7 +108,12 @@
 </template>
 
 <script>
-export default {};
+import Logo from "~/components/commons/Logo";
+import DesignButton from "~/components/commons/DesignButton";
+import CurvedButton from "~/components/commons/CurvedButton";
+export default {
+  components: { Logo, DesignButton, CurvedButton }
+};
 </script>
 
 <style>

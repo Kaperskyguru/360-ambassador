@@ -13,7 +13,7 @@
         <h6 class="color-white col-12 p-0 mb-5">Reach more Global Customers</h6>
         <ul class="inline-list col-12 p-0">
           <li class="inline-list__item mr-4">
-            <a href="" class="inline-list__link color-white">
+            <a href="#" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -42,7 +42,7 @@
             </a>
           </li>
           <li class="inline-list__item mr-4">
-            <a href="" class="inline-list__link color-white">
+            <a href="#" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -69,7 +69,7 @@
             </a>
           </li>
           <li class="inline-list__item mr-4">
-            <a href="" class="inline-list__link color-white">
+            <a href="#" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -96,7 +96,7 @@
             </a>
           </li>
           <li class="inline-list__item mr-4">
-            <a href="" class="inline-list__link color-white">
+            <a href="#" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
