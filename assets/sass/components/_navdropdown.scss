@@ -1,0 +1,27 @@
+.dropdown {
+    &-toggle::after {
+        border: none;
+    }
+    &-menu {
+        width: 35rem;
+        left: unset;
+        right: 0;
+        background: linear-gradient(to left, rgba($color-white, .7), rgba($color-white, .7));
+        border: none;
+        border-bottom-left-radius: 2.3rem;
+        border-bottom-right-radius: 2.3rem;
+        border-top-left-radius: 2.3rem;
+        border-top-right-radius: 0rem;
+        overflow: hidden;
+        overflow-wrap: break-word;
+        padding: 0rem;
+    }
+    &-item {
+        white-space: normal;
+        text-transform: none;
+        padding-top: 1.8rem !important;
+        padding-left: 1.8rem !important;
+        padding-bottom: 1.8rem !important;
+        padding-right: 8.6rem;
+    }
+}

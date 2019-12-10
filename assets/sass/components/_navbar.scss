@@ -1,0 +1,31 @@
+.navbar {
+    padding: 2rem 2.5rem;
+    &-brand {
+        width: 13rem;
+        font-family: 'OpenSans-ExtraBold';
+        font-size: 1.4rem;
+        letter-spacing: 0rem;
+        line-height: 0rem;
+        text-transform: uppercase;
+        .brand-logo {
+            width: 100%;
+        }
+    }
+    .collapse {
+        margin-left: 1.7rem;
+        .navbar-nav {
+            .nav-item {
+                &:not(:last-child) {
+                    margin-right: 1.5rem;
+                }
+                .nav-link {
+                    font-family: 'MavenPro-Bold';
+                    font-size: 1.4rem;
+                    letter-spacing: 0rem;
+                    text-transform: uppercase;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

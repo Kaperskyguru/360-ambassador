@@ -1,0 +1,161 @@
+/* Fonts Start */
+
+@font-face {
+    font-family: 'malayalam';
+    src: url('../fonts/malayalam.ttf');
+}
+
+@font-face {
+    font-family: 'MavenPro-Black';
+    src: url('../fonts/MavenPro-Black.ttf');
+}
+
+@font-face {
+    font-family: 'MavenPro-Bold';
+    src: url('../fonts/MavenPro-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'MavenPro-Medium';
+    src: url('../fonts/MavenPro-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'MavenPro-Regular';
+    src: url('../fonts/MavenPro-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat-Black';
+    src: url('../fonts/Montserrat-Black.otf');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../fonts/Montserrat-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('../fonts/Montserrat-Medium.otf');
+}
+
+@font-face {
+    font-family: 'OpenSans-ExtraBold';
+    src: url('../fonts/OpenSans-ExtraBold.ttf');
+}
+
+
+/* Fonts End */
+
+h1 {
+    font-family: 'MavenPro-Black';
+    font-size: 4.5rem;
+    font-weight: 600;
+    letter-spacing: 0rem;
+}
+
+h2 {
+    font-family: 'MavenPro-Black';
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: 0rem;
+}
+
+h6 {
+    font-family: 'MavenPro-Bold';
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'MavenPro-Medium';
+    font-size: 1.4rem;
+    letter-spacing: 0rem;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+.text-small {
+    font-family: 'MavenPro-Bold';
+    font-size: 1rem;
+    letter-spacing: 0rem;
+}
+
+.banner {
+    &__heading {
+        font-family: 'Montserrat-Bold';
+        font-size: 1.4rem;
+        letter-spacing: 0rem;
+        position: relative;
+        margin-left: 6.3rem;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -2.5rem;
+            transform: translateY(-50%);
+            width: 3rem;
+            height: .2rem;
+            background-color: $color-yellow;
+        }
+    }
+    &__text {
+        font-family: 'Montserrat-Black';
+        font-size: 3.5rem;
+        font-weight: 600;
+        letter-spacing: 0rem;
+    }
+}
+
+.form {
+    &__header {
+        font-family: 'Montserrat-Black';
+    }
+    &__btn {
+        font-family: 'MavenPro-Bold';
+        font-size: 1.4rem;
+    }
+}
+
+.confirmation {
+    &__header {
+        font-family: 'Montserrat-Bold';
+    }
+    &__text {
+        font-family: 'Montserrat-Medium';
+        font-size: 1.6rem;
+        letter-spacing: 0rem;
+    }
+    &__link {
+        font-family: 'Montserrat-Medium';
+        font-size: 1.4rem;
+    }
+}
+
+.list {
+    &__link {
+        font-family: 'MavenPro-Bold';
+        font-size: 1.2rem;
+    }
+}
+
+.footer {
+    &__logo-text {
+        font-family: 'OpenSans-ExtraBold';
+        letter-spacing: 0rem;
+    }
+    &__header {
+        font-family: 'Montserrat-Bold';
+        letter-spacing: 0rem;
+    }
+    &__input {
+        font-family: 'Montserrat-Bold';
+        font-weight: normal;
+    }
+    &__link {
+        font-family: 'Montserrat-Bold';
+        font-weight: normal;
+        font-size: 1.4rem;
+    }
+}

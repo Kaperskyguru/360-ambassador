@@ -1,0 +1,12 @@
+.footer {
+    & {
+        padding-top: 3.9rem;
+        padding-bottom: 3.9rem;
+    }
+    &__logo-box {
+        margin-bottom: 2rem;
+    }
+    &__logo-text {
+        line-height: 0rem;
+    }
+}

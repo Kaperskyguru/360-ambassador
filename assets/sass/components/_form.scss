@@ -1,0 +1,69 @@
+.form {
+    position: relative;
+    &__page-left {
+        background-image: linear-gradient(to left, rgba($color-black, .5), rgba($color-black, .5)), url('../images/form-bg.png');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        padding: 4rem;
+    }
+    &__page-right {
+        padding: 6.9rem;
+    }
+    &__page-left,
+    &__page-right {
+        height: 100vh;
+    }
+    &__header {
+        margin-bottom: 5rem;
+    }
+    &__group {
+        &:first-of-type {
+            margin-top: 3.6rem;
+        }
+        margin-top: .5rem;
+        padding-bottom: 0px;
+    }
+    &__input,
+    &__textarea,
+    &__input--search {
+        outline: none;
+    }
+    &__input--search {
+        padding: .9rem 2rem;
+        background-color: transparent;
+        border: 1.2px solid $color-white;
+        border-radius: 2.5rem;
+    }
+    &__input {
+        font-size: 1.5rem;
+        margin-bottom: 0rem;
+        padding: 1.2rem 0rem;
+        border: none;
+        border-bottom: .15rem solid rgba($color-black, .05);
+        // &::-webkit-input-placeholder {
+        //     // color: $color-grey-dark-3;
+        // }
+        // &:focus:invalid {}
+    }
+    &__label {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: .7rem;
+        transition: all .3s;
+        transform: translateY(-8.7rem);
+    }
+    &__input:placeholder-shown+&__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4.7rem);
+    }
+    &__select {
+        font-size: 1.5rem;
+        margin-bottom: 0rem;
+        padding: 1.2rem 2rem;
+        border-radius: .3rem;
+        background-color: rgba($color-white, .5);
+        // &:focus {}
+    }
+}

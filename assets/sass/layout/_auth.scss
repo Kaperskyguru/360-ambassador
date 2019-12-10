@@ -1,0 +1,28 @@
+.left,
+.right {
+    height: 100vh;
+}
+
+.left {
+    background-color: $color-red-dark;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include respond(tab-land) {
+        display: none;
+    }
+    @include respond(tab-port) {
+        display: none;
+    }
+    @include respond(phone) {
+        display: none;
+    }
+}
+
+.right {
+    background-color: $color-white;
+    padding: 3rem 6rem;
+}
+
+.right p {
+    font-size: 2rem;
+}

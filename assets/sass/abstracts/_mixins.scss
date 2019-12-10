@@ -1,0 +1,50 @@
+@mixin centralize {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/*
+We use "em" instead of "rem" or "px" so that we can overide both default 
+and user-browser(In this we mean custom browser settings set by the user)
+ settings.
+Breakpoint arguments choices for this app:
+
+-phone: 0px - 600px == 37.5em;
+-tablet-portrait:600px - 900px == 56.25em;
+-tablet-landscape: 900px - 1200px == 75em;
+-default: 1200px - 1800px
+-big-desktop: 1800px++ == 112.5em
+
+let 1em = 16px;
+let default = 10px || 62.5% || 1rem;
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width: 37.5em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==tab-port {
+        @media (max-width: 56.25em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==tab-land {
+        @media (max-width: 75em) {
+            @content
+        }
+        ;
+    }
+    @if $breakpoint==big-desktop {
+        @media (min-width: 112.5em) {
+            @content
+        }
+        ;
+    }
+}
