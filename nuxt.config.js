@@ -19,9 +19,9 @@ export default {
       }
     ],
     link: [{
-      rel: 'icon',
+      rel: 'shortcut icon',
       type: 'image/x-icon',
-      href: '/favicon.ico'
+      href: '/logo.png'
     }]
   },
   /*
