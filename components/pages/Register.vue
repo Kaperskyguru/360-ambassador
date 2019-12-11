@@ -1,0 +1,118 @@
+<template>
+  <div class="container-fluid form">
+    <div class="row align-items-center">
+      <div class="col-lg-7 col-md-6 col-12 form__page-left">
+        <a class="navbar-brand color-white" href="#">
+          <img
+            src="/assets/images/logo.png"
+            alt="360 ambassador logo"
+            class="img-fluid"
+          /><br />ambassador
+        </a>
+        <div class="row align-content-center justify-content-center pl-0 pr-0">
+          <div class="col-12 col-md-5 mt-5">
+            <p class="text-small color-yellow col-12 p-0">ADVERTISERS</p>
+            <h6 class="color-white col-12 p-0 mb-4">
+              There is more to being an advertiser. Discover more ways to get
+              the best from the affiliate program
+            </h6>
+            <div class="col-12 mt-4 mt-5 p-0">
+              <a
+                class="btn__curved--yellow color-blue text-bold"
+                href="#"
+                role="button"
+              >
+                LEARN MORE
+              </a>
+            </div>
+          </div>
+          <hr class="col-10 col-md-11 bg-white mt-5 mb-5" />
+          <div class="col-12 col-md-5 mt-5">
+            <p class="text-small color-yellow col-12 p-0">AFFILIATES</p>
+            <h6 class="color-white col-12 p-0 mb-4">
+              There is more to being an advertiser. Discover more ways to get
+              the best from the affiliate program
+            </h6>
+            <div class="col-12 mt-4 mt-5 p-0">
+              <a
+                class="btn__curved--yellow color-blue text-bold"
+                href="#"
+                role="button"
+              >
+                LEARN MORE
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-6 col-12 form__page-right">
+        <div class="row align-items-center">
+          <h2 class="col-12 color-blue form__header">Become an Affiliate</h2>
+          <p class="col-12 color-grey-1">
+            Sign up now! Start by confirming your email below
+          </p>
+          <form action="#" class="col-12 align-self-center p-0">
+            <div class="col-12 form__group">
+              <input
+                type="text"
+                class="col-12 form__input"
+                id="regEmail"
+                placeholder="First Name *"
+                required
+              />
+              <label for="regEmail" class="form__label color-grey-1"
+                >First Name *</label
+              >
+            </div>
+            <div class="col-12 form__group">
+              <input
+                type="text"
+                class="col-12 form__input"
+                id="logPassword"
+                placeholder="Last Name *"
+                required
+              />
+              <label for="text" class="form__label color-grey-1"
+                >Last Name *</label
+              >
+            </div>
+            <div class="col-12 form__group">
+              <input
+                type="email"
+                class="col-12 form__input"
+                id="logPassword"
+                placeholder="email"
+                required
+              />
+              <label for="email" class="form__label color-grey-1">email</label>
+            </div>
+            <div class="col-12 form__group">
+              <button
+                type="submit"
+                class="btn__square-curved--yellow color-blue form__btn col-12 text-bold"
+              >
+                NEXT
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import Texter from "~/components/commons/Text";
+import Logo from "~/components/commons/Logo";
+import BigDesignButton from "~/components/commons/BigDesignButton";
+export default {
+  components: {
+    Texter,
+    BigDesignButton,
+    Logo
+  }
+};
+</script>
+
+<style>
+</style>

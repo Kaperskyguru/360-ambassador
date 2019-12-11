@@ -30,7 +30,7 @@
           <a class="nav-link color-white" href="#">features</a>
         </li>
       </ul>
-      <div class="navbar-nav my-2 my-lg-0">
+      <div class="navbar-nav my-2 my-lg-1">
         <li class="nav-item dropdown">
           <div class="nav-link">
             <a
