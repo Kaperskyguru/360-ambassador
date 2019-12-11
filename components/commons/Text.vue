@@ -5,13 +5,7 @@
       <slot name="content"></slot>
     </h6>
     <div class="col-12 mt-4 mt-5 p-0">
-      <a
-        class="btn__curved--yellow color-blue text-bold"
-        href="#"
-        role="button"
-      >
-        <curved-button> LEARN MORE</curved-button>
-      </a>
+      <curved-button> LEARN MORE</curved-button>
     </div>
   </div>
 </template>

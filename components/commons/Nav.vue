@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light w-100">
-    <a class="navbar-brand color-white" href="#"> <logo /><br />ambassador </a>
+    <brand />
     <button
       class="navbar-toggler"
       type="button"
@@ -99,7 +99,9 @@
         </li>
         <li class="nav-item">
           <div class="nav-link mt-3 mt-lg-0">
-            <Design-button>sign in</Design-button>
+            <nuxt-link to="/login">
+              <Design-button>sign in</Design-button>
+            </nuxt-link>
           </div>
         </li>
       </div>
@@ -108,11 +110,11 @@
 </template>
 
 <script>
-import Logo from "~/components/commons/Logo";
+import Brand from "~/components/partials/Brand";
 import DesignButton from "~/components/commons/DesignButton";
 import CurvedButton from "~/components/commons/CurvedButton";
 export default {
-  components: { Logo, DesignButton, CurvedButton }
+  components: { Brand, DesignButton, CurvedButton }
 };
 </script>
 

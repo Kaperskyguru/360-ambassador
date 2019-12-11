@@ -1,11 +1,9 @@
 <template>
-  <nuxt-link to="/">
-    <img
-      src="~/assets/images/logo.png"
-      alt="360 ambassador logo"
-      class="img-fluid"
-    />
-  </nuxt-link>
+  <img
+    src="~/assets/images/logo.png"
+    alt="360 ambassador logo"
+    class="img-fluid"
+  />
 </template>
 
 <script>

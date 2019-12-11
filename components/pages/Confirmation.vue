@@ -1,9 +1,7 @@
 <template>
   <div class="container-fluid confirmation">
     <div class="col-12">
-      <a class="navbar-brand color-white" href="#">
-        <logo /> <br />ambassador
-      </a>
+      <brand />
     </div>
     <div class="row justify-content-center align-content-center">
       <img
@@ -43,11 +41,11 @@
 </template>
 
 <script>
-import Logo from "~/components/commons/Logo";
+import Brand from "~/components/partials/Brand";
 import CurvedButton from "~/components/commons/CurvedButton";
 export default {
   components: {
-    Logo,
+    Brand,
     CurvedButton
   }
 };

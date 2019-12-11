@@ -5,7 +5,6 @@
         ? 'btn__square-curved--yellow color-black'
         : 'btn__bordered-square-curved--yellow color-white'
     ]"
-    href="#"
   >
     <slot />
   </a>
