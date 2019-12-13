@@ -1,5 +1,10 @@
 .navbar {
-    padding: 2rem 2.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    ;
+    height: auto;
     &-brand {
         width: 13rem;
         font-family: 'OpenSans-ExtraBold';
@@ -8,7 +13,7 @@
         line-height: 0rem;
         text-transform: uppercase;
         .brand-logo {
-            width: 100%;
+            width: 8rem;
         }
     }
     .collapse {
@@ -24,6 +29,9 @@
                     letter-spacing: 0rem;
                     text-transform: uppercase;
                     margin-bottom: 1rem;
+                }
+                &.active .nav-link {
+                    color: $color-yellow !important;
                 }
             }
         }

@@ -23,12 +23,20 @@ a {
     color: $color-blue !important;
 }
 
-.color-grey {
-    color: $color-grey !important;
-}
-
 .color-grey-1 {
     color: $color-grey-1 !important;
+}
+
+.color-grey-2 {
+    color: $color-grey-2 !important;
+}
+
+.color-grey-3 {
+    color: $color-grey-3 !important;
+}
+
+.color-grey-4 {
+    color: $color-grey-4 !important;
 }
 
 .bg-white {
@@ -47,16 +55,28 @@ a {
     background-color: $color-blue !important;
 }
 
-.bg-grey {
-    background-color: $color-grey !important;
-}
-
 .bg-grey-1 {
     background-color: $color-grey-1 !important;
 }
 
+.bg-grey-2 {
+    background-color: $color-grey-2 !important;
+}
+
+.bg-grey-3 {
+    background-color: $color-grey-3 !important;
+}
+
+.bg-grey-4 {
+    background-color: $color-grey-4 !important;
+}
+
 .bg-transparent {
     background-color: transparent !important;
+}
+
+.border-bottom-grey-3 {
+    border-bottom: .15rem solid $color-grey-3;
 }
 
 .text-bold {

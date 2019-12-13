@@ -1,0 +1,40 @@
+.form-2 {
+    &__container {
+        margin-top: 3rem;
+        padding: 0rem;
+        &:last-of-type {
+            margin-bottom: 2rem;
+        }
+    }
+    &__label {
+        padding: 0rem;
+    }
+    &__input,
+    &__select {
+        border: none;
+        border-bottom: 0.12rem solid $color-grey-2;
+        padding: 0rem;
+        background-color: transparent;
+        outline: none;
+    }
+    &__input-disabled {
+        border: none;
+        background-color: transparent;
+        padding: 0rem;
+    }
+    &__textarea {
+        border: 0.12rem solid $color-grey-2;
+        padding: 0rem;
+        background-color: transparent;
+        outline: none;
+        border-radius: 0rem;
+    }
+    &__text {
+        margin-bottom: 2rem;
+        padding-left: 0rem;
+    }
+    & .custom-control-input {
+        width: 2rem;
+        height: 2rem;
+    }
+}

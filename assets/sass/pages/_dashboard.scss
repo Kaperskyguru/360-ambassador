@@ -1,0 +1,99 @@
+.dashboard {
+    background-image: linear-gradient(to left, rgba($color-white, .95), rgba($color-white, .95)), url('../images/banner.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    &__nav {
+        background-color: rgba($color-black, .7);
+        padding: 1.1rem;
+        &--notification {
+            position: relative;
+            & .badge {
+                position: absolute;
+                top: -.22rem;
+                right: -.8rem;
+                padding: .25rem .5rem;
+                border: .2rem solid $color-white;
+                border-radius: 50%;
+            }
+        }
+        &--profile {
+            &-img {
+                width: 3.25rem;
+                height: 3.25rem;
+                border-radius: 50%;
+            }
+            &-dropdown {
+                padding: 2rem;
+                margin-top: 1rem;
+                &-item {
+                    &:focus,
+                    &:hover {
+                        background-color: transparent !important;
+                    }
+                    & svg {
+                        fill: $color-yellow !important;
+                        margin-right: 1rem;
+                    }
+                }
+                &-divider {
+                    height: 3rem
+                }
+            }
+        }
+    }
+    &__body {
+        padding: 4rem;
+    }
+    &__heading {
+        padding: 0rem;
+    }
+    &__summary--card {
+        padding: .8rem 2.5rem;
+        background-color: rgba($color-grey-5, .5);
+        &-container {
+            padding-left: 0rem;
+            margin-left: 0rem;
+        }
+        &-header {
+            margin-bottom: 2.4rem;
+        }
+        &-body {
+            color: rgba($color-blue, .5)
+        }
+    }
+    &-table {
+        &__thead {
+            background-color: $color-yellow;
+            color: $color-blue;
+            & th {
+                vertical-align: middle !important;
+            }
+        }
+        &__tbody {
+            color: $color-blue;
+            & tr {
+                // border-radius: 1rem 1rem 0rem 0rem !important;
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+            }
+            & tr:nth-of-type(odd) {
+                background-color: transparent;
+            }
+            & tr:nth-of-type(even) {
+                background-color: rgba($color-grey-6, .4);
+            }
+        }
+    }
+    &-promotions__card {
+        background-color: rgba($color-white, .5);
+        border-radius: 1rem;
+        box-shadow: 0rem .3rem .6rem $color-grey-1;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        padding-left: 2.5rem;
+        &--img {
+            width: 60%;
+        }
+    }
+}

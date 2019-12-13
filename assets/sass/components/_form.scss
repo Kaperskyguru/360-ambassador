@@ -66,4 +66,9 @@
         background-color: rgba($color-white, .5);
         // &:focus {}
     }
+    &__btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 }

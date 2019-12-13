@@ -118,6 +118,28 @@ p {
     }
 }
 
+.form-2 {
+    &__label,
+    &__input,
+    &__input-disabled,
+    &__select,
+    &__textarea,
+    &__text,
+    &__btn,
+    .custom-control-input {
+        font-family: 'Montserrat-Bold';
+        font-size: 1.4rem;
+        font-weight: normal;
+        letter-spacing: 0rem;
+    }
+    .custom-control-label {
+        font-family: 'Montserrat-Bold';
+        font-size: 1.1rem;
+        font-weight: normal;
+        letter-spacing: 0rem;
+    }
+}
+
 .confirmation {
     &__header {
         font-family: 'Montserrat-Bold';
@@ -158,4 +180,59 @@ p {
         font-weight: normal;
         font-size: 1.4rem;
     }
+}
+
+.dashboard {
+    &__nav--balance {
+        font-family: 'Montserrat-Bold';
+        font-size: 1.2rem;
+        & span {
+            font-family: 'Montserrat-Medium' !important;
+            font-size: 1.5rem !important;
+        }
+    }
+    &__nav--profile-name {
+        font-family: 'Montserrat-Bold';
+        font-size: 1.4rem;
+    }
+    &__nav--profile-location {
+        font-family: 'Montserrat-Medium' !important;
+        font-size: 1.5rem !important;
+    }
+    &__nav--profile-dropdown-item {
+        font-family: 'Montserrat-Bold';
+        font-size: 1.2rem;
+    }
+    &__heading {
+        font-family: 'Montserrat-Bold';
+        font-size: 1.8rem;
+    }
+    &__summary--card-header {
+        font-family: 'Montserrat-Medium' !important;
+        font-size: 1.3rem;
+    }
+    &__summary--card-body {
+        font-family: 'Montserrat-Medium' !important;
+        font-size: 1.6rem;
+    }
+    &-table {
+        &__thead {
+            & th {
+                font-family: 'Montserrat-Bold';
+                font-size: 1.5rem;
+            }
+        }
+        &__tbody {
+            & th,
+            & td {
+                font-family: 'Montserrat-Medium';
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+.badge {
+    font-family: 'Montserrat-Bold';
+    font-size: .8rem;
 }

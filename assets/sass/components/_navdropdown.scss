@@ -1,8 +1,8 @@
-.dropdown {
-    &-toggle::after {
+.home-dropdown {
+    &__toggle::after {
         border: none;
     }
-    &-menu {
+    &__menu {
         width: 35rem;
         left: unset;
         right: 0;
@@ -16,7 +16,7 @@
         overflow-wrap: break-word;
         padding: 0rem;
     }
-    &-item {
+    &__item {
         white-space: normal;
         text-transform: none;
         padding-top: 1.8rem !important;

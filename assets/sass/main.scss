@@ -6,7 +6,9 @@
 @import "base/typography";
 @import "base/utilities";
 @import "components/button";
+@import "components/custom-file-input";
 @import "components/form";
+@import "components/form-2";
 @import "components/navbar";
 @import "components/navdropdown";
 // @import "components/dropdown";
@@ -21,7 +23,7 @@
 @import "layout/testimonial";
 @import "layout/footer";
 // @import "layout/breadcrumb";
-// @import "pages/home";
+@import "pages/dashboard";
 // @import "pages/register";
 // @import "pages/login";
 // @import "pages/reset";
