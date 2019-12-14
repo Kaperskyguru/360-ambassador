@@ -1,6 +1,6 @@
 <template>
-  <nuxt-link to="/">
-    <a class="navbar-brand color-white"> <logo /><br />ambassador </a>
+  <nuxt-link class="navbar-brand color-white" to="/">
+    <logo /><br />ambassador
   </nuxt-link>
 </template>
 
