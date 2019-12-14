@@ -11,6 +11,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/sass/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 
     <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
@@ -363,13 +364,20 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
-                        <div class="col-12 mb-5 dashboard__chart--card">
-                            <canvas id="userChart" width="200" height="250"></canvas>
+                        <div class="col-12 mb-5 dashboard__chart--card p-0">
+                            <div class="col-12">
+                                <div class="row">
+
+                                </div>
+                            </div>
+                            <div id="myfirstchart" style="height: 220px;"></div>
+                            <!-- <canvas id="userChart" width="200" height="250"></canvas> -->
+                            <!-- <div id="curve_chart" style="width: 100%; height: 100%"></div> -->
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-5">
                                 <h6 class="dashboard__heading col-12 mb-5">Top 5 Merchants</h6>
-                                <div class="dashboard__general--card">
+                                <div class="dashboard__general--card mb-5">
                                     <div class="col-12 mb-5">
                                         <div class="row align-content-center">
                                             <div class="col-4">
@@ -456,8 +464,8 @@
                                         </div>
                                     </div>
                                     <p class="dashboard__promotions--card-text color-grey-7 col-12 p-0">
-                                        <span class="color-blue">Upload your Placement Opportunities Today!</span> <br>If you offer placement opportunites or a rate card you can earn additional commission by offering placement opportunities at rates that work for you. A placement gives exposure to an Advertiser’s promotion or
-                                        campaign on your website or within other promotional materials, such email or ad space. Visit the <a href="#" class="color-red">Placements Marketplace</a> today to post and promote your placement inventory across the CJ Network!
+                                        <span class="color-blue">Upload your Placement Opportunities Today!</span> <br>If you offer placement opportunites or a rate card you can earn additional commission by offering placement opportunities at rates that
+                                        work for you. A placement gives exposure to an Advertiser’s promotion or campaign on your website or within other promotional materials, such email or ad space. Visit the <a href="#" class="color-red">Placements Marketplace</a>                                        today to post and promote your placement inventory across the CJ Network!
                                     </p>
                                 </div>
                                 <h6 class="dashboard__heading col-12 mb-5">Tasks</h6>
@@ -488,10 +496,66 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     <script>
+        new Morris.Line({
+            // ID of the element in which to draw the chart.
+            element: 'myfirstchart',
+            // Chart data records -- each entry in this array corresponds to a point on
+            // the chart.
+            data: [{
+                Month: 'January',
+                value: 12000
+            }, {
+                Month: 'February',
+                value: 19000
+            }, {
+                Month: 'March',
+                value: 3000
+            }, {
+                Month: 'April',
+                value: 5000
+            }, {
+                Month: 'May',
+                value: 2000
+            }, {
+                Month: 'June',
+                value: 3000
+            }, {
+                Month: 'July',
+                value: 25000
+            }, {
+                Month: 'August',
+                value: 4500
+            }, {
+                Month: 'September',
+                value: 12450
+            }, {
+                Month: 'October',
+                value: 45820
+            }, {
+                Month: 'November',
+                value: 2000
+            }, {
+                Month: 'December',
+                value: 1450
+            }],
+            // The name of the data record attribute that contains x-values.
+            xkey: 'Month',
+            // A list of names of data record attributes that contain y-values.
+            ykeys: ['value'],
+            // Labels for the ykeys -- will be displayed when you hover over the
+            // chart.
+            labels: ['Value'],
+            lineColors: ['#FECC0A'],
+            parseTime: false,
+        });
+    </script>
+    <!-- <script>
         {
             const userLineChart = document.querySelector('#userChart');
             let options = {
@@ -559,7 +623,7 @@
             //     options: options
             // });
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

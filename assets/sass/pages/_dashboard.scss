@@ -108,6 +108,7 @@
         border-radius: 1rem;
         box-shadow: .3rem .3rem 1rem $color-grey-1;
         height: 35vh;
+        overflow: hidden;
     }
     &__general--card {
         background-color: rgba($color-grey-9, .5);
