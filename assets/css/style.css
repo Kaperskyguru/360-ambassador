@@ -800,15 +800,20 @@ a:active {
 }
 
 .header {
-  height: 100vh;
-  padding: 0rem;
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/banner.png");
   background-repeat: no-repeat;
-  background-position: bottom center;
+  background-position: center left;
   background-size: cover;
+
+  height: 100vh;
+  padding: 0rem;
   display: flex;
   flex-wrap: wrap;
+  max-width: 100%;
+
 }
+
+.header2 {}
 
 .header__text-box {
   color: #ffffff;
