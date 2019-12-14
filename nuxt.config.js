@@ -22,7 +22,18 @@ export default {
       rel: 'shortcut icon',
       type: 'image/x-icon',
       href: '/logo.png'
-    }]
+    }],
+
+    script: [{
+        src: 'js/jquery.min.js'
+      },
+      {
+        src: 'js/popper.js'
+      },
+      {
+        src: 'js/bootstrap.min.js'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color

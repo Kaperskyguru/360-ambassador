@@ -45,7 +45,14 @@
 </template>
 
 <script>
-export default {};
+import CurvedButton from "~/components/commons/CurvedButton";
+import Testimonials from "~/components/partials/Testimonials";
+export default {
+  components: {
+    Testimonials,
+    CurvedButton
+  }
+};
 </script>
 
 <style>

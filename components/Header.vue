@@ -153,7 +153,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-md-6 col-12 mt-md-5 m-md-5 ml-md-auto">
+      <div class="col-md-6 col-12 mt-md-5 m-md-5 ml-md-auto ">
         <h1 class="col-12 color-white p-0">
           Connect With Millions of Customers & Affiliates
         </h1>
@@ -174,3 +174,5 @@ export default {
   components: { Navbar }
 };
 </script>
+<style scoped>
+</style>

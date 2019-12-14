@@ -2,7 +2,7 @@
   <img
     src="~/assets/images/logo.png"
     alt="360 ambassador logo"
-    class="img-fluid"
+    class="img-fluid brand-logo"
   />
 </template>
 

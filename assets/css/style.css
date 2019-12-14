@@ -747,9 +747,7 @@ a:active {
   text-transform: uppercase;
 }
 
-.navbar-brand .brand-logo {
-  width: 8rem;
-}
+
 
 .navbar .collapse {
   margin-left: 1.7rem;
@@ -772,11 +770,11 @@ a:active {
 }
 
 .home-dropdown__toggle::after {
-  border: none;
+  border: none !important;
 }
 
 .home-dropdown__menu {
-  width: 35rem;
+  width: 45rem;
   left: unset;
   right: 0;
   background: linear-gradient(to left, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
@@ -793,7 +791,7 @@ a:active {
 .home-dropdown__item {
   white-space: normal;
   text-transform: none;
-  padding-top: 1.8rem !important;
+  /* padding-top: 1.8rem !important; */
   padding-left: 1.8rem !important;
   padding-bottom: 1.8rem !important;
   padding-right: 8.6rem;
@@ -813,7 +811,6 @@ a:active {
 
 }
 
-.header2 {}
 
 .header__text-box {
   color: #ffffff;

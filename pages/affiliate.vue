@@ -1,7 +1,7 @@
 <template>
   <section class="container-fluid">
     <div class="row justify-content-center">
-      <sign-nav>Advertiser SIGN UP FORM</sign-nav>
+      <sign-nav>AFFILIATE SIGN UP FORM</sign-nav>
       <a-form />
     </div>
   </section>
@@ -9,7 +9,7 @@
 
 <script>
 import SignNav from "~/components/commons/SignNav";
-import AForm from "~/components/partials/AdvertiserForm";
+import AForm from "~/components/partials/AffiliateForm";
 export default {
   components: {
     SignNav,

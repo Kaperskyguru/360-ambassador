@@ -16,14 +16,14 @@
             </a>
           </li>
           <li class="list__item">
-            <a href="" class="list__link color-blue">
+            <nuxt-link to="advertiser" class="list__link color-blue">
               Advertisers
-            </a>
+            </nuxt-link>
           </li>
           <li class="list__item">
-            <a href="" class="list__link color-blue">
+            <nuxt-link to="affiliate" class="list__link color-blue">
               Affiliates
-            </a>
+            </nuxt-link>
           </li>
           <li class="list__item">
             <a href="" class="list__link color-blue">
