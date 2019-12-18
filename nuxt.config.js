@@ -28,9 +28,6 @@ export default {
         src: 'js/jquery.min.js'
       },
       {
-        src: 'js/popper.js'
-      },
-      {
         src: 'js/bootstrap.min.js'
       }
     ]
@@ -50,7 +47,13 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/loadash',
+    {
+      src: '~/plugins/vue-morris',
+      mode: 'client'
+    }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -78,6 +81,8 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      // config.resolve.alias['jQuery'] = '~assets/js/jquery.min.js'
+    }
   }
 }

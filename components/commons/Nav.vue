@@ -117,14 +117,11 @@
 import Brand from "~/components/partials/Brand";
 import DesignButton from "~/components/commons/DesignButton";
 import CurvedButton from "~/components/commons/CurvedButton";
-import Popper from "vue-popperjs";
-// import "vue-popperjs/dist/vue-popper.css";
 export default {
   components: {
     Brand,
     DesignButton,
-    CurvedButton,
-    Popper
+    CurvedButton
   }
 };
 </script>
