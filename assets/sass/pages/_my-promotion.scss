@@ -1,0 +1,14 @@
+.my-promotion {
+    background-image: url('../images/banner.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    &__navbar {
+        background-color: rgba($color-black, 0.7) !important;
+        padding: 1.1rem;
+    }
+    &__container {
+        background-color: $color-white;
+        padding: 4rem;
+    }
+}

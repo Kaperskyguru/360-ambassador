@@ -67,6 +67,14 @@ a {
     color: $color-red !important;
 }
 
+.color-blue-2 {
+    color: $color-blue-2 !important;
+}
+
+.color-grey-10 {
+    color: $color-grey-10 !important;
+}
+
 .bg-white {
     background-color: $color-white !important;
 }
@@ -131,8 +139,21 @@ a {
     background-color: transparent !important;
 }
 
+.bg-blue-2 {
+    background-color: $color-blue-2 !important;
+}
+
+.bg-grey-10 {
+    background-color: $color-grey-10 !important;
+}
+
 .border-bottom-grey-3 {
     border-bottom: .15rem solid $color-grey-3;
+}
+
+.border-grey-3 {
+    border: .1rem solid $color-grey-3;
+    opacity: 0.4;
 }
 
 .text-bold {

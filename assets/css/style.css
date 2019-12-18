@@ -237,6 +237,39 @@ p {
   font-family: 'Montserrat-Bold';
   font-size: 1.5rem; }
 
+.dashboard__general--card__form--label, .dashboard__general--card__form--text {
+  font-family: 'Montserrat-Bold';
+  font-size: 1.4rem; }
+
+.dashboard__general--card__form--input, .dashboard__general--card__form--select {
+  font-family: 'Montserrat-Bold';
+  font-size: 1.1rem; }
+
+.dashboard__general--card__heading {
+  font-family: 'Montserrat-Bold';
+  font-size: 1.8rem;
+  letter-spacing: 0rem; }
+
+.dashboard__general--card__text {
+  font-family: 'Montserrat-Medium';
+  font-size: 1.2rem;
+  letter-spacing: 0rem; }
+
+.dashboard__general--card__text-small {
+  font-family: 'Montserrat-Medium';
+  font-size: .8rem;
+  letter-spacing: 0rem; }
+
+.dashboard__general--card__text-bg {
+  font-family: 'Montserrat-Medium';
+  font-size: 1.5rem;
+  letter-spacing: 0rem; }
+
+.dashboard__general--card a {
+  font-family: 'Montserrat-Medium';
+  font-weight: 600;
+  font-size: 1.2rem; }
+
 .badge {
   font-family: 'Montserrat-Bold';
   font-size: .8rem; }
@@ -289,6 +322,12 @@ a:link, a:hover, a:focus, a:active {
 .color-red {
   color: #F05132 !important; }
 
+.color-blue-2 {
+  color: #1230D9 !important; }
+
+.color-grey-10 {
+  color: #A5A5A5 !important; }
+
 .bg-white {
   background-color: #ffffff !important; }
 
@@ -337,8 +376,18 @@ a:link, a:hover, a:focus, a:active {
 .bg-transparent {
   background-color: transparent !important; }
 
+.bg-blue-2 {
+  background-color: #1230D9 !important; }
+
+.bg-grey-10 {
+  background-color: #A5A5A5 !important; }
+
 .border-bottom-grey-3 {
   border-bottom: 0.15rem solid #707070; }
+
+.border-grey-3 {
+  border: 0.1rem solid #707070;
+  opacity: 0.4; }
 
 .text-bold {
   font-weight: bold; }
@@ -409,6 +458,7 @@ a:link, a:hover, a:focus, a:active {
 .btn__curved--yellow, .btn__curved--yellow:focus, .btn__curved--yellow:hover {
   background-color: #fecc0a;
   color: #000000;
+  border: none !important;
   border-radius: 5rem;
   padding: 1rem 2rem !important;
   text-decoration: none; }
@@ -759,9 +809,67 @@ section,
     background-color: rgba(248, 248, 248, 0.5);
     border-radius: 1rem;
     box-shadow: 0.3rem 0.3rem 1rem #00000029;
-    height: 35vh;
+    height: 43vh;
     overflow: hidden; }
+    .dashboard__chart--card-text {
+      border-left: 0.2rem solid #fecc0a; }
+    .dashboard__chart--card-select {
+      background-color: transparent;
+      border: 0.15rem solid #fecc0a;
+      padding: .5rem;
+      border-radius: 3rem;
+      float: right;
+      outline: none; }
   .dashboard__general--card {
     background-color: rgba(248, 248, 248, 0.5);
     box-shadow: 0rem 1rem 1.5rem #00000029;
     padding: 1rem 2rem; }
+    .dashboard__general--card__form--input, .dashboard__general--card__form--select {
+      border: 0.1rem solid #707070;
+      border-radius: .5rem;
+      outline: none;
+      padding: .35rem 1rem;
+      background-color: transparent;
+      color: #707070; }
+    .dashboard__general--card__body {
+      height: 10rem;
+      padding-right: 0rem; }
+    .dashboard__general--card__img-container {
+      height: 100%;
+      padding: 0rem; }
+    .dashboard__general--card__text {
+      color: rgba(18, 48, 217, 0.5);
+      overflow: hidden;
+      position: relative;
+      line-height: 1.42rem;
+      max-height: 2.9rem;
+      text-align: justify;
+      margin-right: -1.4rem;
+      padding-right: 1.4rem; }
+      .dashboard__general--card__text:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0; }
+      .dashboard__general--card__text:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1.4rem;
+        height: 1.4rem;
+        margin-top: 0.4rem;
+        background: white; }
+    .dashboard__general--card__rating {
+      border-radius: .5rem; }
+
+.my-promotion {
+  background-image: url("../images/banner.png");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover; }
+  .my-promotion__navbar {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    padding: 1.1rem; }
+  .my-promotion__container {
+    background-color: #ffffff;
+    padding: 4rem; }

@@ -107,12 +107,70 @@
         background-color: rgba($color-grey-9, .5);
         border-radius: 1rem;
         box-shadow: .3rem .3rem 1rem $color-grey-1;
-        height: 35vh;
+        height: 43vh;
         overflow: hidden;
+        &-text {
+            border-left: .2rem solid $color-yellow;
+        }
+        &-select {
+            background-color: transparent;
+            border: .15rem solid $color-yellow;
+            padding: .5rem;
+            border-radius: 3rem;
+            float: right;
+            outline: none;
+        }
     }
     &__general--card {
         background-color: rgba($color-grey-9, .5);
         box-shadow: 0rem 1rem 1.5rem $color-grey-1;
         padding: 1rem 2rem;
+        &__form {
+            &--input,
+            &--select {
+                border: .1rem solid $color-grey-3;
+                border-radius: .5rem;
+                outline: none;
+                padding: .35rem 1rem;
+                background-color: transparent;
+                color: $color-grey-3;
+            }
+        }
+        &__body {
+            height: 10rem;
+            padding-right: 0rem;
+        }
+        &__img-container {
+            height: 100%;
+            padding: 0rem;
+        }
+        &__text {
+            color: rgba($color-blue-2, .5);
+            overflow: hidden;
+            position: relative;
+            line-height: 1.42rem;
+            max-height: 2.9rem;
+            text-align: justify;
+            margin-right: -1.4rem;
+            padding-right: 1.4rem;
+            &:before {
+                content: '...';
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                width: 1.4rem;
+                height: 1.4rem;
+                margin-top: 0.4rem;
+                background: white;
+            }
+        }
+        &__rating {
+            border-radius: .5rem;
+        }
     }
 }

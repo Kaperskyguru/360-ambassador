@@ -244,6 +244,45 @@ p {
         font-family: 'Montserrat-Bold';
         font-size: 1.5rem;
     }
+    &__general--card {
+        &__form {
+            &--label,
+            &--text {
+                font-family: 'Montserrat-Bold';
+                font-size: 1.4rem;
+            }
+            &--input,
+            &--select {
+                font-family: 'Montserrat-Bold';
+                font-size: 1.1rem;
+            }
+        }
+        &__heading {
+            font-family: 'Montserrat-Bold';
+            font-size: 1.8rem;
+            letter-spacing: 0rem;
+        }
+        &__text {
+            font-family: 'Montserrat-Medium';
+            font-size: 1.2rem;
+            letter-spacing: 0rem;
+        }
+        &__text-small {
+            font-family: 'Montserrat-Medium';
+            font-size: .8rem;
+            letter-spacing: 0rem;
+        }
+        &__text-bg {
+            font-family: 'Montserrat-Medium';
+            font-size: 1.5rem;
+            letter-spacing: 0rem;
+        }
+        & a {
+            font-family: 'Montserrat-Medium';
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+    }
 }
 
 .badge {
