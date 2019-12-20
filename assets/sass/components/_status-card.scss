@@ -1,0 +1,16 @@
+.status-card {
+    padding: 1rem;
+    border-radius: .5rem;
+    &--bordered {
+        border: .15rem solid $color-grey-5;
+        padding: 1rem;
+        border-radius: .5rem;
+    }
+    &--title,
+    &--value {
+        text-align: center;
+    }
+    &--title {
+        text-transform: uppercase;
+    }
+}

@@ -76,9 +76,28 @@ p {
     word-break: break-all;
 }
 
+.text {
+    font-family: 'Montserrat-Medium';
+    font-size: 1.1rem;
+    letter-spacing: 0rem;
+}
+
 .text-small {
     font-family: 'MavenPro-Bold';
     font-size: 1rem;
+    letter-spacing: 0rem;
+}
+
+.text-sm-light {
+    font-family: 'MavenPro-Medium';
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 0rem;
+}
+
+.text-2 {
+    font-family: 'MavenPro-Bold';
+    font-size: 1.2rem;
     letter-spacing: 0rem;
 }
 
@@ -288,4 +307,43 @@ p {
 .badge {
     font-family: 'Montserrat-Bold';
     font-size: .8rem;
+}
+
+.d-table-cell {
+    font-family: 'Montserrat-Bold';
+    font-size: 1.2rem;
+}
+
+.my-promotion {
+    &__nav {
+        &--link {
+            font-family: 'Montserrat-Medium';
+            font-size: 1.3rem;
+            line-height: .5rem;
+        }
+    }
+    &__pills {
+        &--link {
+            font-family: 'Montserrat-Bold';
+            font-size: 1rem;
+        }
+        &--btn {
+            font-family: 'Montserrat-Medium';
+        }
+        &--input {
+            font-family: 'Montserrat-Medium';
+            font-size: 1rem;
+        }
+    }
+}
+
+.status-card {
+    &--title {
+        font-family: 'Montserrat-Medium';
+        font-size: 1.5rem;
+    }
+    &--value {
+        font-family: 'Montserrat-Bold';
+        font-size: 1.7rem;
+    }
 }

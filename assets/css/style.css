@@ -103,9 +103,25 @@ p {
   overflow-wrap: break-word;
   word-break: break-all; }
 
+.text {
+  font-family: 'Montserrat-Medium';
+  font-size: 1.1rem;
+  letter-spacing: 0rem; }
+
 .text-small {
   font-family: 'MavenPro-Bold';
   font-size: 1rem;
+  letter-spacing: 0rem; }
+
+.text-sm-light {
+  font-family: 'MavenPro-Medium';
+  font-size: 1rem;
+  font-weight: 100;
+  letter-spacing: 0rem; }
+
+.text-2 {
+  font-family: 'MavenPro-Bold';
+  font-size: 1.2rem;
   letter-spacing: 0rem; }
 
 .banner__heading {
@@ -274,6 +290,34 @@ p {
   font-family: 'Montserrat-Bold';
   font-size: .8rem; }
 
+.d-table-cell {
+  font-family: 'Montserrat-Bold';
+  font-size: 1.2rem; }
+
+.my-promotion__nav--link {
+  font-family: 'Montserrat-Medium';
+  font-size: 1.3rem;
+  line-height: .5rem; }
+
+.my-promotion__pills--link {
+  font-family: 'Montserrat-Bold';
+  font-size: 1rem; }
+
+.my-promotion__pills--btn {
+  font-family: 'Montserrat-Medium'; }
+
+.my-promotion__pills--input {
+  font-family: 'Montserrat-Medium';
+  font-size: 1rem; }
+
+.status-card--title {
+  font-family: 'Montserrat-Medium';
+  font-size: 1.5rem; }
+
+.status-card--value {
+  font-family: 'Montserrat-Bold';
+  font-size: 1.7rem; }
+
 a:link, a:hover, a:focus, a:active {
   text-decoration: none; }
 
@@ -327,6 +371,9 @@ a:link, a:hover, a:focus, a:active {
 
 .color-grey-10 {
   color: #A5A5A5 !important; }
+
+.color-blue-3 {
+  color: rgba(18, 48, 217, 0.5) !important; }
 
 .bg-white {
   background-color: #ffffff !important; }
@@ -382,12 +429,24 @@ a:link, a:hover, a:focus, a:active {
 .bg-grey-10 {
   background-color: #A5A5A5 !important; }
 
+.bg-blue-3 {
+  background-color: rgba(18, 48, 217, 0.5) !important; }
+
 .border-bottom-grey-3 {
-  border-bottom: 0.15rem solid #707070; }
+  border-bottom: 0.15rem solid #DBDBDB; }
 
 .border-grey-3 {
   border: 0.1rem solid #707070;
   opacity: 0.4; }
+
+.br-1 {
+  border-right: 0.12rem solid #F0F0F0 !important; }
+
+.bl-1 {
+  border-left: 0.05rem solid #F0F0F0; }
+
+.b-0 {
+  border: none !important; }
 
 .text-bold {
   font-weight: bold; }
@@ -415,6 +474,27 @@ a:link, a:hover, a:focus, a:active {
     display: inline-block; }
   .inline-list__link {
     margin-right: 1.4rem; }
+
+.d-table {
+  overflow-x: auto; }
+
+.d-table-head {
+  display: table-header-group;
+  overflow-x: auto; }
+
+.d-table-body {
+  display: table-row-group;
+  overflow-x: auto; }
+
+.d-table-cell button,
+.d-table-cell button:focus,
+.d-table-cell button:hover {
+  color: #1230D9; }
+
+.d-table-cell button:active {
+  background-color: #DBDBDB !important;
+  color: #ffffff;
+  border-color: #DBDBDB; }
 
 .btn, .btn:link, .btn:visited {
   font-size: 1.1rem;
@@ -572,7 +652,7 @@ a:link, a:hover, a:focus, a:active {
 
 .form-2__input, .form-2__select {
   border: none;
-  border-bottom: 0.12rem solid #727272;
+  border-bottom: 0.12rem solid #DBDBDB;
   padding: 0rem;
   background-color: transparent;
   outline: none; }
@@ -583,7 +663,7 @@ a:link, a:hover, a:focus, a:active {
   padding: 0rem; }
 
 .form-2__textarea {
-  border: 0.12rem solid #727272;
+  border: 0.12rem solid #DBDBDB;
   padding: 0rem;
   background-color: transparent;
   outline: none;
@@ -649,6 +729,18 @@ a:link, a:hover, a:focus, a:active {
   padding-left: 1.8rem !important;
   padding-bottom: 1.8rem !important;
   padding-right: 8.6rem; }
+
+.status-card {
+  padding: 1rem;
+  border-radius: .5rem; }
+  .status-card--bordered {
+    border: 0.15rem solid #DBDBDB;
+    padding: 1rem;
+    border-radius: .5rem; }
+  .status-card--title, .status-card--value {
+    text-align: center; }
+  .status-card--title {
+    text-transform: uppercase; }
 
 .header {
   height: 100vh;
@@ -845,7 +937,8 @@ section,
       max-height: 2.9rem;
       text-align: justify;
       margin-right: -1.4rem;
-      padding-right: 1.4rem; }
+      padding-right: 1.4rem;
+      margin-bottom: .5rem; }
       .dashboard__general--card__text:before {
         content: '...';
         position: absolute;
@@ -858,7 +951,7 @@ section,
         width: 1.4rem;
         height: 1.4rem;
         margin-top: 0.4rem;
-        background: white; }
+        background: #ffffff; }
     .dashboard__general--card__rating {
       border-radius: .5rem; }
 
@@ -872,4 +965,106 @@ section,
     padding: 1.1rem; }
   .my-promotion__container {
     background-color: #ffffff;
-    padding: 4rem; }
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 5.3rem;
+    padding-right: 5.3rem; }
+  .my-promotion__nav--link {
+    color: #DBDBDB;
+    outline: none !important;
+    text-transform: uppercase; }
+    .my-promotion__nav--link:focus, .my-promotion__nav--link:hover, .my-promotion__nav--link.active {
+      outline: none !important;
+      border: none;
+      color: #0E163D !important; }
+  .my-promotion__nav--link, .my-promotion__nav--link.active {
+    border-radius: 0rem !important; }
+  .my-promotion__pills {
+    margin-top: 2rem;
+    border-bottom: 0.1rem solid #DBDBDB; }
+    .my-promotion__pills--link, .my-promotion__pills--link:focus, .my-promotion__pills--link:hover {
+      background-color: transparent !important;
+      color: #0E163D !important;
+      border-radius: 0rem; }
+    .my-promotion__pills--link.active {
+      border-bottom: 0.2rem solid #fecc0a; }
+    .my-promotion__pills--square {
+      display: flex;
+      border: 0.1rem solid rgba(112, 112, 112, 0.5);
+      align-items: center;
+      padding-left: .5rem;
+      padding-right: .5rem;
+      padding-top: .3rem;
+      padding-bottom: .3rem; }
+      .my-promotion__pills--square span {
+        justify-content: flex-start; }
+      .my-promotion__pills--square img {
+        justify-content: flex-end; }
+    .my-promotion__pills--btn {
+      display: flex;
+      background-color: #fecc0a;
+      align-items: center;
+      justify-content: center;
+      padding: .5rem;
+      border: none; }
+    .my-promotion__pills--input {
+      border: none;
+      outline: none;
+      color: #6D6D6D;
+      padding: .5rem; }
+    .my-promotion__pills--switch {
+      position: relative;
+      display: inline; }
+      .my-promotion__pills--switch input[type="checkbox"] {
+        position: relative;
+        width: 5rem;
+        height: 2rem;
+        background-color: #DBDBDB;
+        -webkit-appearance: none;
+        border-radius: 2rem;
+        transition: .4s;
+        cursor: pointer;
+        outline: none; }
+      .my-promotion__pills--switch input:checked[type="checkbox"] {
+        background-color: #fecc0a;
+        outline: none; }
+      .my-promotion__pills--switch input[type="checkbox"]::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0.2rem;
+        transform: translateY(-50%);
+        width: 1.8rem;
+        height: 1.8rem;
+        background-color: #ffffff;
+        border-radius: 50%;
+        z-index: 2;
+        box-shadow: 1rem 1rem 2rem -2rem rgba(0, 0, 0, 0.12);
+        -webkit-box-shadow: 1rem 1rem 2rem -2rem rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 1rem 1rem 2rem -2rem rgba(0, 0, 0, 0.12);
+        transition: .4s; }
+      .my-promotion__pills--switch input:checked[type="checkbox"]::before {
+        right: 3.05rem; }
+      .my-promotion__pills--switch label {
+        position: absolute;
+        color: #0E163D;
+        pointer-events: none; }
+      .my-promotion__pills--switch .email {
+        bottom: -0rem;
+        left: 1.85rem; }
+      .my-promotion__pills--switch .sms {
+        bottom: -0rem;
+        left: 4.3rem; }
+      .my-promotion__pills--switch input:checked[type="checkbox"] + .email {
+        display: none; }
+      .my-promotion__pills--switch input:checked[type="checkbox"] ~ .sms {
+        display: inline; }
+      .my-promotion__pills--switch input[type="checkbox"] ~ .sms {
+        display: none; }
+    .my-promotion__pills--sms-container {
+      display: none; }
+  .my-promotion__modal {
+    background-color: rgba(112, 112, 112, 0.5) !important; }
+    .my-promotion__modal .modal-content {
+      border-radius: 0rem !important;
+      border: none !important; }

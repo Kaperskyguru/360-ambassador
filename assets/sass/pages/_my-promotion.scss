@@ -9,6 +9,140 @@
     }
     &__container {
         background-color: $color-white;
-        padding: 4rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        padding-left: 5.3rem;
+        padding-right: 5.3rem;
+    }
+    &__nav {
+        &--link {
+            color: $color-grey-5;
+            outline: none !important;
+            text-transform: uppercase;
+            &:focus,
+            &:hover,
+            &.active {
+                outline: none !important;
+                border: none;
+                color: $color-blue !important;
+            }
+        }
+        &--link,
+        &--link.active {
+            border-radius: 0rem !important;
+        }
+    }
+    &__pills {
+        margin-top: 2rem;
+        border-bottom: .1rem solid $color-grey-5;
+        &--link,
+        &--link:focus,
+        &--link:hover {
+            background-color: transparent !important;
+            color: $color-blue !important;
+            border-radius: 0rem;
+        }
+        &--link.active {
+            border-bottom: .2rem solid $color-yellow;
+        }
+        &--square {
+            display: flex;
+            border: .1rem solid rgba($color-grey-3, 0.5);
+            align-items: center;
+            padding-left: .5rem;
+            padding-right: .5rem;
+            padding-top: .3rem;
+            padding-bottom: .3rem;
+            & span {
+                justify-content: flex-start;
+            }
+            & img {
+                justify-content: flex-end;
+            }
+        }
+        &--btn {
+            display: flex;
+            background-color: $color-yellow;
+            align-items: center;
+            justify-content: center;
+            padding: .5rem;
+            border: none;
+        }
+        &--input {
+            border: none;
+            outline: none;
+            color: $color-grey-7;
+            padding: .5rem;
+        }
+        &--switch {
+            position: relative;
+            display: inline;
+            & input[type="checkbox"] {
+                position: relative;
+                width: 5rem;
+                height: 2rem;
+                background-color: $color-grey-5;
+                -webkit-appearance: none;
+                border-radius: 2rem;
+                transition: .4s;
+                cursor: pointer;
+                outline: none;
+            }
+            & input:checked[type="checkbox"] {
+                background-color: $color-yellow;
+                outline: none;
+            }
+            & input[type="checkbox"]::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 0.2rem;
+                transform: translateY(-50%);
+                width: 1.8rem;
+                height: 1.8rem;
+                background-color: $color-white;
+                border-radius: 50%;
+                z-index: 2;
+                box-shadow: 1rem 1rem 2rem -2rem rgba($color-black, 0.12);
+                -webkit-box-shadow: 1rem 1rem 2rem -2rem rgba($color-black, 0.12);
+                -moz-box-shadow: 1rem 1rem 2rem -2rem rgba($color-black, 0.12);
+                transition: .4s;
+            }
+            & input:checked[type="checkbox"]::before {
+                right: 3.05rem;
+            }
+            & label {
+                position: absolute;
+                color: $color-blue;
+                pointer-events: none;
+            }
+            .email {
+                bottom: -0rem;
+                left: 1.85rem;
+            }
+            .sms {
+                bottom: -0rem;
+                left: 4.3rem;
+            }
+            & input:checked[type="checkbox"]+.email {
+                display: none;
+            }
+            & input:checked[type="checkbox"]~.sms {
+                display: inline;
+            }
+            & input[type="checkbox"]~.sms {
+                display: none;
+            }
+        }
+        &--sms-container {
+            display: none;
+        }
+    }
+    &__modal {
+        background-color: rgba($color-grey-3, 0.5) !important;
+        & .modal-content {
+            border-radius: 0rem !important;
+            border: none !important;
+        }
     }
 }

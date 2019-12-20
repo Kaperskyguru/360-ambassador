@@ -75,6 +75,10 @@ a {
     color: $color-grey-10 !important;
 }
 
+.color-blue-3 {
+    color: rgba($color-blue-2, .5) !important;
+}
+
 .bg-white {
     background-color: $color-white !important;
 }
@@ -147,13 +151,29 @@ a {
     background-color: $color-grey-10 !important;
 }
 
+.bg-blue-3 {
+    background-color: rgba($color-blue-2, .5) !important;
+}
+
 .border-bottom-grey-3 {
-    border-bottom: .15rem solid $color-grey-3;
+    border-bottom: .15rem solid $color-grey-5;
 }
 
 .border-grey-3 {
     border: .1rem solid $color-grey-3;
     opacity: 0.4;
+}
+
+.br-1 {
+    border-right: .12rem solid $color-grey-6 !important;
+}
+
+.bl-1 {
+    border-left: .05rem solid $color-grey-6;
+}
+
+.b-0 {
+    border: none !important;
 }
 
 .text-bold {
@@ -190,4 +210,30 @@ a {
     &__link {
         margin-right: 1.4rem;
     }
+}
+
+.d-table {
+    overflow-x: auto;
+}
+
+.d-table-head {
+    display: table-header-group;
+    overflow-x: auto;
+}
+
+.d-table-body {
+    display: table-row-group;
+    overflow-x: auto;
+}
+
+.d-table-cell button,
+.d-table-cell button:focus,
+.d-table-cell button:hover {
+    color: $color-blue-2;
+}
+
+.d-table-cell button:active {
+    background-color: $color-grey-5 !important;
+    color: $color-white;
+    border-color: $color-grey-5;
 }
