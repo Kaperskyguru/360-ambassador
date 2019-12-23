@@ -1,8 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light w-100 dashboard__nav">
-    <a class="navbar-brand color-white" href="index.html">
-      <brand />
-    </a>
+    <brand />
     <button
       class="navbar-toggler bg-white"
       type="button"
