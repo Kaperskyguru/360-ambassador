@@ -212,17 +212,28 @@ a {
     }
 }
 
-.d-table {
-    overflow-x: auto;
-}
-
 .d-table-head {
     display: table-header-group;
-    overflow-x: auto;
+}
+
+.d-table-row {
+    display: table-row !important;
+}
+
+.col-auto {
+    // @include respond(phone) {
+    //     display: table !important;
+    // }
+    & img {
+        @include respond(phone) {
+            width: 70%;
+        }
+    }
 }
 
 .d-table-body {
     display: table-row-group;
+    width: 100%;
     overflow-x: auto;
 }
 

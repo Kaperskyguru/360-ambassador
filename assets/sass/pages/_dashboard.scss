@@ -57,9 +57,15 @@
         }
         &-header {
             margin-bottom: 2.4rem;
+            @include respond(phone) {
+                padding: 0rem 2rem;
+            }
         }
         &-body {
-            color: rgba($color-blue, .5)
+            color: rgba($color-blue, .5);
+            @include respond(phone) {
+                padding: 0rem 2rem;
+            }
         }
     }
     &-table {
@@ -98,6 +104,11 @@
             margin-left: auto;
             &-container {
                 margin-top: -1rem;
+            }
+        }
+        &-body {
+            @include respond(phone) {
+                padding: 0rem 2rem;
             }
         }
     }
