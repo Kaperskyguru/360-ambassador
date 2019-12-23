@@ -7,7 +7,7 @@
           <performance-boxes />
         </div>
         <div class="row justify-content-center mt-5">
-          <div class="col-12 col-md-6">
+          <div class="col-md-12 col-lg-6 mb-3">
             <div class="row justify-content-center pl-md-4 pl-5 pr-0">
               <h6 class="dashboard__heading col-9 mb-5">My Promotions</h6>
               <button type="button" class="btn__transparent color-blue col-3">
@@ -97,7 +97,7 @@
               <promotions />
             </div>
           </div>
-          <div class="col-12 col-md-6">
+          <div class="col-md-12 col-lg-6 mt-2">
             <div class="col-12 mb-5 dashboard__chart--card p-0">
               <!-- <div class="col-12">
                 <div class="row"></div>

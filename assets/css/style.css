@@ -625,17 +625,23 @@ a:active {
   margin-right: 1.4rem;
 }
 
-.d-table {
-  overflow-x: auto;
-}
-
 .d-table-head {
   display: table-header-group;
-  overflow-x: auto;
+}
+
+.d-table-row {
+  display: table-row !important;
+}
+
+@media (max-width: 37.5em) {
+  .col-auto img {
+    width: 70%;
+  }
 }
 
 .d-table-body {
   display: table-row-group;
+  width: 100%;
   overflow-x: auto;
 }
 
@@ -1102,6 +1108,7 @@ section,
   background-size: cover;
 }
 
+
 .dashboard__nav {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 1.1rem;
@@ -1167,8 +1174,20 @@ section,
   margin-bottom: 2.4rem;
 }
 
+@media (max-width: 37.5em) {
+  .dashboard__summary--card-header {
+    padding: 0rem 2rem;
+  }
+}
+
 .dashboard__summary--card-body {
   color: rgba(14, 22, 61, 0.5);
+}
+
+@media (max-width: 37.5em) {
+  .dashboard__summary--card-body {
+    padding: 0rem 2rem;
+  }
 }
 
 .dashboard-table__thead {
@@ -1214,6 +1233,12 @@ section,
 
 .dashboard__promotions--card--img-container {
   margin-top: -1rem;
+}
+
+@media (max-width: 37.5em) {
+  .dashboard__promotions--card-body {
+    padding: 0rem 2rem;
+  }
 }
 
 .dashboard__chart--card {
@@ -1441,9 +1466,37 @@ section,
   left: 1.85rem;
 }
 
+@media (max-width: 75em) {
+  .my-promotion__pills--switch .email {
+    bottom: 1rem;
+    left: 2.5rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .my-promotion__pills--switch .email {
+    bottom: -0rem;
+    left: 3rem;
+  }
+}
+
 .my-promotion__pills--switch .sms {
   bottom: -0rem;
   left: 4.3rem;
+}
+
+@media (max-width: 75em) {
+  .my-promotion__pills--switch .sms {
+    bottom: 1rem;
+    left: 4.5rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .my-promotion__pills--switch .sms {
+    bottom: -0rem;
+    left: 5rem;
+  }
 }
 
 .my-promotion__pills--switch input:checked[type="checkbox"]+.email {
