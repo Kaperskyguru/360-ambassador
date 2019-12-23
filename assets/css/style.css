@@ -1,5 +1,5 @@
 /*
-We use "em" instead of "rem" or "px" so that we can overide both default 
+We use "em" instead of "rem" or "px" so that we can overide both default
 and user-browser(In this we mean custom browser settings set by the user)
  settings.
 Breakpoint arguments choices for this app:
@@ -84,6 +84,13 @@ h1 {
   font-size: 4.5rem;
   font-weight: 600;
   letter-spacing: 0rem; }
+
+  h3{
+      font-family: 'MavenPro-Black';
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 0rem;
+  }
 
 h2 {
   font-family: 'MavenPro-Black';
@@ -201,18 +208,18 @@ p {
 
 .dashboard__nav--balance {
   font-family: 'Montserrat-Bold';
-  font-size: 1.2rem; }
+  font-size: 1.2rem !important; }
   .dashboard__nav--balance span {
     font-family: 'Montserrat-Medium' !important;
-    font-size: 1.5rem !important; }
+    font-size: 1rem !important; }
 
 .dashboard__nav--profile-name {
   font-family: 'Montserrat-Bold';
-  font-size: 1.4rem; }
+  font-size: 1.1rem; }
 
 .dashboard__nav--profile-location {
   font-family: 'Montserrat-Medium' !important;
-  font-size: 1.5rem !important; }
+  font-size: 1rem !important; }
 
 .dashboard__nav--profile-dropdown-item {
   font-family: 'Montserrat-Bold';
@@ -312,7 +319,7 @@ p {
 
 .status-card--title {
   font-family: 'Montserrat-Medium';
-  font-size: 1.5rem; }
+  font-size: 1.3rem; }
 
 .status-card--value {
   font-family: 'Montserrat-Bold';
@@ -601,7 +608,7 @@ a:link, a:hover, a:focus, a:active {
   .form__page-left, .form__page-right {
     height: 100vh; }
   .form__header {
-    margin-bottom: 5rem; }
+    margin-bottom: 1rem; }
   .form__group {
     margin-top: .5rem;
     padding-bottom: 0px; }
@@ -691,17 +698,16 @@ a:link, a:hover, a:focus, a:active {
     line-height: 0rem;
     text-transform: uppercase; }
     .navbar-brand .brand-logo {
-      width: 8rem; }
+      width: 7rem; }
   .navbar .collapse {
     margin-left: 1.7rem; }
     .navbar .collapse .navbar-nav .nav-item:not(:last-child) {
       margin-right: 1.5rem; }
     .navbar .collapse .navbar-nav .nav-item .nav-link {
       font-family: 'MavenPro-Bold';
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       letter-spacing: 0rem;
-      text-transform: uppercase;
-      margin-bottom: 1rem; }
+      text-transform: uppercase;}
     .navbar .collapse .navbar-nav .nav-item.active .nav-link {
       color: #fecc0a !important; }
 
@@ -833,7 +839,8 @@ section,
     background-color: rgba(0, 0, 0, 0.7);
     padding: 1.1rem; }
     .dashboard__nav--notification {
-      position: relative; }
+      position: relative;
+   }
       .dashboard__nav--notification .badge {
         position: absolute;
         top: -.22rem;
@@ -842,7 +849,7 @@ section,
         border: 0.2rem solid #ffffff;
         border-radius: 50%; }
     .dashboard__nav--profile-img {
-      width: 3.25rem;
+        width: 3.25rem;
       height: 3.25rem;
       border-radius: 50%; }
     .dashboard__nav--profile-dropdown {
