@@ -119,10 +119,26 @@
             .email {
                 bottom: -0rem;
                 left: 1.85rem;
+                @include respond(tab-land) {
+                    bottom: 1rem;
+                    left: 2.5rem;
+                }
+                @include respond(phone) {
+                    bottom: -0rem;
+                    left: 3rem;
+                }
             }
             .sms {
                 bottom: -0rem;
                 left: 4.3rem;
+                @include respond(tab-land) {
+                    bottom: 1rem;
+                    left: 4.5rem;
+                }
+                @include respond(phone) {
+                    bottom: -0rem;
+                    left: 5rem;
+                }
             }
             & input:checked[type="checkbox"]+.email {
                 display: none;
