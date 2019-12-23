@@ -1,5 +1,5 @@
 <template>
-  <form action="#" class="col-12 align-self-center p-0">
+  <form action="/merchant" class="col-12 align-self-center p-0">
     <div class="col-12 form__group">
       <input
         type="text"
@@ -30,11 +30,9 @@
 </template>
 
 <script>
-import CurvedButton from "~/components/commons/CurvedButton";
 import BigDesignButton from "~/components/commons/BigDesignButton";
 export default {
   components: {
-    CurvedButton,
     BigDesignButton
   }
 };

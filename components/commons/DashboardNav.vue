@@ -15,36 +15,38 @@
       <span class="navbar-toggler-icon color-white"></span>
     </button>
 
-    <div
-      class="collapse navbar-collapse mt-5 mt-md-0"
-      id="navbarSupportedContent"
-    >
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link color-white" href="#"
-            >dashboard <span class="sr-only">(current)</span></a
+          <nuxt-link class="nav-link color-white" to="/merchant"
+            >dashboard <span class="sr-only">(current)</span></nuxt-link
           >
         </li>
         <li class="nav-item">
-          <nuxt-link class="nav-link color-white" to="merchant/my-promotion"
+          <nuxt-link class="nav-link color-white" to="/merchant/my-promotions"
             >my promotion</nuxt-link
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link color-white" href="#">promotions</a>
+          <nuxt-link class="nav-link color-white" to="/merchant/promotions"
+            >promotions</nuxt-link
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link color-white" href="#">links</a>
+          <nuxt-link class="nav-link color-white" to="#">links</nuxt-link>
         </li>
       </ul>
       <div class="navbar-nav my-2 my-lg-0">
         <li class="nav-item">
-          <a class="nav-link color-white dashboard__nav--balance" href="#"
-            >Balance<br /><span>11,000.00 NGN</span></a
+          <nuxt-link class="nav-link color-white dashboard__nav--balance" to="#"
+            >Balance<br /><span>11,000.00 NGN</span></nuxt-link
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link color-white dashboard__nav--notification" href="#">
+          <nuxt-link
+            class="nav-link color-white dashboard__nav--notification"
+            to="#"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20.072"
@@ -69,10 +71,13 @@
               </g>
             </svg>
             <span class="badge color-yellow bg-blue">1</span>
-          </a>
+          </nuxt-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link color-white dashboard__nav--notification" href="#">
+          <nuxt-link
+            class="nav-link color-white dashboard__nav--notification"
+            to="#"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20.072"
@@ -95,10 +100,10 @@
               </g>
             </svg>
             <span class="badge color-yellow bg-blue">10</span>
-          </a>
+          </nuxt-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link color-white" href="#">
+          <nuxt-link class="nav-link color-white" to="#">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20.072"
@@ -117,13 +122,13 @@
                 d="M13.287,5.564a3.7,3.7,0,0,1,.873,2.989,3.021,3.021,0,0,1-3.142,2.836h-.109v.524a.873.873,0,0,1-1.745,0v-.7c0-.72.305-1.571,1.855-1.571a1.282,1.282,0,0,0,1.4-1.309,2.026,2.026,0,0,0-.458-1.615,2.6,2.6,0,0,0-2.007-.7C7.985,6.022,7.92,7.309,7.92,7.44a.873.873,0,1,1-1.745,0c0-.873.676-3.164,3.774-3.164a4.238,4.238,0,0,1,3.338,1.287ZM9.971,13.527a1.023,1.023,0,0,0-.764.327,1.111,1.111,0,0,0-.327.764,1.023,1.023,0,0,0,.327.764,1.111,1.111,0,0,0,.764.327,1.023,1.023,0,0,0,.764-.327,1.111,1.111,0,0,0,.327-.764,1.023,1.023,0,0,0-.327-.764A1.071,1.071,0,0,0,9.971,13.527Zm10.1-3.491A10.036,10.036,0,1,1,10.036,0,10.038,10.038,0,0,1,20.072,10.036Zm-1.745,0a8.291,8.291,0,1,0-8.291,8.291A8.287,8.287,0,0,0,18.327,10.036Z"
               />
             </svg>
-          </a>
+          </nuxt-link>
         </li>
         <li class="nav-item dropdown">
           <div class="nav-link">
-            <a
+            <nuxt-link
               class="dropdown-toggle dashboard__nav--profile d-flex"
-              href="#"
+              to="#"
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -147,15 +152,15 @@
                   >(53347890) Lagos, Nigeria</span
                 >
               </div>
-            </a>
+            </nuxt-link>
             <div
               class="dropdown-menu dropdown-menu-right dashboard__nav--profile-dropdown bg-grey-3"
               aria-labelledby="navbarDropdown"
             >
               <div class="row align-content-start">
-                <a
+                <nuxt-link
                   class="dropdown-item color-white dashboard__nav--profile-dropdown-item"
-                  href="#"
+                  to="#"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -184,10 +189,10 @@
                     </g>
                   </svg>
                   Edit Profile
-                </a>
-                <a
+                </nuxt-link>
+                <nuxt-link
                   class="dropdown-item color-white dashboard__nav--profile-dropdown-item"
-                  href="#"
+                  to="#"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -216,13 +221,13 @@
                     </g>
                   </svg>
                   Settings
-                </a>
+                </nuxt-link>
               </div>
               <div class="dashboard__nav--profile-dropdown-divider"></div>
               <div class="row align-content-end">
-                <a
+                <nuxt-link
                   class="dropdown-item color-white dashboard__nav--profile-dropdown-item"
-                  href="#"
+                  to="#"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -251,7 +256,7 @@
                     </g>
                   </svg>
                   Log Out
-                </a>
+                </nuxt-link>
               </div>
             </div>
           </div>

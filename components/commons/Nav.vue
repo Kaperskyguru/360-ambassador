@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light navbar-reduce w-100">
+  <nav class="navbar navbar-expand-lg navbar-light mt-0 navbar-reduce w-100">
     <brand />
     <button
       class="navbar-toggler bg-white"
@@ -35,9 +35,9 @@
       <div class="navbar-nav my-2 my-lg-1">
         <li class="nav-item dropdown">
           <div class="nav-link">
-            <a
+            <nuxt-link
               class="home-dropdown__toggle btn__bordered-square-curved--yellow"
-              href="#"
+              to="#"
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -45,7 +45,7 @@
               aria-expanded="false"
             >
               get started
-            </a>
+            </nuxt-link>
             <div
               class="dropdown-menu home-dropdown__menu mt-3 mt-lg-0"
               aria-labelledby="navbarDropdown"
@@ -68,13 +68,13 @@
                     rebum. Stet clita kasd gubergren, no sea…
                   </p>
                   <div class="col-12 mt-4 mb-4 p-0">
-                    <a
+                    <nuxt-link
                       class="btn__curved--yellow color-blue"
-                      href="#"
+                      to="register-ad"
                       role="button"
                     >
                       GET STARTED
-                    </a>
+                    </nuxt-link>
                   </div>
                 </div>
                 <div class="dropdown-divider"></div>
@@ -88,13 +88,13 @@
                     rebum. Stet clita kasd gubergren, no sea…
                   </p>
                   <div class="col-12 mt-4 mb-1 p-0">
-                    <a
+                    <nuxt-link
                       class="btn__bordered-curved--yellow color-blue"
-                      href="signup-affiliate.html"
+                      to="register"
                       role="button"
                     >
                       SIGN UP
-                    </a>
+                    </nuxt-link>
                   </div>
                 </div>
               </div>

@@ -1,5 +1,6 @@
 <template>
-  <a
+  <nuxt-link
+    to="login"
     :class="[
       fill
         ? 'btn__square-curved--yellow color-black'
@@ -7,7 +8,7 @@
     ]"
   >
     <slot />
-  </a>
+  </nuxt-link>
 </template>
 
 <script>

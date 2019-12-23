@@ -1,10 +1,10 @@
 <template>
-  <section class="container-fluid">
+  <main class="container-fluid">
     <div class="row justify-content-center">
       <sign-nav>Advertiser SIGN UP FORM</sign-nav>
       <a-form />
     </div>
-  </section>
+  </main>
 </template>
 
 <script>

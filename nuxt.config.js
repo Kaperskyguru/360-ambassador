@@ -25,11 +25,23 @@ export default {
     }],
 
     script: [{
-        src: 'js/jquery.min.js'
+        src: 'https://code.jquery.com/jquery-3.4.1.slim.min.js'
       },
       {
-        src: 'js/bootstrap.min.js'
-      }
+        src: 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'
+      },
+      {
+        src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js'
+      },
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js'
+      },
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js'
+      },
+      {
+        src: '/main.js'
+      },
     ]
   },
   /*

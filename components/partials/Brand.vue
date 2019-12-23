@@ -1,6 +1,6 @@
 <template>
   <nuxt-link class="navbar-brand color-white" to="/">
-    <logo /><br />ambassador
+    <logo /><br /><span style="font-size:1rem">ambassador</span>
   </nuxt-link>
 </template>
 

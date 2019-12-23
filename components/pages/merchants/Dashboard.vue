@@ -90,7 +90,9 @@
                 </tr>
               </tbody>
             </table>
-            <h6 class="dashboard__heading col-12 mb-5">Latest Promotions</h6>
+            <h6 class="dashboard__heading col-12 mb-5 mt-5">
+              Latest Promotions
+            </h6>
             <div class="col-12">
               <promotions />
             </div>

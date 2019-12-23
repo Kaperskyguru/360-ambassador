@@ -19,7 +19,7 @@
           </p>
         </div>
       </div>
-      <div class="col-md-3 col-12 mt-5 pt-5 mr-md-1">
+      <div class="col-md-3 col-12 mt-5  mr-md-1">
         <div class="col-12 text-center">
           <img src="~/assets/images/Mask2.png" alt="" class="img-fluid" />
         </div>
@@ -33,7 +33,7 @@
           </p>
         </div>
       </div>
-      <div class="col-md-3 col-12 mt-5 pt-5">
+      <div class="col-md-3 col-12 mt-5 ">
         <div class="col-12 text-center">
           <img src="~/assets/images/Mask3.png" alt="" class="img-fluid" />
         </div>

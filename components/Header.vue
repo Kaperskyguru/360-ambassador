@@ -6,14 +6,14 @@
         Quickly start & grow your online business with 360 Ambassador
       </p>
     </div>
-    <div class="row align-items-end col-12 pl-md-5 pl-2 ml-0">
-      <div class="col-md-4 col-12 ml-md-5 mt-md-5 m-md-5">
+    <div class="row align-items-end col-12 pl-md-5 pl-2 ml-0 mt-5">
+      <div class="col-md-4 col-12 m-md-5">
         <h1 class="col-md-2 col-12 color-yellow p-0">100M+ Monthly</h1>
         <hr class="col-12 bg-white p-0" />
         <h6 class="color-white col-12 p-0 mb-5">
           Reach more Global Customers
         </h6>
-        <ul class="inline-list col-12 p-0">
+        <ul class="inline-list col-12 pb-0">
           <li class="inline-list__item mr-4">
             <a href="#" class="inline-list__link color-white">
               <svg
