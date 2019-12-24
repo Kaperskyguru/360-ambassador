@@ -1,6 +1,6 @@
 <template>
-  <section class="banner col-12">
-    <div class="row align-content-center">
+  <b-col cols="12" class="banner">
+    <b-row class="align-content-center">
       <p class="banner__heading col-12 col-md-10 color-yellow">
         THE POWER OF AFFILIATE
       </p>
@@ -8,11 +8,11 @@
         Affiliate marketing is the only channel in Nigeria that reaches and
         influences consumers at every stage of their purchase journey
       </h2>
-      <div class="col-12 col-md-10 ml-4 mt-4 pl-4">
+      <b-col md="10" cols="12" class="ml-4 mt-4 pl-4">
         <design-button :fill="false">get started</design-button>
-      </div>
-    </div>
-  </section>
+      </b-col>
+    </b-row>
+  </b-col>
 </template>
 
 <script>
