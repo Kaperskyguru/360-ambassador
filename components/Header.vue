@@ -1,19 +1,21 @@
 <template>
   <header class="col-12 header">
     <navbar></navbar>
-    <div class="col-12 pl-md-5 pl-2">
+    <b-col cols="12" class="pl-md-5 pl-2">
       <p class="col-md-2 col-12 color-white mr-md-auto mt-md-5 m-md-5">
         Quickly start & grow your online business with 360 Ambassador
       </p>
-    </div>
-    <div class="row align-items-end col-12 pl-md-5 pl-2 ml-0">
-      <div class="col-md-4 col-12 ml-md-5 mt-md-5 m-md-5">
+    </b-col>
+    <b-row class="align-items-end col-12 pl-md-5 pl-2 ml-0 mt-5">
+      <b-col md="4" cols="12" class="m-md-5">
         <h1 class="col-md-2 col-12 color-yellow p-0">100M+ Monthly</h1>
         <hr class="col-12 bg-white p-0" />
-        <h6 class="color-white col-12 p-0 mb-5">Reach more Global Customers</h6>
-        <ul class="inline-list col-12 p-0">
+        <h6 class="color-white col-12 p-0 mb-5">
+          Reach more Global Customers
+        </h6>
+        <ul class="inline-list col-12 pb-0">
           <li class="inline-list__item mr-4">
-            <a href="" class="inline-list__link color-white">
+            <a href="#" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -42,7 +44,7 @@
             </a>
           </li>
           <li class="inline-list__item mr-4">
-            <a href="" class="inline-list__link color-white">
+            <a href="#" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -69,7 +71,7 @@
             </a>
           </li>
           <li class="inline-list__item mr-4">
-            <a href="" class="inline-list__link color-white">
+            <a href="#" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -96,7 +98,7 @@
             </a>
           </li>
           <li class="inline-list__item mr-4">
-            <a href="" class="inline-list__link color-white">
+            <a href="#" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -150,8 +152,8 @@
             </a>
           </li>
         </ul>
-      </div>
-      <div class="col-md-6 col-12 mt-md-5 m-md-5 ml-md-auto">
+      </b-col>
+      <b-col md="6" col="12" class="mt-md-5 m-md-5 ml-md-auto ">
         <h1 class="col-12 color-white p-0">
           Connect With Millions of Customers & Affiliates
         </h1>
@@ -161,8 +163,8 @@
           sed diam voluptua. At vero ea rebum. Stet clita kasd gubergren, no
           sea…
         </p>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
   </header>
 </template>
 
@@ -172,3 +174,5 @@ export default {
   components: { Navbar }
 };
 </script>
+<style scoped>
+</style>

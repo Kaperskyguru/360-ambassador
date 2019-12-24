@@ -1,33 +1,29 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light w-100">
-    <a class="navbar-brand color-white" href="#">
-      <img
-        src="/assets/images/logo.png"
-        alt="360 ambassador logo"
-        class="img-fluid"
-      /><br />ambassador
-    </a>
+  <nav class="navbar navbar-expand-lg navbar-light mt-0 navbar-reduce w-100">
+    <brand />
     <button
-      class="navbar-toggler"
+      class="navbar-toggler bg-white"
       type="button"
       data-toggle="collapse"
       data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent"
-      aria-expanded="false"
+      aria-expanded="true"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon color-white"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link color-white" href="#"
-            >advertisers <span class="sr-only">(current)</span></a
-          >
+        <li class="nav-item ">
+          <nuxt-link class="nav-link color-white" to="advertiser"
+            >advertisers <span class="sr-only">(current)</span>
+          </nuxt-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link color-white" href="#">affiliates</a>
+          <nuxt-link class="nav-link color-white" to="affiliate"
+            >affiliates</nuxt-link
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link color-white" href="#">about us</a>
@@ -36,12 +32,12 @@
           <a class="nav-link color-white" href="#">features</a>
         </li>
       </ul>
-      <div class="navbar-nav my-2 my-lg-0">
+      <div class="navbar-nav my-2 my-lg-1">
         <li class="nav-item dropdown">
           <div class="nav-link">
-            <a
-              class="dropdown-toggle btn__bordered-square-curved--yellow"
-              href="#"
+            <nuxt-link
+              class="home-dropdown__toggle btn__bordered-square-curved--yellow"
+              to="#"
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -49,54 +45,56 @@
               aria-expanded="false"
             >
               get started
-            </a>
+            </nuxt-link>
             <div
-              class="dropdown-menu mt-3 mt-lg-0"
+              class="dropdown-menu home-dropdown__menu mt-3 mt-lg-0"
               aria-labelledby="navbarDropdown"
             >
-              <h6 class="dropdown-item color-white bg-blue col-12">
+              <h6
+                class="dropdown-item home-dropdown__item color-white bg-blue col-12"
+              >
                 How do you come in?
               </h6>
-              <div class="dropdown-item bg-transparent col-12">
+              <div
+                class="dropdown-item home-dropdown__item bg-transparent col-12"
+              >
                 <div class="col-12 p-0">
-                  <p class="text-small color-yellow col-12 p-0">
-                    ADVERTISERS
-                  </p>
-                  <h6 class="color-blue col-12 p-0 mb-3">
+                  <p class="text-small color-yellow col-12 p-0">ADVERTISERS</p>
+                  <h6 class="color-blue col-12 p-0 mb-1">
                     Expand your horizon
                   </h6>
-                  <p class="color-blue col-12 p-0 mb-3">
+                  <p class="color-blue col-12 p-0 mt-1 mb-1">
                     Lorem ipsum dolor sit amet, sed diam voluptua. At vero ea
                     rebum. Stet clita kasd gubergren, no sea…
                   </p>
                   <div class="col-12 mt-4 mb-4 p-0">
-                    <a
+                    <nuxt-link
                       class="btn__curved--yellow color-blue"
-                      href="#"
+                      to="register-ad"
                       role="button"
                     >
                       GET STARTED
-                    </a>
+                    </nuxt-link>
                   </div>
                 </div>
                 <div class="dropdown-divider"></div>
                 <div class="col-12 p-0">
                   <p class="text-small color-yellow col-12 p-0">AFFILIATES</p>
-                  <h6 class="color-blue col-12 p-0 mb-3">
+                  <h6 class="color-blue col-12 p-0 mb-1">
                     Work with the trusted brands
                   </h6>
                   <p class="color-blue col-12 p-0">
                     Lorem ipsum dolor sit amet, sed diam voluptua. At vero ea
                     rebum. Stet clita kasd gubergren, no sea…
                   </p>
-                  <div class="col-12 mt-4 mb-4 p-0">
-                    <a
+                  <div class="col-12 mt-4 mb-1 p-0">
+                    <nuxt-link
                       class="btn__bordered-curved--yellow color-blue"
-                      href="#"
+                      to="register"
                       role="button"
                     >
                       SIGN UP
-                    </a>
+                    </nuxt-link>
                   </div>
                 </div>
               </div>
@@ -105,9 +103,9 @@
         </li>
         <li class="nav-item">
           <div class="nav-link mt-3 mt-lg-0">
-            <a class="btn__square-curved--yellow color-black" href="#"
-              >sign in</a
-            >
+            <nuxt-link to="/login">
+              <Design-button>sign in</Design-button>
+            </nuxt-link>
           </div>
         </li>
       </div>
@@ -116,8 +114,17 @@
 </template>
 
 <script>
-export default {};
+import Brand from "~/components/partials/Brand";
+import DesignButton from "~/components/commons/DesignButton";
+import CurvedButton from "~/components/commons/CurvedButton";
+export default {
+  components: {
+    Brand,
+    DesignButton,
+    CurvedButton
+  }
+};
 </script>
 
-<style>
+<style scoped>
 </style>

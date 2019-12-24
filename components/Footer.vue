@@ -1,13 +1,12 @@
 <template>
   <footer class="section footer bg-white col-12">
-    <div class="row align-items-start">
-      <div class="col-12 col-md-2 p-0">
-        <div class="footer__logo-box col-12">
-          <img src="assets/images/logo.png" alt="" class="img-fluid" />
-        </div>
-        <p class="footer__logo-text col-12 color-blue text-bold">AMBASSADOR</p>
-      </div>
-      <div class="col-12 col-md-2">
+    <b-row class="align-items-start">
+      <b-col cols="12" md="2" class="p-0">
+        <b-col cols="12" class="footer__logo-box">
+          <brand class="footer__logo-text col-12 color-blue text-bold" />
+        </b-col>
+      </b-col>
+      <b-col cols="12" md="2">
         <p class="footer__header color-yellow col-12">Company</p>
         <ul class="list col-12">
           <li class="list__item">
@@ -16,14 +15,14 @@
             </a>
           </li>
           <li class="list__item">
-            <a href="" class="list__link color-blue">
+            <nuxt-link to="advertiser" class="list__link color-blue">
               Advertisers
-            </a>
+            </nuxt-link>
           </li>
           <li class="list__item">
-            <a href="" class="list__link color-blue">
+            <nuxt-link to="affiliate" class="list__link color-blue">
               Affiliates
-            </a>
+            </nuxt-link>
           </li>
           <li class="list__item">
             <a href="" class="list__link color-blue">
@@ -31,8 +30,8 @@
             </a>
           </li>
         </ul>
-      </div>
-      <div class="col-12 col-md-2">
+      </b-col>
+      <b-col md="2" cols="12">
         <p class="footer__header color-yellow col-12">Community</p>
         <ul class="list col-12">
           <li class="list__item">
@@ -51,8 +50,8 @@
             </a>
           </li>
         </ul>
-      </div>
-      <div class="col-12 col-md-2">
+      </b-col>
+      <b-col cols="12" md="2">
         <p class="footer__header color-yellow col-12">Legal</p>
         <ul class="list col-12">
           <li class="list__item">
@@ -66,8 +65,8 @@
             </a>
           </li>
         </ul>
-      </div>
-      <div class="col-12 col-md-3 ml-auto">
+      </b-col>
+      <b-col cols="12" md="2" class="ml-auto">
         <ul class="inline-list col-12 p-0">
           <li class="inline-list__item mr-4">
             <a href="" class="inline-list__link color-white">
@@ -207,13 +206,18 @@
             </a>
           </li>
         </ul>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
   </footer>
 </template>
 
 <script>
-export default {};
+import Brand from "~/components/partials/Brand";
+export default {
+  components: {
+    Brand
+  }
+};
 </script>
 
 <style>

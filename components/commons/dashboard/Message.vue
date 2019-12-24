@@ -1,0 +1,24 @@
+<template>
+  <div class="dashboard__general--card mb-5">
+    <div class="dashboard__summary--card-header m-0 col-12">
+      <div class="row m-0">
+        <span class="color-blue mr-auto"><slot name="title"/></span>
+      </div>
+    </div>
+    <p class="dashboard__promotions--card-text color-grey-7 col-12 p-0">
+      <span class="color-blue"><slot name="subtitle"/></span>
+      <br /><slot name="content" />
+    </p>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    link: String
+  }
+};
+</script>
+
+<style>
+</style>
