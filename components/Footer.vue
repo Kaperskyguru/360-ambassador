@@ -1,12 +1,13 @@
 <template>
   <footer class="section footer bg-white col-12">
-    <b-row class="align-items-start">
-      <b-col cols="12" md="2" class="p-0">
-        <b-col cols="12" class="footer__logo-box">
-          <brand class="footer__logo-text col-12 color-blue text-bold" />
-        </b-col>
-      </b-col>
-      <b-col cols="12" md="2">
+    <div class="row align-items-start">
+      <div class="col-12 col-md-2 p-0">
+        <div class="footer__logo-box col-12">
+          <logo />
+        </div>
+        <p class="footer__logo-text col-12 color-blue text-bold">AMBASSADOR</p>
+      </div>
+      <div class="col-12 col-md-2">
         <p class="footer__header color-yellow col-12">Company</p>
         <ul class="list col-12">
           <li class="list__item">
@@ -30,8 +31,8 @@
             </a>
           </li>
         </ul>
-      </b-col>
-      <b-col md="2" cols="12">
+      </div>
+      <div class="col-12 col-md-2">
         <p class="footer__header color-yellow col-12">Community</p>
         <ul class="list col-12">
           <li class="list__item">
@@ -50,8 +51,8 @@
             </a>
           </li>
         </ul>
-      </b-col>
-      <b-col cols="12" md="2">
+      </div>
+      <div class="col-12 col-md-2">
         <p class="footer__header color-yellow col-12">Legal</p>
         <ul class="list col-12">
           <li class="list__item">
@@ -65,8 +66,8 @@
             </a>
           </li>
         </ul>
-      </b-col>
-      <b-col cols="12" md="2" class="ml-auto">
+      </div>
+      <div class="col-12 col-md-3 ml-auto">
         <ul class="inline-list col-12 p-0">
           <li class="inline-list__item mr-4">
             <a href="" class="inline-list__link color-white">
@@ -206,16 +207,16 @@
             </a>
           </li>
         </ul>
-      </b-col>
-    </b-row>
+      </div>
+    </div>
   </footer>
 </template>
 
 <script>
-import Brand from "~/components/partials/Brand";
+import Logo from "~/components/commons/Logo";
 export default {
   components: {
-    Brand
+    Logo
   }
 };
 </script>

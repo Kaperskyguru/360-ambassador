@@ -1,13 +1,13 @@
 <template>
   <header class="col-12 header">
     <navbar></navbar>
-    <b-col cols="12" class="pl-md-5 pl-2">
+    <div class="col-12 pl-md-5 pl-2">
       <p class="col-md-2 col-12 color-white mr-md-auto mt-md-5 m-md-5">
         Quickly start & grow your online business with 360 Ambassador
       </p>
-    </b-col>
-    <b-row class="align-items-end col-12 pl-md-5 pl-2 ml-0 mt-5">
-      <b-col md="4" cols="12" class="m-md-5">
+    </div>
+    <div class="row align-items-end col-12 pl-md-5 pl-2 ml-0 mt-5">
+      <div class="col-md-4 col-12 m-md-5">
         <h1 class="col-md-2 col-12 color-yellow p-0">100M+ Monthly</h1>
         <hr class="col-12 bg-white p-0" />
         <h6 class="color-white col-12 p-0 mb-5">
@@ -152,8 +152,8 @@
             </a>
           </li>
         </ul>
-      </b-col>
-      <b-col md="6" col="12" class="mt-md-5 m-md-5 ml-md-auto ">
+      </div>
+      <div class="col-md-6 col-12 mt-md-5 m-md-5 ml-md-auto ">
         <h1 class="col-12 color-white p-0">
           Connect With Millions of Customers & Affiliates
         </h1>
@@ -163,8 +163,8 @@
           sed diam voluptua. At vero ea rebum. Stet clita kasd gubergren, no
           sea…
         </p>
-      </b-col>
-    </b-row>
+      </div>
+    </div>
   </header>
 </template>
 
