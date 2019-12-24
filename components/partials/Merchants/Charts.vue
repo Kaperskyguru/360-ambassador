@@ -1,28 +1,29 @@
 <template>
   <div class="row">
+    <!-- <div class="row"> -->
     <div class="col-1">
       <a href="#" class="color-blue text-bold"
         ><img src="~/assets/images/left-arrow.png" width="10" alt="" />Back</a
       >
     </div>
-    <!-- CHARTS HERE -->
-    <bar-chart id="myfirstbarchart">
-      VISITORS
-    </bar-chart>
+    <!-- </div> -->
+    <div class="col">
+      <div class="row">
+        <!-- CHARTS HERE -->
+        <bar-chart id="myfirstbarchart">
+          VISITORS
+        </bar-chart>
 
-    <bar-chart id="mysecondbarchart">
-      CLICKS
-    </bar-chart>
-    <bar-chart id="mythirdbarchart">
-      CLICKS
-    </bar-chart>
-    <div class="col bg-blue">
-      <p class="col-12 color-white">CLICKS</p>
-      <div
-        id="mysecondchart"
-        class="p-0"
-        style="height: 220px;width: 100%"
-      ></div>
+        <bar-chart id="mysecondbarchart">
+          CLICKS
+        </bar-chart>
+        <bar-chart id="mythirdbarchart">
+          CLICKS
+        </bar-chart>
+        <bar-chart id="mysecondchart" class="bg-blue">
+          CLICKS
+        </bar-chart>
+      </div>
     </div>
   </div>
 </template>
@@ -41,19 +42,19 @@ export default {
       // the chart.
       data: [
         {
-          Month: "January",
+          Month: "Jan",
           value: 12000
         },
         {
-          Month: "February",
+          Month: "Feb",
           value: 19000
         },
         {
-          Month: "March",
+          Month: "Mar",
           value: 3000
         },
         {
-          Month: "April",
+          Month: "Apr",
           value: 5000
         },
         {
@@ -61,31 +62,31 @@ export default {
           value: 2000
         },
         {
-          Month: "June",
+          Month: "Jun",
           value: 3000
         },
         {
-          Month: "July",
+          Month: "Jul",
           value: 25000
         },
         {
-          Month: "August",
+          Month: "Aug",
           value: 4500
         },
         {
-          Month: "September",
+          Month: "Sept",
           value: 12450
         },
         {
-          Month: "October",
+          Month: "Oct",
           value: 45820
         },
         {
-          Month: "November",
+          Month: "Nov",
           value: 2000
         },
         {
-          Month: "December",
+          Month: "Dec",
           value: 1450
         }
       ],
@@ -97,7 +98,8 @@ export default {
       // chart.
       labels: ["Value"],
       barColors: ["rgb(254,204,10)"],
-      parseTime: false
+      parseTime: false,
+      resize: true
     });
 
     new Morris.Bar({
@@ -107,19 +109,19 @@ export default {
       // the chart.
       data: [
         {
-          Month: "January",
+          Month: "Jan",
           value: 12000
         },
         {
-          Month: "February",
+          Month: "Feb",
           value: 19000
         },
         {
-          Month: "March",
+          Month: "Mar",
           value: 3000
         },
         {
-          Month: "April",
+          Month: "Apr",
           value: 5000
         },
         {
@@ -127,31 +129,31 @@ export default {
           value: 2000
         },
         {
-          Month: "June",
+          Month: "Jun",
           value: 3000
         },
         {
-          Month: "July",
+          Month: "Jul",
           value: 25000
         },
         {
-          Month: "August",
+          Month: "Aug",
           value: 4500
         },
         {
-          Month: "September",
+          Month: "Sept",
           value: 12450
         },
         {
-          Month: "October",
+          Month: "Oct",
           value: 45820
         },
         {
-          Month: "November",
+          Month: "Nov",
           value: 2000
         },
         {
-          Month: "December",
+          Month: "Dec",
           value: 1450
         }
       ],
@@ -163,7 +165,8 @@ export default {
       // chart.
       labels: ["Value"],
       barColors: ["rgb(254,204,10)"],
-      parseTime: false
+      parseTime: false,
+      resize: true
     });
 
     new Morris.Bar({
@@ -173,19 +176,19 @@ export default {
       // the chart.
       data: [
         {
-          Month: "January",
+          Month: "Jan",
           value: 12000
         },
         {
-          Month: "February",
+          Month: "Feb",
           value: 19000
         },
         {
-          Month: "March",
+          Month: "Mar",
           value: 3000
         },
         {
-          Month: "April",
+          Month: "Apr",
           value: 5000
         },
         {
@@ -193,31 +196,31 @@ export default {
           value: 2000
         },
         {
-          Month: "June",
+          Month: "Jun",
           value: 3000
         },
         {
-          Month: "July",
+          Month: "Jul",
           value: 25000
         },
         {
-          Month: "August",
+          Month: "Aug",
           value: 4500
         },
         {
-          Month: "September",
+          Month: "Sept",
           value: 12450
         },
         {
-          Month: "October",
+          Month: "Oct",
           value: 45820
         },
         {
-          Month: "November",
+          Month: "Nov",
           value: 2000
         },
         {
-          Month: "December",
+          Month: "Dec",
           value: 1450
         }
       ],
@@ -229,7 +232,8 @@ export default {
       // chart.
       labels: ["Value"],
       barColors: ["rgb(254,204,10)"],
-      parseTime: false
+      parseTime: false,
+      resize: true
     });
 
     new Morris.Line({
@@ -239,19 +243,19 @@ export default {
       // the chart.
       data: [
         {
-          Month: "January",
+          Month: "Jan",
           value: 12000
         },
         {
-          Month: "February",
+          Month: "Feb",
           value: 19000
         },
         {
-          Month: "March",
+          Month: "Mar",
           value: 3000
         },
         {
-          Month: "April",
+          Month: "Apr",
           value: 5000
         },
         {
@@ -259,31 +263,31 @@ export default {
           value: 2000
         },
         {
-          Month: "June",
+          Month: "Jun",
           value: 3000
         },
         {
-          Month: "July",
+          Month: "Jul",
           value: 25000
         },
         {
-          Month: "August",
+          Month: "Aug",
           value: 4500
         },
         {
-          Month: "September",
+          Month: "Sept",
           value: 12450
         },
         {
-          Month: "October",
+          Month: "Oct",
           value: 45820
         },
         {
-          Month: "November",
+          Month: "Nov",
           value: 2000
         },
         {
-          Month: "December",
+          Month: "Dec",
           value: 1450
         }
       ],
@@ -295,7 +299,8 @@ export default {
       // chart.
       labels: ["Value"],
       lineColors: ["#ffffff"],
-      parseTime: false
+      parseTime: false,
+      resize: true
     });
   }
 };
