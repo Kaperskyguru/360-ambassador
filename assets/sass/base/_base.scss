@@ -7,7 +7,7 @@ html {
         font-size: 45%;
     }
     @include respond(phone) {
-        font-size: 35%;
+        font-size: 40%;
     }
     @include respond(big-desktop) {
         font-size: 75%;

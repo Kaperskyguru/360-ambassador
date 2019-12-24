@@ -23,6 +23,12 @@ let default = 10px || 62.5% || 1rem;
 */
 
 @mixin respond($breakpoint) {
+    @if $breakpoint==phone-small {
+        @media (max-width: 33em) {
+            @content
+        }
+        ;
+    }
     @if $breakpoint==phone {
         @media (max-width: 37.5em) {
             @content

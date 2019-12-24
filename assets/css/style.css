@@ -30,7 +30,7 @@ html {
       font-size: 45%; } }
   @media (max-width: 37.5em) {
     html {
-      font-size: 35%; } }
+      font-size: 40%; } }
   @media (min-width: 112.5em) {
     html {
       font-size: 75%; } }
@@ -845,6 +845,12 @@ section,
         padding: .25rem .5rem;
         border: 0.2rem solid #ffffff;
         border-radius: 50%; }
+        @media (max-width: 75em) {
+          .dashboard__nav--notification .badge {
+            right: 96%; } }
+        @media (max-width: 37.5em) {
+          .dashboard__nav--notification .badge {
+            right: 93%; } }
     .dashboard__nav--profile-img {
       width: 3.25rem;
       height: 3.25rem;
@@ -939,6 +945,9 @@ section,
     .dashboard__general--card__body {
       height: 10rem;
       padding-right: 0rem; }
+      @media (max-width: 37.5em) {
+        .dashboard__general--card__body {
+          height: 14rem; } }
     .dashboard__general--card__img-container {
       height: 100%;
       padding: 0rem; }
@@ -967,6 +976,14 @@ section,
         background: #ffffff; }
     .dashboard__general--card__rating {
       border-radius: .5rem; }
+      @media (max-width: 75em) {
+        .dashboard__general--card__rating {
+          padding-left: .3rem;
+          padding-right: .3rem; } }
+      @media (max-width: 37.5em) {
+        .dashboard__general--card__rating {
+          padding-top: .6rem;
+          padding-bottom: .1rem; } }
 
 .my-promotion {
   background-image: url("../images/banner.png");

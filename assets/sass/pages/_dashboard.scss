@@ -15,6 +15,12 @@
                 padding: .25rem .5rem;
                 border: .2rem solid $color-white;
                 border-radius: 50%;
+                @include respond(tab-land) {
+                    right: 96%;
+                }
+                @include respond(phone) {
+                    right: 93%;
+                }
             }
         }
         &--profile {
@@ -150,6 +156,12 @@
         &__body {
             height: 10rem;
             padding-right: 0rem;
+            @include respond(phone) {
+                height: 14rem;
+            }
+            // @include respond(phone-small) {
+            //     height: 11rem;
+            // }
         }
         &__img-container {
             height: 100%;
@@ -183,6 +195,14 @@
         }
         &__rating {
             border-radius: .5rem;
+            @include respond(tab-land) {
+                padding-left: .3rem;
+                padding-right: .3rem;
+            }
+            @include respond(phone) {
+                padding-top: .6rem;
+                padding-bottom: .1rem;
+            }
         }
     }
 }
