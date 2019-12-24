@@ -3,9 +3,8 @@
     <div class="row align-items-start">
       <div class="col-12 col-md-2 p-0">
         <div class="footer__logo-box col-12">
-          <logo />
+          <brand class="footer__logo-text col-12 color-blue text-bold" />
         </div>
-        <p class="footer__logo-text col-12 color-blue text-bold">AMBASSADOR</p>
       </div>
       <div class="col-12 col-md-2">
         <p class="footer__header color-yellow col-12">Company</p>
@@ -213,10 +212,10 @@
 </template>
 
 <script>
-import Logo from "~/components/commons/Logo";
+import Brand from "~/components/partials/Brand";
 export default {
   components: {
-    Logo
+    Brand
   }
 };
 </script>

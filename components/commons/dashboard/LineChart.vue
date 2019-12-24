@@ -91,6 +91,7 @@ export default {
           value: 1450
         }
       ],
+      resize: true,
       // The name of the data record attribute that contains x-values.
       xkey: "Month",
       // A list of names of data record attributes that contain y-values.

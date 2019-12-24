@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="col-lg-5 col-md-6 col-12 form__page-right">
-        <register-form>Become an Affiliate</register-form>
+        <register-form action="affiliate">Become an Affiliate</register-form>
       </div>
     </div>
   </div>

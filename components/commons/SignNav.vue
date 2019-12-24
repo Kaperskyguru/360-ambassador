@@ -1,9 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light w-100">
-    <nuxt-link class="navbar-brand color-blue" to="/">
-      <logo /><br />ambassador
-    </nuxt-link>
-
+    <brand class="footer__logo-text color-blue text-bold" />
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <p
         class="navbar-text text-bold text-uppercase color-blue mt-md-5 pt-md-5"
@@ -15,10 +12,10 @@
 </template>
 
 <script>
-import Logo from "~/components/commons/Logo";
+import Brand from "~/components/partials/Brand";
 export default {
   components: {
-    Logo
+    Brand
   }
 };
 </script>

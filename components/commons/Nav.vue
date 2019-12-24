@@ -16,12 +16,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item ">
-          <nuxt-link class="nav-link color-white" to="advertiser"
+          <nuxt-link class="nav-link color-white" to="register-ad"
             >advertisers <span class="sr-only">(current)</span>
           </nuxt-link>
         </li>
         <li class="nav-item">
-          <nuxt-link class="nav-link color-white" to="affiliate"
+          <nuxt-link class="nav-link color-white" to="register"
             >affiliates</nuxt-link
           >
         </li>

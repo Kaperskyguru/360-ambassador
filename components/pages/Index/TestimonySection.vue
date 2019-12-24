@@ -14,7 +14,7 @@
           training. Just click below to get started!
         </p>
         <div class="col-12 mt-5 p-0">
-          <curved-button> START PROMOTING</curved-button>
+          <curved-button to="register"> START PROMOTING</curved-button>
 
           <curved-button :fill="false">LEARN MORE</curved-button>
         </div>
@@ -34,7 +34,7 @@
           out-of-pocket costs. Get full details by clicking below:
         </p>
         <div class="col-12 mt-5 p-0">
-          <curved-button>START SELLING</curved-button>
+          <curved-button to="register-ad">START SELLING</curved-button>
 
           <curved-button :fill="false">LEARN MORE</curved-button>
         </div>

@@ -4,7 +4,7 @@
     <p class="col-12 color-grey-1">
       Sign up now! Start by confirming your email below
     </p>
-    <form action="#" class="col-12 align-self-center p-0">
+    <form :action="action" class="col-12 align-self-center p-0">
       <div class="col-12 form__group">
         <input
           type="text"
@@ -47,6 +47,11 @@
 <script>
 import BigDesignButton from "~/components/commons/BigDesignButton";
 export default {
+  props: {
+    action: {
+      type: String
+    }
+  },
   components: {
     BigDesignButton
   }

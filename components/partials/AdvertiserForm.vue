@@ -1,5 +1,9 @@
 <template>
-  <form class="col-12 col-md-9 mt-4 pl-5 form-2">
+  <form
+    action="advertiser"
+    method="post"
+    class="col-12 col-md-9 mt-4 pl-5 form-2"
+  >
     <div class="col-12 mb-3">
       <h6 class="border-bottom-grey-3 col-12 color-blue p-0">
         Contact Information
