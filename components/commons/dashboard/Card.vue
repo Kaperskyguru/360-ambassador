@@ -1,10 +1,10 @@
 <template>
   <div class="col-md-4 col-12 mt-5">
-    <div class="dashboard__general--card col-12 pl-3 pr-3">
+    <div class="dashboard__general--card col-12 pl-3 ">
       <div class="row p-0">
         <p class="text-small color-grey-3 col-12 mb-0">FOOD</p>
       </div>
-      <div class="dashboard__general--card__body col-12 mb-5">
+      <div class="dashboard__general--card__body col-12 mb-3">
         <div class="row">
           <div class="dashboard__general--card__img-container col-3">
             <nuxt-link to="/merchant/1">
@@ -15,7 +15,7 @@
               />
             </nuxt-link>
           </div>
-          <div class="col-9 pr-0 pl-4 mb-0">
+          <div class="col-6 pl-2">
             <div class="row mb-0">
               <nuxt-link to="/merchant/1">
                 <h6
@@ -24,26 +24,27 @@
                   Bukka Hut Festo
                 </h6>
               </nuxt-link>
-              <div class="col-3 p-2 mb-0 ml-2">
-                <small
-                  class="dashboard__general--card__text-small col-12 color-blue text-center d-block p-0"
-                  >Commission</small
-                >
-                <p
-                  class="dashboard__general--card__text-bg color-blue text-center col-12 mb-0 p-0"
-                >
-                  10%
-                </p>
-              </div>
+
               <p class="dashboard__general--card__text color-blue-2 col-12">
                 Price: 0.00 NGN
               </p>
-              <p class="dashboard__general--card__text color-grey-3 col-10">
+              <p class="dashboard__general--card__text color-grey-3 col-12">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
                 aliquyam…
               </p>
             </div>
+          </div>
+          <div class="col-3">
+            <small
+              class="dashboard__general--card__text-small col-12 color-blue text-center d-block p-0"
+              >Commission</small
+            >
+            <p
+              class="dashboard__general--card__text-bg color-blue text-center col-12 mb-0 p-0"
+            >
+              10%
+            </p>
           </div>
         </div>
       </div>
