@@ -5,12 +5,12 @@
       <div class="my-promotion__container col-12">
         <div class="row justify-content-center">
           <p class="col-12">
-            <a href="#" class="color-blue text-bold"
+            <nuxt-link to="/merchant/promotions/" class="color-blue text-bold"
               ><img
                 src="~assets/images/left-arrow.png"
                 width="10"
                 alt=""
-              />Back</a
+              />Back</nuxt-link
             >
           </p>
           <div class="col-md-8 col-12">
@@ -49,54 +49,6 @@
               </div>
             </div>
             <div class="mt-2 p-0"></div>
-
-            <!-- <div class="col-12 d-table-body">
-                <div class="d-table-row bg-grey-6">
-                  <p class="col-auto pt-3 pb-3 pl-2 d-table-cell color-blue">
-                    <img
-                      src="~assets/images/Access_Bank_Logo.png"
-                      alt=""
-                      width="100"
-                    />
-                  </p>
-                  <p
-                    class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
-                  >
-                    <span class="color-blue">Bukka Hut Festo</span>
-                    <span class="color-blue-3 text-small"
-                      >(512345)<br />
-                      <span class="text-small color-grey-3">FOOD</span></span
-                    >
-                  </p>
-                  <p
-                    class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
-                  >
-                    11/01/2019
-                  </p>
-                  <p
-                    class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
-                  >
-                    10%
-                  </p>
-                  <p
-                    class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
-                  >
-                    5,000
-                  </p>
-                  <p
-                    class="col-auto pt-3 pb-3 pl-0 pr-1 d-table-cell color-blue"
-                  >
-                    <button
-                      class="btn__square-curved--yellow p-0"
-                      id="modalBtn"
-                      data-toggle="modal"
-                      data-target="#exampleModalCenter"
-                    >
-                      Join Program
-                    </button>
-                  </p>
-                </div>
-              </div> -->
 
             <table class="table table-responsive-sm table-borderless">
               <tbody class="dashboard-table__tbody bg-grey-6">

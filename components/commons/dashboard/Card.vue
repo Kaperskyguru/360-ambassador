@@ -7,17 +7,23 @@
       <div class="dashboard__general--card__body col-12 mb-0">
         <div class="row">
           <div class="dashboard__general--card__img-container col-3">
-            <img
-              src="~assets/images/Access_Bank_Logo.png"
-              alt=""
-              class="img-fluid"
-            />
+            <nuxt-link to="/merchant/1">
+              <img
+                src="~assets/images/Access_Bank_Logo.png"
+                alt=""
+                class="img-fluid"
+              />
+            </nuxt-link>
           </div>
           <div class="col-9 pr-0 pl-4 mb-0">
             <div class="row mb-0">
-              <h6 class="dashboard__general--card__heading color-blue-1 col-8">
-                Bukka Hut Festo
-              </h6>
+              <nuxt-link to="/merchant/1">
+                <h6
+                  class="dashboard__general--card__heading color-blue-1 col-8"
+                >
+                  Bukka Hut Festo
+                </h6>
+              </nuxt-link>
               <div class="col-3 p-0 mb-0">
                 <small
                   class="dashboard__general--card__text-small col-12 color-blue text-center d-block p-0"
@@ -44,9 +50,14 @@
       <hr class="col-11 color-grey-3 mt-0" />
       <div class="col-12">
         <div class="row justify-content-center align-items-center">
-          <a href="#" class="color-blue-2 mr-auto">View details</a>
-          <a class="btn__square-curved--yellow color-blue-2" href="#"
-            >Join Program</a
+          <nuxt-link to="/merchant/1" class="color-blue-2 mr-auto"
+            >View details</nuxt-link
+          >
+          <nuxt-link
+            to="/merchant/1"
+            class="btn__square-curved--yellow color-blue-2"
+            href="#"
+            >Join Program</nuxt-link
           >
         </div>
       </div>
