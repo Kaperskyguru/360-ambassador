@@ -1326,10 +1326,6 @@ section,
   }
 }
 
-.dashboard__general--card__img-container {
-  height: 100%;
-  padding: 0rem;
-}
 
 .dashboard__general--card__text {
   color: rgba(18, 48, 217, 0.5);
