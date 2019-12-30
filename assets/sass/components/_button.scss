@@ -69,6 +69,17 @@
             text-decoration: none;
         }
     }
+    &__squared--yellow {
+        &,
+        &:focus,
+        &:hover {
+            background-color: $color-yellow;
+            border: none !important;
+            border-radius: .5rem;
+            padding: 1rem 2rem !important;
+            text-decoration: none;
+        }
+    }
     &__square-curved--yellow {
         &,
         &:focus,
