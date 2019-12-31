@@ -1,15 +1,15 @@
 <template>
   <main>
-    <promotion />
+    <dashboard />
   </main>
 </template>
 
 <script>
-import Promotion from "~/components/pages/merchants/Running.promotion.vue";
+import Dashboard from "~/components/pages/affiliates/Dashboard.vue";
 
 export default {
   components: {
-    Promotion
+    Dashboard
   }
 };
 </script>

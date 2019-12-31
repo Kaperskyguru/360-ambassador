@@ -7,7 +7,7 @@
       <div class="dashboard__general--card__body col-12 mb-3">
         <div class="row">
           <div class="dashboard__general--card__img-container col-3">
-            <nuxt-link to="/merchant/1">
+            <nuxt-link to="/affiliates/1">
               <img
                 src="~assets/images/Access_Bank_Logo.png"
                 alt=""
@@ -17,7 +17,7 @@
           </div>
           <div class="col-6 pl-2">
             <div class="row mb-0">
-              <nuxt-link to="/merchant/1">
+              <nuxt-link to="/affiliates/1">
                 <h6
                   class="dashboard__general--card__heading color-blue-1 col-12"
                 >
@@ -51,11 +51,11 @@
       <hr class="color-grey-3 mt-0" />
       <div class="col-12">
         <div class="row justify-content-center align-items-center">
-          <nuxt-link to="/merchant/1" class="color-blue-2 mr-auto"
+          <nuxt-link to="/affiliates/1" class="color-blue-2 mr-auto"
             >View details</nuxt-link
           >
           <nuxt-link
-            to="/merchant/1"
+            to="/affiliates/1"
             class="btn__square-curved--yellow color-blue-2"
             href="#"
             >Join Program</nuxt-link

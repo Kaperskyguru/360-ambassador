@@ -1,5 +1,5 @@
 <template>
-  <form action="/merchant" class="col-12 align-self-center p-0">
+  <form action="/affiliates" class="col-12 align-self-center p-0">
     <div class="col-12 form__group">
       <input
         type="text"
@@ -24,7 +24,7 @@
       <big-design-button>SIGN IN</big-design-button>
     </div>
     <div class="col-12 form__group mt-4">
-      <big-design-button>SIGN IN MERCHANT</big-design-button>
+      <big-design-button>SIGN IN affiliates</big-design-button>
     </div>
   </form>
 </template>

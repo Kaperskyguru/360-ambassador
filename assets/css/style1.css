@@ -1,5 +1,5 @@
 /*
-We use "em" instead of "rem" or "px" so that we can overide both default 
+We use "em" instead of "rem" or "px" so that we can overide both default
 and user-browser(In this we mean custom browser settings set by the user)
  settings.
 Breakpoint arguments choices for this app:
@@ -39,6 +39,30 @@ html {
 @media (max-width: 37.5em) {
   html {
     font-size: 40%;
+  }
+}
+
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 56.25em) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 37.5em) {
+  html {
+    font-size: 35%;
   }
 }
 
@@ -105,6 +129,13 @@ body {
 h1 {
   font-family: 'MavenPro-Black';
   font-size: 4.5rem;
+  font-weight: 600;
+  letter-spacing: 0rem;
+}
+
+h3 {
+  font-family: 'MavenPro-Black';
+  font-size: 3rem;
   font-weight: 600;
   letter-spacing: 0rem;
 }
@@ -254,22 +285,22 @@ p {
 
 .dashboard__nav--balance {
   font-family: 'Montserrat-Bold';
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
 }
 
 .dashboard__nav--balance span {
   font-family: 'Montserrat-Medium' !important;
-  font-size: 1.5rem !important;
+  font-size: 1rem !important;
 }
 
 .dashboard__nav--profile-name {
   font-family: 'Montserrat-Bold';
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 .dashboard__nav--profile-location {
   font-family: 'Montserrat-Medium' !important;
-  font-size: 1.5rem !important;
+  font-size: 1rem !important;
 }
 
 .dashboard__nav--profile-dropdown-item {
@@ -285,6 +316,7 @@ p {
 .dashboard__summary--card-header {
   font-family: 'Montserrat-Medium' !important;
   font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .dashboard__summary--card-body {
@@ -294,7 +326,7 @@ p {
 
 .dashboard-table__thead th {
   font-family: 'Montserrat-Bold';
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .dashboard-table__tbody th,
@@ -394,7 +426,7 @@ p {
 
 .status-card--title {
   font-family: 'Montserrat-Medium';
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .status-card--value {
@@ -582,10 +614,6 @@ a:active {
   font-weight: bold;
 }
 
-.text-bolder {
-  font-weight: bolder;
-}
-
 .vr {
   width: .1rem;
   height: 13rem;
@@ -721,16 +749,6 @@ a:active {
   text-decoration: none;
 }
 
-.btn__squared--yellow,
-.btn__squared--yellow:focus,
-.btn__squared--yellow:hover {
-  background-color: #fecc0a;
-  border: none !important;
-  border-radius: .5rem;
-  padding: 1rem 2rem !important;
-  text-decoration: none;
-}
-
 .btn__square-curved--yellow,
 .btn__square-curved--yellow:focus,
 .btn__square-curved--yellow:hover {
@@ -807,7 +825,7 @@ a:active {
 }
 
 .form__header {
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 .form__group {
@@ -932,7 +950,7 @@ a:active {
 }
 
 .navbar-brand .brand-logo {
-  width: 8rem;
+  width: 7rem;
 }
 
 .navbar .collapse {
@@ -945,10 +963,9 @@ a:active {
 
 .navbar .collapse .navbar-nav .nav-item .nav-link {
   font-family: 'MavenPro-Bold';
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   letter-spacing: 0rem;
   text-transform: uppercase;
-  margin-bottom: 1rem;
 }
 
 .navbar .collapse .navbar-nav .nav-item.active .nav-link {
@@ -960,7 +977,7 @@ a:active {
 }
 
 .home-dropdown__menu {
-  width: 35rem;
+  width: 50rem;
   left: unset;
   right: 0;
   background: linear-gradient(to left, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
@@ -977,9 +994,9 @@ a:active {
 .home-dropdown__item {
   white-space: normal;
   text-transform: none;
-  padding-top: 1.8rem !important;
+  padding-top: 1rem !important;
   padding-left: 1.8rem !important;
-  padding-bottom: 1.8rem !important;
+  padding-bottom: 1.4rem !important;
   padding-right: 8.6rem;
 }
 
@@ -1005,8 +1022,9 @@ a:active {
 
 .header {
   height: 100vh;
-  padding: 0rem;
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/banner.png");
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/banner.webp");
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -1038,7 +1056,7 @@ a:active {
 
 .banner {
   height: 60rem;
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/banner-2.png");
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/banner-2.webp");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -1109,7 +1127,7 @@ section,
 }
 
 .dashboard {
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url("../images/banner.png");
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url("../images/banner.webp");
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -1308,10 +1326,6 @@ section,
   }
 }
 
-.dashboard__general--card__img-container {
-  height: 100%;
-  padding: 0rem;
-}
 
 .dashboard__general--card__text {
   color: rgba(18, 48, 217, 0.5);
@@ -1360,8 +1374,222 @@ section,
   }
 }
 
+.dashboard__nav {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1.1rem;
+}
+
+.dashboard__nav--notification {
+  position: relative;
+}
+
+.dashboard__nav--notification .badge {
+  position: absolute;
+  top: -.22rem;
+  right: -.8rem;
+  padding: .25rem .5rem;
+  border: 0.2rem solid #ffffff;
+  border-radius: 50%;
+}
+
+.dashboard__nav--profile-img {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+}
+
+.dashboard__nav--profile-dropdown {
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.dashboard__nav--profile-dropdown-item:focus,
+.dashboard__nav--profile-dropdown-item:hover {
+  background-color: transparent !important;
+}
+
+.dashboard__nav--profile-dropdown-item svg {
+  fill: #fecc0a !important;
+  margin-right: 1rem;
+}
+
+.dashboard__nav--profile-dropdown-divider {
+  height: 3rem;
+}
+
+.dashboard__body {
+  padding: 4rem;
+}
+
+.dashboard__heading {
+  padding: 0rem;
+}
+
+.dashboard__summary--card {
+  padding: .8rem 2.5rem;
+  background-color: rgba(219, 219, 219, 0.5);
+}
+
+.dashboard__summary--card-container {
+  padding-left: 0rem;
+  margin-left: 0rem;
+}
+
+.dashboard__summary--card-header {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 37.5em) {
+  .dashboard__summary--card-header {
+    padding: 0rem 2rem;
+    font-size: 2rem;
+  }
+}
+
+.dashboard__summary--card-body {
+  color: rgba(14, 22, 61, 0.5);
+}
+
+@media (max-width: 37.5em) {
+  .dashboard__summary--card-body {
+    padding: 0rem 2rem;
+  }
+}
+
+.dashboard-table__thead {
+  background-color: #fecc0a;
+  color: #0E163D;
+}
+
+.dashboard-table__thead th {
+  vertical-align: middle !important;
+}
+
+.dashboard-table__tbody {
+  color: #0E163D;
+}
+
+.dashboard-table__tbody tr {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.dashboard-table__tbody tr:nth-of-type(odd) {
+  background-color: transparent;
+}
+
+.dashboard-table__tbody tr:nth-of-type(even) {
+  background-color: rgba(240, 240, 240, 0.4);
+}
+
+.dashboard__promotions--card {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  box-shadow: 0rem 0.3rem 0.6rem #00000029;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  padding-left: 2.5rem;
+}
+
+.dashboard__promotions--card--img {
+  width: 60%;
+  display: block;
+  margin-left: auto;
+}
+
+.dashboard__promotions--card--img-container {
+  margin-top: -1rem;
+}
+
+@media (max-width: 37.5em) {
+  .dashboard__promotions--card-body {
+    padding: 0rem 2rem;
+  }
+}
+
+.dashboard__chart--card {
+  position: relative;
+  background-color: rgba(248, 248, 248, 0.5);
+  border-radius: 1rem;
+  box-shadow: 0.3rem 0.3rem 1rem #00000029;
+  height: 43vh;
+  overflow: hidden;
+}
+
+.dashboard__chart--card-text {
+  border-left: 0.2rem solid #fecc0a;
+}
+
+.dashboard__chart--card-select {
+  background-color: transparent;
+  border: 0.15rem solid #fecc0a;
+  padding: .5rem;
+  border-radius: 3rem;
+  float: right;
+  outline: none;
+}
+
+.dashboard__general--card {
+  background-color: rgba(248, 248, 248, 0.5);
+  box-shadow: 0rem 1rem 1.5rem #00000029;
+  padding: 1rem 2rem;
+}
+
+.dashboard__general--card__form--input,
+.dashboard__general--card__form--select {
+  border: 0.1rem solid #707070;
+  border-radius: .5rem;
+  outline: none;
+  padding: .35rem 1rem;
+  background-color: transparent;
+  color: #707070;
+}
+
+.dashboard__general--card__body {
+  height: 10rem;
+  padding-right: 0rem;
+}
+
+.dashboard__general--card__img-container {
+  height: 100%;
+  padding: 0rem;
+}
+
+.dashboard__general--card__text {
+  color: rgba(18, 48, 217, 0.5);
+  overflow: hidden;
+  position: relative;
+  line-height: 1.42rem;
+  max-height: 2.9rem;
+  text-align: justify;
+  margin-right: -1.4rem;
+  padding-right: 1.4rem;
+  margin-bottom: .5rem;
+}
+
+.dashboard__general--card__text:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.dashboard__general--card__text:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 0.4rem;
+  background: #ffffff;
+}
+
+.dashboard__general--card__rating {
+  border-radius: .5rem;
+}
+
 .my-promotion {
-  background-image: url("../images/banner.png");
+  background-image: url("../images/banner.webp");
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;

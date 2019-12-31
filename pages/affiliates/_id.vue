@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Promotions from "~/components/pages/merchants/My.promotion";
+import Promotions from "~/components/pages/affiliates/Promotion.details";
 export default {
   components: {
     Promotions

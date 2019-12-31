@@ -6,6 +6,7 @@
         <div class="col-12 col-md-12">
           <performance-boxes />
         </div>
+
         <div class="row justify-content-center mt-5">
           <div class="col-md-12 col-lg-6 mb-3">
             <div class="row justify-content-center pl-md-4 pl-5 pr-0">
@@ -115,10 +116,10 @@
                 <h6 class="dashboard__heading col-12 mb-5">Messages</h6>
 
                 <message>
-                  <template name="title">
+                  <template slot="title">
                     Imagine Production
                   </template>
-                  <template name="subtitle">
+                  <template slot="subtitle">
                     Upload your Placement Opportunities Today!
                   </template>
                   <template slot="content">
@@ -149,10 +150,10 @@
 import DashboardNav from "~/components/commons/DashboardNav";
 import LineChart from "~/components/commons/dashboard/LineChart";
 import Message from "~/components/commons/dashboard/Message";
-import Merchants from "~/components/partials/Merchants/Merchants";
-import PerformanceBoxes from "~/components/partials/Merchants/PerformanceBoxes";
-import Promotions from "~/components/partials/Merchants/Promotions";
-import Tasks from "~/components/partials/Merchants/Tasks";
+import Merchants from "~/components/partials/affiliates/Merchants";
+import PerformanceBoxes from "~/components/partials/affiliates/PerformanceBoxes";
+import Promotions from "~/components/partials/affiliates/Promotions";
+import Tasks from "~/components/partials/affiliates/Tasks";
 export default {
   components: {
     DashboardNav,

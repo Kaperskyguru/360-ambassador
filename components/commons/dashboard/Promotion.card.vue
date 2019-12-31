@@ -1,6 +1,6 @@
 <template>
   <div class="col-md-4 col-12 mt-5 pl-1 pr-1">
-    <nuxt-link to="/merchant/joinned/1">
+    <nuxt-link to="/affiliates/joinned/1">
       <div class="dashboard__general--card col-12 pl-2 pr-2">
         <div class="row p-0">
           <p class="text-small color-grey-3 col-12 mb-0">FOOD</p>

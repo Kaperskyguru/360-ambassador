@@ -1,14 +1,14 @@
 <template>
   <main>
-    <promotions />
+    <my-promotion />
   </main>
 </template>
 
 <script>
-import Promotions from "~/components/pages/merchants/Promotions";
+import MyPromotion from "~/components/pages/merchant/MyPromotion";
 export default {
   components: {
-    Promotions
+    MyPromotion
   }
 };
 </script>
