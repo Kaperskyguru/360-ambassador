@@ -347,3 +347,23 @@ p {
         font-size: 1.7rem;
     }
 }
+
+.notification {
+    &__heading {
+        font-family: 'Montserrat-Bold';
+        font-size: 1.5rem;
+        letter-spacing: 0rem;
+    }
+    &__text {
+        font-family: 'Montserrat-Medium';
+        font-size: 1.5rem;
+        font-weight: normal;
+        letter-spacing: 0rem;
+    }
+    &__time {
+        font-family: 'Montserrat-Medium';
+        font-size: 1.2rem;
+        letter-spacing: 0rem;
+        line-height: 0rem;
+    }
+}
