@@ -45,12 +45,12 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >First Name *</label
           >
           <input
             type="text"
-            class="form-2__input-disabled col ml-md-5 color-grey-2"
+            class="form-2__input-disabled col-md-7 col-12 ml-md-5 color-grey-2"
             placeholder="John"
             disabled
             required
@@ -61,12 +61,12 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Last Name *</label
           >
           <input
             type="text"
-            class="form-2__input-disabled col ml-md-5 color-grey-2"
+            class="form-2__input-disabled col-md-7 col-12 ml-md-5 color-grey-2"
             placeholder="Doe"
             disabled
             required
@@ -77,22 +77,25 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Phone *</label
           >
-          <input type="text" class="form-2__input col ml-md-5 color-grey-2" />
+          <input
+            type="text"
+            class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+          />
         </div>
       </div>
       <div class="col-12 form-2__container">
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >email *</label
           >
           <input
             type="text"
-            class="form-2__input-disabled col ml-md-5 color-grey-2"
+            class="form-2__input-disabled col-md-7 col-12 ml-md-5 color-grey-2"
             placeholder="johndoe@abc.com"
             disabled
             required
@@ -103,13 +106,13 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Username *</label
           >
           <input
             type="text"
             required
-            class="form-2__input col ml-md-5 color-grey-2"
+            class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
           />
         </div>
       </div>
@@ -117,12 +120,12 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Password *</label
           >
           <input
             type="password"
-            class="form-2__input col ml-md-5 color-grey-2"
+            class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
             required
           />
         </div>
@@ -136,13 +139,13 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Address *</label
           >
           <input
             type="text"
             required
-            class="form-2__input col ml-md-5 color-grey-2"
+            class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
           />
         </div>
       </div>
@@ -150,13 +153,13 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >City *</label
           >
           <input
             type="text"
             required
-            class="form-2__input col ml-md-5 color-grey-2"
+            class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
           />
         </div>
       </div>
@@ -164,13 +167,13 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >State *</label
           >
           <input
             type="text"
             required
-            class="form-2__input col ml-md-5 color-grey-2"
+            class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
           />
         </div>
       </div>
@@ -178,13 +181,13 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Bvn *</label
           >
           <input
             type="text"
             required
-            class="form-2__input col ml-md-5 color-grey-2"
+            class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
           />
         </div>
       </div>
@@ -192,13 +195,13 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Account Number *</label
           >
           <input
             type="text"
             required
-            class="form-2__input col ml-md-5 color-grey-2"
+            class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
           />
         </div>
       </div>
@@ -206,7 +209,7 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Bank *</label
           >
           <select
@@ -229,37 +232,46 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Company Name</label
           >
-          <input type="text" class="form-2__input col ml-md-5 color-grey-2" />
+          <input
+            type="text"
+            class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+          />
         </div>
       </div>
       <div class="col-12 form-2__container">
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Website or Newsletter name</label
           >
-          <input type="text" class="form-2__input col ml-md-5 color-grey-2" />
+          <input
+            type="text"
+            class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+          />
         </div>
       </div>
       <div class="col-12 form-2__container">
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Website URL</label
           >
-          <input type="text" class="form-2__input col ml-md-5 color-grey-2" />
+          <input
+            type="text"
+            class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+          />
         </div>
       </div>
       <div class="col-12 form-2__container">
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Describe your website</label
           >
           <textarea
@@ -272,7 +284,7 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Category</label
           >
           <select type="text" class="form-2__select col ml-md-5 color-grey-2">
@@ -286,7 +298,7 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Current monthly unique visitors</label
           >
           <select type="text" class="form-2__select col ml-md-5 color-grey-2">
@@ -305,7 +317,7 @@
         <div class="row">
           <label
             for=""
-            class="text-right col-md-3 col-12 form-2__label color-grey-2"
+            class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Category</label
           >
           <select type="text" class="form-2__select col ml-md-5 color-grey-2">
