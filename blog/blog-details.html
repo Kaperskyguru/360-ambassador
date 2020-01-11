@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog Design - Blog</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav class="nav__menu">
+        <a href="#" class="nav__logo">
+            <img src="assets/images/header-logo.svg" alt="">
+            <h4 class="col-12 color-white text-bolder text-center mt-3 nav__logo--heading">ADONISJS BLOG</h4>
+            <P class="col-12 color-white text-center nav__logo--text">WHERE WE TALK ADONIS JS</P>
+        </a>
+        <div class="mobile-navigation">
+            <input type="checkbox" class="mobile-navigation__checkbox" id="toggle-nav">
+            <label for="toggle-nav" class="mobile-navigation__button">
+                                <span class="mobile-navigation__icon"></span>
+                            </label>
+            <div class="mobile-navigation__background"></div>
+            <div class="mobile-navigation__nav" role="navigation">
+                <div class="mobile-navigation__form-container bg-white">
+                    <form action="" class="mobile-navigation__form">
+                        <input class="form-control mobile-navigation__search bg-transparent border-0 mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn bg-transparent color-grey-dark my-2 my-sm-0" type="submit"><ion-icon name="search"></ion-icon></button>
+                    </form>
+                </div>
+
+                <ul class="mobile-navigation__main">
+                    <li class="mobile-navigation__item"><a href="#" class="mobile-navigation__link">Home</a></li>
+                    <li class="mobile-navigation__item"><a href="#" class="mobile-navigation__link">Blog</a></li>
+                </ul>
+
+                <ul class="mobile-navigation-socials">
+                    <li class="mobile-navigation-socials__list">
+                        <a href="#" class="mobile-navigation-socials__link bg-twitter">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="mobile-navigation-socials__list">
+                        <a href="#" class="mobile-navigation-socials__link bg-facebook">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="mobile-navigation-socials__list">
+                        <a href="#" class="mobile-navigation-socials__link bg-linkedin">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav__menu-content"></div>
+        <ul class="socials">
+            <li class="socials__list">
+                <a href="#" class="socials__link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+            </li>
+            <li class="socials__list">
+                <a href="#" class="socials__link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+            <li class="socials__list">
+                <a href="#" class="socials__link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+            </li>
+        </ul>
+        <div class="nav__form-container">
+            <form action="" class="nav__form">
+                <input class="form-control navbar__search bg-transparent border-0 mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn bg-transparent color-grey-dark my-2 my-sm-0" type="submit"><ion-icon name="search"></ion-icon></button>
+            </form>
+        </div>
+        <ul class="nav__main">
+            <li class="nav__main--list">
+                <a href="#" class="nav__main--link">
+                                    Home
+                                </a>
+            </li>
+            <li class="nav__main--list active">
+                <a href="#" class="nav__main--link">
+                                    Blog
+                                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container-fluid">
+        <div class="row justify-content-center">
+            <section class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-7 col-12">
+                        <div class="banner-card-2">
+                            <div class="banner-card-2__img-container">
+                                <img src="assets/images/2019.jpg" alt="">
+                            </div>
+                            <div class="banner-card-2__content bg-white">
+                                <h3 class="banner-card-2__content--title text-center col-12 color-violent-violet">
+                                    Store Extra Columns as JSON With Laravel Overflow
+                                </h3>
+                            </div>
+                            <p class="col-12">
+                                Join the weekly newsletter and never miss out on new tips, tutorials, and more.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-12">
+                        <div class="card bg-radical-red">
+                            <a href="#" class="card__link">
+                                <div class="news-card__content">
+                                    <h3 class="banner-card__content--title col-12 color-white">
+                                        Newsletter
+                                    </h3>
+                                    <hr class="bg-white">
+                                    <p class="col-12 color-white">
+                                        Join the weekly newsletter and never miss out on new tips, tutorials, and more.
+                                    </p>
+                                    <form action="" class="news-form col-12">
+                                        <input type="text" class="news-form__input" placeholder="email address">
+                                        <button class="news-form__btn text-white color-white">Subscribe</button>
+                                    </form>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href="#" class="card__link">
+                                <div class="card__img-container">
+                                    <img src="assets/images/blog-img-1.jpg" alt="">
+                                </div>
+                                <div class="card__content bg-violent-violet">
+                                    <h6 class="card__content--heading col-12 color-radical-red">
+                                        news
+                                    </h6>
+                                    <h3 class="card__content--title col-12 color-white">
+                                        2019 in review
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer container-fluid">
+        <div class="row justify-content-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="footer__header col-12">
+                        <div class="row justify-content-center">
+                            <div class="footer__header--link-container col-12 col-md-4">
+                                <a href="#" class="col-12 footer__header--link">Home</a>
+                                <a href="#" class="col-12 footer__header--link">Blog</a>
+                            </div>
+                            <ul class="footer__header--socials col-12 col-md-4">
+                                <li class="footer__header--socials__list">
+                                    <a href="#" class="footer__header--socials__link bg-twitter">
+                                        <ion-icon name="logo-twitter"></ion-icon>
+                                    </a>
+                                </li>
+                                <li class="footer__header--socials__list">
+                                    <a href="#" class="footer__header--socials__link bg-facebook">
+                                        <ion-icon name="logo-facebook"></ion-icon>
+                                    </a>
+                                </li>
+                                <li class="footer__header--socials__list">
+                                    <a href="#" class="footer__header--socials__link bg-linkedin">
+                                        <ion-icon name="logo-linkedin"></ion-icon>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="col-md-4 col-12">
+                                <div class="card bg-radical-red">
+                                    <a href="#" class="card__link">
+                                        <div class="news-card__content">
+                                            <h3 class="banner-card__content--title col-12 color-white">
+                                                Newsletter
+                                            </h3>
+                                            <hr class="bg-white">
+                                            <p class="col-12 color-white">
+                                                Join the weekly newsletter and never miss out on new tips, tutorials, and more.
+                                            </p>
+                                            <form action="" class="news-form col-12">
+                                                <input type="text" class="news-form__input" placeholder="email address">
+                                                <button class="news-form__btn text-white color-white">Subscribe</button>
+                                            </form>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer__footer">
+        <p class="footer__footer--text">
+            &copy;2020 Adonisjs blog
+        </p>
+    </div>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+
+</html>
