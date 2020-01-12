@@ -6,7 +6,7 @@ THIS IS THE TABLE OF CONTENT OF THE STYLESHEET TO HELP YOU UNDERSTAND HOW TO NAV
 3) UTILITIES STYLE = any style that changes the outlook of the dom or elements in the dom.
 4) COMPONENTS STYLE = like the name is, talks about any style that can stand on its own without the help of a parent element.
 5) LAYOUT STYLE = style that has one or several different components in it and which forms part of a page.
-6) PAGE STYLE = style that has to do specifically with a particular page.  
+6) PAGE STYLE = style that has to do specifically with a particular page.
 
 NOTE: As for reponsive design it comes directly below the particular style it references. Ther is no special section for responsive design.
 */
@@ -144,7 +144,7 @@ ion-icon {
 
 .card__content--title {
     font-family: 'effra';
-    font-size: 3rem;
+    font-size: 2.3rem;
 }
 
 .news-form__input,
@@ -171,7 +171,7 @@ ion-icon {
 
 @media (max-width: 37.5em) {
     .footer__header--socials__link ion-icon {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -186,6 +186,7 @@ ion-icon {
 }
 
 .color-white {
+    /* color: #220052 !important; */
     color: #ffffff !important;
 }
 
@@ -214,7 +215,8 @@ ion-icon {
 }
 
 .bg-violent-violet {
-    background-color: #220052 !important;
+    background-color: #ffffff !important;
+    /* background-color: #220052 !important; */
 }
 
 .bg-white {
@@ -222,6 +224,8 @@ ion-icon {
 }
 
 .bg-radical-red {
+
+    /* background-color: #f4645f !important; */
     background-color: #FB2F51 !important;
 }
 
@@ -595,7 +599,7 @@ a:hover {
 /* Card Styles */
 
 .banner-card {
-    height: 54rem;
+    /* height: 50rem; */
 }
 
 @media (max-width: 37.5em) {
@@ -661,11 +665,11 @@ a:hover {
 .banner-card__content,
 .card__content,
 .news-card__content {
-    padding: 2.25rem 2.875rem;
+    padding: 2rem 1rem;
 }
 
 .card__content {
-    height: 17rem;
+    height: 11rem;
 }
 
 .banner-card__content--heading,
@@ -729,7 +733,7 @@ a:hover {
     background-color: #fff;
     color: #a1a1a1;
     border: .2rem solid #e8e8e8;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.5rem;
     border-radius: .25rem;
     line-height: 1.2;
 }
@@ -739,7 +743,7 @@ a:hover {
     border-bottom-right-radius: .25rem;
     background-color: #d6514d;
     border: .2rem solid #d6514d;
-    padding: 2rem 1.5rem;
+    /* padding: 2rem 1.5rem; */
 }
 
 
@@ -822,8 +826,8 @@ a:hover {
 }
 
 .footer__header--socials__link {
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
