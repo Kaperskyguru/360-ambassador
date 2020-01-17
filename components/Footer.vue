@@ -10,9 +10,9 @@
         <p class="footer__header color-yellow col-12">Company</p>
         <ul class="list col-12">
           <li class="list__item">
-            <a href="" class="list__link color-blue">
+            <nuxt-link to="" class="list__link color-blue">
               About Us
-            </a>
+            </nuxt-link>
           </li>
           <li class="list__item">
             <nuxt-link to="advertiser" class="list__link color-blue">
@@ -25,9 +25,9 @@
             </nuxt-link>
           </li>
           <li class="list__item">
-            <a href="" class="list__link color-blue">
+            <nuxt-link to="" class="list__link color-blue">
               Career
-            </a>
+            </nuxt-link>
           </li>
         </ul>
       </div>
@@ -35,19 +35,19 @@
         <p class="footer__header color-yellow col-12">Community</p>
         <ul class="list col-12">
           <li class="list__item">
-            <a href="" class="list__link color-blue">
+            <nuxt-link to="" class="list__link color-blue">
               Support
-            </a>
+            </nuxt-link>
           </li>
           <li class="list__item">
-            <a href="" class="list__link color-blue">
+            <nuxt-link to="" class="list__link color-blue">
               Blog
-            </a>
+            </nuxt-link>
           </li>
           <li class="list__item">
-            <a href="" class="list__link color-blue">
+            <nuxt-link to="" class="list__link color-blue">
               Meet the Team
-            </a>
+            </nuxt-link>
           </li>
         </ul>
       </div>
@@ -55,21 +55,21 @@
         <p class="footer__header color-yellow col-12">Legal</p>
         <ul class="list col-12">
           <li class="list__item">
-            <a href="" class="list__link color-blue">
+            <nuxt-link to="" class="list__link color-blue">
               T&C
-            </a>
+            </nuxt-link>
           </li>
           <li class="list__item">
-            <a href="" class="list__link color-blue">
+            <nuxt-link to="" class="list__link color-blue">
               Terms of Use
-            </a>
+            </nuxt-link>
           </li>
         </ul>
       </div>
       <div class="col-12 col-md-3 ml-auto">
         <ul class="inline-list col-12 p-0">
           <li class="inline-list__item mr-4">
-            <a href="" class="inline-list__link color-white">
+            <nuxt-link to="" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18.462"
@@ -95,10 +95,10 @@
                   </g>
                 </g>
               </svg>
-            </a>
+            </nuxt-link>
           </li>
           <li class="inline-list__item mr-4">
-            <a href="" class="inline-list__link color-white">
+            <nuxt-link to="" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="7.5"
@@ -122,10 +122,10 @@
                   </g>
                 </g>
               </svg>
-            </a>
+            </nuxt-link>
           </li>
           <li class="inline-list__item mr-4">
-            <a href="" class="inline-list__link color-white">
+            <nuxt-link to="" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="15"
@@ -149,10 +149,10 @@
                   </g>
                 </g>
               </svg>
-            </a>
+            </nuxt-link>
           </li>
           <li class="inline-list__item mr-4">
-            <a href="" class="inline-list__link color-white">
+            <nuxt-link to="" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="15"
@@ -203,7 +203,7 @@
                   </g>
                 </g>
               </svg>
-            </a>
+            </nuxt-link>
           </li>
         </ul>
       </div>

@@ -1,5 +1,9 @@
 <template>
-  <form :action="url" class="col-12 align-self-center p-0">
+  <form
+    @submit.prevent="login"
+    method="post"
+    class="col-12 align-self-center p-0"
+  >
     <div class="col-12 form__group">
       <input
         type="text"
@@ -7,11 +11,13 @@
         id="regEmail"
         placeholder="Username"
         required
+        v-model="form.username"
       />
       <label for="regEmail" class="form__label color-grey-1">Username</label>
     </div>
     <div class="col-12 form__group">
       <input
+        v-model="form.password"
         type="password"
         class="col-12 form__input"
         id="logPassword"
@@ -25,7 +31,6 @@
     </div>
     <div class="col-12 form__group mt-4">
       <button
-        v-on:click="loginMerchant()"
         class="btn__square-curved--yellow color-blue form__btn col-12 text-bold"
         type="submit"
       >
@@ -46,14 +51,24 @@ export default {
   },
   data() {
     return {
-      url: "/affiliates"
+      form: {
+        username: "",
+        password: ""
+      }
     };
   },
   methods: {
-    loginMerchant() {
-      console.log("askjhasjashjashj");
-
-      this.url = "/merchants";
+    async login() {
+      console.log(
+        await this.$auth.loginWith("local", {
+          data: {
+            username: this.form.username,
+            password: this.form.password
+          }
+        })
+      );
+      // const user = await this.$store.dispatch("user/login", this.form);
+      // console.log(user);
     }
   }
 };

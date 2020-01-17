@@ -7,7 +7,9 @@
           <div class="col-12">
             <div class="col m-2">
               <div class="row justify-content-end">
-                <a href="#" class="btn__curved--yellow">ADD NEW</a>
+                <nuxt-link to="#" class="btn__curved--yellow"
+                  >ADD NEW</nuxt-link
+                >
               </div>
             </div>
           </div>

@@ -15,7 +15,7 @@
         </h6>
         <ul class="inline-list col-12 pb-0">
           <li class="inline-list__item mr-4">
-            <a href="#" class="inline-list__link color-white">
+            <nuxt-link to="#" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -41,10 +41,10 @@
                   </g>
                 </g>
               </svg>
-            </a>
+            </nuxt-link>
           </li>
           <li class="inline-list__item mr-4">
-            <a href="#" class="inline-list__link color-white">
+            <nuxt-link to="#" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -68,10 +68,10 @@
                   </g>
                 </g>
               </svg>
-            </a>
+            </nuxt-link>
           </li>
           <li class="inline-list__item mr-4">
-            <a href="#" class="inline-list__link color-white">
+            <nuxt-link to="#" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -95,10 +95,10 @@
                   </g>
                 </g>
               </svg>
-            </a>
+            </nuxt-link>
           </li>
           <li class="inline-list__item mr-4">
-            <a href="#" class="inline-list__link color-white">
+            <nuxt-link to="#" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -149,7 +149,7 @@
                   </g>
                 </g>
               </svg>
-            </a>
+            </nuxt-link>
           </li>
         </ul>
       </div>

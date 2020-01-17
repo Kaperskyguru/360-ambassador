@@ -29,11 +29,11 @@
         <span class="color-yellow">Start Over</span>
       </p>
       <div class="col-12 d-flex justify-content-center">
-        <a href="" class="color-white text-center mr-5 confirmation__link"
-          >Go to <br /><span class="color-yellow">Affiliate</span></a
+        <nuxt-link to="" class="color-white text-center mr-5 confirmation__link"
+          >Go to <br /><span class="color-yellow">Affiliate</span></nuxt-link
         >
-        <a href="" class="color-white text-center ml-5 confirmation__link"
-          >Go to <br /><span class="color-yellow">Advertiser</span></a
+        <nuxt-link to="" class="color-white text-center ml-5 confirmation__link"
+          >Go to <br /><span class="color-yellow">Advertiser</span></nuxt-link
         >
       </div>
     </div>

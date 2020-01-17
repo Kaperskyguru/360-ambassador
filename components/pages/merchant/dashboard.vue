@@ -220,7 +220,9 @@
                   at rates that work for you. A placement gives exposure to an
                   Advertiser’s promotion or campaign on your website or within
                   other promotional materials, such email or ad space. Visit the
-                  <a href="#" class="color-red">Placements Marketplace</a>
+                  <nuxt-link to="#" class="color-red"
+                    >Placements Marketplace</nuxt-link
+                  >
                   today to post and promote your placement inventory across the
                   CJ Network!
                 </template>

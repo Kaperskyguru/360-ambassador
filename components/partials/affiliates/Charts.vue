@@ -2,8 +2,12 @@
   <div class="row">
     <!-- <div class="row"> -->
     <div class="col-1">
-      <a href="#" class="color-blue text-bold"
-        ><img src="~/assets/images/left-arrow.png" width="10" alt="" />Back</a
+      <nuxt-link to="#" class="color-blue text-bold"
+        ><img
+          src="~/assets/images/left-arrow.png"
+          width="10"
+          alt=""
+        />Back</nuxt-link
       >
     </div>
     <!-- </div> -->

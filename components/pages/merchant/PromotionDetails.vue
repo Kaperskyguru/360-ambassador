@@ -7,18 +7,20 @@
           <div class="col-md-12 col-12 mb-4 pr-5">
             <div class="row">
               <div class="col-6">
-                <a href="#" class="color-blue text-bold mr-auto"
+                <nuxt-link to="#" class="color-blue text-bold mr-auto"
                   ><img
                     src="~assets/images/left-arrow.png"
                     width="10"
                     alt=""
-                  />Back</a
+                  />Back</nuxt-link
                 >
               </div>
               <div class="col-6" v-show="!finish">
                 <div class="col m-2 mr-1">
                   <div class="row justify-content-end pr-5">
-                    <a href="#" class="btn__curved--yellow">ADD NEW</a>
+                    <nuxt-link to="#" class="btn__curved--yellow"
+                      >ADD NEW</nuxt-link
+                    >
                   </div>
                 </div>
               </div>
@@ -42,7 +44,8 @@
                 role="tablist"
               >
                 <li class="my-promotion__pills--item nav-item">
-                  <a
+                  <nuxt-link
+                    to=""
                     class="my-promotion__pills--link nav-link active"
                     id="pills-url-tab"
                     data-toggle="pill"
@@ -50,7 +53,7 @@
                     role="tab"
                     aria-controls="pills-url"
                     aria-selected="true"
-                    >URL</a
+                    >URL</nuxt-link
                   >
                 </li>
               </ul>

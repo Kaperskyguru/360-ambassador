@@ -36,10 +36,10 @@
                 >
               </div>
               <div class="col-6">
-                <a
-                  :href="link"
+                <nuxt-link
+                  :to="link"
                   class="dashboard__promotions--card-text color-blue-1 btn-transparent"
-                  >View details</a
+                  >View details</nuxt-link
                 >
               </div>
             </div>

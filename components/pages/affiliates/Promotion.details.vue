@@ -126,7 +126,8 @@
                 role="tablist"
               >
                 <li class="my-promotion__nav--item nav-item p-0">
-                  <a
+                  <nuxt-link
+                    to=""
                     class="my-promotion__nav--link nav-link pl-0 active border-top-0 border-left-0 br-1"
                     id="moreInfo-tab"
                     data-toggle="tab"
@@ -134,11 +135,12 @@
                     role="tab"
                     aria-controls="moreInfo"
                     aria-selected="true"
-                    >more info</a
+                    >more info</nuxt-link
                   >
                 </li>
                 <li class="my-promotion__nav--item nav-item p-0">
-                  <a
+                  <nuxt-link
+                    to=""
                     class="my-promotion__nav--link nav-link bl-1"
                     id="pTerms-tab"
                     data-toggle="tab"
@@ -146,7 +148,7 @@
                     role="tab"
                     aria-controls="pTerms"
                     aria-selected="false"
-                    >promotion terms</a
+                    >promotion terms</nuxt-link
                   >
                 </li>
               </ul>
@@ -538,7 +540,8 @@
                 role="tablist"
               >
                 <li class="my-promotion__pills--item nav-item">
-                  <a
+                  <nuxt-link
+                    to=""
                     class="my-promotion__pills--link nav-link active"
                     id="pills-url-tab"
                     data-toggle="pill"
@@ -546,11 +549,12 @@
                     role="tab"
                     aria-controls="pills-url"
                     aria-selected="true"
-                    >URL</a
+                    >URL</nuxt-link
                   >
                 </li>
                 <li class="my-promotion__pills--item nav-item">
-                  <a
+                  <nuxt-link
+                    to=""
                     class="my-promotion__pills--link nav-link"
                     id="pills-email-tab"
                     data-toggle="pill"
@@ -558,11 +562,12 @@
                     role="tab"
                     aria-controls="pills-email"
                     aria-selected="false"
-                    >Email/SMS</a
+                    >Email/SMS</nuxt-link
                   >
                 </li>
                 <li class="my-promotion__pills--item nav-item">
-                  <a
+                  <nuxt-link
+                    to=""
                     class="my-promotion__pills--link nav-link"
                     id="pills-social-tab"
                     data-toggle="pill"
@@ -570,11 +575,12 @@
                     role="tab"
                     aria-controls="pills-social"
                     aria-selected="false"
-                    >Social Media</a
+                    >Social Media</nuxt-link
                   >
                 </li>
                 <li class="my-promotion__pills--item nav-item">
-                  <a
+                  <nuxt-link
+                    to=""
                     class="my-promotion__pills--link nav-link"
                     id="pills-embed-tab"
                     data-toggle="pill"
@@ -582,7 +588,7 @@
                     role="tab"
                     aria-controls="pills-embed"
                     aria-selected="false"
-                    >Embed</a
+                    >Embed</nuxt-link
                   >
                 </li>
               </ul>

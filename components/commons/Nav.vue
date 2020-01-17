@@ -26,10 +26,10 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link color-white" href="#">about us</a>
+          <nuxt-link class="nav-link color-white" to="#">about us</nuxt-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link color-white" href="#">features</a>
+          <nuxt-link class="nav-link color-white" to="#">features</nuxt-link>
         </li>
       </ul>
       <div class="navbar-nav my-2 my-lg-1">
@@ -103,9 +103,9 @@
         </li>
         <li class="nav-item">
           <div class="nav-link mt-3 mt-lg-0">
-            <nuxt-link to="/login">
-              <Design-button>sign in</Design-button>
-            </nuxt-link>
+            <!-- <nuxt-link to="/login"> -->
+            <Design-button>sign in</Design-button>
+            <!-- </nuxt-link> -->
           </div>
         </li>
       </div>

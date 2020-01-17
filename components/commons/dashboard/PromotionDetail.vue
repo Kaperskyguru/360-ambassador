@@ -48,27 +48,27 @@
         role="tablist"
       >
         <li class="my-promotion__nav--item nav-item p-0">
-          <a
+          <nuxt-link
             class="my-promotion__nav--link nav-link pl-0 active border-top-0 border-left-0 br-1"
             id="moreInfo-tab"
             data-toggle="tab"
-            href="#moreInfo"
+            to="#moreInfo"
             role="tab"
             aria-controls="moreInfo"
             aria-selected="true"
-            >more info</a
+            >more info</nuxt-link
           >
         </li>
         <li class="my-promotion__nav--item nav-item p-0">
-          <a
+          <nuxt-link
             class="my-promotion__nav--link nav-link bl-1"
             id="pTerms-tab"
             data-toggle="tab"
-            href="#pTerms"
+            to="#pTerms"
             role="tab"
             aria-controls="pTerms"
             aria-selected="false"
-            >promotion terms</a
+            >promotion terms</nuxt-link
           >
         </li>
       </ul>
