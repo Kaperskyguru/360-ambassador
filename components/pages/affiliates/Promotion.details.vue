@@ -14,40 +14,6 @@
             >
           </p>
           <div class="col-md-8 col-12">
-            <div class="col-12 d-table p-0">
-              <!-- <div class="d-table-head">
-                <div class="d-table-row bg-grey-8">
-                  <p
-                    class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
-                  >
-                    Seller
-                  </p>
-                  <p
-                    class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
-                  >
-                    Product
-                  </p>
-                  <p
-                    class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
-                  >
-                    Launch Date
-                  </p>
-                  <p
-                    class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
-                  >
-                    Comm
-                  </p>
-                  <p
-                    class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
-                  >
-                    Sales Price
-                  </p>
-                  <p
-                    class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
-                  ></p>
-                </div>
-              </div> -->
-            </div>
             <div class="mt-2 p-0"></div>
 
             <table class="table table-responsive-sm table-borderless">
@@ -61,22 +27,22 @@
                   <th
                     class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
                   >
-                    Seller
+                    Product
                   </th>
                   <th
                     class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
                   >
-                    Seller
+                    Launch Date
                   </th>
                   <th
                     class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
                   >
-                    Seller
+                    Comm
                   </th>
                   <th
                     class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
                   >
-                    Seller
+                    Sales Price
                   </th>
                   <th
                     class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue"
@@ -95,15 +61,15 @@
                     />
                   </td>
                   <td class="color-blue">
-                    <span class="color-blue">Bukka Hut Festo</span>
+                    <span class="color-blue">{{ promotion.name || "" }}</span>
                     <span class="color-blue-3 text-small"
                       >(512345)<br />
                       <span class="text-small color-grey-3">FOOD</span></span
                     >
                   </td>
                   <td class="color-blue">11/01/2019</td>
-                  <td class="color-blue">10%</td>
-                  <td class="color-blue">5,000</td>
+                  <td class="color-blue">{{ promotion.commission }}</td>
+                  <td class="color-blue">{{ promotion.price }}</td>
                   <td class="color-blue">
                     <button
                       class="btn__square-curved--yellow p-0"
@@ -166,7 +132,9 @@
                           <div class="text col-4 text-bold color-blue">
                             Name:
                           </div>
-                          <div class="text col-8 color-blue">Bukka Hut</div>
+                          <div class="text col-8 color-blue">
+                            {{ promotion.name }}
+                          </div>
                         </div>
                       </div>
                       <div class="col-12 p-0 mb-2">
@@ -201,7 +169,7 @@
                             URL:
                           </div>
                           <div class="text col-8 color-blue">
-                            http://www.coverwallet.com
+                            {{ promotion.url }}
                           </div>
                         </div>
                       </div>
@@ -312,7 +280,9 @@
                           <div class="text col-2 text-bold color-blue">
                             Category:
                           </div>
-                          <div class="text col-9 color-blue">Commercial</div>
+                          <div class="text col-9 color-blue">
+                            {{ showCategory(promotion.category) }}
+                          </div>
                         </div>
                       </div>
                       <div class="border-bottom-grey-3"></div>
@@ -322,16 +292,7 @@
                             Description:
                           </div>
                           <div class="text col-9 color-blue">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Itaque tempore voluptas repellendus placeat
-                            laborum reiciendis officiis illum quae asperiores
-                            suscipit. Aperiam accusantium praesentium totam
-                            deserunt reiciendis at qui sed consequatur! Lorem
-                            ipsum dolor sit, amet consectetur adipisicing elit.
-                            Sequi ullam eaque quae architecto adipisci ipsum
-                            praesentium, assumenda obcaecati rem, voluptas
-                            provident rerum quas eum dolore iste, consequuntur
-                            illo. Natus, maiores.
+                            {{ promotion.description }}
                           </div>
                         </div>
                       </div>
@@ -359,8 +320,7 @@
                     <div class="row">
                       <div class="col-4 color-blue">Description:</div>
                       <div class="col-8 color-blue">
-                        CoverWallet sales rep verify quote request by phone with
-                        prospective client
+                        {{ promotion.description }}
                       </div>
                     </div>
                   </div>
@@ -895,9 +855,30 @@
 
 <script>
 import MenuBar from "~/components/commons/DashboardNav";
+import { mapState } from "vuex";
+
 export default {
   components: {
     MenuBar
+  },
+  computed: {
+    ...mapState({
+      promotion: state => {
+        return state.promotion.promotion;
+      },
+
+      categories: state => {
+        return state.category.categories;
+      }
+    })
+  },
+
+  methods: {
+    showCategory(id) {
+      return this.categories.filter(item => {
+        return item._id == id;
+      })[0].name;
+    }
   }
 };
 </script>

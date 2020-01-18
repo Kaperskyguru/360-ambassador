@@ -5,6 +5,7 @@
 <script>
 import Register from "~/components/pages/Register";
 export default {
+  auth: false,
   components: {
     Register
   }

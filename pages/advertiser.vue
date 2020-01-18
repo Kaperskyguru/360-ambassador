@@ -11,6 +11,7 @@
 import SignNav from "~/components/commons/SignNav";
 import AdForm from "~/components/partials/AdvertiserForm";
 export default {
+  auth: false,
   components: {
     SignNav,
     AdForm

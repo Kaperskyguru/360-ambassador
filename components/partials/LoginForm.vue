@@ -46,6 +46,7 @@
 <script>
 import BigDesignButton from "~/components/commons/BigDesignButton";
 export default {
+  auth: "guest",
   components: {
     BigDesignButton
   },
@@ -59,16 +60,12 @@ export default {
   },
   methods: {
     async login() {
-      console.log(
-        await this.$auth.loginWith("local", {
-          data: {
-            username: this.form.username,
-            password: this.form.password
-          }
-        })
-      );
-      // const user = await this.$store.dispatch("user/login", this.form);
-      // console.log(user);
+      const user = await this.$store.dispatch("user/login", this.form);
+      // console.log(await this.$store.dispatch("user/me"));
+      if (this.$auth.loggedIn) {
+        console.log(await this.$store.dispatch("user/me"));
+        this.$router.push("/affiliates");
+      }
     }
   }
 };

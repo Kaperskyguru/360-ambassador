@@ -20,10 +20,12 @@
                   <select
                     class="dashboard__general--card__form--select ml-4 col-12"
                   >
-                    <option value="1">Category</option>
-                    <option value="1">Category</option>
-                    <option value="1">Category</option>
-                    <option value="1">Category</option>
+                    <option
+                      v-for="(category, i) in categories"
+                      :key="i"
+                      :value="category._id"
+                      >{{ category.name }}</option
+                    >
                   </select>
                 </div>
                 <div class="col-auto ml-md-auto">
@@ -39,15 +41,11 @@
           All Categories
         </h6>
         <div class="row justify-content-center">
-          <card />
-          <card />
-          <card />
-          <card />
-          <card />
-          <card />
-          <card />
-          <card />
-          <card />
+          <card
+            :promotion="promotion"
+            v-for="(promotion, i) in promotions"
+            :key="i"
+          ></card>
         </div>
       </div>
     </div>
@@ -57,10 +55,24 @@
 <script>
 import MenuBar from "~/components/commons/DashboardNav";
 import Card from "~/components/commons/dashboard/Card";
+import { mapState } from "vuex";
+
 export default {
   components: {
     MenuBar,
     Card
+  },
+
+  computed: {
+    ...mapState({
+      promotions: state => {
+        return state.promotion.promotions;
+      },
+
+      categories: state => {
+        return state.category.categories;
+      }
+    })
   }
 };
 </script>

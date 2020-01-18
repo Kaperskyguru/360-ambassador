@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    to="login"
+    :to="$auth.loggedIn ? 'affiliates' : 'login'"
     :class="[
       fill
         ? 'btn__square-curved--yellow color-black'
@@ -17,6 +17,11 @@ export default {
     fill: {
       type: Boolean,
       default: true
+    }
+  },
+  mounted() {
+    if (this.$auth.loggedIn) {
+      this.signinText = "Goto Dashboard";
     }
   }
 };

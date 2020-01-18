@@ -72,7 +72,8 @@ export default {
       src: "~/plugins/vue-morris",
       mode: "client"
     },
-    "~/plugins/axios"
+    "~/plugins/axios",
+    "~/plugins/auth"
   ],
   /*
    ** Nuxt.js dev-modules
@@ -87,10 +88,20 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: "/login", method: "post", propertyName: "data.token" },
-          logout: { url: "/logout", method: "post" },
-          user: { url: "/user", method: "get", propertyName: "data.user" }
-        }
+          login: {
+            url: "/login",
+            method: "post",
+            propertyName: "data.token"
+          },
+          logout: false,
+          user: {
+            url: "/user/5e14740ea4c1bf5b71600a5f",
+            method: "get",
+            propertyName: "data"
+          }
+        },
+        tokenRequired: true,
+        tokenType: "bearer"
       }
     }
   },
@@ -109,7 +120,9 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     "@nuxtjs/dotenv",
 
-    "@nuxtjs/auth"
+    "@nuxtjs/auth",
+
+    "@nuxtjs/proxy"
   ],
   /*
    ** Axios module configuration
@@ -117,15 +130,22 @@ export default {
    */
   axios: {
     baseURL:
-      process.env.API_URL || "https://damp-hollows-99847.herokuapp.com/api/v1"
+      process.env.API_URL || "https://damp-hollows-99847.herokuapp.com/api/v1",
     // browserBaseURL: process.env.API_URL,
     // proxy: true
     // mode: "no-cors",
-    // redirectError: {
-    //   401: "/login",
-    //   404: "/notfound"
-    // }
+    redirectError: {
+      401: "/login",
+      404: "/login"
+    }
   },
+
+  //https://dev.to/mrnaif2018/how-to-make-nuxt-auth-working-with-jwt-a-definitive-guide-9he
+
+  // proxy: {
+  //   "/api/":
+  //     process.env.API_URL || "https://damp-hollows-99847.herokuapp.com/api/v1"
+  // },
   /*
    ** Build configuration
    */

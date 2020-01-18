@@ -1,8 +1,8 @@
 export const actions = {
   async me() {
-    await this.$auth.fetchUser();
+    return await this.$auth.fetchUser();
   },
-  login({ commit, dispatch }, { username, password }) {
+  async login({ commit, dispatch }, { username, password }) {
     return this.$auth.loginWith("local", {
       data: { username, password }
     });

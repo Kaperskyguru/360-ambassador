@@ -9,6 +9,10 @@ import Promotions from "~/components/pages/affiliates/Promotions";
 export default {
   components: {
     Promotions
+  },
+  async fetch({ store }) {
+    await store.dispatch("promotion/get");
+    await store.dispatch("category/get");
   }
 };
 </script>

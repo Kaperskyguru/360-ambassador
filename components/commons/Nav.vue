@@ -104,7 +104,7 @@
         <li class="nav-item">
           <div class="nav-link mt-3 mt-lg-0">
             <!-- <nuxt-link to="/login"> -->
-            <Design-button>sign in</Design-button>
+            <Design-button>{{ signinText }}</Design-button>
             <!-- </nuxt-link> -->
           </div>
         </li>
@@ -118,10 +118,20 @@ import Brand from "~/components/partials/Brand";
 import DesignButton from "~/components/commons/DesignButton";
 import CurvedButton from "~/components/commons/CurvedButton";
 export default {
+  data() {
+    return {
+      signinText: "sign in"
+    };
+  },
   components: {
     Brand,
     DesignButton,
     CurvedButton
+  },
+  mounted() {
+    if (this.$auth.loggedIn) {
+      this.signinText = "Goto Dashboard";
+    }
   }
 };
 </script>

@@ -224,6 +224,7 @@
               <div class="dashboard__nav--profile-dropdown-divider"></div>
               <div class="row align-content-end">
                 <nuxt-link
+                  @click.native="logout"
                   class="dropdown-item color-white dashboard__nav--profile-dropdown-item"
                   to="#"
                 >
@@ -269,6 +270,13 @@ import Brand from "~/components/partials/Brand";
 export default {
   components: {
     Brand
+  },
+  methods: {
+    async logout() {
+      console.log("asas");
+
+      await this.$store.dispatch("user/logout");
+    }
   }
 };
 </script>

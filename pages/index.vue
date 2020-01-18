@@ -27,38 +27,20 @@ export default {
     Banner,
     Testimonial
   },
-  // async asyncData({
-  //   isDev,
-  //   route,
-  //   store,
-  //   env,
-  //   params,
-  //   query,
-  //   req,
-  //   res,
-  //   redirect,
-  //   error,
-  //   $axios
-  // }) {
-
-  //   const data = await $axios.$get("/all_approved");
-  //   console.log(data);
-  // }
-
-  async fetch({ store }) {
-    await store.dispatch("otp/get");
+  async fetch({ store, auth }) {
+    // await store.dispatch("promotion/get");
   },
 
-  computed: {
-    ...mapState({
-      tokens: state => {
-        return state.otp.tokens;
-      }
-    })
-  },
+  // computed: {
+  //   ...mapState({
+  //     tokens: state => {
+  //       return state.otp.tokens;
+  //     }
+  //   })
+  // },
 
   mounted() {
-    console.log(this.tokens, "Test");
+    console.log(this.$auth.loggedIn, "test");
   }
 };
 </script>

@@ -11,6 +11,7 @@
 import SignNav from "~/components/commons/SignNav";
 import AForm from "~/components/partials/AffiliateForm";
 export default {
+  auth: false,
   components: {
     SignNav,
     AForm
