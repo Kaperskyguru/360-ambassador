@@ -7,7 +7,9 @@
           <div class="col-12">
             <div class="col m-2">
               <div class="row justify-content-end">
-                <nuxt-link to="#" class="btn__curved--yellow"
+                <nuxt-link
+                  to="/merchants/my-promotions/new"
+                  class="btn__curved--yellow"
                   >ADD NEW</nuxt-link
                 >
               </div>

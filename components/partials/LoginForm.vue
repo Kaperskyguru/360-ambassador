@@ -36,15 +36,13 @@
       >
         SIGN IN MERCHANT
       </button>
-      <!-- <big-design-button 
-        ></big-design-button
-      > -->
     </div>
   </form>
 </template>
 
 <script>
 import BigDesignButton from "~/components/commons/BigDesignButton";
+import { mapState } from "vuex";
 export default {
   auth: "guest",
   components: {
@@ -58,14 +56,48 @@ export default {
       }
     };
   },
+  computed: {
+    ...mapState({
+      roles: state => {
+        return state.role.roles;
+      }
+    })
+  },
   methods: {
     async login() {
       const user = await this.$store.dispatch("user/login", this.form);
-      // console.log(await this.$store.dispatch("user/me"));
       if (this.$auth.loggedIn) {
-        console.log(await this.$store.dispatch("user/me"));
-        this.$router.push("/affiliates");
+        this.redirectByRole(this.$auth.user.role);
       }
+    },
+
+    redirectByRole(role_id) {
+      const role = this.findRole(role_id);
+
+      switch (role) {
+        case "Admin":
+          this.$router.push("/merchants");
+          break;
+
+        case "merchant":
+          this.$router.push("/merchants");
+          break;
+
+        case "Promoter":
+          this.$router.push("/affiliates");
+          break;
+
+        default:
+          this.$router.push("/login");
+          break;
+      }
+    },
+
+    findRole(role) {
+      const rol = this.roles.filter(item => {
+        return item._id == role;
+      })[0];
+      return rol.name;
     }
   }
 };

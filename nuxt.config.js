@@ -141,6 +141,7 @@ export default {
   },
 
   //https://dev.to/mrnaif2018/how-to-make-nuxt-auth-working-with-jwt-a-definitive-guide-9he
+  //chromium-browser --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp
 
   // proxy: {
   //   "/api/":
