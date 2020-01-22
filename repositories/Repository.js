@@ -1,7 +1,6 @@
-const resource = "/promotion";
-export default $axios => ({
+export default $axios => resource => ({
   index() {
-    return $axios.get(`${resource}`);
+    return $axios.$get(`${resource}`);
   },
 
   show(id) {

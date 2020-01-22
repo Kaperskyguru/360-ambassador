@@ -73,7 +73,8 @@ export default {
       mode: "client"
     },
     "~/plugins/axios",
-    "~/plugins/auth"
+    "~/plugins/auth",
+    "~/plugins/repositories"
   ],
   /*
    ** Nuxt.js dev-modules
@@ -95,7 +96,7 @@ export default {
           },
           logout: false,
           user: {
-            url: "/user/5e14740ea4c1bf5b71600a5f",
+            url: "/verify",
             method: "get",
             propertyName: "data"
           }
@@ -130,18 +131,20 @@ export default {
    */
   axios: {
     baseURL:
-      process.env.API_URL || "https://damp-hollows-99847.herokuapp.com/api/v1",
+      process.env.API_URL || "https://damp-hollows-99847.herokuapp.com/api/v1"
+    // credentials: true
     // browserBaseURL: process.env.API_URL,
     // proxy: true
     // mode: "no-cors",
-    redirectError: {
-      401: "/login",
-      404: "/login"
-    }
+    // redirectError: {
+    //   401: "/login",
+    //   404: "/login"
+    // }
   },
 
   //https://dev.to/mrnaif2018/how-to-make-nuxt-auth-working-with-jwt-a-definitive-guide-9he
   //chromium-browser --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp
+  //https://blog.lichter.io/posts/nuxt-api-call-organization-and-decoupling/
 
   // proxy: {
   //   "/api/":

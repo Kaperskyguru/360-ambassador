@@ -211,16 +211,16 @@
 // });
 
 function myFunction() {
-  var checkbox = document.getElementById('toggleInput');
-  var emailContainer = document.getElementById('emailContainer');
-  var smsContainer = document.getElementById('smsContainer');
+  var checkbox = document.getElementById("toggleInput");
+  var emailContainer = document.getElementById("emailContainer");
+  var smsContainer = document.getElementById("smsContainer");
 
   if (checkbox.checked == true) {
     emailContainer.style.display = "none";
     smsContainer.style.display = "block";
-    console.log('hello');
+    // console.log('hello');
   } else {
-    console.log('hello');
+    // console.log('hello');
     emailContainer.style.display = "block";
     smsContainer.style.display = "none";
   }

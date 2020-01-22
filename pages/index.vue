@@ -14,7 +14,6 @@ import Home from "~/components/pages/Index/Home.vue";
 import Banner from "~/components/pages/Index/Banner.vue";
 import Testimonial from "~/components/pages/Index/TestimonySection.vue";
 import Foot from "~/components/Footer.vue";
-// import axios from "~/plugins/axios";
 
 import { mapState } from "vuex";
 
@@ -40,7 +39,7 @@ export default {
   // },
 
   mounted() {
-    console.log(this.$auth.loggedIn, "test");
+    // console.log(this.$auth.loggedIn, "test");
   }
 };
 </script>

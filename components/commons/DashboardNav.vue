@@ -273,8 +273,6 @@ export default {
   },
   methods: {
     async logout() {
-      console.log("asas");
-
       await this.$store.dispatch("user/logout");
     }
   }

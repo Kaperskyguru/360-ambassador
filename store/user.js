@@ -11,7 +11,7 @@ export const actions = {
     await this.$auth.logout();
   },
   register({ dispatch, commit }, form) {
-    this.$axios.post("/users", form);
+    this.$axios.post("/register", form);
   },
   update(
     { commit, state },

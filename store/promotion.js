@@ -1,4 +1,5 @@
 const resource = "promotion";
+
 export const state = () => ({
   promotions: [],
   promotion: []
@@ -16,15 +17,14 @@ export const mutations = {
 
 export const actions = {
   async get({ commit }) {
-    const res = await this.$axios.get(`/${resource}`);
-
+    const res = await this.$repositories.promotion.index();
     if (res.status === 200 && res.data.success && res.data.code) {
       commit("set", res.data.data);
     }
   },
   async find({ commit }, promotion) {
     const res = await this.$axios.get(`/${resource}/${promotion}`);
-    console.log(res.data);
+    // console.log(res.data);
     commit("find", res.data.data);
   },
   async set({ commit }) {

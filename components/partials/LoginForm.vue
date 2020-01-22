@@ -66,15 +66,16 @@ export default {
   methods: {
     async login() {
       const user = await this.$store.dispatch("user/login", this.form);
+      const me = await this.$store.dispatch("user/me");
+      // console.log(me, this.$auth.user.role);
+
       if (this.$auth.loggedIn) {
         this.redirectByRole(this.$auth.user.role);
       }
     },
 
-    redirectByRole(role_id) {
-      const role = this.findRole(role_id);
-
-      switch (role) {
+    redirectByRole(role) {
+      switch (this.findRole(role)) {
         case "Admin":
           this.$router.push("/merchants");
           break;

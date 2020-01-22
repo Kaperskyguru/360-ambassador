@@ -83,9 +83,11 @@ export default {
 
   methods: {
     showCategory(id) {
-      return this.categories.filter(item => {
-        return item._id == id;
-      })[0].name;
+      // return this.categories.filter(item => {
+      //   return item._id == id;
+      // })[0].name;
+
+      return "Banking";
     }
   }
 };

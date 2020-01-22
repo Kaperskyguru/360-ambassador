@@ -5,8 +5,7 @@ export const state = () => ({
 
 export const mutations = {
   set(state, roles) {
-    console.log(roles);
-
+    // console.log(roles);
     state.roles = roles;
   }
 
