@@ -4,7 +4,11 @@
     <p class="col-12 color-grey-1">
       Sign up now! Start by confirming your email below
     </p>
-    <form :action="action" class="col-12 align-self-center p-0">
+    <form
+      @submit.prevent="register"
+      method="post"
+      class="col-12 align-self-center p-0"
+    >
       <div class="col-12 form__group">
         <input
           type="text"
@@ -12,6 +16,8 @@
           id="regEmail"
           placeholder="First Name *"
           required
+          name="firstname"
+          v-model="form.firstname"
         />
         <label for="regEmail" class="form__label color-grey-1"
           >First Name *</label
@@ -24,6 +30,8 @@
           id="logPassword"
           placeholder="Last Name *"
           required
+          name="lastname"
+          v-model="form.lastname"
         />
         <label for="text" class="form__label color-grey-1">Last Name *</label>
       </div>
@@ -34,6 +42,8 @@
           id="logPassword"
           placeholder="Email"
           required
+          name="email"
+          v-model="form.email"
         />
         <label for="email" class="form__label color-grey-1">Email</label>
       </div>
@@ -52,8 +62,30 @@ export default {
       type: String
     }
   },
+  data() {
+    return {
+      form: {
+        firstname: "",
+        lastname: "",
+        email: ""
+      }
+    };
+  },
   components: {
     BigDesignButton
+  },
+  methods: {
+    async register() {
+      this.$store
+        .dispatch("user/register", this.form)
+        .then(res => {
+          console.log(res, "data");
+          this.$router.push(this.action);
+        })
+        .catch(err => {
+          console.log(err, "error");
+        });
+    }
   }
 };
 </script>

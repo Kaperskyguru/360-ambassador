@@ -29,14 +29,6 @@
     <div class="col-12 form__group">
       <big-design-button>SIGN IN AFFILIATE</big-design-button>
     </div>
-    <div class="col-12 form__group mt-4">
-      <button
-        class="btn__square-curved--yellow color-blue form__btn col-12 text-bold"
-        type="submit"
-      >
-        SIGN IN MERCHANT
-      </button>
-    </div>
   </form>
 </template>
 
@@ -65,17 +57,17 @@ export default {
   },
   methods: {
     async login() {
-      const user = await this.$store.dispatch("user/login", this.form);
-      const me = await this.$store.dispatch("user/me");
-      // console.log(me, this.$auth.user.role);
+      await this.$store.dispatch("user/login", this.form);
+      await this.$store.dispatch("user/me");
+      // console.log(me, this.$auth.user.role.mame, user);
 
       if (this.$auth.loggedIn) {
-        this.redirectByRole(this.$auth.user.role);
+        this.redirectByRole(this.$auth.user.role.name);
       }
     },
 
     redirectByRole(role) {
-      switch (this.findRole(role)) {
+      switch (role) {
         case "Admin":
           this.$router.push("/merchants");
           break;
