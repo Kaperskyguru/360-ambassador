@@ -76,11 +76,15 @@ export default {
   },
   methods: {
     async register() {
+      // Get Roles
+
       this.$store
         .dispatch("user/register", this.form)
         .then(res => {
-          console.log(res, "data");
-          this.$router.push(this.action);
+          this.$router.push({
+            name: "confirmation",
+            query: { email: res.data.data.email, user_id: res.data.data._id }
+          });
         })
         .catch(err => {
           console.log(err, "error");

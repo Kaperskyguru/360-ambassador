@@ -1,6 +1,6 @@
 <template>
   <form
-    action="advertiser"
+    @submit.prevent="updateUser"
     method="post"
     class="col-12 col-md-9 mt-4 pl-5 form-2"
   >
@@ -54,6 +54,7 @@
             placeholder="John"
             disabled
             required
+            v-model="user.firstname"
           />
         </div>
       </div>
@@ -70,6 +71,7 @@
             placeholder="Doe"
             disabled
             required
+            v-model="user.lastname"
           />
         </div>
       </div>
@@ -83,6 +85,7 @@
           <input
             type="text"
             class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+            v-model="user.phone"
           />
         </div>
       </div>
@@ -99,6 +102,7 @@
             placeholder="johndoe@abc.com"
             disabled
             required
+            v-model="user.email"
           />
         </div>
       </div>
@@ -113,6 +117,7 @@
             type="text"
             required
             class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+            v-model="user.username"
           />
         </div>
       </div>
@@ -127,6 +132,7 @@
             type="password"
             class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
             required
+            v-model="user.password"
           />
         </div>
       </div>
@@ -146,6 +152,7 @@
             type="text"
             required
             class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+            v-model="user.address"
           />
         </div>
       </div>
@@ -160,6 +167,7 @@
             type="text"
             required
             class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+            v-model="user.city"
           />
         </div>
       </div>
@@ -174,6 +182,7 @@
             type="text"
             required
             class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+            v-model="user.state"
           />
         </div>
       </div>
@@ -188,6 +197,7 @@
             type="text"
             required
             class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+            v-model="user.bvn"
           />
         </div>
       </div>
@@ -202,6 +212,7 @@
             type="text"
             required
             class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+            v-model="user.account_number"
           />
         </div>
       </div>
@@ -216,6 +227,7 @@
             type="text"
             required
             class="form-2__select col ml-md-5 color-grey-2"
+            v-model="user.bank"
           >
             <option value="1"></option>
             <option value="1">gtb</option>
@@ -238,6 +250,7 @@
           <input
             type="text"
             class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+            v-model="user.company_name"
           />
         </div>
       </div>
@@ -251,6 +264,7 @@
           <input
             type="text"
             class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+            v-model="user.website"
           />
         </div>
       </div>
@@ -264,6 +278,7 @@
           <input
             type="text"
             class="form-2__input ml-md-5 col-md-8 col-12 color-grey-2"
+            v-model="user.website_url"
           />
         </div>
       </div>
@@ -277,6 +292,7 @@
           <textarea
             rows="3"
             class="form-2__textarea col ml-md-5 color-grey-2"
+            v-model="user.website_info"
           ></textarea>
         </div>
       </div>
@@ -287,7 +303,11 @@
             class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Category</label
           >
-          <select type="text" class="form-2__select col ml-md-5 color-grey-2">
+          <select
+            type="text"
+            class="form-2__select col ml-md-5 color-grey-2"
+            v-model="user.category"
+          >
             <option value="1"></option>
             <option value="1">jfvdfkndj</option>
             <option value="1">skdnvksdnk</option>
@@ -301,7 +321,11 @@
             class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Current monthly unique visitors</label
           >
-          <select type="text" class="form-2__select col ml-md-5 color-grey-2">
+          <select
+            type="text"
+            class="form-2__select col ml-md-5 color-grey-2"
+            v-model="user.unique_visitors"
+          >
             <option value="1"></option>
             <option value="1">jfvdfkndj</option>
             <option value="1">skdnvksdnk</option>
@@ -320,7 +344,11 @@
             class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
             >Category</label
           >
-          <select type="text" class="form-2__select col ml-md-5 color-grey-2">
+          <select
+            type="text"
+            class="form-2__select col ml-md-5 color-grey-2"
+            v-model="user.industry_category"
+          >
             <option value="1"></option>
             <option value="1">jfvdfkndj</option>
             <option value="1">skdnvksdnk</option>
@@ -351,6 +379,7 @@
             type="checkbox"
             class="custom-control-input"
             id="customCheck1"
+            v-model="user.service_agreement"
           />
           <label class="custom-control-label color-grey-2" for="customCheck1">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
@@ -369,6 +398,7 @@
             type="checkbox"
             class="custom-control-input"
             id="customCheck2"
+            v-model="user.software_affiliate_policy"
           />
           <label class="custom-control-label color-grey-2" for="customCheck2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
@@ -385,6 +415,7 @@
             type="checkbox"
             class="custom-control-input"
             id="customCheck3"
+            v-model="user.privacy_policy"
           />
           <label class="custom-control-label color-grey-2" for="customCheck3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
@@ -401,6 +432,7 @@
             type="checkbox"
             class="custom-control-input"
             id="customCheck4"
+            v-model="user.age_certification"
           />
           <label class="custom-control-label color-grey-2" for="customCheck4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
@@ -417,6 +449,7 @@
             type="checkbox"
             class="custom-control-input"
             id="customCheck5"
+            v-model="user.certificate_of_authority"
           />
           <label class="custom-control-label color-grey-2" for="customCheck5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
@@ -445,6 +478,29 @@ import DesignButton from "~/components/commons/SmallDesignButton";
 export default {
   components: {
     DesignButton
+  },
+  data() {
+    return {
+      user: {}
+    };
+  },
+  methods: {
+    updateUser() {
+      // Get formal registered user
+
+      this.$store
+        .dispatch("user/update", this.user)
+        .then(res => {
+          this.$router.push({
+            name: "confirmation",
+            query: { email: res.data.data.email, user_id: res.data.data._id }
+          });
+        })
+        .catch(err => {
+          console.log(err, "error");
+        });
+      console.log(this.user);
+    }
   }
 };
 </script>

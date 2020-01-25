@@ -15,7 +15,7 @@
       <p
         class="col-12 col-md-5 color-white text-center confirmation__text mb-4"
       >
-        We just sent an email to test@yahoo.com.<br />
+        We just sent an email to {{ user.email }}.<br />
         Click the link in the email to confirm your email address.
       </p>
       <p class="col-12 color-white text-center confirmation__text mb-4">
@@ -24,7 +24,10 @@
       <div class="col-12 mb-4 d-flex justify-content-center">
         <curved-button>RESEND EMAIL</curved-button>
       </div>
-      <p class="col-12 color-white text-center confirmation__text mt-5">
+      <p
+        @click.prevent="back"
+        class="col-12 color-white text-center confirmation__text mt-5"
+      >
         Wrong email address?<br />
         <span class="color-yellow">Start Over</span>
       </p>
@@ -47,6 +50,12 @@ export default {
   components: {
     Brand,
     CurvedButton
+  },
+  props: ["user"],
+  methods: {
+    back() {
+      this.$router.go(-1);
+    }
   }
 };
 </script>
