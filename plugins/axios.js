@@ -17,9 +17,9 @@ export default function({ $axios, redirect }, inject) {
 
   $axios.onError(error => {
     // console.log(error);
-    const code = parseInt(error.response && error.response.status);
-    if (code === 404) {
-      redirect("/");
-    }
+    // const code = parseInt(error.response && error.response.status);
+    // if (code === 404) {
+    //   redirect("/");
+    // }
   });
 }

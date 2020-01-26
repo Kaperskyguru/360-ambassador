@@ -21,6 +21,7 @@
     "cross-env": "^5.2.0",
     "jquery": "^3.4.1",
     "nuxt": "^2.4.0",
+    "vee-validate": "^3.2.2",
     "vue-lodash": "^2.0.2",
     "vue-morris": "^1.1.0"
   },

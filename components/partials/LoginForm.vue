@@ -1,44 +1,61 @@
 <template>
-  <form
-    @submit.prevent="login"
-    method="post"
+  <ValidationObserver
+    v-slot="{ handleSubmit }"
     class="col-12 align-self-center p-0"
   >
-    <div class="col-12 form__group">
-      <input
-        type="text"
-        class="col-12 form__input"
-        id="regEmail"
-        placeholder="Username"
-        required
-        v-model="form.username"
-      />
-      <label for="regEmail" class="form__label color-grey-1">Username</label>
-    </div>
-    <div class="col-12 form__group">
-      <input
-        v-model="form.password"
-        type="password"
-        class="col-12 form__input"
-        id="logPassword"
-        placeholder="password"
-        required
-      />
-      <label for="logPassword" class="form__label color-grey-1">password</label>
-    </div>
-    <div class="col-12 form__group">
-      <big-design-button>SIGN IN AFFILIATE</big-design-button>
-    </div>
-  </form>
+    <form
+      @submit.prevent="handleSubmit(login)"
+      method="post"
+      class="col-12 align-self-center p-0"
+    >
+      <ValidationProvider name="Username" rules="required" v-slot="{ errors }">
+        <div class="col-12 form__group">
+          <input
+            type="text"
+            class="col-12 form__input"
+            id="regEmail"
+            placeholder="Username"
+            v-model="form.username"
+          />
+          <span>{{ errors[0] }}</span>
+          <!-- <label for="regEmail" class="form__label color-grey-1"
+            >Username</label
+          > -->
+        </div>
+      </ValidationProvider>
+
+      <ValidationProvider name="Password" rules="required" v-slot="{ errors }">
+        <div class="col-12 form__group">
+          <input
+            v-model="form.password"
+            type="password"
+            class="col-12 form__input"
+            id="logPassword"
+            placeholder="password"
+            required
+          />
+          <span>{{ errors[0] }}</span>
+        </div>
+      </ValidationProvider>
+      <!-- <label for="logPassword" class="form__label color-grey-1">password</label> -->
+
+      <div class="col-12 form__group">
+        <big-design-button>SIGN IN AFFILIATE</big-design-button>
+      </div>
+    </form>
+  </ValidationObserver>
 </template>
 
 <script>
 import BigDesignButton from "~/components/commons/BigDesignButton";
+import { ValidationProvider, ValidationObserver } from "vee-validate";
 import { mapState } from "vuex";
 export default {
   auth: "guest",
   components: {
-    BigDesignButton
+    BigDesignButton,
+    ValidationProvider,
+    ValidationObserver
   },
   data() {
     return {
@@ -59,7 +76,6 @@ export default {
     async login() {
       await this.$store.dispatch("user/login", this.form);
       await this.$store.dispatch("user/me");
-      // console.log(me, this.$auth.user.role.mame, user);
 
       if (this.$auth.loggedIn) {
         this.redirectByRole(this.$auth.user.role.name);

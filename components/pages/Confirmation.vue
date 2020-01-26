@@ -32,10 +32,16 @@
         <span class="color-yellow">Start Over</span>
       </p>
       <div class="col-12 d-flex justify-content-center">
-        <nuxt-link to="" class="color-white text-center mr-5 confirmation__link"
+        <nuxt-link
+          to="#"
+          v-on:click.native="redirect('affiliate')"
+          class="color-white text-center mr-5 confirmation__link"
           >Go to <br /><span class="color-yellow">Affiliate</span></nuxt-link
         >
-        <nuxt-link to="" class="color-white text-center ml-5 confirmation__link"
+        <nuxt-link
+          to="#"
+          v-on:click.native="redirect('advertiser')"
+          class="color-white text-center ml-5 confirmation__link"
           >Go to <br /><span class="color-yellow">Advertiser</span></nuxt-link
         >
       </div>
@@ -55,6 +61,15 @@ export default {
   methods: {
     back() {
       this.$router.go(-1);
+    },
+    redirect(url) {
+      this.$router.push({
+        name: url,
+        query: {
+          email: this.user.email,
+          user_id: this.user.id
+        }
+      });
     }
   }
 };

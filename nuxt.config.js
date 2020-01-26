@@ -74,7 +74,8 @@ export default {
     },
     "~/plugins/axios",
     "~/plugins/auth",
-    "~/plugins/repositories"
+    "~/plugins/repositories",
+    "~/plugins/vee-validate"
   ],
   /*
    ** Nuxt.js dev-modules
@@ -132,14 +133,6 @@ export default {
   axios: {
     baseURL:
       process.env.API_URL || "https://damp-hollows-99847.herokuapp.com/api/v1"
-    // credentials: true
-    // browserBaseURL: process.env.API_URL,
-    // proxy: true
-    // mode: "no-cors",
-    // redirectError: {
-    //   401: "/login",
-    //   404: "/login"
-    // }
   },
 
   //https://dev.to/mrnaif2018/how-to-make-nuxt-auth-working-with-jwt-a-definitive-guide-9he
@@ -154,6 +147,7 @@ export default {
    ** Build configuration
    */
   build: {
+    transpile: ["vee-validate/dist/rules"],
     /*
      ** You can extend webpack config here
      */
