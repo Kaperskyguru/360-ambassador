@@ -133,6 +133,8 @@ export default {
     if (this.$auth.loggedIn) {
       this.signinText = "Goto Dashboard";
       this.redirectByRole(this.$auth.user.role.name);
+    } else {
+      this.link = "/login";
     }
   },
 
