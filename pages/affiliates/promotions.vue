@@ -11,10 +11,20 @@ export default {
   components: {
     Promotions
   },
-  async fetch({ store }) {
-    await store.dispatch("promotion/get");
-    await store.dispatch("category/get");
+
+  async fetch({ store, error }) {
+    try {
+      await store.dispatch("promotion/get");
+    } catch (error) {
+      error({
+        statusCode: 500,
+        message: error
+      });
+    }
   }
+
+  // await store.dispatch("promotion/get");
+  // await store.dispatch("category/get");
 };
 </script>
 

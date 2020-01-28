@@ -24,6 +24,7 @@ export default {
   },
 
   methods: {
+    // Look into this method.. Why not dispatch in Fetch method
     getUserById(id) {
       this.$store
         .dispatch("user/find", id)

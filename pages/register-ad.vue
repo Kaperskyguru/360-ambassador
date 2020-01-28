@@ -26,7 +26,7 @@ export default {
   },
 
   async fetch({ store }) {
-    await store.dispatch("role/get");
+    // await store.dispatch("role/get");
   }
 };
 </script>

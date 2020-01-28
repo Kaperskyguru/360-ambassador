@@ -136,7 +136,7 @@
                         >Commission</label
                       >
                       <select
-                      v-model="form.commissionCurrency"
+                        v-model="form.commissionCurrency"
                         type="text"
                         class="form-2__select ml-md-5 col-2 color-grey-2"
                       >
@@ -151,7 +151,7 @@
                         /></option>
                       </select>
                       <input
-                      v-model="form.commissionAmount"
+                        v-model="form.commissionAmount"
                         type="text"
                         class="form-2__input col-6 color-grey-2"
                       />
@@ -362,7 +362,7 @@ export default {
     })
   },
   created() {
-    this.$store.dispatch("category/get");
+    //this.$store.dispatch("category/get");
   }
 };
 </script>

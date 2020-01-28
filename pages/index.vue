@@ -26,8 +26,16 @@ export default {
     Banner,
     Testimonial
   },
-  async fetch({ store, auth }) {
-    await store.dispatch("role/get");
+
+  async fetch({ store, auth, error }) {
+    try {
+      await store.dispatch("role/get");
+    } catch (error) {
+      error({
+        statusCode: 500,
+        message: error
+      });
+    }
   },
 
   // computed: {

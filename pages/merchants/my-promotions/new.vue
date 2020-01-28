@@ -10,6 +10,16 @@ export default {
   auth: false,
   components: {
     AddPromotion
+  },
+  async fetch({ store, auth, error }) {
+    try {
+      await store.dispatch("category/get");
+    } catch (error) {
+      error({
+        statusCode: 500,
+        message: error
+      });
+    }
   }
 };
 </script>

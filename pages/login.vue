@@ -10,7 +10,7 @@ export default {
   },
 
   fetch({ store }) {
-    store.dispatch("role/get");
+    // store.dispatch("role/get");
   }
 };
 </script>

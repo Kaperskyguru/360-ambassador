@@ -39,9 +39,19 @@ export default {
     }
   },
 
-  created() {
-    this.getUserById(this.$route.query.user_id);
+  async fetch({ store, auth, error }) {
+    try {
+      await store.dispatch("category/get");
+    } catch (error) {
+      error({
+        statusCode: 500,
+        message: error
+      });
+    }
   }
+  // created() {
+  //   this.getUserById(this.$route.query.user_id);
+  // }
 };
 </script>
 

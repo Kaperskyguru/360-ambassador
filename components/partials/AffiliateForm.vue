@@ -510,7 +510,7 @@ export default {
     })
   },
   created() {
-    this.$store.dispatch("category/get");
+    // this.$store.dispatch("category/get");
   }
 };
 </script>
