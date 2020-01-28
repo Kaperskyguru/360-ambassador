@@ -259,9 +259,12 @@
                   v-model="form.category"
                   class="form-2__select col  color-grey-2"
                 >
-                  <option value="1"></option>
-                  <option value="2">jfvdfkndj</option>
-                  <option value="3">skdnvksdnk</option>
+                  <option
+                    :value="category._id"
+                    v-for="(category, i) in categories"
+                    :key="i"
+                    >{{ category.name }}</option
+                  >
                 </select>
                 <span class="input-error">{{ errors[0] }}</span>
               </div>
@@ -499,8 +502,16 @@ export default {
     this.form.lastName = this.user.lastName;
     this.form.email = this.user.email;
   },
-
-  computed: {}
+  computed: {
+    ...mapState({
+      categories: state => {
+        return state.category.categories;
+      }
+    })
+  },
+  created() {
+    this.$store.dispatch("category/get");
+  }
 };
 </script>
 

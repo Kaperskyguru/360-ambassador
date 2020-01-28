@@ -104,7 +104,7 @@
         <li class="nav-item">
           <div class="nav-link mt-3 mt-lg-0">
             <!-- <nuxt-link to="/login"> -->
-            <Design-button>{{ signinText }}</Design-button>
+            <Design-button :link="link">{{ signinText }}</Design-button>
             <!-- </nuxt-link> -->
           </div>
         </li>
@@ -120,7 +120,8 @@ import CurvedButton from "~/components/commons/CurvedButton";
 export default {
   data() {
     return {
-      signinText: "sign in"
+      signinText: "sign in",
+      link: ""
     };
   },
   components: {
@@ -131,6 +132,29 @@ export default {
   mounted() {
     if (this.$auth.loggedIn) {
       this.signinText = "Goto Dashboard";
+      this.redirectByRole(this.$auth.user.role.name);
+    }
+  },
+
+  methods: {
+    redirectByRole(role) {
+      switch (role) {
+        case "admin":
+          this.link = "/admin";
+          break;
+
+        case "merchant":
+          this.link = "/merchants";
+          break;
+
+        case "promoter":
+          this.link = "/affiliates";
+          break;
+
+        default:
+          this.link = "/login";
+          break;
+      }
     }
   }
 };

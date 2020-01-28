@@ -31,63 +31,119 @@
               </thead>
               <tbody class="dashboard-table__tbody">
                 <tr>
-                  <td><nuxt-link to="#" class="color-blue">Bukka Hut</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">Bukka Hut Fresto</nuxt-link></td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">Bukka Hut</nuxt-link>
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue"
+                      >Bukka Hut Fresto</nuxt-link
+                    >
+                  </td>
                   <td><nuxt-link to="#" class="color-blue">10%</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">10</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">100</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">3</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">N30.00</nuxt-link></td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">N30.00</nuxt-link>
+                  </td>
                 </tr>
 
                 <tr>
-                  <td><nuxt-link to="#" class="color-blue">Access Bank</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">Bukka Hut Fresto</nuxt-link></td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">Access Bank</nuxt-link>
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue"
+                      >Bukka Hut Fresto</nuxt-link
+                    >
+                  </td>
                   <td><nuxt-link to="#" class="color-blue">5%</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">120</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">1234</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">58</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">N30.00</nuxt-link></td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">N30.00</nuxt-link>
+                  </td>
                 </tr>
 
                 <tr>
-                  <td><nuxt-link to="#" class="color-blue">Universal</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">Bukka Hut Fresto</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">0.05%</nuxt-link></td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">Universal</nuxt-link>
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue"
+                      >Bukka Hut Fresto</nuxt-link
+                    >
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">0.05%</nuxt-link>
+                  </td>
                   <td><nuxt-link to="#" class="color-blue">24</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">100</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">46</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">N30.00</nuxt-link></td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">N30.00</nuxt-link>
+                  </td>
                 </tr>
 
                 <tr>
-                  <td><nuxt-link to="#" class="color-blue">Universal</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">Bukka Hut Fresto</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">0.05%</nuxt-link></td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">Universal</nuxt-link>
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue"
+                      >Bukka Hut Fresto</nuxt-link
+                    >
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">0.05%</nuxt-link>
+                  </td>
                   <td><nuxt-link to="#" class="color-blue">24</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">100</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">46</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">N30.00</nuxt-link></td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">N30.00</nuxt-link>
+                  </td>
                 </tr>
 
                 <tr>
-                  <td><nuxt-link to="#" class="color-blue">Universal</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">Bukka Hut Fresto</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">0.05%</nuxt-link></td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">Universal</nuxt-link>
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue"
+                      >Bukka Hut Fresto</nuxt-link
+                    >
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">0.05%</nuxt-link>
+                  </td>
                   <td><nuxt-link to="#" class="color-blue">24</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">100</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">46</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">N30.00</nuxt-link></td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">N30.00</nuxt-link>
+                  </td>
                 </tr>
 
                 <tr>
-                  <td><nuxt-link to="#" class="color-blue">Universal</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">Bukka Hut Fresto</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">0.05%</nuxt-link></td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">Universal</nuxt-link>
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue"
+                      >Bukka Hut Fresto</nuxt-link
+                    >
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">0.05%</nuxt-link>
+                  </td>
                   <td><nuxt-link to="#" class="color-blue">24</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">100</nuxt-link></td>
                   <td><nuxt-link to="#" class="color-blue">46</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">N30.00</nuxt-link></td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">N30.00</nuxt-link>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -129,7 +185,9 @@
                     exposure to an Advertiser’s promotion or campaign on your
                     website or within other promotional materials, such email or
                     ad space. Visit the
-                    <nuxt-link to="#" class="color-red">Placements Marketplace</nuxt-link>
+                    <nuxt-link to="#" class="color-red"
+                      >Placements Marketplace</nuxt-link
+                    >
                     today to post and promote your placement inventory across
                     the CJ Network!
                   </template>

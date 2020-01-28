@@ -78,8 +78,6 @@ export default {
       this.$store
         .dispatch("user/login", this.form)
         .then(res => {
-          console.log(res);
-
           if (this.$auth.loggedIn) {
             this.redirectByRole(this.$auth.user.role.name);
           }
@@ -92,16 +90,11 @@ export default {
             group: "alerts"
           });
         });
-      // } catch (errors) {
-      //   // Alert
-      //   console.table(errors);
-      // }
-      // await this.$store.dispatch("user/me");
     },
 
     redirectByRole(role) {
       switch (role) {
-        case "Admin":
+        case "admin":
           this.$router.push("/merchants");
           break;
 
@@ -109,7 +102,7 @@ export default {
           this.$router.push("/merchants");
           break;
 
-        case "Promoter":
+        case "promoter":
           this.$router.push("/affiliates");
           break;
 
