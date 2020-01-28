@@ -74,12 +74,29 @@ export default {
   },
   methods: {
     async login() {
-      await this.$store.dispatch("user/login", this.form);
-      await this.$store.dispatch("user/me");
+      // try {
+      this.$store
+        .dispatch("user/login", this.form)
+        .then(res => {
+          console.log(res);
 
-      if (this.$auth.loggedIn) {
-        this.redirectByRole(this.$auth.user.role.name);
-      }
+          if (this.$auth.loggedIn) {
+            this.redirectByRole(this.$auth.user.role.name);
+          }
+        })
+        .catch(err => {
+          console.table(err);
+          this.$notify({
+            text: "Username and password combination is wrong",
+            type: "error",
+            group: "alerts"
+          });
+        });
+      // } catch (errors) {
+      //   // Alert
+      //   console.table(errors);
+      // }
+      // await this.$store.dispatch("user/me");
     },
 
     redirectByRole(role) {

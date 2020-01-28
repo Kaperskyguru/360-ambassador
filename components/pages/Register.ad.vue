@@ -32,7 +32,9 @@
         </div>
       </div>
       <div class="col-lg-5 col-md-6 col-12 form__page-right">
-        <register-form action="advertiser">Become an Advertiser</register-form>
+        <register-form :role="role" action="advertiser"
+          >Become an Advertiser</register-form
+        >
       </div>
     </div>
   </div>
@@ -47,7 +49,8 @@ export default {
     Texter,
     RegisterForm,
     Brand
-  }
+  },
+  props: ["role"]
 };
 </script>
 

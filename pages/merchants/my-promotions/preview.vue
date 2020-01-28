@@ -7,6 +7,7 @@
 <script>
 import PromotionDetails from "~/components/pages/merchant/PromotionDetails";
 export default {
+  auth: false,
   components: {
     PromotionDetails
   }

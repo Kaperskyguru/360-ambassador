@@ -25,8 +25,9 @@
                 <input
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="form.firstname"
+                  :placeholder="user.firstName"
                   disabled
+                  v-model="user.firstName"
                 />
                 <span class="input-error">{{ errors[0] }}</span>
               </div>
@@ -45,8 +46,9 @@
                 <input
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="form.lastname"
+                  :placeholder="user.lastName"
                   disabled
+                  v-model="user.lastName"
                 />
                 <span class="input-error">{{ errors[0] }}</span>
               </div>
@@ -59,7 +61,7 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field v-model="form.phone" :required="true" name="phone">
+            <field v-model="user.phone" :required="true" name="phone">
               <template slot="label">Phone</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -75,10 +77,10 @@
             <input
               type="text"
               class="form-2__input-disabled col-md-7 col-12 ml-md-5 color-grey-2"
-              placeholder="johndoe@abc.com"
+              :placeholder="user.email"
               disabled
               required
-              v-model="form.email"
+              v-model="user.email"
             />
           </div>
         </div>
@@ -88,7 +90,7 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field v-model="form.username" :required="true" name="username">
+            <field v-model="user.username" :required="true" name="username">
               <template slot="label">Username</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -101,7 +103,7 @@
             v-slot="{ errors }"
           >
             <field
-              v-model="form.password"
+              v-model="user.password"
               :required="true"
               name="password"
               type="password"
@@ -122,7 +124,7 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field v-model="form.address" :required="true" name="address">
+            <field v-model="user.address" :required="true" name="address">
               <template slot="label">Address</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -130,7 +132,7 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="City" rules="required" v-slot="{ errors }">
-            <field v-model="form.city" :required="true" name="city">
+            <field v-model="user.city" :required="true" name="city">
               <template slot="label">City</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -142,7 +144,7 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field v-model="form.state" :required="true" name="state">
+            <field v-model="user.state" :required="true" name="state">
               <template slot="label">State</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -154,7 +156,7 @@
             rules="required|min:9"
             v-slot="{ errors }"
           >
-            <field :required="true" name="bvn" v-model="form.bvn" type="number">
+            <field :required="true" name="bvn" v-model="user.bvn" type="number">
               <template slot="label">BVN</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -169,7 +171,7 @@
             <field
               :required="true"
               name="account_number"
-              v-model="form.account_number"
+              v-model="user.AccountNumber"
             >
               <template slot="label">Account Number</template>
               <template slot="errors">{{ errors[0] }}</template>
@@ -209,7 +211,7 @@
             <field
               :required="true"
               name="company_name"
-              v-model="form.company_name"
+              v-model="user.company_name"
             >
               <template slot="label">Company Name</template>
               <template slot="errors">{{ errors[0] }}</template>
@@ -222,7 +224,7 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field :required="true" name="Company Name" v-model="form.website">
+            <field :required="true" name="Company Name" v-model="user.website">
               <template slot="label">Website or Newsletter name</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -237,7 +239,7 @@
             <field
               :required="true"
               name="Website URL"
-              v-model="form.website_url"
+              v-model="user.website_url"
             >
               <template slot="label">Website URL</template>
               <template slot="errors">{{ errors[0] }}</template>
@@ -256,7 +258,7 @@
                 <textarea
                   rows="3"
                   class="form-2__textarea col color-grey-2"
-                  v-model="form.website_info"
+                  v-model="user.website_info"
                 ></textarea>
                 <span class="input-error">{{ errors[0] }}</span>
               </div>
@@ -274,7 +276,7 @@
               <div class="col-md-8 col-12 ml-md-5">
                 <select
                   type="text"
-                  v-model="form.category"
+                  v-model="user.category"
                   class="form-2__select col  color-grey-2"
                 >
                   <option value="1"></option>
@@ -298,7 +300,7 @@
                 <select
                   type="text"
                   class="form-2__select col color-grey-2"
-                  v-model="form.unique_visitors"
+                  v-model="user.unique_visitors"
                 >
                   <option value="1"></option>
                   <option value="2">jfvdfkndj</option>
@@ -326,7 +328,7 @@
                 <select
                   type="text"
                   class="form-2__select col  color-grey-2"
-                  v-model="form.industry_category"
+                  v-model="user.industry_category"
                 >
                   <option value="1"></option>
                   <option value="2">jfvdfkndj</option>
@@ -366,7 +368,7 @@
                 type="checkbox"
                 class="custom-control-input"
                 id="customCheck1"
-                v-model="form.service_agreement"
+                v-model="user.service_agreement"
               />
               <label
                 class="custom-control-label color-grey-2"
@@ -395,7 +397,7 @@
                 type="checkbox"
                 class="custom-control-input"
                 id="customCheck2"
-                v-model="form.software_affiliate_policy"
+                v-model="user.software_affiliate_policy"
               />
               <label
                 class="custom-control-label color-grey-2"
@@ -422,7 +424,7 @@
                 type="checkbox"
                 class="custom-control-input"
                 id="customCheck3"
-                v-model="form.privacy_policy"
+                v-model="user.privacy_policy"
               />
               <label
                 class="custom-control-label color-grey-2"
@@ -449,7 +451,7 @@
                 type="checkbox"
                 class="custom-control-input"
                 id="customCheck4"
-                v-model="form.age_certification"
+                v-model="user.age_certification"
               />
               <label
                 class="custom-control-label color-grey-2"
@@ -478,7 +480,7 @@
                 type="checkbox"
                 class="custom-control-input"
                 id="customCheck5"
-                v-model="form.certificate_authority"
+                v-model="user.certificate_authority"
               />
               <label
                 class="custom-control-label color-grey-2"
@@ -525,38 +527,44 @@ export default {
   props: ["user"],
   data() {
     return {
-      form: {}
+      // form: {}
     };
   },
   methods: {
     async updateUser() {
       // Get formal registered user
 
-      try {
-        const data = {
-          form: this.form,
-          id: this.user.id
-        };
+      // try {
+      const data = {
+        form: this.user,
+        id: this.user.id
+      };
 
+      try {
         const res = await this.$store.dispatch("user/update", data);
-        console.log(this.user);
       } catch (error) {
-        alert(error)
+        console.log(error.response);
       }
     },
 
     onFileChange(e) {
-      this.form.profile_picture = e.target.files[0];
+      this.user.profile_picture = e.target.files[0];
 
       // Upload file here or display
     }
-  },
-
-  mounted() {
-    this.form.firstname = this.user.firstname || "Solomon";
-    this.form.lastname = this.user.lastname || "Eseme";
-    this.form.email = this.user.email;
   }
+
+  // beforeMount() {
+  //   this.$nextTick(() => {
+  //     this.form = this.user;
+  //   });
+
+  //   // this.user.firstName = this.user.firstName || "";
+  //   // this.user.lastName = this.user.lastName || "";
+  //   // this.user.email = this.user.email || "";
+
+  //   console.log(this.form, this.user);
+  // }
 };
 </script>
 

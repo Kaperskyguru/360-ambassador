@@ -29,9 +29,9 @@
                 <input
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="form.firstname"
+                  :placeholder="user.firstName"
                   disabled
-                  :value="form.firstname"
+                  :value="form.firstName"
                 />
                 <span class="input-error">{{ errors[0] }}</span>
               </div>
@@ -54,9 +54,9 @@
                 <input
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="form.lastname"
+                  :placeholder="user.lastName"
                   disabled
-                  :value="form.lastname"
+                  :value="form.lastName"
                 />
                 <span class="input-error">{{ errors[0] }}</span>
               </div>
@@ -65,7 +65,7 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="Phone Number" rules="" v-slot="{ errors }">
-            <field :required="true" name="phone">
+            <field :required="true" name="phone" v-model="form.phone">
               <template slot="label">Phone</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -83,7 +83,8 @@
                 <input
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="form.email"
+                  :placeholder="user.email"
+                  :value="form.email"
                   disabled
                 />
                 <span class="input-error">{{ errors[0] }}</span>
@@ -174,7 +175,7 @@
           >
             <field
               :required="true"
-              v-model="form.account_number"
+              v-model="form.AccountNumber"
               name="account_number"
             >
               <template slot="label">Account Number</template>
@@ -451,32 +452,51 @@ export default {
 
   data() {
     return {
-      form: {}
+      form: {},
+      profile_picture: []
     };
   },
   methods: {
     async updateUser() {
+      const formdata = new FormData();
+      const file = this.profile_picture;
+
+      // converting all form inputs to FormData
+      formdata.append("profile_picture", file);
+      for (const key in this.form) {
+        if (this.form.hasOwnProperty(key)) {
+          const element = this.form[key];
+          formdata.append(key, element);
+        }
+      }
+
+      // Sending all data including ID
       const data = {
-        form: this.form,
+        form: formdata,
         id: this.user.id
       };
+
       try {
+        // Updating User through Store
         const res = await this.$store.dispatch("user/update", data);
+        console.log(res);
+
+        // NOTIFICATION HERE
       } catch (err) {
-        console.log(err);
+        console.log(err.response.data);
       }
     },
 
     onFileChange(e) {
-      this.form.profile_picture = e.target.files[0];
+      this.profile_picture = e.target.files[0];
 
       // Upload file here or display
     }
   },
 
   mounted() {
-    this.form.firstname = this.user.firstname || "Solomon";
-    this.form.lastname = this.user.lastname || "Eseme";
+    this.form.firstName = this.user.firstName;
+    this.form.lastName = this.user.lastName;
     this.form.email = this.user.email;
   },
 

@@ -282,6 +282,7 @@
                           </div>
                           <div class="text col-9 color-blue">
                             {{ showCategory(promotion.category) }}
+                            <!-- {{ promotion.category }} -->
                           </div>
                         </div>
                       </div>
@@ -875,10 +876,19 @@ export default {
 
   methods: {
     showCategory(id) {
-      return this.categories.filter(item => {
+      const category = this.categories.filter(item => {
         return item._id == id;
-      })[0].name;
+      })[0];
+      console.log(category);
+
+      if (category) {
+        return category.name;
+      }
+      return "";
     }
+  },
+  mounted() {
+    console.log(this.promotion, "test");
   }
 };
 </script>

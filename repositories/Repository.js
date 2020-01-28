@@ -1,21 +1,9 @@
-export default $axios => resource => ({
-  index() {
-    return $axios.$get(`${resource}`);
-  },
+import PromotionRepository from "~/repositories/PromotionRepository";
+import UserRepository from "~/repositories/UserRepository";
+import RoleRepository from "~/repositories/RoleRepository";
 
-  show(id) {
-    return $axios.$get(`${resource}/${id}`);
-  },
-
-  create(payload) {
-    return $axios.$post(`${resource}`, payload);
-  },
-
-  update(id, payload) {
-    return $axios.$post(`${resource}/${id}`, payload);
-  },
-
-  delete(id) {
-    return $axios.$delete(`${resource}/${id}`);
-  }
+export default $axios => ({
+  promotion: PromotionRepository($axios),
+  user: UserRepository($axios),
+  role: RoleRepository($axios)
 });

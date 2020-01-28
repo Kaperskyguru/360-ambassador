@@ -29,12 +29,12 @@ export default {
         .dispatch("user/find", id)
         .then(res => {
           this.user.id = res.data.data._id;
-          this.user.firstname = res.data.data.firstname;
-          this.user.lastname = res.data.data.lastname;
+          this.user.firstName = res.data.data.firstName;
+          this.user.lastName = res.data.data.lastName;
           this.user.email = this.$route.query.email;
         })
         .catch(err => {
-          console.log(err);
+          console.log(err.response);
         });
     }
   },

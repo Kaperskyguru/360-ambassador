@@ -27,7 +27,7 @@ export default {
     Testimonial
   },
   async fetch({ store, auth }) {
-    // await store.dispatch("promotion/get");
+    await store.dispatch("role/get");
   },
 
   // computed: {

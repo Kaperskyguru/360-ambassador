@@ -75,7 +75,9 @@ export default {
     "~/plugins/axios",
     "~/plugins/auth",
     "~/plugins/repositories",
-    "~/plugins/vee-validate"
+    "~/plugins/vee-validate",
+    { src: "~/plugins/vue-notification", ssr: false },
+    "~/plugins/vue-moment"
   ],
   /*
    ** Nuxt.js dev-modules

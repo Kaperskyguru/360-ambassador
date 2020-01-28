@@ -7,6 +7,7 @@
 <script>
 import MyPromotion from "~/components/pages/merchant/MyPromotion";
 export default {
+  auth: false,
   components: {
     MyPromotion
   }

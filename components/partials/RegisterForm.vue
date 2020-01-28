@@ -26,7 +26,7 @@
               placeholder="First Name *"
               required
               name="firstname"
-              v-model="form.firstname"
+              v-model="form.firstName"
             />
             <span>{{ errors[0] }}</span>
             <!-- <label for="firstname" class="form__label color-grey-1"
@@ -47,7 +47,7 @@
               placeholder="Last Name *"
               required
               name="lastname"
-              v-model="form.lastname"
+              v-model="form.lastName"
             />
             <span>{{ errors[0] }}</span>
             <!-- <label for="lastname" class="form__label color-grey-1"
@@ -72,7 +72,7 @@
             />
 
             <!-- <label for="email" class="form__label color-grey-1">Email</label> -->
-            <span>{{ errors[0] }}</span>
+            <span class="input-error" id="email-error">{{ errors[0] }}</span>
           </div>
         </ValidationProvider>
         <div class="col-12 form__group">
@@ -90,15 +90,14 @@ export default {
   props: {
     action: {
       type: String
+    },
+    role: {
+      type: String
     }
   },
   data() {
     return {
-      form: {
-        firstname: "",
-        lastname: "",
-        email: ""
-      }
+      form: {}
     };
   },
   components: {
@@ -106,22 +105,23 @@ export default {
     ValidationProvider,
     ValidationObserver
   },
+
   methods: {
     async register() {
       // Get Roles
+      this.form.role = this.role;
 
       this.$store
         .dispatch("user/register", this.form)
         .then(res => {
-          console.log(res);
-
           this.$router.push({
             name: "confirmation",
             query: { email: res.data.email, user_id: res.data._id }
           });
         })
         .catch(err => {
-          console.log(err, "error");
+          const error = document.getElementById("email-error");
+          error.textContent = err.response.data.message;
         });
     }
   }

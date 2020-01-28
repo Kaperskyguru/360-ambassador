@@ -23,7 +23,7 @@ export const actions = {
   },
 
   async find({ dispatch, commit }, id) {
-    const res = await this.$axios.get(`/user/${id}`);
+    const res = await this.$axios.get(`/user/?_id=${id}`);
     return res;
   },
 
@@ -37,8 +37,8 @@ export const actions = {
     return res.data;
   },
 
-  update({ commit }, { form, id }) {
-    return this.$axios.put(`/user/${id}`, form);
+  async update({ commit }, { form, id }) {
+    return await this.$axios.post(`/user/${id}`, form);
   },
 
   delete() {

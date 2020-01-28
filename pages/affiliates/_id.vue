@@ -8,6 +8,7 @@
 import Promotions from "~/components/pages/affiliates/Promotion.details";
 
 export default {
+  auth: false,
   components: {
     Promotions
   },
