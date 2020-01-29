@@ -10,6 +10,21 @@ export default {
   auth: false,
   components: {
     Promotions
+  },
+
+  async fetch({ store, auth, error }) {
+    try {
+      await store.dispatch(
+        "promotion/promotionsByUserID",
+        store.$auth.user._id
+      );
+    } catch (erro) {
+      console.log(erro);
+      // error({
+      //   statusCode: 500,
+      //   message: erro
+      // });
+    }
   }
 };
 </script>

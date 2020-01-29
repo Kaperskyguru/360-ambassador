@@ -59,12 +59,16 @@
 
         <div class="row justify-content-center">
           <!-- CARD HERE -->
+          <cards
+            v-for="(promotion, i) in promotions"
+            :key="i"
+            :promotion="promotion"
+          />
+          <!-- <cards />
           <cards />
           <cards />
           <cards />
-          <cards />
-          <cards />
-          <cards />
+          <cards /> -->
         </div>
       </div>
     </div>
@@ -75,11 +79,20 @@
 import MenuBar from "~/components/commons/DashboardNav";
 import Cards from "~/components/commons/dashboard/Promotion.card";
 import Btn from "~/components/commons/Btn";
+import { mapState } from "vuex";
 export default {
   components: {
     MenuBar,
     Cards,
     Btn
+  },
+
+  computed: {
+    ...mapState({
+      promotions: state => {
+        return state.promotion.myPromotions;
+      }
+    })
   }
 };
 </script>

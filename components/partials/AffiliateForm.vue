@@ -31,7 +31,7 @@
                   class="form-2__input-disabled col-12 color-grey-2"
                   :placeholder="user.firstName"
                   disabled
-                  :value="form.firstName"
+                  v-model="form.firstName"
                 />
                 <span class="input-error">{{ errors[0] }}</span>
               </div>
@@ -56,7 +56,7 @@
                   class="form-2__input-disabled col-12 color-grey-2"
                   :placeholder="user.lastName"
                   disabled
-                  :value="form.lastName"
+                  v-model="form.lastName"
                 />
                 <span class="input-error">{{ errors[0] }}</span>
               </div>
@@ -84,7 +84,7 @@
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
                   :placeholder="user.email"
-                  :value="form.email"
+                  v-model="form.email"
                   disabled
                 />
                 <span class="input-error">{{ errors[0] }}</span>
@@ -197,9 +197,69 @@
                   v-model="form.bank"
                   class="form-2__select col-12 color-grey-2"
                 >
-                  <option value="1"></option>
-                  <option value="2">gtb</option>
-                  <option value="3">gtb</option>
+                  <option value="Access Bank Plc">Access Bank Plc</option>
+                  <option value="Fidelity Bank Plc">Fidelity Bank Plc</option>
+                  <option value="irst City Monument Bank Limited"
+                    >First City Monument Bank Limited</option
+                  >
+                  <option value="First Bank of Nigeria Limited"
+                    >First Bank of Nigeria Limited</option
+                  >
+                  <option value="Guaranty Trust Bank Plc"
+                    >Guaranty Trust Bank Plc</option
+                  >
+                  <option value="Union Bank of Nigeria Plc"
+                    >Union Bank of Nigeria Plc</option
+                  >
+                  <option value="United Bank for Africa Plc"
+                    >United Bank for Africa Plc</option
+                  >
+                  <option value="Zenith Bank Plc">Zenith Bank Plc</option>
+                  <option value="Citibank Nigeria Limited"
+                    >Citibank Nigeria Limited</option
+                  >
+                  <option value="Ecobank Nigeria Plc"
+                    >Ecobank Nigeria Plc</option
+                  >
+                  <option value="Heritage Banking Company Limited"
+                    >Heritage Banking Company Limited</option
+                  >
+                  <option value="Keystone Bank Limited"
+                    >Keystone Bank Limited</option
+                  >
+                  <option value="Polaris Bank Limited"
+                    >Polaris Bank Limited</option
+                  >
+                  <option value="Stanbic IBTC Bank Plc"
+                    >Stanbic IBTC Bank Plc</option
+                  >
+                  <option value="Standard Chartered">Standard Chartered</option>
+                  <option value="Sterling Bank Plc">Sterling Bank Plc</option>
+                  <option value="Titan Trust Bank Limited"
+                    >Titan Trust Bank Limited</option
+                  >
+                  <option value="Unity Bank Plc">Unity Bank Plc</option>
+                  <option value="Wema Bank Plc">Wema Bank Plc</option>
+                  <option value="Globus Bank Limited"
+                    >Globus Bank Limited</option
+                  >
+                  <option value="SunTrust Bank Nigeria Limited"
+                    >SunTrust Bank Nigeria Limited</option
+                  >
+                  <option value="Providus Bank Limited"
+                    >Providus Bank Limited</option
+                  >
+                  <option value="Jaiz Bank Plc">Jaiz Bank Plc</option>
+                  <option value="TAJBank Limited">TAJBank Limited</option>
+                  <option value="oronation Merchant Bank"
+                    >Coronation Merchant Bank</option
+                  >
+                  <option value="FBNQuest Merchant Bank"
+                    >FBNQuest Merchant Bank</option
+                  >
+                  <option value="FSDH Merchant Bank">FSDH Merchant Bank</option>
+                  <option value="Rand Merchant Bank">Rand Merchant Bank</option>
+                  <option value="Nova Merchant Bank">Nova Merchant Bank</option>
                 </select>
                 <span class="input-error">{{ errors[0] }}</span>
               </div>
@@ -451,8 +511,6 @@ export default {
     Field,
     ImageField
   },
-  props: ["user"],
-
   data() {
     return {
       form: {},
@@ -497,20 +555,15 @@ export default {
     }
   },
 
-  mounted() {
-    this.form.firstName = this.user.firstName;
-    this.form.lastName = this.user.lastName;
-    this.form.email = this.user.email;
-  },
   computed: {
     ...mapState({
+      user: state => {
+        return state.user.user;
+      },
       categories: state => {
         return state.category.categories;
       }
     })
-  },
-  created() {
-    // this.$store.dispatch("category/get");
   }
 };
 </script>

@@ -19,14 +19,13 @@
                 <h6
                   class="dashboard__general--card__heading color-blue-1 col-12"
                 >
-                  Bukka Hut Festo
+                  {{ promotion.name || "" }}
                 </h6>
                 <p class="dashboard__general--card__text color-blue-2 col-12">
                   Bukka Hut Festo
                 </p>
                 <p class="dashboard__general--card__text col-6">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod…
+                  {{ promotion.description || "" }}
                 </p>
               </div>
             </div>
@@ -132,7 +131,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["promotion"]
+};
 </script>
 
 <style>

@@ -2,7 +2,7 @@
   <section class="container-fluid">
     <div class="row justify-content-center">
       <sign-nav>Advertiser SIGN UP FORM</sign-nav>
-      <ad-form :user="user" />
+      <ad-form />
     </div>
   </section>
 </template>
@@ -17,32 +17,13 @@ export default {
     AdForm
   },
 
-  data() {
-    return {
-      user: []
-    };
-  },
-
-  methods: {
-    // Look into this method.. Why not dispatch in Fetch method
-    getUserById(id) {
-      this.$store
-        .dispatch("user/find", id)
-        .then(res => {
-          this.user.id = res.data.data._id;
-          this.user.firstName = res.data.data.firstName;
-          this.user.lastName = res.data.data.lastName;
-          this.user.email = this.$route.query.email;
-          // console.log(this.user);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+  async fetch({ store, param, route, query, error }) {
+    try {
+      await store.dispatch("category/get");
+      await store.dispatch("user/find", query.user_id);
+    } catch (err) {
+      error({ statusCode: 500, message: err });
     }
-  },
-
-  created() {
-    this.getUserById(this.$route.query.user_id);
   }
 };
 </script>

@@ -3,30 +3,28 @@
     <nuxt-link to="/affiliates/joinned/1">
       <div class="dashboard__general--card col-12 pl-2 pr-2">
         <div class="row p-0">
-          <p class="text-small color-grey-3 col-12 mb-0">FOOD</p>
+          <p class="text-small color-grey-3 col-12 mb-0">
+            {{ promotion.category !== null ? promotion.category.name : "" }}
+          </p>
         </div>
         <div class="dashboard__general--card__body col-12">
           <div class="row">
             <div class="dashboard__general--card__img-container col">
-              <img
-                src="~assets/images/Access_Bank_Logo.png"
-                alt=""
-                class="img-fluid"
-              />
+              <!-- ~assets/images/Access_Bank_Logo.png -->
+              <img :src="promotion.product_file[0]" alt="" class="img-fluid" />
             </div>
             <div class="col pr-0 pl-3">
               <div class="row">
                 <h6
                   class="dashboard__general--card__heading color-blue-1 col-12"
                 >
-                  Bukka Hut Festo
+                  {{ promotion.name || "" }}
                 </h6>
                 <p class="dashboard__general--card__text color-blue-2 col-12">
                   Bukka Hut Festo
                 </p>
                 <p class="dashboard__general--card__text col-12">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod…
+                  {{ promotion.description || "" }}
                 </p>
               </div>
             </div>
@@ -48,48 +46,28 @@
         <div class="col-12 mt-5">
           <div class="row justify-content-center">
             <stat-box>
-              <template slot="title"
-                >CLICKS</template
-              >
-              <template slot="value"
-                >200</template
-              >
+              <template slot="title">CLICKS</template>
+              <template slot="value">200</template>
             </stat-box>
 
             <stat-box>
-              <template slot="title"
-                >VISITORS</template
-              >
-              <template slot="value"
-                >100</template
-              >
+              <template slot="title">VISITORS</template>
+              <template slot="value">100</template>
             </stat-box>
 
             <stat-box>
-              <template slot="title"
-                >SALES</template
-              >
-              <template slot="value"
-                >2</template
-              >
+              <template slot="title">SALES</template>
+              <template slot="value">2</template>
             </stat-box>
 
             <stat-box>
-              <template slot="title"
-                >CONV.</template
-              >
-              <template slot="value"
-                >0.02%</template
-              >
+              <template slot="title">CONV.</template>
+              <template slot="value">0.02%</template>
             </stat-box>
 
             <stat-box>
-              <template slot="title"
-                >N PER SALE</template
-              >
-              <template slot="value"
-                >5.00
-              </template>
+              <template slot="title">N PER SALE</template>
+              <template slot="value">5.00 </template>
             </stat-box>
           </div>
         </div>
@@ -102,6 +80,7 @@
 import StatBox from "~/components/commons/dashboard/Small.Stat.Box";
 
 export default {
+  props: ["promotion"],
   components: {
     StatBox
   }

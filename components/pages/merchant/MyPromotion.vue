@@ -17,10 +17,11 @@
           </div>
         </div>
         <div class="row justify-content-center">
-          <card />
-          <card />
-          <card />
-          <card />
+          <card
+            v-for="(promotion, i) in promotions"
+            :key="i"
+            :promotion="promotion"
+          />
         </div>
       </div>
     </div>
@@ -30,10 +31,19 @@
 <script>
 import Card from "~/components/commons/dashboard/MerchantCard";
 import MyNavBar from "~/components/commons/dashboard/MerchantNav";
+import { mapState } from "vuex";
 export default {
   components: {
     MyNavBar,
     Card
+  },
+
+  computed: {
+    ...mapState({
+      promotions: state => {
+        return state.promotion.myPromotions;
+      }
+    })
   }
 };
 </script>

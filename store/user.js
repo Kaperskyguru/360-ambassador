@@ -1,11 +1,15 @@
 export const state = () => ({
   user: []
+  // singleUser: []
 });
 
 export const mutations = {
   storeUser(state, user) {
     state.user = user;
   }
+  // storeSingleUser(state, user) {
+  //   state.singleUser = user;
+  // }
 };
 export const actions = {
   async me() {
@@ -24,7 +28,9 @@ export const actions = {
 
   async find({ dispatch, commit }, id) {
     const res = await this.$axios.get(`/user/?_id=${id}`);
-    return res;
+    if (res.data.code == 200 && res.data.success) {
+      commit("storeUser", res.data.data);
+    }
   },
 
   async register({ dispatch, commit }, form) {
@@ -39,6 +45,10 @@ export const actions = {
 
   async update({ commit }, { form, id }) {
     return await this.$axios.post(`/user/${id}`, form);
+  },
+
+  async updateMerchant({ commit }, { form, id }) {
+    return await this.$axios.post(`/user/merchant/${id}`, form);
   },
 
   delete() {

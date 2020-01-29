@@ -2,7 +2,8 @@ const resource = "promotion";
 
 export const state = () => ({
   promotions: [],
-  promotion: []
+  promotion: [],
+  myPromotions: []
 });
 
 export const mutations = {
@@ -12,6 +13,10 @@ export const mutations = {
 
   find(state, promotion) {
     state.promotion = promotion;
+  },
+
+  setMyPromotions(state, promotions) {
+    state.myPromotions = promotions;
   }
 };
 
@@ -31,6 +36,13 @@ export const actions = {
     const res = await this.$axios.post(`/${resource}`);
     if (res.status === 200 && res.data.success && res.data.code) {
       commit("set", res.data);
+    }
+  },
+
+  async promotionsByUserID({ commit }, id) {
+    const res = await this.$repositories.promotion.getAllByUserID(id);
+    if (res.status === 200 && res.data.success && res.data.code) {
+      commit("setMyPromotions", res.data.data);
     }
   },
 

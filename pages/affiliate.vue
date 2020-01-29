@@ -2,7 +2,7 @@
   <section class="container-fluid">
     <div class="row justify-content-center">
       <sign-nav>AFFILIATE SIGN UP FORM</sign-nav>
-      <a-form :user="user" />
+      <a-form />
     </div>
   </section>
 </template>
@@ -17,41 +17,14 @@ export default {
     AForm
   },
 
-  data() {
-    return {
-      user: []
-    };
-  },
-
-  methods: {
-    getUserById(id) {
-      this.$store
-        .dispatch("user/find", id)
-        .then(res => {
-          this.user.id = res.data.data._id;
-          this.user.firstName = res.data.data.firstName;
-          this.user.lastName = res.data.data.lastName;
-          this.user.email = this.$route.query.email;
-        })
-        .catch(err => {
-          console.log(err.response);
-        });
-    }
-  },
-
-  async fetch({ store, auth, error }) {
+  async fetch({ store, param, route, query, error }) {
     try {
       await store.dispatch("category/get");
+      await store.dispatch("user/find", query.user_id);
     } catch (err) {
-      error({
-        statusCode: 500,
-        message: err
-      });
+      error({ statusCode: 500, message: err });
     }
   }
-  // created() {
-  //   this.getUserById(this.$route.query.user_id);
-  // }
 };
 </script>
 

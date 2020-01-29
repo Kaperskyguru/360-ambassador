@@ -8,6 +8,10 @@ export default $axios => ({
     return $axios.$get(`${resource}/${id}`);
   },
 
+  getAllByUserID(id) {
+    return $axios.get(`/all_my_created_promotion?user_id=${id}`);
+  },
+
   create(payload) {
     return $axios.$post(`${resource}`, payload);
   },
