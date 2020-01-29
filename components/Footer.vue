@@ -72,8 +72,8 @@
             <nuxt-link to="" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="18.462"
-                height="15"
+                width="10"
+                height="10"
                 viewBox="0 0 18.462 15"
               >
                 <defs>
@@ -101,8 +101,8 @@
             <nuxt-link to="" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="7.5"
-                height="15"
+                width="10"
+                height="10"
                 viewBox="0 0 7.5 15"
               >
                 <defs>
@@ -128,8 +128,8 @@
             <nuxt-link to="" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
+                width="10"
+                height="10"
                 viewBox="0 0 15 15"
               >
                 <defs>
@@ -155,8 +155,8 @@
             <nuxt-link to="" class="inline-list__link color-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
+                width="10"
+                height="10"
                 viewBox="0 0 15 15"
               >
                 <defs>
@@ -206,6 +206,9 @@
             </nuxt-link>
           </li>
         </ul>
+      </div>
+      <div class="color-grey-2" style="font-size:.9rem">
+        &copy; 360 Ambassador. All Rights reserved
       </div>
     </div>
   </footer>

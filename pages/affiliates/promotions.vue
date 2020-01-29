@@ -15,10 +15,10 @@ export default {
   async fetch({ store, error }) {
     try {
       await store.dispatch("promotion/get");
-    } catch (error) {
+    } catch (err) {
       error({
         statusCode: 500,
-        message: error
+        message: err
       });
     }
   }

@@ -42,10 +42,10 @@ export default {
   async fetch({ store, auth, error }) {
     try {
       await store.dispatch("category/get");
-    } catch (error) {
+    } catch (err) {
       error({
         statusCode: 500,
-        message: error
+        message: err
       });
     }
   }

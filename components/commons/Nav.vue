@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light mt-0 navbar-reduce w-100">
+  <nav class="navbar navbar-expand-lg navbar-light pt-3 navbar-reduce w-100">
     <brand />
     <button
       class="navbar-toggler bg-white"
@@ -47,29 +47,29 @@
               get started
             </nuxt-link>
             <div
-              class="dropdown-menu home-dropdown__menu mt-3 mt-lg-0"
+              class="dropdown-menu home-dropdown__menu mt-5 mt-lg-3 "
               aria-labelledby="navbarDropdown"
             >
               <h6
-                class="dropdown-item home-dropdown__item color-white bg-blue col-12"
+                class="dropdown-item home-dropdown__item color-white bg-blue col-12 "
               >
-                How do you come in?
+                <span class="ml-3">How do you come in?</span>
               </h6>
               <div
-                class="dropdown-item home-dropdown__item bg-transparent col-12"
+                class="dropdown-item home-dropdown__item  bg-transparent col-12"
               >
-                <div class="col-12 p-0">
-                  <p class="text-small color-yellow col-12 p-0">ADVERTISERS</p>
-                  <h6 class="color-blue col-12 p-0 mb-1">
+                <div class="col-12 mb-5  dropdown__item">
+                  <p class="text-small color-blue col-12 p-0">ADVERTISERS</p>
+                  <h6 class="color-blue dropdown-title col-12 p-0 ">
                     Expand your horizon
                   </h6>
-                  <p class="color-blue col-12 p-0 mt-1 mb-1">
+                  <p class="color-blue dropdown-text col-12 p-0 mt-1 mb-2">
                     Lorem ipsum dolor sit amet, sed diam voluptua. At vero ea
                     rebum. Stet clita kasd gubergren, no sea…
                   </p>
-                  <div class="col-12 mt-4 mb-4 p-0">
+                  <div class="col-12 mt-4 p-0">
                     <nuxt-link
-                      class="btn__curved--yellow color-blue"
+                      class="btn__curved--yellow dropdown-btn color-blue"
                       to="register-ad"
                       role="button"
                     >
@@ -77,19 +77,19 @@
                     </nuxt-link>
                   </div>
                 </div>
-                <div class="dropdown-divider"></div>
-                <div class="col-12 p-0">
-                  <p class="text-small color-yellow col-12 p-0">AFFILIATES</p>
-                  <h6 class="color-blue col-12 p-0 mb-1">
+                <div class="dropdown-divider col-12"></div>
+                <div class="col-12 mt-4 dropdown__item">
+                  <p class="text-small color-blue col-12 p-0">AFFILIATES</p>
+                  <h6 class="color-blue dropdown-title col-12 p-0">
                     Work with the trusted brands
                   </h6>
-                  <p class="color-blue col-12 p-0">
+                  <p class="color-blue dropdown-text col-12 p-0">
                     Lorem ipsum dolor sit amet, sed diam voluptua. At vero ea
                     rebum. Stet clita kasd gubergren, no sea…
                   </p>
-                  <div class="col-12 mt-4 mb-1 p-0">
+                  <div class="col-12 mt-4 mb-4 p-0">
                     <nuxt-link
-                      class="btn__bordered-curved--yellow color-blue"
+                      class="btn__bordered-curved--yellow dropdown-btn color-blue"
                       to="register"
                       role="button"
                     >
@@ -103,9 +103,7 @@
         </li>
         <li class="nav-item">
           <div class="nav-link mt-3 mt-lg-0">
-            <!-- <nuxt-link to="/login"> -->
             <Design-button :link="link">{{ signinText }}</Design-button>
-            <!-- </nuxt-link> -->
           </div>
         </li>
       </div>

@@ -30,10 +30,10 @@ export default {
   async fetch({ store, auth, error }) {
     try {
       await store.dispatch("role/get");
-    } catch (error) {
+    } catch (erro) {
       error({
         statusCode: 500,
-        message: error
+        message: erro
       });
     }
   },

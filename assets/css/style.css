@@ -104,14 +104,14 @@ body {
 /* Fonts End */
 h1 {
   font-family: "MavenPro-Black";
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: 600;
   letter-spacing: 0rem;
 }
 
 h2 {
   font-family: "MavenPro-Black";
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 600;
   letter-spacing: 0rem;
 }
@@ -125,7 +125,7 @@ h3 {
 
 h6 {
   font-family: "MavenPro-Bold";
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -133,8 +133,8 @@ p {
   font-family: "MavenPro-Medium";
   font-size: 1.4rem;
   letter-spacing: 0rem;
-  overflow-wrap: break-word;
-  word-break: break-all;
+  /* overflow-wrap: break-word; */
+  /* word-break: break-all; */
 }
 
 .text {
@@ -183,8 +183,8 @@ p {
 
 .banner__text {
   font-family: "Montserrat-Black";
-  font-size: 3.5rem;
-  font-weight: 600;
+  font-size: 3rem;
+  font-weight: 400;
   letter-spacing: 0rem;
 }
 
@@ -686,13 +686,19 @@ a:active {
   text-decoration: none;
 }
 
+.dropdown-btn {
+  font-size: .8rem;
+  font-weight: bold;
+  padding: .7rem 1.1rem !important;
+}
+
 .btn__bordered--yellow,
 .btn__bordered--yellow:focus,
 .btn__bordered--yellow:hover {
   background-color: transparent;
   color: #000000;
   border: 0.1rem solid #fecc0a;
-  padding: 1rem 2rem !important;
+  padding: 1rem 2rem;
   text-decoration: none;
 }
 
@@ -703,16 +709,18 @@ a:active {
   color: #000000;
   border: 0.13rem solid #fecc0a;
   border-radius: 5rem;
-  padding: 1rem 2rem !important;
+  padding: 1rem 2rem;
   text-decoration: none;
 }
+
+/* padding: .7rem 1.3rem; */
 
 .btn__bordered-square-curved--yellow,
 .btn__bordered-square-curved--yellow:focus,
 .btn__bordered-square-curved--yellow:hover {
   background-color: transparent;
   color: #ffffff;
-  padding: 1rem 2rem !important;
+  padding: .8rem 2rem;
   border: 0.13rem solid #fecc0a;
   border-radius: 5rem 5rem 0rem 5rem;
   text-decoration: none;
@@ -725,7 +733,7 @@ a:active {
   color: #000000;
   border: none !important;
   border-radius: 5rem;
-  padding: 1rem 2rem !important;
+  padding: 1rem 2rem;
   text-decoration: none;
 }
 
@@ -744,7 +752,7 @@ a:active {
 .btn__square-curved--yellow:hover {
   background-color: #fecc0a;
   color: #000000;
-  padding: 1rem 2rem !important;
+  padding: .8rem 3rem !important;
   border: 0.13rem solid #fecc0a;
   border-radius: 5rem 5rem 0rem 5rem;
   text-decoration: none;
@@ -804,13 +812,14 @@ a:active {
       rgba(0, 0, 0, 0.5)),
     url("../images/form-bg.webp");
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: bottom center;
   background-size: cover;
-  padding: 4rem;
+  padding: 2.5rem;
 }
 
 .form__page-right {
-  padding: 6.9rem;
+  padding: 8rem;
+  padding-left: 4rem !important;
 }
 
 .form__page-left,
@@ -819,7 +828,7 @@ a:active {
 }
 
 .form__header {
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 .form__group {
@@ -845,9 +854,9 @@ a:active {
 }
 
 .form__input {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 0rem;
-  padding: 1.2rem 0rem;
+  padding: 0rem;
   border: none;
   border-bottom: 0.15rem solid rgba(0, 0, 0, 0.05);
 }
@@ -972,7 +981,7 @@ a:active {
 }
 
 .home-dropdown__menu {
-  width: 50rem;
+  width: 40rem;
   left: unset;
   right: 0;
   background: linear-gradient(to left,
@@ -988,12 +997,28 @@ a:active {
   padding: 0rem;
 }
 
+.dropdown-text {
+  line-height: 1;
+  font-size: 1.1rem;
+  /* margin-bottom: 2.4rem !important; */
+}
+
+.dropdown-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem !important;
+}
+
 .home-dropdown__item {
   white-space: normal;
   text-transform: none;
   padding-top: 1rem !important;
-  padding-left: 1.8rem !important;
+  /* padding-left: 1.8rem !important; */
   padding-bottom: 1.4rem !important;
+  /*  */
+  font-size: 1.5rem;
+}
+
+.dropdown__item {
   padding-right: 8.6rem;
 }
 
@@ -1026,11 +1051,28 @@ a:active {
       rgba(0, 0, 0, 0.5)),
     url("../images/banner.webp");
   background-repeat: no-repeat;
-  background-position: bottom center;
+  /* background-position: bottom center; */
   background-size: cover;
-  display: flex;
-  flex-wrap: wrap;
+  /* display: relative; */
+  /* flex-wrap: wrap; */
 }
+
+@media (min-width: 50em) {
+  .header-text {
+    bottom: 0;
+    position: absolute
+  }
+}
+
+
+@media (max-width: 75em) {
+  .header-text {
+    bottom: 0;
+    position: absolute;
+    padding-top: 3rem !important
+  }
+}
+
 
 .header__text-box {
   color: #ffffff;

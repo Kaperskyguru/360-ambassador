@@ -1,7 +1,10 @@
 <template>
-  <div class="row align-items-center">
+  <div
+    class="row align-content-center justify-content-center pt-5"
+    style="margin:4rem auto"
+  >
     <h2 class="col-12 color-blue form__header"><slot></slot></h2>
-    <p class="col-12 color-grey-1">
+    <p class="col-12 color-grey-2">
       Sign up now! Start by confirming your email below
     </p>
     <ValidationObserver

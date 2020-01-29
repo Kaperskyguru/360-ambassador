@@ -31,16 +31,19 @@
             type="password"
             class="col-12 form__input"
             id="logPassword"
-            placeholder="password"
+            placeholder="Password"
             required
           />
           <span>{{ errors[0] }}</span>
         </div>
       </ValidationProvider>
+      <div class="color-blue text-right p-3 text-bold">
+        <nuxt-link class="color-blue" to="/login">Forgot Password?</nuxt-link>
+      </div>
       <!-- <label for="logPassword" class="form__label color-grey-1">password</label> -->
 
       <div class="col-12 form__group">
-        <big-design-button>SIGN IN AFFILIATE</big-design-button>
+        <big-design-button>SIGN IN</big-design-button>
       </div>
     </form>
   </ValidationObserver>
