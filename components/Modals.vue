@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import Btn from "~/components/commons/Btn";
+import Btn from "~/components/commons/buttons/Btn";
 
 export default {
   components: {

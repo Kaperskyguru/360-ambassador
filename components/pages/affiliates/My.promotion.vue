@@ -76,9 +76,9 @@
 </template>
 
 <script>
-import MenuBar from "~/components/commons/DashboardNav";
+import MenuBar from "~/components/commons/navs/DashboardNav";
 import Cards from "~/components/commons/dashboard/Promotion.card";
-import Btn from "~/components/commons/Btn";
+import Btn from "~/components/commons/buttons/Btn";
 import { mapState } from "vuex";
 export default {
   components: {

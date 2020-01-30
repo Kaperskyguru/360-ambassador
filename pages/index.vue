@@ -38,14 +38,6 @@ export default {
     }
   },
 
-  // computed: {
-  //   ...mapState({
-  //     tokens: state => {
-  //       return state.otp.tokens;
-  //     }
-  //   })
-  // },
-
   mounted() {
     // console.log(this.$auth.loggedIn, "test");
   }

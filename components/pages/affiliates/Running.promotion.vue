@@ -99,7 +99,8 @@
                 role="tablist"
               >
                 <li class="my-promotion__nav--item nav-item p-0">
-                  <nuxt-link to=""
+                  <nuxt-link
+                    to=""
                     class="my-promotion__nav--link nav-link pl-0 active border-top-0 border-left-0 br-1"
                     id="moreInfo-tab"
                     data-toggle="tab"
@@ -111,7 +112,8 @@
                   >
                 </li>
                 <li class="my-promotion__nav--item nav-item p-0">
-                  <nuxt-link to=""
+                  <nuxt-link
+                    to=""
                     class="my-promotion__nav--link nav-link bl-1"
                     id="pTerms-tab"
                     data-toggle="tab"
@@ -591,7 +593,7 @@
 </template>
 
 <script>
-import MenuBar from "~/components/commons/DashboardNav";
+import MenuBar from "~/components/commons/navs/DashboardNav";
 import Modal from "~/components/Modals";
 import Charts from "~/components/partials/affiliates/Charts";
 import BarChart from "~/components/commons/dashboard/BarChart";

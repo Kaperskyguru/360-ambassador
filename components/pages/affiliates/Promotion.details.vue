@@ -855,7 +855,7 @@
 </template>
 
 <script>
-import MenuBar from "~/components/commons/DashboardNav";
+import MenuBar from "~/components/commons/navs/DashboardNav";
 import { mapState } from "vuex";
 
 export default {

@@ -51,7 +51,7 @@
 
 <script>
 import Brand from "~/components/partials/Brand";
-import CurvedButton from "~/components/commons/CurvedButton";
+import CurvedButton from "~/components/commons/buttons/CurvedButton";
 export default {
   components: {
     Brand,

@@ -1,4 +1,3 @@
-const resource = "categories";
 export const state = () => ({
   categories: []
 });
@@ -17,7 +16,7 @@ export const mutations = {
 
 export const actions = {
   async get({ commit }) {
-    const res = await this.$axios.get(`/${resource}`);
+    const res = await this.$repositories.category.all();
     if (res.status === 200 && res.data.success && res.data.code) {
       commit("set", res.data.data);
     }

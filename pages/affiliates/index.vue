@@ -13,9 +13,7 @@ export default {
   components: {
     Dashboard
   },
-  fetch({ store }) {
-    // store.dispatch("category/get");
-  }
+  fetch({ store }) {}
 };
 </script>
 

@@ -972,6 +972,10 @@ a:active {
   /* margin-bottom: 1rem; */
 }
 
+.dropdown-item.active {
+  background: none !important;
+}
+
 .navbar .collapse .navbar-nav .nav-item.active .nav-link {
   color: #fecc0a !important;
 }
@@ -995,6 +999,10 @@ a:active {
   overflow: hidden;
   overflow-wrap: break-word;
   padding: 0rem;
+}
+
+.dropdown-toggle::after {
+  color: #ffffff !important
 }
 
 .dropdown-text {

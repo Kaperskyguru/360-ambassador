@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import MenuBar from "~/components/commons/DashboardNav";
+import MenuBar from "~/components/commons/navs/DashboardNav";
 import Card from "~/components/commons/dashboard/Card";
 import { mapState } from "vuex";
 

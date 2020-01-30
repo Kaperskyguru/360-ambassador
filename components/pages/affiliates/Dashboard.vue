@@ -205,7 +205,7 @@
 </template>
 
 <script>
-import DashboardNav from "~/components/commons/DashboardNav";
+import DashboardNav from "~/components/commons/navs/DashboardNav";
 import LineChart from "~/components/commons/dashboard/LineChart";
 import Message from "~/components/commons/dashboard/Message";
 import Merchants from "~/components/partials/affiliates/Merchants";

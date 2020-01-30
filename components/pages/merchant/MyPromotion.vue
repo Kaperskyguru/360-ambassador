@@ -30,7 +30,7 @@
 
 <script>
 import Card from "~/components/commons/dashboard/MerchantCard";
-import MyNavBar from "~/components/commons/dashboard/MerchantNav";
+import MyNavBar from "~/components/commons/navs/MerchantNav";
 import { mapState } from "vuex";
 export default {
   components: {

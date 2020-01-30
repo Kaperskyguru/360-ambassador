@@ -594,7 +594,7 @@
 </template>
 
 <script>
-import DesignButton from "~/components/commons/SmallDesignButton";
+import DesignButton from "~/components/commons/buttons/SmallDesignButton";
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 import { mapState } from "vuex";
 import Field from "~/components/commons/Field";

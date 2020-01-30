@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import BigDesignButton from "~/components/commons/BigDesignButton";
+import BigDesignButton from "~/components/commons/buttons/BigDesignButton";
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 export default {
   props: {

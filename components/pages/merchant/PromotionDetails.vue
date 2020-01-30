@@ -170,7 +170,7 @@
 </template>
 
 <script>
-import MyNavBar from "~/components/commons/dashboard/MerchantNav";
+import MyNavBar from "~/components/commons/navs/MerchantNav";
 import PromotionDetails from "~/components/commons/dashboard/PromotionDetail";
 import StatBox from "~/components/commons/dashboard/Stat.box";
 export default {

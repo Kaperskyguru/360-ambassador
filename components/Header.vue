@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import Navbar from "~/components/commons/Nav";
+import Navbar from "~/components/commons/navs/Nav";
 import SocialIcons from "~/components/commons/SocialIcons";
 export default {
   components: { Navbar, SocialIcons }

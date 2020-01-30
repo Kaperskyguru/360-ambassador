@@ -53,8 +53,8 @@
 
 <script>
 import Testimonials from "~/components/partials/Testimonials";
-import CurvedButton from "~/components/commons/CurvedButton";
-import DesignButton from "~/components/commons/DesignButton";
+import CurvedButton from "~/components/commons/buttons/CurvedButton";
+import DesignButton from "~/components/commons/buttons/DesignButton";
 export default {
   components: { Testimonials, CurvedButton, DesignButton }
 };

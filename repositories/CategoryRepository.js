@@ -1,4 +1,4 @@
-const resource = "/roles";
+const resource = "/categories";
 export default $axios => ({
   all() {
     return $axios.get(`${resource}`);

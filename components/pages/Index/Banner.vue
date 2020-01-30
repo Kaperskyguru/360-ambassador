@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import DesignButton from "~/components/commons/DesignButton";
+import DesignButton from "~/components/commons/buttons/DesignButton";
 export default {
   components: {
     DesignButton

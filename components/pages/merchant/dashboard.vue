@@ -237,7 +237,7 @@
 
 <script>
 import PerformanceBoxes from "~/components/partials/merchants/PerformanceBoxes";
-import MyNavBar from "~/components/commons/dashboard/MerchantNav";
+import MyNavBar from "~/components/commons/navs/MerchantNav";
 import LineChart from "~/components/commons/dashboard/LineChart2";
 import BarChart from "~/components/commons/dashboard/BarChart2"; // Convert LineChart and BarChart to one
 import Message from "~/components/commons/dashboard/Message";

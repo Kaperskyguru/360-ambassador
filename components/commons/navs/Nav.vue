@@ -15,12 +15,19 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item ">
+        <li
+          :class="[
+            currentPage === 'register-ad' ? activeClass : '',
+            'nav-item'
+          ]"
+        >
           <nuxt-link class="nav-link color-white" to="register-ad"
             >advertisers <span class="sr-only">(current)</span>
           </nuxt-link>
         </li>
-        <li class="nav-item">
+        <li
+          :class="[currentPage === 'register' ? activeClass : '', 'nav-item']"
+        >
           <nuxt-link class="nav-link color-white" to="register"
             >affiliates</nuxt-link
           >
@@ -113,13 +120,14 @@
 
 <script>
 import Brand from "~/components/partials/Brand";
-import DesignButton from "~/components/commons/DesignButton";
-import CurvedButton from "~/components/commons/CurvedButton";
+import DesignButton from "~/components/commons/buttons/DesignButton";
+import CurvedButton from "~/components/commons/buttons/CurvedButton";
 export default {
   data() {
     return {
       signinText: "sign in",
-      link: ""
+      link: "",
+      activeClass: "active"
     };
   },
   components: {
@@ -155,6 +163,11 @@ export default {
           this.link = "/login";
           break;
       }
+    }
+  },
+  computed: {
+    currentPage() {
+      return this.$route.name;
     }
   }
 };

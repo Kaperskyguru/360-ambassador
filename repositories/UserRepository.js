@@ -5,18 +5,20 @@ export default $axios => ({
   },
 
   show(id) {
-    return $axios.$get(`${resource}/${id}`);
+    return $axios.get(`${user}/?_id=${id}`);
   },
 
   create(payload) {
-    return $axios.$post(`${resource}`, payload);
+    return $axios.post(`/register`, payload);
   },
 
-  update(id, payload) {
-    return $axios.$post(`${resource}/${id}`, payload);
+  updateAffiliate(id, payload) {
+    return $axios.post(`${resource}/${id}`, payload);
   },
-
+  updateMerchant(id, payload) {
+    return $axios.post(`${resource}/merchant/${id}`, payload);
+  },
   delete(id) {
-    return $axios.$delete(`${resource}/${id}`);
+    return $axios.delete(`${resource}/${id}`);
   }
 });

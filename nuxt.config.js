@@ -87,7 +87,9 @@ export default {
   buildModules: [],
 
   router: {
-    middleware: ["auth"]
+    middleware: ["auth"],
+    linkActiveClass: "active",
+    linkExactActiveClass: "active"
   },
 
   auth: {

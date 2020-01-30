@@ -22,12 +22,6 @@ export default {
       type: String,
       default: ""
     }
-  },
-  mounted() {
-    if (this.$auth.loggedIn) {
-      this.signinText = "Goto Dashboard";
-    }
-    console.log(this.link);
   }
 };
 </script>
