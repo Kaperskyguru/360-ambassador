@@ -1,14 +1,12 @@
 export default function({ store, redirect }) {
   if (store.state.auth.loggedIn) {
-    switch (store.state.auth.user.role) {
-      case "promoter":
-        return redirect("/affiliates");
-        break;
+    switch (store.state.auth.user.role.name) {
+      case "admin":
+        return redirect("/admin");
       case "merchant":
         return redirect("/merchants");
-        break;
       default:
-        return redirect("/admin");
+        break;
     }
   } else {
     return redirect("/login");
