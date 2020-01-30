@@ -7,7 +7,8 @@
 <script>
 import Promotions from "~/components/pages/affiliates/My.promotion";
 export default {
-  auth: false,
+  auth: true,
+  middleware: "affiliate",
   components: {
     Promotions
   },
@@ -21,8 +22,8 @@ export default {
     } catch (erro) {
       console.log(erro);
       // error({
-      //   statusCode: 500,
-      //   message: erro
+      //   statusCode: erro.response.data.code,
+      //   message: erro.response.data
       // });
     }
   }

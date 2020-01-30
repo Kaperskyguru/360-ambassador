@@ -8,7 +8,8 @@
 import Dashboard from "~/components/pages/affiliates/Dashboard.vue";
 
 export default {
-  auth: false,
+  auth: true,
+  middleware: "affiliate",
   components: {
     Dashboard
   },

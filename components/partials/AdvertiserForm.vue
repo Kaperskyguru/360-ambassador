@@ -1,3 +1,4 @@
+
 <template>
   <ValidationObserver v-slot="{ handleSubmit }">
     <form
@@ -588,6 +589,7 @@
         </div>
       </div>
     </form>
+    <loading :show="show" :label="label" :overlay="overlay"> </loading>
   </ValidationObserver>
 </template>
 
@@ -597,6 +599,7 @@ import { ValidationProvider, ValidationObserver } from "vee-validate";
 import { mapState } from "vuex";
 import Field from "~/components/commons/Field";
 import ImageField from "~/components/commons/ImageField";
+// import Loading from "vue-full-loading";
 export default {
   components: {
     DesignButton,
@@ -604,15 +607,20 @@ export default {
     ValidationObserver,
     ImageField,
     Field
+    // Loading
   },
   data() {
     return {
       form: {},
-      profile_picture: []
+      profile_picture: [],
+      show: false,
+      label: "Updating...",
+      overlay: true
     };
   },
   methods: {
     async updateUser() {
+      this.show = true;
       const formdata = new FormData();
       const file = this.profile_picture;
 
@@ -631,6 +639,11 @@ export default {
 
       try {
         const res = await this.$store.dispatch("user/updateMerchant", data);
+        this.show = false;
+        this.$swal({
+          text: "Account updated successfully",
+          icon: "success"
+        });
       } catch (error) {
         console.log(error.response);
       }

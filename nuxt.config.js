@@ -77,7 +77,9 @@ export default {
     "~/plugins/repositories",
     "~/plugins/vee-validate",
     { src: "~/plugins/vue-notification", ssr: false },
-    "~/plugins/vue-moment"
+    "~/plugins/vue-moment",
+    { src: "~/plugins/vue-full-loading", ssr: false },
+    "~/plugins/vue-swal"
   ],
   /*
    ** Nuxt.js dev-modules
@@ -124,9 +126,9 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     "@nuxtjs/dotenv",
 
-    "@nuxtjs/auth",
+    "@nuxtjs/auth"
 
-    "@nuxtjs/proxy"
+    // "nuxt-sweetalert2"
   ],
   /*
    ** Axios module configuration

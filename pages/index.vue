@@ -33,7 +33,7 @@ export default {
     } catch (erro) {
       error({
         statusCode: 500,
-        message: erro
+        message: erro.response.data
       });
     }
   },

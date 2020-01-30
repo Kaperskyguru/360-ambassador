@@ -22,7 +22,8 @@ export default {
       await store.dispatch("category/get");
       await store.dispatch("user/find", query.user_id);
     } catch (err) {
-      error({ statusCode: 500, message: err });
+      console.log(err.response);
+      // error({ statusCode: err.response.code, message: err.response.data });
     }
   }
 };

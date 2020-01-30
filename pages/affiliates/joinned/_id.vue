@@ -8,7 +8,8 @@
 import Promotion from "~/components/pages/affiliates/Running.promotion.vue";
 
 export default {
-  auth: false,
+  auth: true,
+  middleware: "affiliate",
   components: {
     Promotion
   }

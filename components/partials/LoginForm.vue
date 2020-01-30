@@ -3,6 +3,17 @@
     v-slot="{ handleSubmit }"
     class="col-12 align-self-center p-0"
   >
+    <div class="alert alert-danger alert-dismissible fade show" v-show="alert">
+      Username and password combination is wrong
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
     <form
       @submit.prevent="handleSubmit(login)"
       method="post"
@@ -46,6 +57,7 @@
         <big-design-button>SIGN IN</big-design-button>
       </div>
     </form>
+    <loading :show="show" :label="label" :overlay="overlay"></loading>
   </ValidationObserver>
 </template>
 
@@ -53,6 +65,7 @@
 import BigDesignButton from "~/components/commons/BigDesignButton";
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 import { mapState } from "vuex";
+
 export default {
   auth: "guest",
   components: {
@@ -65,7 +78,11 @@ export default {
       form: {
         username: "",
         password: ""
-      }
+      },
+      show: false,
+      overlay: true,
+      label: "Logging into your account, please wait...",
+      alert: false
     };
   },
   computed: {
@@ -77,21 +94,32 @@ export default {
   },
   methods: {
     async login() {
+      this.show = true;
       // try {
       this.$store
         .dispatch("user/login", this.form)
         .then(res => {
           if (this.$auth.loggedIn) {
+            this.show = false;
             this.redirectByRole(this.$auth.user.role.name);
           }
         })
         .catch(err => {
-          console.table(err);
-          this.$notify({
-            text: "Username and password combination is wrong",
-            type: "error",
-            group: "alerts"
-          });
+          this.show = false;
+          console.log(err);
+          if (err.response.data.code == 403) {
+            this.$swal({
+              text: "Please verify your account",
+              icon: "error"
+            });
+          } else {
+            this.alert = true;
+            // this.$notify({
+            //   text: "Username and password combination is wrong",
+            //   type: "error",
+            //   group: "alerts"
+            // });
+          }
         });
     },
 
@@ -113,14 +141,14 @@ export default {
           this.$router.push("/login");
           break;
       }
-    },
-
-    findRole(role) {
-      const rol = this.roles.filter(item => {
-        return item._id == role;
-      })[0];
-      return rol.name;
     }
+
+    // findRole(role) {
+    //   const rol = this.roles.filter(item => {
+    //     return item.name == role;
+    //   })[0];
+    //   return rol._id;
+    // }
   }
 };
 </script>

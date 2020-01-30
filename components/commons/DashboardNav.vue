@@ -273,7 +273,7 @@ export default {
   },
   methods: {
     async logout() {
-      await this.$store.dispatch("user/logout");
+      console.log(await this.$store.dispatch("user/logout"));
     }
   }
 };

@@ -496,6 +496,7 @@
         </div>
       </div>
     </form>
+    <loading :show="show" :label="label" :overlay="overlay"> </loading>
   </ValidationObserver>
 </template>
 
@@ -504,54 +505,74 @@ import { ValidationProvider, ValidationObserver } from "vee-validate";
 import { mapState } from "vuex";
 import Field from "~/components/commons/Field";
 import ImageField from "~/components/commons/ImageField";
+
 export default {
   components: {
     ValidationProvider,
     ValidationObserver,
     Field,
-    ImageField
+    ImageField,
   },
   data() {
     return {
       form: {},
-      profile_picture: []
+      // profile_picture: [],
+      show: false,
+      label: "Updating...",
+      overlay: true
     };
   },
   methods: {
     async updateUser() {
-      const formdata = new FormData();
-      const file = this.profile_picture;
+      this.show = true;
 
-      // converting all form inputs to FormData
-      formdata.append("profile_picture", file);
-      for (const key in this.form) {
-        if (this.form.hasOwnProperty(key)) {
-          const element = this.form[key];
-          formdata.append(key, element);
-        }
-      }
-
+      const formdata = this.generateFormData(this.form);
       // Sending all data including ID
       const data = {
         form: formdata,
         id: this.user.id
       };
+      this.makeUpdateRequest(data);
+    },
 
+    onFileChange(e) {
+      // Upload file here or display
+      this.form.profile_picture = e.target.files[0];
+    },
+
+    async makeUpdateRequest(data) {
       try {
         // Updating User through Store
         const res = await this.$store.dispatch("user/update", data);
-        console.log(res);
+        this.show = false;
 
         // NOTIFICATION HERE
+        this.successAlert();
       } catch (err) {
         console.log(err.response.data);
       }
     },
 
-    onFileChange(e) {
-      this.profile_picture = e.target.files[0];
+    successAlert() {
+      this.$swal({
+        text: "Account updated successfully",
+        icon: "success"
+      });
+    },
 
-      // Upload file here or display
+    generateFormData(data) {
+      const formdata = new FormData();
+      // const file = this.profile_picture;
+
+      // converting all form inputs to FormData
+      // formdata.append("profile_picture", file);
+      for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          const element = data[key];
+          formdata.append(key, element);
+        }
+      }
+      return formdata;
     }
   },
 

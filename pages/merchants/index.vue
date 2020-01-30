@@ -7,8 +7,8 @@
 <script>
 import Dashboard from "~/components/pages/merchant/dashboard";
 export default {
-  auth: false,
-  // middleware: "merchant",
+  auth: true,
+  middleware: "merchant",
   components: {
     Dashboard
   }

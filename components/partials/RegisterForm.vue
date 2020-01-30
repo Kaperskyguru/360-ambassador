@@ -83,6 +83,7 @@
         </div>
       </form>
     </ValidationObserver>
+    <loading :show="show" :label="label" :overlay="overlay"></loading>
   </div>
 </template>
 
@@ -100,7 +101,10 @@ export default {
   },
   data() {
     return {
-      form: {}
+      form: {},
+      show: false,
+      overlay: true,
+      label: "Registering your account, please wait..."
     };
   },
   components: {
@@ -111,18 +115,21 @@ export default {
 
   methods: {
     async register() {
-      // Get Roles
+      // Get Roles;
+      this.show = true;
       this.form.role = this.role;
 
       this.$store
         .dispatch("user/register", this.form)
         .then(res => {
+          this.show = false;
           this.$router.push({
             name: "confirmation",
             query: { email: res.data.email, user_id: res.data._id }
           });
         })
         .catch(err => {
+          this.show = false;
           const error = document.getElementById("email-error");
           error.textContent = err.response.data.message;
         });

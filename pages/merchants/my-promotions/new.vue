@@ -7,7 +7,8 @@
 <script>
 import AddPromotion from "~/components/pages/merchant/AddPromotion";
 export default {
-  auth: false,
+  auth: true,
+  middleware: "merchant",
   components: {
     AddPromotion
   },
@@ -15,10 +16,10 @@ export default {
     try {
       await store.dispatch("category/get");
     } catch (err) {
-      error({
-        statusCode: 500,
-        message: err
-      });
+      // error({
+      //   statusCode: 500,
+      //   message: err
+      // });
     }
   }
 };

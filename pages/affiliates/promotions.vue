@@ -7,7 +7,8 @@
 <script>
 import Promotions from "~/components/pages/affiliates/Promotions";
 export default {
-  auth: false,
+  auth: true,
+  middleware: "affiliate",
   components: {
     Promotions
   },
@@ -16,10 +17,12 @@ export default {
     try {
       await store.dispatch("promotion/get");
     } catch (err) {
-      error({
-        statusCode: 500,
-        message: err
-      });
+      console.log(err);
+
+      // error({
+      //   statusCode: err.response.data.code,
+      //   message: err.response.data
+      // });
     }
   }
 

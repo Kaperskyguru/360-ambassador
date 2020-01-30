@@ -52,7 +52,10 @@ export default {
     RegisterForm,
     Brand
   },
-  props: ["role"]
+  props: ["role"],
+  data() {
+    return {};
+  }
 };
 </script>
 
