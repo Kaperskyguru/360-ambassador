@@ -31,10 +31,12 @@ export default {
     try {
       await store.dispatch("role/get");
     } catch (erro) {
-      error({
-        statusCode: 500,
-        message: erro.response.data
-      });
+      console.log(erro);
+
+      // error({
+      //   statusCode: 500,
+      //   message: erro.response.data
+      // });
     }
   },
 

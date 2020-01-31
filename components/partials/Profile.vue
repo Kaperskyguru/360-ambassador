@@ -78,6 +78,7 @@
             <nuxt-link
               class="dropdown-item color-white dashboard__nav--profile-dropdown-item"
               to="#"
+              @click.native="logout"
             >
               <logout-icon />
               Log Out
@@ -107,6 +108,11 @@ export default {
     SettingsIcon,
     EditProfileIcon,
     HelpIcon
+  },
+  methods: {
+    async logout() {
+      console.log(await this.$store.dispatch("user/logout"));
+    }
   }
 };
 </script>

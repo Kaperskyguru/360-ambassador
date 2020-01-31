@@ -27,7 +27,6 @@
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
                   :placeholder="user.firstName"
-                  disabled="false"
                   v-model="form.firstName"
                 />
                 <span class="input-error">{{ errors[0] }}</span>
@@ -48,7 +47,6 @@
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
                   :placeholder="user.lastName"
-                  disabled
                   v-model="form.lastName"
                 />
                 <span class="input-error">{{ errors[0] }}</span>
@@ -79,7 +77,6 @@
               type="text"
               class="form-2__input-disabled col-md-7 col-12 ml-md-5 color-grey-2"
               :placeholder="user.email"
-              disabled
               required
               v-model="form.email"
             />

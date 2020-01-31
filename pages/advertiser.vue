@@ -22,8 +22,11 @@ export default {
       await store.dispatch("category/get");
       await store.dispatch("user/find", query.user_id);
     } catch (err) {
-      console.log(err.response);
-      // error({ statusCode: err.response.code, message: err.response.data });
+      // const { code, response } = err;
+      // if (code && response) {
+      //   error({ statusCode: err.code, message: err.response });
+      // } else console.log(err);
+      console.log(err);
     }
   }
 };

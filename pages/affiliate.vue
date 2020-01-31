@@ -18,11 +18,16 @@ export default {
   },
 
   async fetch({ store, param, route, query, error }) {
+    // if (query.user_id == undefined) return;
     try {
       await store.dispatch("category/get");
       await store.dispatch("user/find", query.user_id);
     } catch (err) {
-      error({ statusCode: err.response.code, message: err.response.data });
+      // const { code, response } = err;
+      // if (code && response) {
+      //   error({ statusCode: err.code, message: err.response });
+      // } else
+      console.log(err);
     }
   }
 };

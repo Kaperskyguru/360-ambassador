@@ -3,7 +3,9 @@ const resource = "promotion";
 export const state = () => ({
   promotions: [],
   promotion: [],
-  myPromotions: []
+  myPromotions: [],
+  joinedPromotions: [],
+  joinedPromotion: []
 });
 
 export const mutations = {
@@ -17,6 +19,13 @@ export const mutations = {
 
   setMyPromotions(state, promotions) {
     state.myPromotions = promotions;
+  },
+
+  setJoinedPromotions(state, promotions) {
+    state.joinedPromotions = promotions;
+  },
+  setJoinedPromotion(state, promotion) {
+    state.joinedPromotion = promotion;
   }
 };
 
@@ -28,14 +37,14 @@ export const actions = {
     }
   },
   async find({ commit }, promotion) {
-    const res = await this.$axios.get(`/${resource}/${promotion}`);
-    // console.log(res.data);
+    const res = await this.$repositories.promotion.show(promotion);
+    console.log(res);
     commit("find", res.data.data);
   },
-  async set({ commit }) {
-    const res = await this.$axios.post(`/${resource}`);
+  async set({ commit }, form) {
+    const res = await this.$repositories.promotion.create(form);
     if (res.status === 200 && res.data.success && res.data.code) {
-      commit("set", res.data);
+      // commit("set", res.data);
     }
   },
 
@@ -43,6 +52,20 @@ export const actions = {
     const res = await this.$repositories.promotion.getAllByUserID(id);
     if (res.status === 200 && res.data.success && res.data.code) {
       commit("setMyPromotions", res.data.data);
+    }
+  },
+
+  async joinedPromotions({ commit }, data) {
+    const res = await this.$repositories.promotion.getJoinedPromotions(data);
+    if (res.status === 200 && res.data.success && res.data.code) {
+      commit("setJoinedPromotion", res.data.data);
+    }
+  },
+
+  async joinPromotion({ commit }, data) {
+    const res = await this.$repositories.promotion.joinPromotion(data);
+    if (res.status === 200 && res.data.success && res.data.code) {
+      commit("setJoinedPromotions", res.data.data);
     }
   },
 

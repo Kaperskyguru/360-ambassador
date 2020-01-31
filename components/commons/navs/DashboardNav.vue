@@ -71,7 +71,7 @@ export default {
   },
   computed: {
     currentPage() {
-      return this.$route.name;
+      return "";
     }
   }
 };

@@ -107,7 +107,7 @@ export default {
         .catch(err => {
           this.show = false;
           console.log(err);
-          if (err.response.data.code == 403) {
+          if (err && err.response.data.code == 403) {
             this.$swal({
               text: "Please verify your account",
               icon: "error"

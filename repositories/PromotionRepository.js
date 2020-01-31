@@ -5,7 +5,7 @@ export default $axios => ({
   },
 
   show(id) {
-    return $axios.$get(`${resource}/${id}`);
+    return $axios.get(`${resource}/${id}`);
   },
 
   getAllByUserID(id) {
@@ -13,14 +13,22 @@ export default $axios => ({
   },
 
   create(payload) {
-    return $axios.$post(`${resource}`, payload);
+    return $axios.post(`${resource}`, payload);
+  },
+
+  joinPromotion(payload) {
+    return $axios.$post(`/apply`, payload);
+  },
+
+  getJoinedPromotions(payload) {
+    return $axios.get(`/applied`, payload);
   },
 
   update(id, payload) {
-    return $axios.$post(`${resource}/${id}`, payload);
+    return $axios.post(`${resource}/${id}`, payload);
   },
 
   delete(id) {
-    return $axios.$delete(`${resource}/${id}`);
+    return $axios.delete(`${resource}/${id}`);
   }
 });

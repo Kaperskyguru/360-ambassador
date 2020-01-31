@@ -13,7 +13,9 @@ export default {
   components: {
     Dashboard
   },
-  fetch({ store }) {}
+  async fetch({ store }) {
+    await store.dispatch("category/get");
+  }
 };
 </script>
 

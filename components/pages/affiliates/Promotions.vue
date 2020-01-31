@@ -38,7 +38,7 @@
           </div>
         </div>
         <h6 class="dashboard__heading col-12 color-blue mt-5">
-          All Categories
+          All Promotions
         </h6>
         <div class="row justify-content-center">
           <card

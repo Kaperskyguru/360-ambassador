@@ -3,14 +3,17 @@
     <div class="dashboard__general--card col-12 pl-3 ">
       <div class="row p-0">
         <p class="text-small color-grey-3 col-12 mb-0">
-          {{ showCategory(promotion.category) }}
+          {{ promotion.category ? promotion.category.name : "" }}
         </p>
       </div>
       <div class="dashboard__general--card__body col-12 mb-3">
         <div class="row">
           <div class="dashboard__general--card__img-container col-3">
             <nuxt-link
-              :to="{ name: 'affiliates-id', params: { id: promotion._id } }"
+              :to="{
+                name: 'affiliates-promotions-id',
+                params: { id: promotion._id }
+              }"
             >
               <img :src="promotion.product_file[1]" alt="" class="img-fluid" />
             </nuxt-link>
@@ -18,7 +21,10 @@
           <div class="col-6 pl-2">
             <div class="row mb-0">
               <nuxt-link
-                :to="{ name: 'affiliates-id', params: { id: promotion._id } }"
+                :to="{
+                  name: 'affiliates-promotions-id',
+                  params: { id: promotion._id }
+                }"
               >
                 <h6
                   class="dashboard__general--card__heading color-blue-1 col-12"
@@ -52,14 +58,18 @@
       <div class="col-12">
         <div class="row justify-content-center align-items-center">
           <nuxt-link
-            :to="{ name: 'affiliates-id', params: { id: promotion._id } }"
+            :to="{
+              name: 'affiliates-promotions-id',
+              params: { id: promotion._id }
+            }"
             class="color-blue-2 mr-auto"
             >View details</nuxt-link
           >
           <nuxt-link
-            :to="{ name: 'affiliates-id', params: { id: promotion._id } }"
+            to="#"
             class="btn__square-curved--yellow color-blue-2"
             href="#"
+            @click.native="joinPromotion"
             >Join Program</nuxt-link
           >
         </div>
@@ -73,21 +83,16 @@ import { mapState } from "vuex";
 export default {
   props: ["promotion"],
 
-  computed: {
-    ...mapState({
-      categories: state => {
-        return state.category.categories;
-      }
-    })
-  },
-
   methods: {
-    showCategory(id) {
-      // return this.categories.filter(item => {
-      //   return item._id == id;
-      // })[0].name;
-
-      return "Banking";
+    async joinPromotion() {
+      try {
+        const data = new FormData();
+        data.append("promoter_id", this.$auth.user._id);
+        data.append("promotion", this.promotion._id);
+        await this.$store.dispatch("promotion/joinPromotion", data);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 };
