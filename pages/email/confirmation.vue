@@ -8,8 +8,10 @@ export default {
 
   created() {
     this.$store
-      .dispatch("user/confirmEmail", this.$route.token)
+      .dispatch("user/confirmEmail", this.$route.query.token)
       .then(res => {
+        console.log(res);
+
         if (res.data.code == 200 && res.data.data.is_email_confirmed) {
           this.successAlert();
           this.redirectByRole(res.data.data.role.name);
