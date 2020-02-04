@@ -27,6 +27,7 @@
               >
               <div class="col-md-8 col-12 ml-md-5">
                 <input
+                  autocomplete="on"
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
                   :placeholder="user.firstName"
@@ -52,6 +53,7 @@
               >
               <div class="col-md-8 col-12 ml-md-5">
                 <input
+                  autocomplete="on"
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
                   :placeholder="user.lastName"
@@ -81,6 +83,7 @@
               >
               <div class="col-md-8 col-12 ml-md-5">
                 <input
+                  autocomplete="on"
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
                   :placeholder="user.email"
@@ -511,7 +514,7 @@ export default {
     ValidationProvider,
     ValidationObserver,
     Field,
-    ImageField,
+    ImageField
   },
   data() {
     return {

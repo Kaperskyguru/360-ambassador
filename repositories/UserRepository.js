@@ -5,7 +5,7 @@ export default $axios => ({
   },
 
   show(id) {
-    return $axios.get(`${user}/?_id=${id}`);
+    return $axios.get(`${resource}/?_id=${id}`);
   },
 
   create(payload) {
@@ -20,8 +20,6 @@ export default $axios => ({
   },
 
   confirmEmail(token) {
-    console.log(token);
-
     return $axios.get(`/confirm_email?token=${token}`);
   },
 

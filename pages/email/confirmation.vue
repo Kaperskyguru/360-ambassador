@@ -10,13 +10,13 @@ export default {
     this.$store
       .dispatch("user/confirmEmail", this.$route.query.token)
       .then(res => {
-        if (res.data.code == 200) {
+        if (res.data.code == 200 || res.data.code == 204) {
           this.successAlert();
-          this.redirectByRole(res.data.data.role.name);
+          this.redirectByRole(res.data.data.role.name, res.data.data._id);
         }
       })
       .catch(err => {
-        console.log(err.response);
+        console.log(err);
 
         this.errorAlert();
         this.redirectByRole("");
@@ -41,18 +41,18 @@ export default {
       });
     },
 
-    redirectByRole(role) {
+    redirectByRole(role, id = "") {
       switch (role) {
         case "admin":
-          this.$router.push("/advertiser");
+          this.$router.push(`/advertiser?user_id=${id}`);
           break;
 
         case "merchant":
-          this.$router.push("/advertiser");
+          this.$router.push(`/advertiser?user_id=${id}`);
           break;
 
         case "promoter":
-          this.$router.push("/affiliate");
+          this.$router.push(`/affiliate?user_id=${id}`);
           break;
 
         default:

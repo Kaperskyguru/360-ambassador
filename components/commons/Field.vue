@@ -7,6 +7,7 @@
     >
     <div class="col-md-8 col-12 ml-md-5">
       <input
+        autocomplete="on"
         :type="type"
         class="form-2__input col-12 color-grey-2"
         :value="value"
