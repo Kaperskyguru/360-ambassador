@@ -75,6 +75,7 @@
         </div>
       </div>
     </div>
+    <loading :show="show" :label="label" :overlay="overlay" />
   </div>
 </template>
 
@@ -83,14 +84,33 @@ import { mapState } from "vuex";
 export default {
   props: ["promotion"],
 
+  data() {
+    return {
+      show: false,
+      label: "Signing you up for this promotion, please wait...",
+      overlay: true
+    };
+  },
+
   methods: {
     async joinPromotion() {
+      this.show = true;
       try {
-        const data = new FormData();
-        data.append("promoter_id", this.$auth.user._id);
-        data.append("promotion", this.promotion._id);
+        const data = {};
+        data.promoter_id = this.$auth.user._id;
+        data.promotion = this.promotion._id;
         await this.$store.dispatch("promotion/joinPromotion", data);
+        this.$swal({
+          text: "You've successfully joined the promotion",
+          icon: "success"
+        });
+        this.show = false;
       } catch (error) {
+        this.show = false;
+        this.$swal({
+          text: "An error occurred, Don't panic just try again",
+          icon: "error"
+        });
         console.log(error);
       }
     }

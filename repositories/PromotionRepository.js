@@ -17,7 +17,9 @@ export default $axios => ({
   },
 
   joinPromotion(payload) {
-    return $axios.$post(`/apply`, payload);
+    console.log(JSON.stringify(payload));
+
+    return $axios.post(`/apply`, payload);
   },
 
   getJoinedPromotions(payload) {
