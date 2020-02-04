@@ -23,10 +23,6 @@ export default {
     role() {
       return this.getRoleID("merchant");
     }
-  },
-
-  async fetch({ store }) {
-    // await store.dispatch("role/get");
   }
 };
 </script>

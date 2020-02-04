@@ -32,16 +32,7 @@ export default {
       await store.dispatch("role/get");
     } catch (erro) {
       console.log(erro);
-
-      // error({
-      //   statusCode: 500,
-      //   message: erro.response.data
-      // });
     }
-  },
-
-  mounted() {
-    // console.log(this.$auth.loggedIn, "test");
   }
 };
 </script>

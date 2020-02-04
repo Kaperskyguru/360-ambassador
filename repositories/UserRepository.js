@@ -18,6 +18,13 @@ export default $axios => ({
   updateMerchant(id, payload) {
     return $axios.post(`${resource}/merchant/${id}`, payload);
   },
+
+  confirmEmail(token) {
+    console.log(token);
+
+    return $axios.get(`/confirm_email?token=${token}`);
+  },
+
   delete(id) {
     return $axios.delete(`${resource}/${id}`);
   }

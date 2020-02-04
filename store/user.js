@@ -47,6 +47,10 @@ export const actions = {
     return await this.$repositories.user.updateMerchant(id, form);
   },
 
+  async confirmEmail({ commit }, token) {
+    return await this.$repositories.user.confirmEmail(token);
+  },
+
   delete(id) {
     return this.$repositories.user.delete();
   }
