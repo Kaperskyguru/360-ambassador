@@ -35,6 +35,10 @@ export default $axios => ({
     return $axios.post(`${resource}/${id}`, payload);
   },
 
+  search(keyword = "", category = "") {
+    return $axios.get(`search?search=${keyword}&category=${category}`);
+  },
+
   delete(id) {
     return $axios.delete(`${resource}/${id}`);
   }

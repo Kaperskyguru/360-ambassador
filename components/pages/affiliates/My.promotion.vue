@@ -12,7 +12,7 @@
                   <label
                     class="dashboard__general--card__form--label color-blue"
                     for="inlineFormInput"
-                    >Name</label
+                    >Quick Dates</label
                   >
                   <select class="dashboard__general--card__form--select ml-4">
                     <option value="1">Today</option>
@@ -23,9 +23,9 @@
                 </div>
                 <div class="col-auto m-2">
                   <div
-                    class="dashboard__general--card__form--text color-blue p-1"
+                    class="dashboard__general--card__form--text color-blue p-1 ml-4 mr-4"
                   >
-                    or
+                    OR
                   </div>
                 </div>
                 <div class="col-auto m-2">
@@ -34,7 +34,7 @@
                     >Start Date</label
                   >
                   <input
-                    class="dashboard__general--card__form--input"
+                    class="dashboard__general--card__form--input ml-4"
                     type="date"
                   />
                 </div>
@@ -44,7 +44,7 @@
                     >End Date</label
                   >
                   <input
-                    class="dashboard__general--card__form--input"
+                    class="dashboard__general--card__form--input ml-4"
                     type="date"
                   />
                 </div>

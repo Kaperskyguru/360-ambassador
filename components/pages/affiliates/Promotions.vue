@@ -10,6 +10,7 @@
                 <div class="col-auto">
                   <div class="form-check mb-2">
                     <input
+                      v-model="terms.keyword"
                       class="dashboard__general--card__form--input col-12"
                       type="text"
                       placeholder="Keyword"
@@ -18,6 +19,7 @@
                 </div>
                 <div class="col-auto">
                   <select
+                    v-model="terms.category"
                     class="dashboard__general--card__form--select ml-4 col-12"
                   >
                     <option
@@ -29,7 +31,10 @@
                   </select>
                 </div>
                 <div class="col-auto ml-md-auto">
-                  <button class="btn__curved--yellow btn btn-sm btn-warning">
+                  <button
+                    @click.prevent="search"
+                    class="btn__curved--yellow btn btn-sm btn-warning"
+                  >
                     Search
                   </button>
                 </div>
@@ -56,11 +61,32 @@
 import MenuBar from "~/components/commons/navs/DashboardNav";
 import Card from "~/components/commons/dashboard/Card";
 import { mapState } from "vuex";
+import Field from "~/components/commons/Field";
 
 export default {
   components: {
     MenuBar,
-    Card
+    Card,
+    Field
+  },
+
+  data() {
+    return {
+      terms: {}
+    };
+  },
+
+  methods: {
+    search() {
+      if (this.terms.keyword || this.terms.category) {
+        this.$store.dispatch("promotion/searchPromotion", this.terms);
+      } else {
+        this.$store.dispatch("promotion/get");
+      }
+    }
+  },
+  async fetch({ store }) {
+    await store.dispatch("category/get");
   },
 
   computed: {

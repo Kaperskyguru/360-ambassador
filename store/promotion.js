@@ -69,6 +69,15 @@ export const actions = {
     }
   },
 
+  async searchPromotion({ commit }, data) {
+    const keyword = data.keyword;
+    const category = data.category;
+    const res = await this.$repositories.promotion.search(keyword, category);
+    if (res.status === 200 && res.data.success && res.data.code) {
+      commit("set", res.data.data);
+    }
+  },
+
   async update({ commit }, { id, data }) {
     const res = await this.$axios.put(`/approve/` + id, data);
     if (res.status === 200 && res.data.success && res.data.code) {
