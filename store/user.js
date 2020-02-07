@@ -1,10 +1,14 @@
 export const state = () => ({
-  user: []
+  user: [],
+  topMerchants: []
 });
 
 export const mutations = {
   storeUser(state, user) {
     state.user = user;
+  },
+  storeTopMerchants(state, merchants) {
+    state.topMerchants = merchants;
   }
 };
 export const actions = {
@@ -26,6 +30,15 @@ export const actions = {
     const res = await this.$repositories.user.show(id);
     if (res.data.code == 200 && res.data.success) {
       commit("storeUser", res.data.data);
+    }
+  },
+
+  async getTopMerchants({ dispatch, commit }) {
+    const res = await this.$repositories.user.topMerchants();
+    // console.log(res);
+
+    if (res.data.code == 200 && res.data.success) {
+      commit("storeTopMerchants", res.data.data);
     }
   },
 

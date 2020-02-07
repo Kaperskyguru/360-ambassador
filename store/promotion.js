@@ -5,7 +5,9 @@ export const state = () => ({
   promotion: [],
   myPromotions: [],
   joinedPromotions: [],
-  joinedPromotion: []
+  joinedPromotion: [],
+  latestPromotions: [],
+  performance: []
 });
 
 export const mutations = {
@@ -26,6 +28,13 @@ export const mutations = {
   },
   setJoinedPromotion(state, promotion) {
     state.joinedPromotion = promotion;
+  },
+  setLatestPromotions(state, promotions) {
+    state.latestPromotions = promotions;
+  },
+
+  setPerformance(state, performance) {
+    state.performance = performance;
   }
 };
 
@@ -52,6 +61,20 @@ export const actions = {
     const res = await this.$repositories.promotion.getAllByUserID(id);
     if (res.status === 200 && res.data.success && res.data.code) {
       commit("setMyPromotions", res.data.data);
+    }
+  },
+
+  async latestPromotions({ commit }) {
+    const res = await this.$repositories.promotion.latest();
+    if (res.status === 200 && res.data.success && res.data.code) {
+      commit("setLatestPromotions", res.data.data);
+    }
+  },
+
+  async performance({ commit }, user = "") {
+    const res = await this.$repositories.promotion.performance(user);
+    if (res.status === 200 && res.data.success && res.data.code) {
+      commit("setPerformance", res.data.data);
     }
   },
 

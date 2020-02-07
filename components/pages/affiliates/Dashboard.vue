@@ -171,6 +171,28 @@
               <div class="col-12 col-md-7">
                 <h6 class="dashboard__heading col-12 mb-5">Messages</h6>
 
+                <message v-for="(message, i) in messages" :key="i">
+                  <template slot="title">
+                    Imagine Production
+                  </template>
+                  <template slot="subtitle">
+                    Upload your Placement Opportunities Today!
+                  </template>
+                  <template slot="content">
+                    If you offer placement opportunites or a rate card you can
+                    earn additional commission by offering placement
+                    opportunities at rates that work for you. A placement gives
+                    exposure to an Advertiser’s promotion or campaign on your
+                    website or within other promotional materials, such email or
+                    ad space. Visit the
+                    <nuxt-link to="#" class="color-red"
+                      >Placements Marketplace</nuxt-link
+                    >
+                    today to post and promote your placement inventory across
+                    the CJ Network!
+                  </template>
+                </message>
+
                 <message>
                   <template slot="title">
                     Imagine Production
@@ -212,6 +234,7 @@ import Merchants from "~/components/partials/affiliates/Merchants";
 import PerformanceBoxes from "~/components/partials/affiliates/PerformanceBoxes";
 import Promotions from "~/components/partials/affiliates/Promotions";
 import Tasks from "~/components/partials/affiliates/Tasks";
+import { mapState } from "vuex";
 export default {
   components: {
     DashboardNav,
@@ -221,6 +244,13 @@ export default {
     Promotions,
     Tasks,
     LineChart
+  },
+  computed: {
+    ...mapState({
+      messages: state => {
+        return state.message.messages;
+      }
+    })
   }
 };
 </script>

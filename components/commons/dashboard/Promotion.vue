@@ -29,7 +29,7 @@
             <div class="row">
               <div class="col-6 ml-auto">
                 <span class="dashboard__promotions--card-volume color-red"
-                  ><slot name="volume" />%</span
+                  ><slot name="volume"/></span
                 ><br />
                 <span class="dashboard__promotions--card-text color-red mt-2"
                   >comm.</span
@@ -37,7 +37,10 @@
               </div>
               <div class="col-6">
                 <nuxt-link
-                  :to="link"
+                  :to="{
+                    name: 'affiliates-promotions-id',
+                    params: { id: promotion_id }
+                  }"
                   class="dashboard__promotions--card-text color-blue-1 btn-transparent"
                   >View details</nuxt-link
                 >
@@ -56,7 +59,7 @@ export default {
   props: {
     icon: String,
     alt: String,
-    link: String
+    promotion_id: String
   },
   components: {
     Icon

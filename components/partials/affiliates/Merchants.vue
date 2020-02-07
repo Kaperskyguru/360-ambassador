@@ -1,8 +1,12 @@
 <template>
   <div class="dashboard__general--card mb-5">
-    <merchant icon="5.png">
+    <merchant
+      :icon="merchant.profile_picture"
+      v-for="(merchant, i) in merchants"
+      :key="i"
+    >
       <template slot="title">
-        SemanticsBit
+        {{ merchant.username }}
       </template>
 
       <template slot="rate">
@@ -54,9 +58,17 @@
 
 <script>
 import Merchant from "~/components/commons/dashboard/Merchant";
+import { mapState } from "vuex";
 export default {
   components: {
     Merchant
+  },
+  computed: {
+    ...mapState({
+      merchants: state => {
+        return state.user.topMerchants;
+      }
+    })
   }
 };
 </script>

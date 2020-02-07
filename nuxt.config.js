@@ -57,7 +57,7 @@ export default {
    ** Customize the progress-bar color
    */
   loading: {
-    color: "#fff"
+    color: "#fecc0a"
   },
   /*
    ** Global CSS
@@ -113,10 +113,6 @@ export default {
       }
     }
   },
-
-  // env: {
-  //   APIUrl: process.env.API_URL || "http://localhost:3000"
-  // },
   /*
    ** Nuxt.js modules
    */

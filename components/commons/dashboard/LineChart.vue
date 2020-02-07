@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div id="myfirstchart" class="p-0" style="height: 220px;width: 100%"></div>
+    <div id="myfirstchart" class="p-0" style="height: 220px; width: 100%"></div>
   </div>
 </template>
 

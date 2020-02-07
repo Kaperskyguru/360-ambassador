@@ -31,6 +31,14 @@ export default $axios => ({
     return $axios.get(`/applied`, payload);
   },
 
+  latest() {
+    return $axios.get(`/latest`);
+  },
+
+  performance(user = "") {
+    return $axios.get(`/promoter_performance`);
+  },
+
   update(id, payload) {
     return $axios.post(`${resource}/${id}`, payload);
   },

@@ -15,6 +15,10 @@ export default {
   },
   async fetch({ store }) {
     await store.dispatch("category/get");
+    // await store.dispatch("user/getTopMerchants");
+    // await store.dispatch("promotion/latestPromotions");
+    // await store.dispatch("task/get");
+    // await store.dispatch("promotion/performance");
   }
 };
 </script>

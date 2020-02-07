@@ -8,6 +8,10 @@ export default $axios => ({
     return $axios.get(`${resource}/?_id=${id}`);
   },
 
+  topMerchants() {
+    return $axios.get(`/top/merchant`);
+  },
+
   create(payload) {
     return $axios.post(`/register`, payload);
   },
