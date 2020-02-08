@@ -19,6 +19,7 @@ export default {
     await store.dispatch("promotion/latestPromotions");
     await store.dispatch("task/get");
     await store.dispatch("promotion/performance");
+    await store.dispatch("message/get");
   }
 };
 </script>

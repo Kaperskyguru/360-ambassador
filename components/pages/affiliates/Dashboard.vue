@@ -178,22 +178,10 @@
                   <template slot="subtitle">
                     Upload your Placement Opportunities Today!
                   </template>
-                  <template slot="content">
-                    If you offer placement opportunites or a rate card you can
-                    earn additional commission by offering placement
-                    opportunities at rates that work for you. A placement gives
-                    exposure to an Advertiser’s promotion or campaign on your
-                    website or within other promotional materials, such email or
-                    ad space. Visit the
-                    <nuxt-link to="#" class="color-red"
-                      >Placements Marketplace</nuxt-link
-                    >
-                    today to post and promote your placement inventory across
-                    the CJ Network!
-                  </template>
+                  <template slot="content">{{ message.message }} </template>
                 </message>
 
-                <message>
+                <!-- <message>
                   <template slot="title">
                     Imagine Production
                   </template>
@@ -213,7 +201,7 @@
                     today to post and promote your placement inventory across
                     the CJ Network!
                   </template>
-                </message>
+                </message> -->
 
                 <h6 class="dashboard__heading col-12 mb-5">Tasks</h6>
                 <tasks />

@@ -1,15 +1,25 @@
 <template>
-  <img :src="icon" :alt="alt" />
+  <img
+    :src="icon"
+    :alt="alt"
+    :style="{ 'border-radius': round + '%' + '!important' }"
+  />
 </template>
 
 <script>
 export default {
   props: {
     icon: String,
-    alt: { type: String, default: "image" }
+    alt: { type: String, default: "image" },
+    round: { type: String, default: "0" }
   }
 };
 </script>
 
-<style>
+<style scoped>
+img {
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+}
 </style>

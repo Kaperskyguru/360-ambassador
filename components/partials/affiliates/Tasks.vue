@@ -4,7 +4,6 @@
       <task>{{ task.name }}</task>
       <hr />
     </span>
-    <task>Review new transactions</task>
   </div>
 </template>
 

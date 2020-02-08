@@ -6,13 +6,14 @@
       <div class="dashboard__summary--card-header">
         <div class="row pr-3">
           <span class="color-blue mr-auto"><slot name="title"/></span>
-          <span class="dashboard__promotions--card--img-container ml-auto">
+          <div class="dashboard__promotions--card--img-container ml-auto">
             <icon
+              round="50"
               :icon="icon"
               :alt="alt"
               class="dashboard__promotions--card--img"
             />
-          </span>
+          </div>
         </div>
       </div>
       <div class="dashboard__promotions--card-body">
@@ -59,7 +60,9 @@ export default {
   props: {
     icon: String,
     alt: String,
-    promotion_id: String
+    promotion_id: String,
+    width: String,
+    height: String
   },
   components: {
     Icon
@@ -67,5 +70,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 </style>
