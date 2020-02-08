@@ -1,25 +1,74 @@
 require("dotenv").config();
+const desc =
+  "Quickly start &amp; grow your online business with 360 Ambassador | 360 Ambasador";
 export default {
   mode: "universal",
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || "",
+    title: "360 Ambassador",
     meta: [
+      { charset: "utf-8" },
       {
-        charset: "utf-8"
-      },
-      {
+        hid: "viewport",
         name: "viewport",
         content: "width=device-width, initial-scale=1"
       },
       {
+        hid: "keywords",
+        name: "keywords",
+        content: "vuejs, nuxt, javascript, tutorials, development, software"
+      },
+      {
+        hid: "twitter:card",
+        name: "twitter:card",
+        content: desc || ""
+      },
+      { hid: "twitter:site", name: "twitter:site", content: "@360-ambassador" },
+      {
+        hid: "twitter:creator",
+        name: "twitter:creator",
+        content: "@360-ambassador"
+      },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: desc || ""
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content: desc || ""
+      },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: "/logo.png"
+      },
+      {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
+        content: desc || ""
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "/logo.png"
+      },
+      {
+        hid: "og:site_name",
+        name: "og:site_name",
+        content: "360 Ambassador"
+      },
+      { hid: "og:title", name: "og:title", content: "360 Ambassador" },
+      {
+        hid: "og:description",
+        name: "og:description",
+        content: desc || ""
       }
     ],
+
     link: [
       {
         rel: "shortcut icon",

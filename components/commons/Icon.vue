@@ -1,5 +1,5 @@
 <template>
-  <img :src="require('@/assets/images/' + icon + '')" :alt="alt" />
+  <img :src="icon" :alt="alt" />
 </template>
 
 <script>

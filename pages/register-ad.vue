@@ -23,6 +23,18 @@ export default {
     role() {
       return this.getRoleID("merchant");
     }
+  },
+  head: {
+    title:
+      "Register | 360 Ambasador | Quickly start &amp; grow your online business with 360 Ambassador",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Quickly start &amp; grow your online business with 360 Ambassador"
+      }
+    ]
   }
 };
 </script>

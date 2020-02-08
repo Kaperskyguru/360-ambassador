@@ -33,6 +33,18 @@ export default {
     } catch (erro) {
       console.log(erro);
     }
+  },
+  head: {
+    title:
+      "360 Ambasador | Quickly start &amp; grow your online business with 360 Ambassador",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Quickly start &amp; grow your online business with 360 Ambassador"
+      }
+    ]
   }
 };
 </script>
