@@ -25,7 +25,7 @@
           CLICKS
         </bar-chart>
         <bar-chart id="mysecondchart" class="bg-blue">
-          CLICKS
+          <span class="text-white"> CLICKS </span>
         </bar-chart>
       </div>
     </div>

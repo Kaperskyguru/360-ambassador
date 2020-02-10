@@ -423,7 +423,9 @@
               </div>
             </div>
           </div>
-          <promotion-shareable-link />
+          <div class="col-md-4 col-12">
+            <promotion-shareable-link />
+          </div>
         </div>
       </div>
     </div>

@@ -30,21 +30,43 @@
                 </tr>
               </thead>
               <tbody class="dashboard-table__tbody">
-                <tr>
+                <tr v-for="(promotion, i) in promotions" :key="i">
                   <td>
-                    <nuxt-link to="#" class="color-blue">Bukka Hut</nuxt-link>
+                    <nuxt-link to="#" class="color-blue">{{
+                      promotion.user !== null ? promotion.user.name : ""
+                    }}</nuxt-link>
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">{{
+                      promotion.name
+                    }}</nuxt-link>
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">{{
+                      promotion.commission
+                    }}</nuxt-link>
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">{{
+                      promotion.click ? promotion.click : 10
+                    }}</nuxt-link>
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">{{
+                      promotion.impressions ? promotion.impression : 100
+                    }}</nuxt-link>
+                  </td>
+                  <td>
+                    <nuxt-link to="#" class="color-blue">{{
+                      promotion.conv ? promotion.conv : 3
+                    }}</nuxt-link>
                   </td>
                   <td>
                     <nuxt-link to="#" class="color-blue"
-                      >Bukka Hut Fresto</nuxt-link
+                      >N{{
+                        promotion.price ? promotion.price : 30.0
+                      }}</nuxt-link
                     >
-                  </td>
-                  <td><nuxt-link to="#" class="color-blue">10%</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">10</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">100</nuxt-link></td>
-                  <td><nuxt-link to="#" class="color-blue">3</nuxt-link></td>
-                  <td>
-                    <nuxt-link to="#" class="color-blue">N30.00</nuxt-link>
                   </td>
                 </tr>
 
@@ -181,28 +203,6 @@
                   <template slot="content">{{ message.message }} </template>
                 </message>
 
-                <!-- <message>
-                  <template slot="title">
-                    Imagine Production
-                  </template>
-                  <template slot="subtitle">
-                    Upload your Placement Opportunities Today!
-                  </template>
-                  <template slot="content">
-                    If you offer placement opportunites or a rate card you can
-                    earn additional commission by offering placement
-                    opportunities at rates that work for you. A placement gives
-                    exposure to an Advertiser’s promotion or campaign on your
-                    website or within other promotional materials, such email or
-                    ad space. Visit the
-                    <nuxt-link to="#" class="color-red"
-                      >Placements Marketplace</nuxt-link
-                    >
-                    today to post and promote your placement inventory across
-                    the CJ Network!
-                  </template>
-                </message> -->
-
                 <h6 class="dashboard__heading col-12 mb-5">Tasks</h6>
                 <tasks />
               </div>
@@ -237,6 +237,9 @@ export default {
     ...mapState({
       messages: state => {
         return state.message.messages;
+      },
+      promotions: state => {
+        return state.promotion.myPromotions;
       }
     })
   }

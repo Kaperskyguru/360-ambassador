@@ -6,7 +6,7 @@
 
       <div class="my-promotion__container col-12">
         <div class="row justify-content-center">
-          <div class="col-12 mb-4 pr-5">
+          <div class="col-12 mb-4">
             <charts />
           </div>
           <div class="col-md-8 col-12">
@@ -99,8 +99,7 @@
                 role="tablist"
               >
                 <li class="my-promotion__nav--item nav-item p-0">
-                  <nuxt-link
-                    to=""
+                  <a
                     class="my-promotion__nav--link nav-link pl-0 active border-top-0 border-left-0 br-1"
                     id="moreInfo-tab"
                     data-toggle="tab"
@@ -108,12 +107,11 @@
                     role="tab"
                     aria-controls="moreInfo"
                     aria-selected="true"
-                    >more info</nuxt-link
+                    >more info</a
                   >
                 </li>
                 <li class="my-promotion__nav--item nav-item p-0">
-                  <nuxt-link
-                    to=""
+                  <a
                     class="my-promotion__nav--link nav-link bl-1"
                     id="pTerms-tab"
                     data-toggle="tab"
@@ -121,7 +119,7 @@
                     role="tab"
                     aria-controls="pTerms"
                     aria-selected="false"
-                    >promotion terms</nuxt-link
+                    >promotion terms</a
                   >
                 </li>
               </ul>
@@ -574,14 +572,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 row">
-              <h6
-                class="col-12 text text-bold color-blue bg-grey-8 pt-4 pb-3 pl-3 pr-3"
-              >
-                Promotion sharable Link
-              </h6>
-              <shareable-link />
-            </div>
+            <shareable-link />
           </div>
         </div>
       </div>
@@ -598,7 +589,7 @@ import Modal from "~/components/Modals";
 import Charts from "~/components/partials/affiliates/Charts";
 import BarChart from "~/components/commons/dashboard/BarChart";
 import StatBox from "~/components/commons/dashboard/Stat.box";
-import ShareableLink from "~/components/partials/affiliates/Shareable.link";
+import ShareableLink from "~/components/commons/sidebar/ShareableLink";
 export default {
   data() {
     return {
