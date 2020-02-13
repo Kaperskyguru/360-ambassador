@@ -342,7 +342,7 @@ p {
 
 .dashboard__general--card__heading {
   font-family: "Montserrat-Bold";
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   letter-spacing: 0rem;
 }
 
@@ -354,7 +354,7 @@ p {
 
 .dashboard__general--card__text-small {
   font-family: "Montserrat-Medium";
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   letter-spacing: 0rem;
 }
 
@@ -1340,8 +1340,8 @@ section,
   background-color: rgba(248, 248, 248, 0.5);
   border-radius: 1rem;
   box-shadow: 0.3rem 0.3rem 1rem #00000029;
-  height: 43vh;
-  overflow: hidden;
+  /* height: 43vh;
+  overflow: hidden; */
 }
 
 .dashboard__chart--card-text {
@@ -1375,7 +1375,6 @@ section,
 
 .dashboard__general--card__body {
   height: 10rem;
-  padding-right: 0rem;
 }
 
 @media (max-width: 37.5em) {
@@ -1392,10 +1391,7 @@ section,
 .dashboard__general--card__text {
   color: rgba(18, 48, 217, 0.5);
   overflow: hidden;
-  position: relative;
-  line-height: 1.42rem;
-  max-height: 7rem;
-  text-align: justify;
+  max-height: 5rem;
   margin-right: -1.4rem;
   padding-right: 1.4rem;
   margin-bottom: 0.5rem;

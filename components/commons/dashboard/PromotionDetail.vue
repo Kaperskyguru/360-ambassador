@@ -1,46 +1,89 @@
 <template>
   <div>
-    <div class="col-12 d-table p-0">
-      <div class="d-table-head">
-        <div class="d-table-row bg-grey-8">
-          <p class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
-            Seller
-          </p>
-          <p class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
-            Product
-          </p>
-          <p class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
-            Launch Date
-          </p>
-          <p class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
-            Comm
-          </p>
-          <p class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
-            Sales Price
-          </p>
-        </div>
-      </div>
-    </div>
     <div class="mt-2 p-0"></div>
+
     <table class="table table-responsive-sm table-borderless">
+      <thead class="d-table-head">
+        <tr class="d-table-row bg-grey-8">
+          <th class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
+            Seller
+          </th>
+          <th class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
+            Product
+          </th>
+          <th class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
+            Launch Date
+          </th>
+          <th class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
+            Comm
+          </th>
+          <th class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
+            Sales Price
+          </th>
+        </tr>
+      </thead>
+
       <tbody class="dashboard-table__tbody bg-grey-6">
         <tr>
-          <td scope="col-auto" class="color-blue">
-            <img src="~assets/images/Access_Bank_Logo.png" alt="" width="100" />
+          <td class="color-blue">
+            <img
+              :src="
+                promotion.user
+                  ? promotion.user.profile_picture
+                  : require('@/assets/images/Access_Bank_Logo.png')
+              "
+              alt=""
+              width="100"
+            />
           </td>
-          <td scope="col-auto" class="color-blue">
-            <span class="color-blue">Bukka Hut Festo</span>
+          <td class="color-blue">
+            <span class="color-blue">{{ promotion.name || "" }}</span>
             <span class="color-blue-3 text-small"
               >(512345)<br />
-              <span class="text-small color-grey-3">FOOD</span></span
+              <span class="text-small color-grey-3">{{
+                promotion.category ? promotion.category.name : ""
+              }}</span></span
             >
           </td>
-          <td scope="col-auto" class="color-blue">11/01/2019</td>
-          <td scope="col-auto" class="color-blue">10%</td>
-          <td scope="col-auto" class="color-blue">5,000</td>
+          <td class="color-blue">11/01/2019</td>
+          <td class="color-blue">{{ promotion.commission || "" }}</td>
+          <td class="color-blue">
+            {{ promotion.price || "" }}
+          </td>
         </tr>
       </tbody>
     </table>
+
+    <!-- <tbody class="dashboard-table__tbody bg-grey-6">
+        <tr>
+          <td scope="col-auto" class="color-blue">
+            <img
+              :src="
+                promotion.user
+                  ? promotion.user.profile_picture
+                  : require('@/assets/images/Access_Bank_Logo.png')
+              "
+              alt=""
+              width="100"
+            />
+          </td>
+          <td scope="col-auto" class="color-blue">
+            <span class="color-blue">{{ promotion.name || "" }}</span>
+            <span class="color-blue-3 text-small"
+              >(512345)<br />
+              <span class="text-small color-grey-3">{{
+                promotion.category ? promotion.category.name : ""
+              }}</span></span
+            >
+          </td>
+          <td scope="col-auto" class="color-blue">11/01/2019</td>
+          <td scope="col-auto" class="color-blue">
+            {{ promotion.commission }}%
+          </td>
+          <td scope="col-auto" class="color-blue">{{ promotion.price }}</td>
+        </tr>
+      </tbody>
+    </table> -->
     <div class="col-12 mt-4 p-0">
       <ul
         class="my-promotion__nav nav nav-tabs b-0 p-0"
@@ -48,27 +91,27 @@
         role="tablist"
       >
         <li class="my-promotion__nav--item nav-item p-0">
-          <nuxt-link
+          <a
             class="my-promotion__nav--link nav-link pl-0 active border-top-0 border-left-0 br-1"
             id="moreInfo-tab"
             data-toggle="tab"
-            to="#moreInfo"
+            href="#moreInfo"
             role="tab"
             aria-controls="moreInfo"
             aria-selected="true"
-            >more info</nuxt-link
+            >more info</a
           >
         </li>
         <li class="my-promotion__nav--item nav-item p-0">
-          <nuxt-link
+          <a
             class="my-promotion__nav--link nav-link bl-1"
             id="pTerms-tab"
             data-toggle="tab"
-            to="#pTerms"
+            href="#pTerms"
             role="tab"
             aria-controls="pTerms"
             aria-selected="false"
-            >promotion terms</nuxt-link
+            >promotion terms</a
           >
         </li>
       </ul>
@@ -136,83 +179,15 @@
             </div>
             <div class="col-md-5 col-12">
               <div class="col-12 color-blue">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 18.462 15"
-                >
-                  <defs>
-                    <style>
-                      .b {
-                        fill: #0e163d !important;
-                      }
-                    </style>
-                  </defs>
-                  <g transform="translate(-0.001 -0.004)">
-                    <g transform="translate(0.001 0.004)">
-                      <g transform="translate(0 0)">
-                        <path
-                          class="b"
-                          d="M18.464,1.778a7.581,7.581,0,0,1-2.176.6,3.8,3.8,0,0,0,1.666-2.1,7.588,7.588,0,0,1-2.405.919A3.791,3.791,0,0,0,9.094,4.653,10.755,10.755,0,0,1,1.286.7,3.792,3.792,0,0,0,2.459,5.752,3.773,3.773,0,0,1,.743,5.279v.048A3.789,3.789,0,0,0,3.781,9.04a3.8,3.8,0,0,1-1.71.065,3.791,3.791,0,0,0,3.539,2.63A7.6,7.6,0,0,1,.9,13.357,7.661,7.661,0,0,1,0,13.3,10.72,10.72,0,0,0,5.807,15,10.7,10.7,0,0,0,16.584,4.226q0-.246-.011-.49A7.7,7.7,0,0,0,18.464,1.778Z"
-                          transform="translate(-0.001 -0.004)"
-                        />
-                      </g>
-                    </g>
-                  </g>
-                </svg>
+                <twitter-icon color="#0e163d" width="10" height="10" />
                 https://twitter.com/coverwallet
               </div>
               <div class="col-12 color-blue">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 18.462 15"
-                >
-                  <defs>
-                    <style>
-                      .b {
-                        fill: #0e163d;
-                      }
-                    </style>
-                  </defs>
-                  <g transform="translate(-7 -2)">
-                    <g transform="translate(7 2)">
-                      <path
-                        class="b"
-                        d="M14.5,2V5H13c-.517,0-.75.608-.75,1.125V8H14.5v3H12.25v6h-3V11H7V8H9.25V5a3,3,0,0,1,3-3Z"
-                        transform="translate(-7 -2)"
-                      />
-                    </g>
-                  </g>
-                </svg>
+                <facebook-icon color="#0e163d" width="10" height="10" />
                 https://facebook.com/coverwallet
               </div>
               <div class="col-12 color-blue">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 18.462 15"
-                >
-                  <defs>
-                    <style>
-                      .b {
-                        fill: #0e163d;
-                      }
-                    </style>
-                  </defs>
-                  <g transform="translate(-2 -2)">
-                    <g transform="translate(2 2)">
-                      <path
-                        class="b"
-                        d="M6.35,2h6.3A4.353,4.353,0,0,1,17,6.35v6.3A4.35,4.35,0,0,1,12.65,17H6.35A4.353,4.353,0,0,1,2,12.65V6.35A4.35,4.35,0,0,1,6.35,2M6.2,3.5A2.7,2.7,0,0,0,3.5,6.2v6.6a2.7,2.7,0,0,0,2.7,2.7h6.6a2.7,2.7,0,0,0,2.7-2.7V6.2a2.7,2.7,0,0,0-2.7-2.7H6.2m7.238,1.125a.938.938,0,1,1-.937.938.938.938,0,0,1,.938-.938M9.5,5.75A3.75,3.75,0,1,1,5.75,9.5,3.75,3.75,0,0,1,9.5,5.75m0,1.5A2.25,2.25,0,1,0,11.75,9.5,2.25,2.25,0,0,0,9.5,7.25Z"
-                        transform="translate(-2 -2)"
-                      />
-                    </g>
-                  </g>
-                </svg>
+                <instagram-icon color="#0e163d" width="10" height="10" />
                 https://instagram.com/coverwallet
               </div>
             </div>
@@ -445,7 +420,22 @@
 </template>
 
 <script>
-export default {};
+import TwitterIcon from "~/components/commons/Icons/Twitter";
+import FacebookIcon from "~/components/commons/Icons/Facebook";
+import InstagramIcon from "~/components/commons/Icons/Instagram";
+import { mapState } from "vuex";
+
+export default {
+  components: {
+    TwitterIcon,
+    FacebookIcon,
+    InstagramIcon
+  },
+  props: ["promotion"],
+  data() {
+    return {};
+  }
+};
 </script>
 
 <style>

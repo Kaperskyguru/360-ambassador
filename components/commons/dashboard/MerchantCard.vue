@@ -1,6 +1,11 @@
 <template>
-  <div class="col-lg-3 col-md-4 col-12 mt-5 pl-1 pr-1">
-    <nuxt-link to="/merchants/my-promotions/1">
+  <div class="col-lg-3 col-md-4 col-12 mt-5 pl-3 pr-3">
+    <nuxt-link
+      :to="{
+        name: 'merchants-my-promotions-id',
+        params: { id: promotion._id }
+      }"
+    >
       <div class="dashboard__general--card col-12 pl-2 pr-2">
         <div class="row p-0">
           <p class="text-small color-grey-3 col-12 mb-0">FOOD</p>
@@ -34,7 +39,7 @@
         <div class="col-12">
           <div class="row justify-content-center">
             <div
-              class="dashboard__general--card__rating border-grey-3 col p-lg-0"
+              class="dashboard__general--card__rating border-grey-3 col p-lg-1"
             >
               <small
                 class="dashboard__general--card__text-small col-12 color-blue text-center d-block p-0"
@@ -47,7 +52,7 @@
               </p>
             </div>
             <div
-              class="dashboard__general--card__rating border-grey-3 col p-lg-0 ml-2"
+              class="dashboard__general--card__rating border-grey-3 col p-lg-1 ml-2"
             >
               <small
                 class="dashboard__general--card__text-small col-12 color-blue text-center d-block p-0"
@@ -60,7 +65,7 @@
               </p>
             </div>
             <div
-              class="dashboard__general--card__rating border-grey-3 col p-lg-0 ml-2"
+              class="dashboard__general--card__rating border-grey-3 col p-lg-1 ml-2"
             >
               <small
                 class="dashboard__general--card__text-small col-12 color-blue text-center d-block p-0"
@@ -73,7 +78,7 @@
               </p>
             </div>
             <div
-              class="dashboard__general--card__rating border-grey-3 col p-lg-0 ml-2"
+              class="dashboard__general--card__rating border-grey-3 col p-lg-1 ml-2"
             >
               <small
                 class="dashboard__general--card__text-small col-12 color-blue text-center d-block p-0"
@@ -86,7 +91,7 @@
               </p>
             </div>
             <div
-              class="dashboard__general--card__rating border-grey-3 col p-lg-0 ml-2"
+              class="dashboard__general--card__rating border-grey-3 col p-lg-1 ml-2"
             >
               <small
                 class="dashboard__general--card__text-small col-12 color-blue text-center d-block p-0"
@@ -103,7 +108,7 @@
             <div class="col-6 mb-5 pl-4 pr-5">
               <div class="row justify-content-start pl-1">
                 <div
-                  class="dashboard__general--card__rating border-grey-3 col-5 p-lg-0 ml-1"
+                  class="dashboard__general--card__rating border-grey-3 col-5 p-lg-1 ml-1"
                 >
                   <small
                     class="dashboard__general--card__text-small col-12 color-blue text-center d-block p-0"

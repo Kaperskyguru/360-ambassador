@@ -4,6 +4,7 @@ import RoleRepository from "~/repositories/RoleRepository";
 import CategoryRepository from "~/repositories/CategoryRepository";
 import TaskRepository from "~/repositories/TaskRepository";
 import MessageRepository from "~/repositories/MessageRepository";
+import InsightRepository from '~/repositories/InsightRepository'
 
 export default $axios => ({
   promotion: PromotionRepository($axios),
@@ -11,5 +12,6 @@ export default $axios => ({
   role: RoleRepository($axios),
   category: CategoryRepository($axios),
   task: TaskRepository($axios),
-  message: MessageRepository($axios)
+  message: MessageRepository($axios),
+  insight: InsightRepository($axios)
 });

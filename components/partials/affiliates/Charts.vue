@@ -22,10 +22,10 @@
           CLICKS
         </bar-chart>
         <bar-chart id="mythirdbarchart">
-          CLICKS
+          Conversion Rate
         </bar-chart>
         <bar-chart id="mysecondchart" class="bg-blue">
-          <span class="text-white"> CLICKS </span>
+          <span class="text-white"> Product Sold </span>
         </bar-chart>
       </div>
     </div>

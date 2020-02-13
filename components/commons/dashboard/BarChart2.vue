@@ -15,16 +15,15 @@ export default {
 
   data() {
     return {
-      chart_id: this.id,
-      chart_data: this.data
+      chart_id: this.id
     };
   },
   mounted() {
     new Morris.Bar({
       element: this.chart_id,
 
-      data: this.chart_data
-        ? this.chart_data
+      data: this.data
+        ? this.data
         : [
             {
               Month: "January",

@@ -1,15 +1,19 @@
 <template>
-  <div class="col-md-4 col-12 mt-5">
+  <div class="col-md-4 col-12 mt-5 pl-0 pr-5">
     <nuxt-link
       :to="{
         name: 'affiliates-my-promotions-id',
         params: { id: promotion._id }
       }"
     >
-      <div class="dashboard__general--card col-12">
+      <div class="dashboard__general--card col-12 pl-3">
         <div class="row">
           <p class="text-small color-grey-3 col-12 mb-0">
-            {{ promotion.category !== null ? promotion.category.name : "" }}
+            {{
+              promotion.category != null
+                ? promotion.category
+                : promotion.category
+            }}
           </p>
         </div>
         <div class="dashboard__general--card__body col-12">
@@ -25,9 +29,9 @@
                 >
                   {{ promotion.name || "" }}
                 </h6>
-                <!-- <p class="dashboard__general--card__text color-blue-2 col-8">
-                  Bukka Hut Festo
-                </p> -->
+                <p class="dashboard__general--card__text color-blue-2 col-8">
+                  Price {{ promotion.price || "" }} NGN
+                </p>
                 <p class="dashboard__general--card__text col-8">
                   {{ promotion.description || "" }}
                 </p>
@@ -36,33 +40,33 @@
             </div>
           </div>
         </div>
-        <div class="col-12 mt-5 p-0">
-          <div class="row justify-content-center">
-            <div class="stat-box col-2 p-0 m-1">
+        <div class="col-12 mt-5 pl-2">
+          <div class="row">
+            <div class="stat-box col-2 p-0 m-1 mr-2">
               <stat-box>
                 <template slot="title">CLICKS</template>
                 <template slot="value">200</template>
               </stat-box>
             </div>
-            <div class="stat-box col-2 p-0 m-1">
+            <div class="stat-box col-2 p-0 m-1 mr-2">
               <stat-box>
                 <template slot="title">VISITORS</template>
                 <template slot="value">100</template>
               </stat-box>
             </div>
-            <div class="stat-box  col-2 p-0 m-1">
+            <div class="stat-box  col-2 p-0 m-1 mr-2">
               <stat-box>
                 <template slot="title">SALES</template>
                 <template slot="value">2</template>
               </stat-box>
             </div>
-            <div class="stat-box  col-2 p-0 m-1">
+            <div class="stat-box  col-2 p-0 m-1 mr-2">
               <stat-box>
                 <template slot="title">CONV.</template>
                 <template slot="value">0.02%</template>
               </stat-box>
             </div>
-            <div class="stat-box  col-2 p-0 m-1">
+            <div class="stat-box  col-2 p-0 m-1 mr-2">
               <stat-box>
                 <template slot="title">N PER SALE</template>
                 <template slot="value">5.00 </template>

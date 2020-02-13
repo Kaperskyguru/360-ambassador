@@ -146,7 +146,7 @@
                   </div>
                 </div>
               </div>
-              <line-chart />
+              <line-chart :data="chartData" />
             </div>
 
             <div class="col-12 mb-5 dashboard__chart--card">
@@ -173,7 +173,7 @@
                   </div>
                 </div>
               </div>
-              <bar-chart id="myfourthbarchart"> </bar-chart>
+              <bar-chart id="myfourthbarchart" :data="chartData"> </bar-chart>
             </div>
             <!--  -->
             <div class="col-12 mb-5 dashboard__chart--card">
@@ -200,32 +200,21 @@
                   </div>
                 </div>
               </div>
-              <bar-chart id="myfifthbarchart"> </bar-chart>
+              <bar-chart id="myfifthbarchart" :data="chartData"> </bar-chart>
             </div>
           </div>
 
           <div class="col-md-12 col-lg-3 mt-2">
             <div class="col-12">
               <h6 class="dashboard__heading col-12 mb-5">Messages</h6>
-              <message>
+              <message v-for="(message, i) in messages" :key="i">
                 <template slot="title">
-                  Announcement
+                  Imagine Production
                 </template>
                 <template slot="subtitle">
                   Upload your Placement Opportunities Today!
                 </template>
-                <template slot="content">
-                  If you offer placement opportunites or a rate card you can
-                  earn additional commission by offering placement opportunities
-                  at rates that work for you. A placement gives exposure to an
-                  Advertiser’s promotion or campaign on your website or within
-                  other promotional materials, such email or ad space. Visit the
-                  <nuxt-link to="#" class="color-red"
-                    >Placements Marketplace</nuxt-link
-                  >
-                  today to post and promote your placement inventory across the
-                  CJ Network!
-                </template>
+                <template slot="content">{{ message.message }} </template>
               </message>
             </div>
           </div>
@@ -241,6 +230,7 @@ import MyNavBar from "~/components/commons/navs/MerchantNav";
 import LineChart from "~/components/commons/dashboard/LineChart2";
 import BarChart from "~/components/commons/dashboard/BarChart2"; // Convert LineChart and BarChart to one
 import Message from "~/components/commons/dashboard/Message";
+import { mapState } from "vuex";
 export default {
   components: {
     MyNavBar,
@@ -248,6 +238,19 @@ export default {
     LineChart,
     BarChart,
     Message
+  },
+  computed: {
+    ...mapState({
+      messages: state => {
+        return state.message.messages;
+      },
+      promotions: state => {
+        return state.promotion.myPromotions;
+      },
+      chartData: state => {
+        return state.insight.earningGraph;
+      }
+    })
   }
 };
 </script>

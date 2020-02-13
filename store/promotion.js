@@ -1,5 +1,3 @@
-const resource = "promotion";
-
 export const state = () => ({
   promotions: [],
   promotion: [],
@@ -7,7 +5,7 @@ export const state = () => ({
   joinedPromotions: [],
   joinedPromotion: [],
   latestPromotions: [],
-  performance: []
+  performance: {}
 });
 
 export const mutations = {
@@ -45,15 +43,20 @@ export const actions = {
       commit("set", res.data.data);
     }
   },
-  async find({ commit }, promotion) {
-    const res = await this.$repositories.promotion.show(promotion);
-    console.log(res);
-    commit("find", res.data.data);
+  async find({ commit, state }, promotion) {
+    try {
+      const res = await this.$repositories.promotion.show(promotion);
+      if (res.status === 200 && res.data.success && res.data.code) {
+        commit("find", res.data.data);
+      }
+    } catch (err) {
+      console.log(err, "here");
+    }
   },
-  async set({ commit }, form) {
+  async add({ commit }, form) {
     const res = await this.$repositories.promotion.create(form);
     if (res.status === 200 && res.data.success && res.data.code) {
-      // commit("set", res.data);
+      return res.data.data;
     }
   },
 
@@ -72,9 +75,15 @@ export const actions = {
   },
 
   async performance({ commit }, user = "") {
-    const res = await this.$repositories.promotion.performance(user);
+    const res = await this.$repositories.promotion.performance(
+      "5e2eb02d73491f05fbcfbdc0"
+    );
     if (res.status === 200 && res.data.success && res.data.code) {
-      commit("setPerformance", res.data.data);
+      if (Array.isArray(res.data.data)) {
+        commit("setPerformance", res.data.data[0]);
+      } else {
+        commit("setPerformance", res.data.data);
+      }
     }
   },
 

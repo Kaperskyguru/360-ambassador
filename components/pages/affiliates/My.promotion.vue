@@ -90,6 +90,7 @@ export default {
   data() {
     return {
       promotion: {
+        price: "0.00",
         _id: "5e30d193766041031df6b445",
         category: "Technology",
         product_file: [

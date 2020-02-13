@@ -28,7 +28,7 @@
           </div>
 
           <div class="col-md-8 col-12">
-            <promotion-details />
+            <promotion-details :promotion="promotion" />
           </div>
 
           <div class="col-md-4 col-12">
@@ -36,7 +36,7 @@
               <h6
                 class="col-12 text text-bold color-blue bg-grey-8 pt-4 pb-3 pl-3 pr-3"
               >
-                Promotion sharable Link
+                Promotion sharable Link {{ promotion }}
               </h6>
               <ul
                 class="my-promotion__pills nav nav-pills mb-3 col-12"
@@ -44,8 +44,7 @@
                 role="tablist"
               >
                 <li class="my-promotion__pills--item nav-item">
-                  <nuxt-link
-                    to=""
+                  <a
                     class="my-promotion__pills--link nav-link active"
                     id="pills-url-tab"
                     data-toggle="pill"
@@ -53,7 +52,7 @@
                     role="tab"
                     aria-controls="pills-url"
                     aria-selected="true"
-                    >URL</nuxt-link
+                    >URL</a
                   >
                 </li>
               </ul>
@@ -173,6 +172,7 @@
 import MyNavBar from "~/components/commons/navs/MerchantNav";
 import PromotionDetails from "~/components/commons/dashboard/PromotionDetail";
 import StatBox from "~/components/commons/dashboard/Stat.box";
+import { mapState } from "vuex";
 export default {
   components: {
     MyNavBar,
@@ -184,6 +184,15 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+
+  computed: {
+    ...mapState({
+      promotion: state => {
+        console.log(state.promotion.promotion);
+        return state.promotion.promotion;
+      }
+    })
   }
 };
 </script>

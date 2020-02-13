@@ -11,6 +11,10 @@ export default {
   middleware: "merchant",
   components: {
     PromotionDetails
+  },
+
+  async fetch({ store, params, auth }) {
+    store.dispatch("promotion/find", params.id);
   }
 };
 </script>

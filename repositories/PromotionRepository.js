@@ -36,7 +36,7 @@ export default $axios => ({
   },
 
   performance(user = "") {
-    return $axios.get(`/promoter_performance`);
+    return $axios.get(`/promoter_performance?user=${user}`);
   },
 
   update(id, payload) {
