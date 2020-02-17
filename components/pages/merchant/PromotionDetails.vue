@@ -7,7 +7,9 @@
           <div class="col-md-12 col-12 mb-4 pr-5">
             <div class="row">
               <div class="col-6">
-                <nuxt-link to="#" class="color-blue text-bold mr-auto"
+                <nuxt-link
+                  to="/merchants/my-promotions"
+                  class="color-blue text-bold mr-auto"
                   ><img
                     src="~assets/images/left-arrow.png"
                     width="10"
@@ -18,7 +20,9 @@
               <div class="col-6" v-show="!finish">
                 <div class="col m-2 mr-1">
                   <div class="row justify-content-end pr-5">
-                    <nuxt-link to="#" class="btn__curved--yellow"
+                    <nuxt-link
+                      to="/merchants/my-promotions/new"
+                      class="btn__curved--yellow"
                       >ADD NEW</nuxt-link
                     >
                   </div>
@@ -28,7 +32,7 @@
           </div>
 
           <div class="col-md-8 col-12">
-            <promotion-details :promotion="promotion" />
+            <promotion-detail :promotion="promotion" />
           </div>
 
           <div class="col-md-4 col-12">
@@ -36,7 +40,7 @@
               <h6
                 class="col-12 text text-bold color-blue bg-grey-8 pt-4 pb-3 pl-3 pr-3"
               >
-                Promotion sharable Link {{ promotion }}
+                Promotion sharable Link
               </h6>
               <ul
                 class="my-promotion__pills nav nav-pills mb-3 col-12"
@@ -66,7 +70,7 @@
                   <div
                     class="col-12 my-promotion__pills--square text-sm-light color-blue mt-4 mb-3"
                   >
-                    <span class="col-10">https://sdjnjkdaklddjlssckls.sd</span>
+                    <span class="col-10">{{ promotion.url }}</span>
                     <img
                       src="~assets/images/undraw_schedule.png"
                       alt=""
@@ -170,13 +174,13 @@
 
 <script>
 import MyNavBar from "~/components/commons/navs/MerchantNav";
-import PromotionDetails from "~/components/commons/dashboard/PromotionDetail";
+import PromotionDetail from "~/components/commons/dashboard/PromotionDetail";
 import StatBox from "~/components/commons/dashboard/Stat.box";
 import { mapState } from "vuex";
 export default {
   components: {
     MyNavBar,
-    PromotionDetails,
+    PromotionDetail,
     StatBox
   },
   props: {

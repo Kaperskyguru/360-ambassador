@@ -9,7 +9,7 @@
 
     <box :icon="require('@/assets/images/Mask-Group-5.png')">
       <template slot="title">Total Promotion</template>
-      <template slot="price">{{ performance.total_performance || 0 }}</template>
+      <template slot="price">{{ performance.total_promotion || 0 }}</template>
     </box>
 
     <box :icon="require('@/assets/images/Mask-Group-6.png')">

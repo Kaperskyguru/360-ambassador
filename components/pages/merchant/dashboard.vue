@@ -30,28 +30,23 @@
                 </tr>
               </thead>
               <tbody class="dashboard-table__tbody">
-                <tr>
-                  <td class="color-blue">Bukka Hut Fresto</td>
-                  <td class="color-blue">10</td>
-                  <td class="color-blue">100</td>
-                  <td class="color-blue">100</td>
-                  <td class="color-blue">3</td>
-                  <td class="color-blue">N30.00</td>
+                <tr v-for="(promotion, i) in promotions" :key="i">
+                  <td class="color-blue">{{ promotion.name || "" }}</td>
+                  <td class="color-blue">{{ promotion.Affiliates || 0 }}</td>
+                  <td class="color-blue">{{ promotion.Clicks || 0 }}</td>
+                  <td class="color-blue">{{ promotion.Impressions || 0 }}</td>
+                  <td class="color-blue">
+                    {{ promotion.Convertion_rate || 0 }}
+                  </td>
+                  <td class="color-blue">N{{ promotion.price || 0 }}</td>
                   <td class="color-blue">N90.00</td>
-                </tr>
-                <tr>
-                  <td class="color-blue">Bukka Hut Fresto</td>
-                  <td class="color-blue">15</td>
-                  <td class="color-blue">120</td>
-                  <td class="color-blue">1234</td>
-                  <td class="color-blue">10</td>
-                  <td class="color-blue">N30.00</td>
-                  <td class="color-blue">N300.00</td>
                 </tr>
               </tbody>
             </table>
             <div class="row justify-content-center pl-md-4 pl-5 pr-0 mt-5">
-              <h6 class="dashboard__heading col-9 mb-5">My Promotions</h6>
+              <h6 class="dashboard__heading col-9 mb-5">
+                My Promotions Affiliates
+              </h6>
               <button type="button" class="btn__transparent color-blue col-3">
                 See all
               </button>

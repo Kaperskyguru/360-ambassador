@@ -8,7 +8,7 @@
             <div class="row">
               <div class="col-12">
                 <nuxt-link
-                  to="my-promotions"
+                  to="/merchants/my-promotions"
                   class="color-blue text-bold mr-auto"
                   ><img
                     src="~assets/images/left-arrow.png"

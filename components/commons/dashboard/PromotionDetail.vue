@@ -53,37 +53,6 @@
         </tr>
       </tbody>
     </table>
-
-    <!-- <tbody class="dashboard-table__tbody bg-grey-6">
-        <tr>
-          <td scope="col-auto" class="color-blue">
-            <img
-              :src="
-                promotion.user
-                  ? promotion.user.profile_picture
-                  : require('@/assets/images/Access_Bank_Logo.png')
-              "
-              alt=""
-              width="100"
-            />
-          </td>
-          <td scope="col-auto" class="color-blue">
-            <span class="color-blue">{{ promotion.name || "" }}</span>
-            <span class="color-blue-3 text-small"
-              >(512345)<br />
-              <span class="text-small color-grey-3">{{
-                promotion.category ? promotion.category.name : ""
-              }}</span></span
-            >
-          </td>
-          <td scope="col-auto" class="color-blue">11/01/2019</td>
-          <td scope="col-auto" class="color-blue">
-            {{ promotion.commission }}%
-          </td>
-          <td scope="col-auto" class="color-blue">{{ promotion.price }}</td>
-        </tr>
-      </tbody>
-    </table> -->
     <div class="col-12 mt-4 p-0">
       <ul
         class="my-promotion__nav nav nav-tabs b-0 p-0"
@@ -129,7 +98,7 @@
                   <div class="text col-4 text-bold color-blue">
                     Name:
                   </div>
-                  <div class="text col-8 color-blue">Bukka Hut</div>
+                  <div class="text col-8 color-blue">{{ promotion.name }}</div>
                 </div>
               </div>
               <div class="col-12 p-0 mb-2">
@@ -137,7 +106,9 @@
                   <div class="text col-4 text-bold color-blue">
                     Contact:
                   </div>
-                  <div class="text col-8 color-blue">PMX Agency</div>
+                  <div class="text col-8 color-blue">
+                    {{ promotion.user !== null ? promotion.user.username : "" }}
+                  </div>
                 </div>
               </div>
               <div class="col-12 p-0 mb-2">
@@ -146,7 +117,7 @@
                     Email:
                   </div>
                   <div class="text col-8 color-blue">
-                    CoverWalletAffiliates@FowardPMX.com
+                    {{ promotion.user !== null ? promotion.user.email : "" }}
                   </div>
                 </div>
               </div>
@@ -155,7 +126,9 @@
                   <div class="text col-4 text-bold color-blue">
                     Country:
                   </div>
-                  <div class="text col-8 color-blue">NIGERIA</div>
+                  <div class="text col-8 color-blue">
+                    {{ promotion.user !== null ? promotion.user.state : "" }}
+                  </div>
                 </div>
               </div>
               <div class="col-12 p-0 mb-2">
@@ -164,7 +137,7 @@
                     URL:
                   </div>
                   <div class="text col-8 color-blue">
-                    http://www.coverwallet.com
+                    {{ promotion.url }}
                   </div>
                 </div>
               </div>
@@ -180,15 +153,15 @@
             <div class="col-md-5 col-12">
               <div class="col-12 color-blue">
                 <twitter-icon color="#0e163d" width="10" height="10" />
-                https://twitter.com/coverwallet
+                {{ promotion.twitter }}
               </div>
               <div class="col-12 color-blue">
                 <facebook-icon color="#0e163d" width="10" height="10" />
-                https://facebook.com/coverwallet
+                {{ promotion.facebook }}
               </div>
               <div class="col-12 color-blue">
                 <instagram-icon color="#0e163d" width="10" height="10" />
-                https://instagram.com/coverwallet
+                {{ promotion.instagram }}
               </div>
             </div>
             <div class="col-12">
@@ -207,7 +180,11 @@
                   <div class="text col-2 text-bold color-blue">
                     Category:
                   </div>
-                  <div class="text col-9 color-blue">Commercial</div>
+                  <div class="text col-9 color-blue">
+                    {{
+                      promotion.category !== null ? promotion.category.name : ""
+                    }}
+                  </div>
                 </div>
               </div>
               <div class="border-bottom-grey-3"></div>
@@ -217,15 +194,7 @@
                     Description:
                   </div>
                   <div class="text col-9 color-blue">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Itaque tempore voluptas repellendus placeat laborum
-                    reiciendis officiis illum quae asperiores suscipit. Aperiam
-                    accusantium praesentium totam deserunt reiciendis at qui sed
-                    consequatur! Lorem ipsum dolor sit, amet consectetur
-                    adipisicing elit. Sequi ullam eaque quae architecto adipisci
-                    ipsum praesentium, assumenda obcaecati rem, voluptas
-                    provident rerum quas eum dolore iste, consequuntur illo.
-                    Natus, maiores.
+                    {{ promotion.description || "" }}
                   </div>
                 </div>
               </div>
@@ -432,8 +401,8 @@ export default {
     InstagramIcon
   },
   props: ["promotion"],
-  data() {
-    return {};
+  created() {
+    console.log(this.promotion);
   }
 };
 </script>

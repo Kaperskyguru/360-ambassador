@@ -15,8 +15,6 @@ export default {
   },
 
   fetch({ store, params }) {
-    console.log(params.id);
-
     store.dispatch("promotion/find", params.id);
   }
 };
