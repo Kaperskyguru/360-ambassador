@@ -108,7 +108,7 @@ export default {
         async: true
       },
       {
-        src: "/main.js",
+        src: "~/assets/js/main.js",
         async: true
       }
     ]
@@ -127,11 +127,6 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    "~/plugins/loadash",
-    {
-      src: "~/plugins/vue-morris",
-      mode: "client"
-    },
     "~/plugins/axios",
     "~/plugins/auth",
     "~/plugins/repositories",
