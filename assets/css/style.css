@@ -1433,7 +1433,7 @@ section,
 }
 
 .my-promotion {
-  background-image: url("../images/banner.png");
+  background-image: url("../images/banner.webp");
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
