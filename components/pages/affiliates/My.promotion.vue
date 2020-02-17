@@ -64,11 +64,11 @@
             :key="i"
             :promotion="promotion"
           />
-          <cards :promotion="promotion" />
-          <cards :promotion="promotion" />
-          <cards :promotion="promotion" />
-          <cards :promotion="promotion" />
-          <cards :promotion="promotion" />
+          <!-- <cards :promotion="test_promotion" />
+          <cards :promotion="test_promotion" />
+          <cards :promotion="test_promotion" />
+          <cards :promotion="test_promotion" />
+          <cards :promotion="test_promotion" /> -->
         </div>
       </div>
     </div>
@@ -89,7 +89,7 @@ export default {
 
   data() {
     return {
-      promotion: {
+      test_promotion: {
         price: "0.00",
         _id: "5e30d193766041031df6b445",
         category: "Technology",

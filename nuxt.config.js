@@ -79,26 +79,37 @@ export default {
 
     script: [
       {
-        src: "https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        src: "https://code.jquery.com/jquery-3.4.1.slim.min.js",
+        // defer: true,
+        async: true
       },
       {
         src:
-          "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+          "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
+        // defer: true,
+        async: true
       },
       {
         src:
-          "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+          "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
+        // defer: true,
+        async: true
       },
       {
         src:
-          "https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"
+          "https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js",
+        // defer: true,
+        async: true
       },
       {
         src:
-          "https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"
+          "https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js",
+        // defer: true,
+        async: true
       },
       {
-        src: "/main.js"
+        src: "/main.js",
+        async: true
       }
     ]
   },

@@ -15,8 +15,6 @@ export default {
     Dashboard
   },
   async fetch({ store, auth }) {
-    // console.log(store.state.auth.user._id);
-
     await store.dispatch("category/get");
     await store.dispatch("user/getTopMerchants");
     await store.dispatch("promotion/latestPromotions");
