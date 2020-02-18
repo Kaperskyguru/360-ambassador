@@ -100,8 +100,8 @@ export default {
         .dispatch("user/login", this.form)
         .then(res => {
           if (this.$auth.loggedIn) {
-            this.show = false;
             this.redirectByRole(this.$auth.user.role.name);
+            this.show = false;
           }
         })
         .catch(err => {

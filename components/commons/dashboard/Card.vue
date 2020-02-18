@@ -69,6 +69,7 @@
             to="#"
             class="btn__square-curved--yellow color-blue-2"
             href="#"
+            data-toggle="modal"
             @click.native="joinPromotion"
             >Join Program</nuxt-link
           >
@@ -76,19 +77,32 @@
       </div>
     </div>
     <loading :show="show" :label="label" :overlay="overlay" />
+
+    <confirm-box :show="show">
+      <template slot="content">
+        You have opted to join the
+        <span class="text-bold">{{ promotion.name }}</span> promotion. Just a
+        step away from earning your income<br /><br />click the button below to
+        confirm
+      </template>
+    </confirm-box>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import ConfirmBox from "~/components/Modals.vue";
 export default {
   props: ["promotion"],
-
+  components: {
+    ConfirmBox
+  },
   data() {
     return {
       show: false,
       label: "Signing you up for this promotion, please wait...",
-      overlay: true
+      overlay: true,
+      pop: false
     };
   },
 
@@ -100,10 +114,11 @@ export default {
         data.promoter_id = this.$auth.user._id;
         data.promotion = this.promotion._id;
         await this.$store.dispatch("promotion/joinPromotion", data);
-        this.$swal({
-          text: "You've successfully joined the promotion",
-          icon: "success"
-        });
+        $("#exampleModalCenter").modal("show");
+        // this.$swal({
+        //   text: "You've successfully joined the promotion",
+        //   icon: "success"
+        // });
         this.show = false;
       } catch (error) {
         this.show = false;

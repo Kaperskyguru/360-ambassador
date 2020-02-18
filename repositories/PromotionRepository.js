@@ -17,9 +17,6 @@ export default $axios => ({
   },
 
   joinPromotion(payload) {
-    // const data = JSON.stringify(payload);
-
-    // console.log(data);
     const headers = {
       "Content-Type": "application/json"
     };
@@ -27,8 +24,8 @@ export default $axios => ({
     return $axios.post(`/apply`, payload, { headers });
   },
 
-  getJoinedPromotions(payload) {
-    return $axios.get(`/applied`, payload);
+  getJoinedPromotions(user) {
+    return $axios.get(`/applied/${user}`);
   },
 
   latest() {

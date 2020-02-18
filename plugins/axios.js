@@ -1,23 +1,12 @@
 export default function({ $axios, redirect }, inject) {
-  $axios.onRequest(config => {
-    // console.log("Making request to ", config.headers);
-    if (config.url == "/verify") {
-      // console.log(config);
-    }
-    // $axios.setHeader("Access-Control-Allow-Origin", "*");
-  });
+  $axios.onRequest(config => {});
 
-  $axios.onResponse(res => {
-    // if (config.url == "/verify") {
-    // console.log(res.data);
-    // }
-  });
+  $axios.onResponse(res => {});
 
   $axios.onError(error => {
-    console.log(error.response);
-    // const code = parseInt(error.response && error.response.status);
-    // if (code === 404) {
-    //   redirect("/");
-    // }
+    const code = parseInt(error.response && error.response.status);
+    if (code === 401) {
+      redirect("/login");
+    }
   });
 }

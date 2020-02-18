@@ -35,8 +35,6 @@ export const actions = {
 
   async getTopMerchants({ dispatch, commit }) {
     const res = await this.$repositories.user.topMerchants();
-    // console.log(res);
-
     if (res.data.code == 200 && res.data.success) {
       commit("storeTopMerchants", res.data.data);
     }

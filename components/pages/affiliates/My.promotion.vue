@@ -62,7 +62,7 @@
           <cards
             v-for="(promotion, i) in promotions"
             :key="i"
-            :promotion="promotion"
+            :promotion="promotion.promotion"
           />
           <!-- <cards :promotion="test_promotion" />
           <cards :promotion="test_promotion" />
@@ -106,7 +106,7 @@ export default {
   computed: {
     ...mapState({
       promotions: state => {
-        return state.promotion.myPromotions;
+        return state.promotion.joinedPromotions;
       }
     })
   }

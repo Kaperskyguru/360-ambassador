@@ -50,7 +50,7 @@ export const actions = {
         commit("find", res.data.data);
       }
     } catch (err) {
-      console.log(err, "here");
+      console.log(err);
     }
   },
   async add({ commit }, form) {
@@ -87,17 +87,17 @@ export const actions = {
     }
   },
 
-  async joinedPromotions({ commit }, data) {
-    const res = await this.$repositories.promotion.getJoinedPromotions(data);
+  async joinedPromotions({ commit }, user) {
+    const res = await this.$repositories.promotion.getJoinedPromotions(user);
     if (res.status === 200 && res.data.success && res.data.code) {
-      commit("setJoinedPromotion", res.data.data);
+      commit("setJoinedPromotions", res.data.data);
     }
   },
 
   async joinPromotion({ commit }, data) {
     const res = await this.$repositories.promotion.joinPromotion(data);
     if (res.status === 200 && res.data.success && res.data.code) {
-      commit("setJoinedPromotions", res.data.data);
+      commit("setJoinedPromotion", res.data.data);
     }
   },
 

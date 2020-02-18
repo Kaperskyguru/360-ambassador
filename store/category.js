@@ -2,16 +2,17 @@ export const state = () => ({
   categories: []
 });
 
+export const getters = {
+  find: state => category_id => {
+    const category = state.categories.find(item => item._id == category_id);
+    if (category) return category;
+    return;
+  }
+};
 export const mutations = {
   set(state, categories) {
     state.categories = categories;
   }
-
-  //   find(state, id) {
-  //     state.categories.filter(item => {
-  //       return (item._id = id);
-  //     });
-  //   }
 };
 
 export const actions = {

@@ -18,7 +18,7 @@ export default {
       {
         hid: "keywords",
         name: "keywords",
-        content: "vuejs, nuxt, javascript, tutorials, development, software"
+        content: ""
       },
       {
         hid: "twitter:card",
@@ -79,32 +79,27 @@ export default {
 
     script: [
       {
-        src: "https://code.jquery.com/jquery-3.4.1.slim.min.js",
-        // defer: true,
-        async: true
+        src: "https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        // async: true
       },
       {
         src:
           "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
-        // defer: true,
         async: true
       },
       {
         src:
           "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
-        // defer: true,
         async: true
       },
       {
         src:
           "https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js",
-        // defer: true,
         async: true
       },
       {
         src:
           "https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js",
-        // defer: true,
         async: true
       },
       {
@@ -128,7 +123,6 @@ export default {
    */
   plugins: [
     "~/plugins/axios",
-    "~/plugins/auth",
     "~/plugins/repositories",
     "~/plugins/vee-validate",
     { src: "~/plugins/vue-notification", ssr: false },
@@ -180,8 +174,6 @@ export default {
     "@nuxtjs/dotenv",
 
     "@nuxtjs/auth"
-
-    // "nuxt-sweetalert2"
   ],
   /*
    ** Axios module configuration
@@ -191,15 +183,6 @@ export default {
     baseURL:
       process.env.API_URL || "https://damp-hollows-99847.herokuapp.com/api/v1"
   },
-
-  //https://dev.to/mrnaif2018/how-to-make-nuxt-auth-working-with-jwt-a-definitive-guide-9he
-  //chromium-browser --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp
-  //https://blog.lichter.io/posts/nuxt-api-call-organization-and-decoupling/
-
-  // proxy: {
-  //   "/api/":
-  //     process.env.API_URL || "https://damp-hollows-99847.herokuapp.com/api/v1"
-  // },
   /*
    ** Build configuration
    */
@@ -208,21 +191,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-      // config.resolve.alias['jQuery'] = '~assets/js/jquery.min.js'
-    }
+    extend(config, ctx) {}
   }
-
-  // messages: {
-  //   oading: "Loading...",
-  //   error_404: "This page could not be found blah vlah!!",
-  //   server_error: "Server error",
-  //   nuxtjs: "Nuxt.js",
-  //   back_to_home: "Back to the home page",
-  //   server_error_details:
-  //     "An error occurred in the application and your page could not be served. If you are the application owner, check your logs for details.",
-  //   client_error: "Error",
-  //   client_error_details:
-  //     "An error occurred while rendering the page. Check developer tools console for details."
-  // }
 };

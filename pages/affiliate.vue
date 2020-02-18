@@ -18,15 +18,10 @@ export default {
   },
 
   async fetch({ store, param, route, query, error }) {
-    // if (query.user_id == undefined) return;
     try {
       await store.dispatch("category/get");
       await store.dispatch("user/find", query.user_id);
     } catch (err) {
-      // const { code, response } = err;
-      // if (code && response) {
-      //   error({ statusCode: err.code, message: err.response });
-      // } else
       console.log(err);
     }
   }

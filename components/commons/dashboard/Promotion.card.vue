@@ -9,11 +9,7 @@
       <div class="dashboard__general--card col-12 pl-3">
         <div class="row">
           <p class="text-small color-grey-3 col-12 mb-0">
-            {{
-              promotion.category != null
-                ? promotion.category
-                : promotion.category
-            }}
+            {{ findCategory }}
           </p>
         </div>
         <div class="dashboard__general--card__body col-12">
@@ -82,11 +78,30 @@
 <script>
 import StatBox from "~/components/commons/dashboard/Small.Stat.Box";
 import CardButton from "~/components/commons/buttons/CardButton";
+import { mapGetters } from "vuex";
 export default {
   props: ["promotion"],
   components: {
     StatBox,
     CardButton
+  },
+  computed: {
+    ...mapGetters({
+      getCategory: "category/find"
+    }),
+
+    findCategory() {
+      const cat =
+        this.promotion.category !== null ? this.promotion.category : "";
+      const category = this.getCategory(
+        typeof cat === "object" ? cat._id : cat
+      );
+
+      if (category) {
+        return category.name;
+      }
+      return "";
+    }
   }
 };
 </script>

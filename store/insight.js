@@ -10,9 +10,7 @@ export const mutations = {
 
 export const actions = {
   async earningsGraph({ commit }, user) {
-    const res = await this.$repositories.insight.totalEarningsGraph(
-      "5e2eb02d73491f05fbcfbdc0"
-    );
+    const res = await this.$repositories.insight.totalEarningsGraph(user);
     if (res.status === 200 && res.data.success && res.data.code) {
       commit("set", res.data.data);
     }
