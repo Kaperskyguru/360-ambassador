@@ -3,7 +3,10 @@
     <div class="row align-items-center">
       <div class="col-lg-7 col-md-6 col-12 form__page-left">
         <brand />
-        <div class="row align-content-center justify-content-center pl-0 pr-0">
+        <div
+          class="row align-content-center justify-content-center pl-0 pr-0 mt-5 pt-2"
+          style="margin:0px auto"
+        >
           <texter>
             <template v-slot:title>
               ADVERTISERS
@@ -14,7 +17,7 @@
               the best from the affiliate program
             </template>
           </texter>
-          <hr class="col-10 col-md-11 bg-white mt-5 mb-5" />
+          <hr class="col-12 bg-white mt-5 mb-5" />
 
           <texter>
             <template v-slot:title>
@@ -29,7 +32,10 @@
         </div>
       </div>
       <div class="col-lg-5 col-md-6 col-12 form__page-right">
-        <div class="row align-items-center">
+        <div
+          class="row align-content-center justify-content-center pt-5"
+          style="margin:7rem auto"
+        >
           <h2 class="col-12 color-blue form__header">Sign in</h2>
           <login-form />
         </div>

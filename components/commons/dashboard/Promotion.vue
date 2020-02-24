@@ -6,13 +6,14 @@
       <div class="dashboard__summary--card-header">
         <div class="row pr-3">
           <span class="color-blue mr-auto"><slot name="title"/></span>
-          <span class="dashboard__promotions--card--img-container ml-auto">
+          <div class="dashboard__promotions--card--img-container ml-auto">
             <icon
+              round="50"
               :icon="icon"
               :alt="alt"
               class="dashboard__promotions--card--img"
             />
-          </span>
+          </div>
         </div>
       </div>
       <div class="dashboard__promotions--card-body">
@@ -29,17 +30,20 @@
             <div class="row">
               <div class="col-6 ml-auto">
                 <span class="dashboard__promotions--card-volume color-red"
-                  ><slot name="volume" />%</span
+                  ><slot name="volume"/></span
                 ><br />
                 <span class="dashboard__promotions--card-text color-red mt-2"
                   >comm.</span
                 >
               </div>
               <div class="col-6">
-                <a
-                  :href="link"
+                <nuxt-link
+                  :to="{
+                    name: 'affiliates-promotions-id',
+                    params: { id: promotion_id }
+                  }"
                   class="dashboard__promotions--card-text color-blue-1 btn-transparent"
-                  >View details</a
+                  >View details</nuxt-link
                 >
               </div>
             </div>
@@ -56,7 +60,9 @@ export default {
   props: {
     icon: String,
     alt: String,
-    link: String
+    promotion_id: String,
+    width: String,
+    height: String
   },
   components: {
     Icon
@@ -64,5 +70,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 </style>

@@ -11,9 +11,19 @@
 import SignNav from "~/components/commons/SignNav";
 import AForm from "~/components/partials/AffiliateForm";
 export default {
+  auth: false,
   components: {
     SignNav,
     AForm
+  },
+
+  async fetch({ store, param, route, query, error }) {
+    try {
+      await store.dispatch("category/get");
+      await store.dispatch("user/find", query.user_id);
+    } catch (err) {
+      console.log(err);
+    }
   }
 };
 </script>

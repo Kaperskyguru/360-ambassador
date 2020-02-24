@@ -2,7 +2,7 @@
   <div class="col-12 mb-5">
     <div class="row align-content-center">
       <div class="col-4">
-        <icon :icon="icon" alt="" class="img-fluid" />
+        <icon round="50" :icon="icon" alt="" class="img-fluid" />
       </div>
       <div class="col-8">
         <div class="dashboard__summary--card-header m-0">

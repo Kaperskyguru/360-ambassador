@@ -16,10 +16,7 @@
               Congratulation!
             </h6>
             <p class="col-12 color-grey-7 text-small text-center">
-              You have opted to join the
-              <span class="text-bold">Bukka Hot Festo</span> promotion. Just a
-              step away from earning your income<br /><br />click the button
-              below to confirm
+              <slot name="content" />
             </p>
             <div class="col-12">
               <div class="row justify-content-center">
@@ -36,7 +33,7 @@
 </template>
 
 <script>
-import Btn from "~/components/commons/Btn";
+import Btn from "~/components/commons/buttons/Btn";
 
 export default {
   components: {

@@ -15,13 +15,36 @@ import Banner from "~/components/pages/Index/Banner.vue";
 import Testimonial from "~/components/pages/Index/TestimonySection.vue";
 import Foot from "~/components/Footer.vue";
 
+import { mapState } from "vuex";
+
 export default {
+  auth: false,
   components: {
     Heade,
     Home,
     Foot,
     Banner,
     Testimonial
+  },
+
+  async fetch({ store, auth, error }) {
+    try {
+      await store.dispatch("role/get");
+    } catch (erro) {
+      console.log(erro);
+    }
+  },
+  head: {
+    title:
+      "360 Ambasador | Quickly start &amp; grow your online business with 360 Ambassador",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Quickly start &amp; grow your online business with 360 Ambassador"
+      }
+    ]
   }
 };
 </script>

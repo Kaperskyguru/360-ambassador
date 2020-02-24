@@ -16,5 +16,9 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
+.dashboard__general--card__text-small {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
 </style>

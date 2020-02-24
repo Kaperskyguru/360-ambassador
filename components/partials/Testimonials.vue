@@ -14,7 +14,9 @@
 import Testimonial from "~/components/commons/Testimonial";
 
 export default {
-  components: { Testimonial }
+  components: {
+    Testimonial
+  }
 };
 </script>
 

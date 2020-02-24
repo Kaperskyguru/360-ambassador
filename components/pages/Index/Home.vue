@@ -1,13 +1,13 @@
 <template>
-  <b-col cols="12" class="color-white pt-5 pb-5">
-    <b-row>
+  <section class="color-white col-12 pt-5 pb-5">
+    <div class="row">
       <h2 class="col-md-5 col-12 color-blue ml-md-4">
         Cutting Edge Solutions For Results-Driven Individuals
       </h2>
-    </b-row>
-    <b-row class="justify-content-center mt-5 mb-5">
-      <b-col md="3" cols="12" class="mt-5 mr-md-1">
-        <div class="text-center">
+    </div>
+    <div class="row justify-content-center mt-5 mb-5">
+      <div class="col-md-3 col-12 mt-5 mr-md-1">
+        <div class=" text-center">
           <img src="~/assets/images/Mask1.png" alt="" class="img-fluid" />
         </div>
         <div class="mt-4">
@@ -18,11 +18,11 @@
             Over 9.5 million products sold across 22 categories.
           </p>
         </div>
-      </b-col>
-      <b-col md="3" cols="12" class="mt-5  mr-md-1">
-        <b-col cols="12" class="text-center">
+      </div>
+      <div class="col-md-3 col-12 mt-5  mr-md-1">
+        <div class="col-12 text-center">
           <img src="~/assets/images/Mask2.png" alt="" class="img-fluid" />
-        </b-col>
+        </div>
         <div class="mt-4">
           <h6 class="color-blue col-12 p-0 text-center">
             Award-Winning Authority
@@ -32,11 +32,11 @@
             - 2 years running.
           </p>
         </div>
-      </b-col>
-      <b-col md="3" cols="12" class=" mt-5 ">
-        <b-col cols="12" class="text-center">
+      </div>
+      <div class="col-md-3 col-12 mt-5 ">
+        <div class="col-12 text-center">
           <img src="~/assets/images/Mask3.png" alt="" class="img-fluid" />
-        </b-col>
+        </div>
         <div class="mt-4">
           <h6 class="color-blue col-12 p-0 text-center">
             Preferred by Top Marketers
@@ -46,15 +46,15 @@
             sellers & consumers.
           </p>
         </div>
-      </b-col>
-    </b-row>
-  </b-col>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
 import Testimonials from "~/components/partials/Testimonials";
-import CurvedButton from "~/components/commons/CurvedButton";
-import DesignButton from "~/components/commons/DesignButton";
+import CurvedButton from "~/components/commons/buttons/CurvedButton";
+import DesignButton from "~/components/commons/buttons/DesignButton";
 export default {
   components: { Testimonials, CurvedButton, DesignButton }
 };
