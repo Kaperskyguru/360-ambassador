@@ -20,9 +20,9 @@
             </p>
             <div class="col-12">
               <div class="row justify-content-center">
-                <btn class="my-promotion__pills--btn color-blue-2 col-9">
+                <!-- <btn class="my-promotion__pills--btn color-blue-2 col-9">
                   Confirm
-                </btn>
+                </btn> -->
               </div>
             </div>
           </div>
@@ -33,14 +33,12 @@
 </template>
 
 <script>
-import Btn from "~/components/commons/buttons/Btn";
+// import Btn from "~/components/commons/buttons/Btn";
 
 export default {
   components: {
-    Btn
+    // Btn
   }
 };
 </script>
 
-<style>
-</style>

@@ -27,5 +27,4 @@
   </main>
 </template>
 
-<style>
-</style>
+

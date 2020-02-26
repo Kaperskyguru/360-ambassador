@@ -5,13 +5,6 @@
     height="22.999"
     viewBox="0 0 23 22.999"
   >
-    <defs>
-      <style>
-        .r {
-          fill: #0e163d;
-        }
-      </style>
-    </defs>
     <g transform="translate(0.004 0.001)">
       <g transform="translate(-0.004 -0.001)">
         <path
@@ -36,6 +29,3 @@ export default {
   props: { color: { type: String, default: "#0e163d" } }
 };
 </script>
-
-<style>
-</style>

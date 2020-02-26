@@ -65,13 +65,14 @@
 import BigDesignButton from "~/components/commons/buttons/BigDesignButton";
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 import { mapState } from "vuex";
-
+import Loading from "~/components/commons/Loading";
 export default {
   auth: "guest",
   components: {
     BigDesignButton,
     ValidationProvider,
-    ValidationObserver
+    ValidationObserver,
+    Loading
   },
   data() {
     return {
@@ -153,5 +154,3 @@ export default {
 };
 </script>
 
-<style>
-</style>
