@@ -53,7 +53,7 @@
 
 <script>
 import Brand from "~/components/partials/Brand";
-import Profile from "~/components/partials/Profile";
+import Profile from "~/components/partials/Profile1";
 export default {
   components: {
     Brand,

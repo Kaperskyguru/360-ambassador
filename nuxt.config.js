@@ -79,7 +79,7 @@ export default {
 
     script: [
       {
-        src: "https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        // src: "https://code.jquery.com/jquery-3.4.1.slim.min.js"
         // async: true
       },
       {
@@ -128,7 +128,8 @@ export default {
     { src: "~/plugins/vue-notification", ssr: false },
     "~/plugins/vue-moment",
     { src: "~/plugins/vue-full-loading", ssr: false },
-    "~/plugins/vue-swal"
+    "~/plugins/vue-swal",
+    { src: "~/plugins/apexcharts", ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -188,10 +189,21 @@ export default {
    ** Build configuration
    */
   build: {
+    vendor: ["vue-apexchart"],
     transpile: ["vee-validate/dist/rules"],
     /*
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
   }
+
+  // sitemap: {
+  //   path: '/sitemap.xml',
+  //   hostname: 'http://blog.zoz0312.com',
+  //   lastmod: '2019-11-20',
+  //   exclude: [
+  //     '/login',
+  //     '/category/**',
+  //     '/posts/create'
+  //   ],
 };
