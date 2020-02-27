@@ -1,6 +1,6 @@
 <template>
   <main>
-    <heade />
+    <heade :title="signinText" />
     <home />
     <banner />
     <testimonial />
@@ -26,7 +26,11 @@ export default {
     Banner,
     Testimonial
   },
-
+  async asyncData({ store }) {
+    if (store.$auth.loggedIn) {
+      return { signinText: "Goto Dashboard" };
+    }
+  },
   async fetch({ store, auth, error }) {
     try {
       await store.dispatch("role/get");

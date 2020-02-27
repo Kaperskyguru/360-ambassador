@@ -1,6 +1,6 @@
 <template>
   <main>
-    <promotions />
+    <promotions :promotion="promotion" />
   </main>
 </template>
 
@@ -14,8 +14,13 @@ export default {
     Promotions
   },
 
-  fetch({ store, params }) {
-    store.dispatch("promotion/find", params.id);
+  // fetch({ store, params }) {
+  //   store.dispatch("promotion/find", params.id);
+  // },
+
+  async asyncData({ store, params }) {
+    const promotion = await store.dispatch("promotion/find", params.id);
+    return { promotion };
   }
 };
 </script>

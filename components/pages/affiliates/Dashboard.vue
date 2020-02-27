@@ -1,9 +1,6 @@
 <template>
   <div class="container-fluid dashboard">
     <div class="row">
-      <div id="navbar">
-        <navigation></navigation>
-      </div>
       <dashboard-nav />
       <div class="dashboard__body col-12">
         <div class="col-12 col-md-12">
@@ -128,7 +125,6 @@ import Merchants from "~/components/partials/affiliates/Merchants";
 import PerformanceBoxes from "~/components/partials/affiliates/PerformanceBoxes";
 import Promotions from "~/components/partials/affiliates/Promotions";
 import Tasks from "~/components/partials/affiliates/Tasks";
-import Navigation from "~/components/DNav";
 import { mapState } from "vuex";
 export default {
   components: {
@@ -138,8 +134,7 @@ export default {
     PerformanceBoxes,
     Promotions,
     Tasks,
-    LineChart,
-    Navigation
+    LineChart
   },
   computed: {
     ...mapState({

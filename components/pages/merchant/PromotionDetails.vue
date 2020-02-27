@@ -98,7 +98,7 @@
                         clicks
                       </template>
                       <template slot="amount">
-                        200
+                        {{ promotion.clicks }}
                       </template>
                     </stat-box>
                   </div>
@@ -109,7 +109,7 @@
                         visitors
                       </template>
                       <template slot="amount">
-                        100
+                        {{ promotion.Visitors || 0 }}
                       </template>
                     </stat-box>
                   </div>
@@ -119,7 +119,7 @@
                         sales
                       </template>
                       <template slot="amount">
-                        2
+                        {{ promotion.Sales || 0 }}
                       </template>
                     </stat-box>
                   </div>
@@ -129,7 +129,7 @@
                         conv
                       </template>
                       <template slot="amount">
-                        0.02%
+                        {{ promotion.Convertion_rate || 0.0 }}
                       </template>
                     </stat-box>
                   </div>
@@ -183,21 +183,7 @@ export default {
     PromotionDetail,
     StatBox
   },
-  props: {
-    finish: {
-      type: Boolean,
-      default: false
-    }
-  },
-
-  computed: {
-    ...mapState({
-      promotion: state => {
-        console.log(state.promotion.promotion);
-        return state.promotion.promotion;
-      }
-    })
-  }
+  props: ["finish", "promotion"]
 };
 </script>
 

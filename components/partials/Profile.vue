@@ -29,7 +29,7 @@
       </nuxt-link>
     </li>
     <li class="nav-item dropdown">
-      <div class="nav-link">
+      <div class="nav-link" :class="{ show: show }">
         <nuxt-link
           class="dropdown-toggle dashboard__nav--profile d-flex"
           to="#"
@@ -38,6 +38,7 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
+          @click.native="show = !show"
         >
           <profile-image />
           <div class="col d-block m-0 p-0">
@@ -55,6 +56,7 @@
         </nuxt-link>
         <div
           class="dropdown-menu dropdown-menu-right dashboard__nav--profile-dropdown bg-grey-3"
+          :class="{ show: show }"
           aria-labelledby="navbarDropdown"
         >
           <div class="row align-content-start">
@@ -108,6 +110,11 @@ export default {
     SettingsIcon,
     EditProfileIcon,
     HelpIcon
+  },
+  data() {
+    return {
+      show: false
+    };
   },
   methods: {
     async logout() {

@@ -1473,7 +1473,7 @@ section,
 
 .my-promotion__pills {
   margin-top: 2rem;
-  border-bottom: 0.1rem solid #dbdbdb;
+  /* border-bottom: 0.1rem solid #dbdbdb; */
 }
 
 .my-promotion__pills--link,

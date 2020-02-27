@@ -79,30 +79,6 @@ export default {
 
     script: [
       {
-        // src: "https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        // async: true
-      },
-      {
-        src:
-          "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
-        async: true
-      },
-      {
-        src:
-          "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
-        async: true
-      },
-      {
-        src:
-          "https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js",
-        async: true
-      },
-      {
-        src:
-          "https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js",
-        async: true
-      },
-      {
         src: "~/assets/js/main.js",
         async: true
       }
@@ -125,10 +101,10 @@ export default {
     "~/plugins/axios",
     "~/plugins/repositories",
     "~/plugins/vee-validate",
-    { src: "~/plugins/vue-notification", ssr: false },
-    "~/plugins/vue-moment",
-    { src: "~/plugins/vue-full-loading", ssr: false },
     "~/plugins/vue-swal",
+    "~/plugins/vue-moment",
+    { src: "~/plugins/vue-notification", ssr: false },
+    { src: "~/plugins/vue-full-loading", ssr: false },
     { src: "~/plugins/apexcharts", ssr: false }
   ],
   /*
@@ -167,15 +143,10 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://bootstrap-vue.js.org
     "bootstrap-vue/nuxt",
-    // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
-    // Doc: https://github.com/nuxt-community/dotenv-module
     "@nuxtjs/dotenv",
-
-    "@nuxtjs/auth",
-    "@nuxtjs/svg"
+    "@nuxtjs/auth"
   ],
   /*
    ** Axios module configuration
@@ -196,14 +167,4 @@ export default {
      */
     extend(config, ctx) {}
   }
-
-  // sitemap: {
-  //   path: '/sitemap.xml',
-  //   hostname: 'http://blog.zoz0312.com',
-  //   lastmod: '2019-11-20',
-  //   exclude: [
-  //     '/login',
-  //     '/category/**',
-  //     '/posts/create'
-  //   ],
 };

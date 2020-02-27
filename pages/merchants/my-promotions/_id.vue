@@ -1,6 +1,6 @@
 <template>
   <main>
-    <promotion-details />
+    <promotion-details :promotion="promotion" />
   </main>
 </template>
 
@@ -12,8 +12,10 @@ export default {
   components: {
     PromotionDetails
   },
-  fetch({ store, params }) {
-    store.dispatch("promotion/find", params.id);
+
+  async asyncData({ store, params }) {
+    const promotion = await store.dispatch("promotion/find", params.id);
+    return { promotion };
   }
 };
 </script>

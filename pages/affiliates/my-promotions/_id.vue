@@ -1,6 +1,6 @@
 <template>
   <main>
-    <promotion />
+    <promotion :promotion="promotion" />
   </main>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   middleware: "affiliate",
   components: {
     Promotion
+  },
+
+  async asyncData({ store, params }) {
+    const promotion = await store.dispatch("promotion/find", params.id);
+    return { promotion };
   }
 };
 </script>
