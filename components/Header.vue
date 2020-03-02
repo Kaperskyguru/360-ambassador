@@ -38,6 +38,7 @@ import Navbar from "~/components/commons/navs/Nav";
 import SocialIcons from "~/components/commons/SocialIcons";
 export default {
   props: ["title"],
+  name: "Header",
   components: { Navbar, SocialIcons }
 };
 </script>

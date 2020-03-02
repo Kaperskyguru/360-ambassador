@@ -36,7 +36,7 @@
                 <tr v-for="(promotion, i) in promotions" :key="i">
                   <td>
                     <nuxt-link to="#" class="color-blue">{{
-                      promotion.user !== null ? promotion.user.name : ""
+                      promotion.user !== null ? promotion.user.username : "e"
                     }}</nuxt-link>
                   </td>
                   <td>

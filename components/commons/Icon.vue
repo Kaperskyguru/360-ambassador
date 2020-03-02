@@ -2,12 +2,13 @@
   <img
     :src="icon"
     :alt="alt"
-    :style="{ 'border-radius': round + '%' + '!important' }"
+    :style="{ 'border-radius': round + '% !important;' }"
   />
 </template>
 
 <script>
 export default {
+  name: "Icon",
   props: {
     icon: String,
     alt: { type: String, default: "image" },

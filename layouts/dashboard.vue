@@ -28,7 +28,7 @@
 </template>
 <script>
 export default {
-  middleware: "defaultData"
+  middleware: "loadDashboardData"
 };
 </script>
 <style scoped>

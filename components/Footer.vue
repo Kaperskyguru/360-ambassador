@@ -104,6 +104,7 @@ import TwitterIcon from "~/components/commons/Icons/Twitter";
 import InstagramIcon from "~/components/commons/Icons/Instagram";
 import FacebookIcon from "~/components/commons/Icons/Facebook";
 export default {
+  name: "Footer",
   components: {
     Brand,
     YoutubeIcon,

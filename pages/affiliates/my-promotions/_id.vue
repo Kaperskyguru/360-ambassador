@@ -8,6 +8,7 @@
 import Promotion from "~/components/pages/affiliates/Running.promotion.vue";
 
 export default {
+  layout: "dashboard",
   auth: true,
   middleware: "affiliate",
   components: {

@@ -36,6 +36,7 @@
 // import Btn from "~/components/commons/buttons/Btn";
 
 export default {
+  name: "Modal",
   components: {
     // Btn
   }
