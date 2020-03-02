@@ -1,10 +1,10 @@
 export const state = () => ({
-  promotions: [],
-  promotion: [],
-  myPromotions: [],
-  joinedPromotions: [],
-  joinedPromotion: [],
-  latestPromotions: [],
+  promotions: {},
+  promotion: {},
+  myPromotions: {},
+  joinedPromotions: {},
+  joinedPromotion: {},
+  latestPromotions: {},
   performance: {}
 });
 

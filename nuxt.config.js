@@ -106,6 +106,7 @@ export default {
     { src: "~/plugins/vue-notification", ssr: false },
     { src: "~/plugins/vue-full-loading", ssr: false },
     { src: "~/plugins/apexcharts", ssr: false }
+    // { src: "~/plugins/localStorage.js", ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules

@@ -112,7 +112,10 @@
         </li>
         <li class="nav-item">
           <div class="nav-link mt-3 mt-lg-0">
-            <Design-button :link="link">{{ title }}</Design-button>
+            <Design-button :link="link">
+              <template v-if="$auth.loggedin"> Goto Dashboard</template>
+              <template v-else>sign in</template>
+            </Design-button>
           </div>
         </li>
       </div>
@@ -125,12 +128,6 @@ import Brand from "~/components/partials/Brand";
 import DesignButton from "~/components/commons/buttons/DesignButton";
 import CurvedButton from "~/components/commons/buttons/CurvedButton";
 export default {
-  props: {
-    title: {
-      default: "sign in",
-      type: String
-    }
-  },
   data() {
     return {
       link: "",
