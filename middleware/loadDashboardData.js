@@ -1,7 +1,7 @@
 import RSVP from "rsvp";
 export default async function({ store, from }) {
   let isInitialPageLoad = !from;
-  if (isInitialPageLoad || from.path == "/login") {
+  if (isInitialPageLoad || from.path == "/login" || from.path == "/") {
     try {
       switch (store.state.auth.user.role.name) {
         case "promoter":

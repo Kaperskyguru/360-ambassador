@@ -118,7 +118,7 @@ export default {
   },
   methods: {
     async logout() {
-      console.log(await this.$store.dispatch("user/logout"));
+      await this.$store.dispatch("user/logout");
     }
   }
 };
