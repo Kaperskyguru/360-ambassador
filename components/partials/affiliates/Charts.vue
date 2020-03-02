@@ -24,9 +24,6 @@
         <bar-chart id="mythirdbarchart">
           Conversion Rate
         </bar-chart>
-        <!-- <line-chart id="mysecondchart" class="bg-blue">
-          <span class="text-white"> Product Sold </span>
-        </line-chart> -->
         <bar-chart id="mysecondchart" class="bg-blue">
           <span class="text-white"> Product Sold </span>
         </bar-chart>

@@ -1,5 +1,4 @@
 <template>
-  <!-- <div :id="chart_id" class="p-0" style="height: 220px; width: 100%"></div> -->
   <apexchart
     width="100%"
     height="220px"

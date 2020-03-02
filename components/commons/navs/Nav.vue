@@ -113,7 +113,7 @@
         <li class="nav-item">
           <div class="nav-link mt-3 mt-lg-0">
             <Design-button :link="link">
-              <template v-if="$auth.loggedin"> Goto Dashboard</template>
+              <template v-if="$auth.loggedIn"> Goto Dashboard</template>
               <template v-else>sign in</template>
             </Design-button>
           </div>
