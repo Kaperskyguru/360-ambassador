@@ -168,7 +168,7 @@
                   </div>
                 </div>
               </div>
-              <bar-chart id="myfourthbarchart" :data="chartData"> </bar-chart>
+              <bar-chart id="myfourthbarchart"> </bar-chart>
             </div>
             <!--  -->
             <div class="col-12 mb-5 dashboard__chart--card">
@@ -250,5 +250,3 @@ export default {
 };
 </script>
 
-<style>
-</style>

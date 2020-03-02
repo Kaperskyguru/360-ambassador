@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light pt-3 navbar-reduce w-100">
+  <b-nav class="navbar navbar-expand-lg pt-3">
     <brand />
     <button
       class="navbar-toggler bg-white"
@@ -39,9 +39,9 @@
           <nuxt-link class="nav-link color-white" to="#">features</nuxt-link>
         </li>
       </ul>
-      <div class="navbar-nav my-2 my-lg-1">
+      <div class="navbar-nav my-2 my-lg-1 dropdown">
         <li class="nav-item dropdown">
-          <div class="nav-link">
+          <div class="nav-link" :class="{ show: show }">
             <nuxt-link
               class="home-dropdown__toggle btn__bordered-square-curved--yellow"
               to="#"
@@ -50,11 +50,13 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
+              @click.native="show = !show"
             >
               get started
             </nuxt-link>
             <div
               class="dropdown-menu home-dropdown__menu mt-5 mt-lg-3 "
+              :class="{ show: show }"
               aria-labelledby="navbarDropdown"
             >
               <h6
@@ -110,12 +112,15 @@
         </li>
         <li class="nav-item">
           <div class="nav-link mt-3 mt-lg-0">
-            <Design-button :link="link">{{ signinText }}</Design-button>
+            <Design-button :link="link">
+              <template v-if="$auth.loggedin"> Goto Dashboard</template>
+              <template v-else>sign in</template>
+            </Design-button>
           </div>
         </li>
       </div>
     </div>
-  </nav>
+  </b-nav>
 </template>
 
 <script>
@@ -125,9 +130,9 @@ import CurvedButton from "~/components/commons/buttons/CurvedButton";
 export default {
   data() {
     return {
-      signinText: "sign in",
       link: "",
-      activeClass: "active"
+      activeClass: "active",
+      show: false
     };
   },
   components: {
@@ -135,9 +140,9 @@ export default {
     DesignButton,
     CurvedButton
   },
+
   mounted() {
     if (this.$auth.loggedIn) {
-      this.signinText = "Goto Dashboard";
       this.redirectByRole(this.$auth.user.role.name);
     } else {
       this.link = "/login";
@@ -173,5 +178,5 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 </style>

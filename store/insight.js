@@ -4,7 +4,7 @@ export const state = () => ({
 
 export const mutations = {
   set(state, data) {
-    if (data !== null) state.earningGraph = data[0].graph;
+    if (data !== null) state.earningGraph = data[0];
   }
 };
 

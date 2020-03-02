@@ -5,13 +5,6 @@
     height="10"
     viewBox="0 0 15 15"
   >
-    <defs>
-      <style>
-        .ab {
-          fill: #ffffff;
-        }
-      </style>
-    </defs>
     <g transform="translate(-0.001)">
       <g transform="translate(0.001)">
         <g transform="translate(0)">
@@ -68,5 +61,3 @@ export default {
 };
 </script>
 
-<style>
-</style>

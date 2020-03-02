@@ -1,5 +1,8 @@
 <template>
   <main>
+    <div v-if="$nuxt.isOffline">
+      You are currently not connected to the internet
+    </div>
     <client-only>
       <notifications group="alerts" position="bottom right">
         <template slot="body" slot-scope="props">
@@ -26,6 +29,12 @@
     <nuxt />
   </main>
 </template>
-
-<style>
+<script>
+export default {
+  middleware: "defaultData"
+};
+</script>
+<style scoped>
 </style>
+
+

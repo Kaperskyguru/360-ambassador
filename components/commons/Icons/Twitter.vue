@@ -6,13 +6,6 @@
     viewBox="0 0 18.462 15"
     class="color-white"
   >
-    <defs>
-      <style>
-        .ab {
-          fill: #ffffff;
-        }
-      </style>
-    </defs>
     <g transform="translate(-0.001 -0.004)">
       <g transform="translate(0.001 0.004)">
         <g transform="translate(0 0)">
@@ -39,5 +32,3 @@ export default {
 };
 </script>
 
-<style>
-</style>

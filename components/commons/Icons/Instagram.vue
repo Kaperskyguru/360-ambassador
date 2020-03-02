@@ -5,13 +5,6 @@
     height="10"
     viewBox="0 0 15 15"
   >
-    <defs>
-      <style>
-        .ab {
-          fill: #ffffff;
-        }
-      </style>
-    </defs>
     <g transform="translate(-2 -2)">
       <g transform="translate(2 2)">
         <path
@@ -31,5 +24,3 @@ export default {
 };
 </script>
 
-<style>
-</style>

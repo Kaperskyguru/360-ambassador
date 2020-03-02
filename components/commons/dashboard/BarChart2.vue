@@ -1,5 +1,13 @@
 <template>
-  <div :id="chart_id" class="p-0" style="height: 220px; width: 100%"></div>
+  <!-- <div :id="chart_id" class="p-0" style="height: 220px; width: 100%"></div> -->
+  <apexchart
+    width="100%"
+    height="220px"
+    type="bar"
+    :options="options"
+    :series="series"
+    class="p-0"
+  ></apexchart>
 </template>
 
 <script>
@@ -15,75 +23,37 @@ export default {
 
   data() {
     return {
-      chart_id: this.id
+      chart_id: this.id,
+      options: {
+        colors: ["#FECC0A"],
+        chart: {
+          id: this.id
+        },
+        xaxis: {
+          categories: [
+            "January",
+            "Febuary",
+            "March",
+            "Apriel",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+          ]
+        }
+      },
+      series: [
+        {
+          name: "Earnings",
+          data: [30, 40, 45, 50, 49, 60, 70, 91, 67, 23, 46, 98]
+        }
+      ]
     };
-  },
-  mounted() {
-    new Morris.Bar({
-      element: this.chart_id,
-
-      data: this.data
-        ? this.data
-        : [
-            {
-              Month: "January",
-              value: 12000
-            },
-            {
-              Month: "February",
-              value: 19000
-            },
-            {
-              Month: "March",
-              value: 3000
-            },
-            {
-              Month: "April",
-              value: 5000
-            },
-            {
-              Month: "May",
-              value: 2000
-            },
-            {
-              Month: "June",
-              value: 3000
-            },
-            {
-              Month: "July",
-              value: 25000
-            },
-            {
-              Month: "August",
-              value: 4500
-            },
-            {
-              Month: "September",
-              value: 12450
-            },
-            {
-              Month: "October",
-              value: 45820
-            },
-            {
-              Month: "November",
-              value: 2000
-            },
-            {
-              Month: "December",
-              value: 1450
-            }
-          ],
-      xkey: "Month",
-      ykeys: ["value"],
-      labels: ["Value"],
-      barColors: ["rgb(254,204,10)"],
-      parseTime: false,
-      resize: true
-    });
   }
 };
 </script>
 
-<style>
-</style>

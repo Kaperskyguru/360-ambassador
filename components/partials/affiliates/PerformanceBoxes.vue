@@ -44,8 +44,6 @@ export default {
   computed: {
     ...mapState({
       performance: state => {
-        console.log(state.promotion.performance);
-
         return state.promotion.performance;
       }
     })
@@ -53,5 +51,3 @@ export default {
 };
 </script>
 
-<style>
-</style>

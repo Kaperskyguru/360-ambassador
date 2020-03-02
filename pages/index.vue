@@ -26,14 +26,6 @@ export default {
     Banner,
     Testimonial
   },
-
-  async fetch({ store, auth, error }) {
-    try {
-      await store.dispatch("role/get");
-    } catch (erro) {
-      console.log(erro);
-    }
-  },
   head: {
     title:
       "360 Ambasador | Quickly start &amp; grow your online business with 360 Ambassador",
@@ -49,5 +41,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+

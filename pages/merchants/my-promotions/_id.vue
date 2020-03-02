@@ -1,22 +1,23 @@
 <template>
   <main>
-    <promotion-details />
+    <promotion-details :promotion="promotion" />
   </main>
 </template>
 
 <script>
 import PromotionDetails from "~/components/pages/merchant/PromotionDetails";
 export default {
+  layout: "dashboard",
   auth: true,
   middleware: "merchant",
   components: {
     PromotionDetails
   },
-  fetch({ store, params }) {
-    store.dispatch("promotion/find", params.id);
+
+  async asyncData({ store, params }) {
+    const promotion = await store.dispatch("promotion/find", params.id);
+    return { promotion };
   }
 };
 </script>
 
-<style>
-</style>

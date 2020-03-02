@@ -1,6 +1,6 @@
 <template>
   <header class="col-12 header">
-    <navbar></navbar>
+    <navbar :title="title"></navbar>
     <div class="col-12 pl-md-5 pl-2 pt-5 mb-5">
       <p class="col-md-2 col-12 color-white mr-md-auto mt-md-5 m-md-5">
         Quickly start & grow <br />
@@ -37,6 +37,8 @@
 import Navbar from "~/components/commons/navs/Nav";
 import SocialIcons from "~/components/commons/SocialIcons";
 export default {
+  props: ["title"],
+  name: "Header",
   components: { Navbar, SocialIcons }
 };
 </script>

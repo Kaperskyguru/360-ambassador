@@ -11,16 +11,10 @@
         height="22.999"
         viewBox="0 0 23 22.999"
       >
-        <defs>
-          <style>
-            .a {
-              fill: #0e163d;
-            }
-          </style>
-        </defs>
         <g transform="translate(0.004 0.001)">
           <g transform="translate(-0.004 -0.001)">
             <path
+              style=" fill: #0e163d;"
               class="a"
               d="M12.784,14.719a1.192,1.192,0,0,1-.846-.35,5.618,5.618,0,0,1,0-7.936l4.416-4.416a5.612,5.612,0,1,1,7.937,7.936l-2.019,2.019a1.2,1.2,0,1,1-1.693-1.693L22.6,8.26a3.22,3.22,0,1,0-4.554-4.553L13.628,8.122a3.223,3.223,0,0,0,0,4.553,1.2,1.2,0,0,1-.846,2.042Z"
               transform="translate(-2.934 -0.372)"
@@ -49,6 +43,7 @@
 import { ValidationProvider } from "vee-validate";
 
 export default {
+  name: "ImageField",
   components: {
     ValidationProvider
   },
@@ -60,5 +55,3 @@ export default {
 };
 </script>
 
-<style>
-</style>

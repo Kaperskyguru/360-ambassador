@@ -5,13 +5,6 @@
     height="10"
     viewBox="0 0 7.5 15"
   >
-    <defs>
-      <style>
-        .ab {
-          fill: #ffffff !important;
-        }
-      </style>
-    </defs>
     <g transform="translate(-7 -2)">
       <g transform="translate(7 2)">
         <path
@@ -30,6 +23,3 @@ export default {
   props: { color: { type: String, default: "#ffffff" } }
 };
 </script>
-
-<style>
-</style>

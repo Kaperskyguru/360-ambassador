@@ -1,10 +1,10 @@
 export const state = () => ({
-  promotions: [],
-  promotion: [],
-  myPromotions: [],
-  joinedPromotions: [],
-  joinedPromotion: [],
-  latestPromotions: [],
+  promotions: {},
+  promotion: {},
+  myPromotions: {},
+  joinedPromotions: {},
+  joinedPromotion: {},
+  latestPromotions: {},
   performance: {}
 });
 
@@ -48,11 +48,13 @@ export const actions = {
       const res = await this.$repositories.promotion.show(promotion);
       if (res.status === 200 && res.data.success && res.data.code) {
         commit("find", res.data.data);
+        return res.data.data;
       }
     } catch (err) {
       console.log(err);
     }
   },
+
   async add({ commit }, form) {
     const res = await this.$repositories.promotion.create(form);
     if (res.status === 200 && res.data.success && res.data.code) {

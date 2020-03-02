@@ -5,13 +5,6 @@
     height="15"
     viewBox="0 0 20.072 20.072"
   >
-    <defs>
-      <style>
-        .a {
-          fill: #fff !important;
-        }
-      </style>
-    </defs>
     <g transform="translate(0 0)">
       <path
         :style="{ fill: color + ' !important' }"
@@ -29,5 +22,3 @@ export default {
 };
 </script>
 
-<style>
-</style>
