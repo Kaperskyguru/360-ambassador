@@ -1,9 +1,7 @@
 import RSVP from "rsvp";
 export default async function({ store, from }) {
   let isInitialPageLoad = !from;
-
-  if (isInitialPageLoad) {
-    console.log(isInitialPageLoad);
+  if (isInitialPageLoad || from.path == "/") {
     try {
       await RSVP.all([
         store.dispatch("category/get"),

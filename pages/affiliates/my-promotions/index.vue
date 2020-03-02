@@ -15,9 +15,9 @@ export default {
   },
 
   async fetch({ store, auth, error, from }) {
+    let isInitialPageLoad = !from;
+    console.log(isInitialPageLoad, from);
     try {
-      let isInitialPageLoad = !from;
-
       if (isInitialPageLoad) {
         await store.dispatch(
           "promotion/joinedPromotions",
