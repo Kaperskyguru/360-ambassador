@@ -108,18 +108,21 @@ export default {
         .catch(err => {
           this.show = false;
           console.log(err);
-          if (err && err.response.data.code == 403) {
-            this.$swal({
-              text: "Please verify your account",
-              icon: "error"
-            });
-          } else {
-            this.alert = true;
-            // this.$notify({
-            //   text: "Username and password combination is wrong",
-            //   type: "error",
-            //   group: "alerts"
-            // });
+          const { response } = err;
+          if (response !== undefined) {
+            if (response.data.code == 403) {
+              this.$swal({
+                text: "Please verify your account",
+                icon: "error"
+              });
+            } else {
+              this.alert = true;
+              // this.$notify({
+              //   text: "Username and password combination is wrong",
+              //   type: "error",
+              //   group: "alerts"
+              // });
+            }
           }
         });
     },
