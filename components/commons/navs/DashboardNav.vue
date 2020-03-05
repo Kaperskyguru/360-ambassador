@@ -9,11 +9,16 @@
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      @click="show = !show"
     >
       <span class="navbar-toggler-icon color-white"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div
+      class="collapse navbar-collapse mt-4"
+      :class="{ show: show }"
+      id="navbarSupportedContent"
+    >
       <ul class="navbar-nav mr-auto">
         <li
           :class="[currentPage === 'affiliates' ? activeClass : '', 'nav-item']"
@@ -66,12 +71,13 @@ export default {
   },
   data() {
     return {
-      activeClass: "active"
+      activeClass: "active",
+      show: false
     };
   },
   computed: {
     currentPage() {
-      return "";
+      return this.$route.name;
     }
   }
 };

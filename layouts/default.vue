@@ -34,7 +34,7 @@ export default {
   middleware: "defaultData"
 };
 </script>
-<style scoped>
+<style>
 </style>
 
 

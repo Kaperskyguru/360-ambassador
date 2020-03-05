@@ -1,15 +1,10 @@
 <template>
-  <main>
-    <promotion-details :promotion="promotion" />
-  </main>
+  <promotion-details :promotion="promotion" />
 </template>
 
 <script>
 import PromotionDetails from "~/components/pages/merchant/PromotionDetails";
 export default {
-  layout: "dashboard",
-  auth: true,
-  middleware: "merchant",
   components: {
     PromotionDetails
   },

@@ -53,7 +53,7 @@
         </tr>
       </tbody>
     </table>
-    <proomotion-details :promotion="promotion" />
+    <promotion-details :promotion="promotion" />
   </div>
 </template>
 

@@ -35,6 +35,11 @@ export default {
 };
 </script>
 <style scoped>
+@media (max-width: 75em) {
+  html {
+    font-size: 60% !important;
+  }
+}
 </style>
 
 

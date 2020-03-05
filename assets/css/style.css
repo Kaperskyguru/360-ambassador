@@ -34,6 +34,10 @@ html {
   html {
     font-size: 45%;
   }
+
+  .dashboard__promotions--card {
+    padding-left: 3rem !important;
+  }
 }
 
 @media (max-width: 37.5em) {
@@ -1632,4 +1636,9 @@ section,
 .my-promotion__modal .modal-content {
   border-radius: 0rem !important;
   border: none !important;
+}
+
+button,
+a {
+  outline: none !important;
 }

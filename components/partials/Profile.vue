@@ -41,7 +41,7 @@
           @click.native="show = !show"
         >
           <profile-image />
-          <div class="col d-block m-0 p-0">
+          <div class="d-block m-0 p-0">
             <span
               class="dashboard__nav--profile-name col-12 d-block color-white"
               >Hi, {{ $auth.user.firstName || "" }}

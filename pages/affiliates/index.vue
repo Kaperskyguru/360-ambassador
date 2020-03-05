@@ -1,7 +1,5 @@
 <template>
-  <main>
-    <dashboard />
-  </main>
+  <dashboard />
 </template>
 
 <script>
@@ -9,9 +7,6 @@ import Dashboard from "~/components/pages/affiliates/Dashboard.vue";
 import { mapState } from "vuex";
 
 export default {
-  layout: "dashboard",
-  auth: true,
-  middleware: "affiliate",
   components: {
     Dashboard
   },
