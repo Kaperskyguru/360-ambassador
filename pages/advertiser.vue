@@ -2,7 +2,7 @@
   <section class="container-fluid">
     <div class="row justify-content-center">
       <sign-nav>Advertiser SIGN UP FORM</sign-nav>
-      <ad-form />
+      <ad-form :user="user" />
     </div>
   </section>
 </template>
@@ -11,16 +11,18 @@
 import SignNav from "~/components/commons/SignNav";
 import AdForm from "~/components/partials/AdvertiserForm";
 export default {
-  auth: false,
+  auth: true,
+  middleware: "merchant",
   components: {
     SignNav,
     AdForm
   },
 
-  async fetch({ store, param, route, query, error }) {
+  async asyncData({ store, param, route, query, error }) {
     try {
       await store.dispatch("category/get");
-      await store.dispatch("user/find", query.user_id);
+      const user = await store.dispatch("user/find", query.user_id);
+      return { user };
     } catch (err) {
       // const { code, response } = err;
       // if (code && response) {

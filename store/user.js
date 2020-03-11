@@ -30,6 +30,7 @@ export const actions = {
     const res = await this.$repositories.user.show(id);
     if (res.data.code == 200 && res.data.success) {
       commit("storeUser", res.data.data);
+      return res.data.data;
     }
   },
 

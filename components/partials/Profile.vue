@@ -63,6 +63,7 @@
             <nuxt-link
               class="dropdown-item color-white dashboard__nav--profile-dropdown-item"
               to="#"
+              @click.native="redirectByRole($auth.user.role.name)"
             >
               <edit-profile-icon />
               Edit Profile
@@ -116,9 +117,34 @@ export default {
       show: false
     };
   },
+  computed: {
+    link: () => {
+      return this.$auth.user.role == "merchant" ? "advertiser" : "affiliate";
+    }
+  },
   methods: {
     async logout() {
       await this.$store.dispatch("user/logout");
+    },
+    redirectByRole(role) {
+      const id = this.$auth.user._id;
+      switch (role) {
+        case "admin":
+          this.$router.push(`/advertiser?user_id=${id}`);
+          break;
+
+        case "merchant":
+          this.$router.push(`/advertiser?user_id=${id}`);
+          break;
+
+        case "promoter":
+          this.$router.push(`/affiliate?user_id=${id}`);
+          break;
+
+        default:
+          this.$router.push("/");
+          break;
+      }
     }
   }
 };
