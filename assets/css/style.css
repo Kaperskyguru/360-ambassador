@@ -1642,3 +1642,14 @@ button,
 a {
   outline: none !important;
 }
+
+.btn__squared--disabled,
+.btn__squared--disabled:focus,
+.btn__squared--disabled:hover {
+  color: #ffffff !important;
+  background-color: #707070;
+  padding: .8rem 3rem !important;
+  border: 0.13rem solid #707070;
+  border-radius: 5rem 5rem 0rem 5rem;
+  text-decoration: none;
+}

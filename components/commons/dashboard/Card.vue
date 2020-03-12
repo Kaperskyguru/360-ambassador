@@ -65,20 +65,18 @@
             class="color-blue-2 mr-auto"
             >View details</nuxt-link
           >
-          <nuxt-link
-            to="#"
-            class="btn__square-curved--yellow color-blue-2"
-            href="#"
-            data-toggle="modal"
-            @click.native="joinPromotion"
-            >Join Program</nuxt-link
-          >
+          <join-button
+            class="color-blue-2"
+            :promotion="promotion"
+            v-on:pop="pop = !pop"
+            v-on:show="show = !show"
+          />
         </div>
       </div>
     </div>
     <loading :show="show" :label="label" :overlay="overlay" />
 
-    <confirm-box :show="show">
+    <confirm-box :show="pop" v-on:close="pop = !pop">
       <template slot="content">
         You have opted to join the
         <span class="text-bold">{{ promotion.name }}</span> promotion. Just a
@@ -91,11 +89,15 @@
 
 <script>
 import { mapState } from "vuex";
+import JoinButton from "~/components/commons/buttons/JoinPromotionBtn";
 import ConfirmBox from "~/components/Modals.vue";
+import DesignButton from "~/components/commons/buttons/DesignButton";
 export default {
   props: ["promotion"],
   components: {
-    ConfirmBox
+    ConfirmBox,
+    DesignButton,
+    JoinButton
   },
   data() {
     return {
@@ -104,31 +106,6 @@ export default {
       overlay: true,
       pop: false
     };
-  },
-
-  methods: {
-    async joinPromotion() {
-      this.show = true;
-      try {
-        const data = {};
-        data.promoter_id = this.$auth.user._id;
-        data.promotion = this.promotion._id;
-        await this.$store.dispatch("promotion/joinPromotion", data);
-        $("#exampleModalCenter").modal("show");
-        // this.$swal({
-        //   text: "You've successfully joined the promotion",
-        //   icon: "success"
-        // });
-        this.show = false;
-      } catch (error) {
-        this.show = false;
-        this.$swal({
-          text: "An error occurred, Don't panic just try again",
-          icon: "error"
-        });
-        console.log(error);
-      }
-    }
   }
 };
 </script>

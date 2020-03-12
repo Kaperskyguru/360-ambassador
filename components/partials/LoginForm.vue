@@ -19,19 +19,21 @@
       method="post"
       class="col-12 align-self-center p-0"
     >
-      <ValidationProvider name="Username" rules="required" v-slot="{ errors }">
+      <ValidationProvider
+        name="Email"
+        rules="required|email"
+        v-slot="{ errors }"
+      >
         <div class="col-12 form__group">
           <input
-            type="text"
+            type="email"
             class="col-12 form__input"
             id="regEmail"
-            placeholder="Username"
-            v-model="form.username"
+            placeholder="Email"
+            v-model="form.email"
+            required
           />
-          <span>{{ errors[0] }}</span>
-          <!-- <label for="regEmail" class="form__label color-grey-1"
-            >Username</label
-          > -->
+          <span class="input-error">{{ errors[0] }}</span>
         </div>
       </ValidationProvider>
 
@@ -45,14 +47,12 @@
             placeholder="Password"
             required
           />
-          <span>{{ errors[0] }}</span>
+          <span class="input-error">{{ errors[0] }}</span>
         </div>
       </ValidationProvider>
       <div class="color-blue text-right p-3 text-bold">
         <nuxt-link class="color-blue" to="/login">Forgot Password?</nuxt-link>
       </div>
-      <!-- <label for="logPassword" class="form__label color-grey-1">password</label> -->
-
       <div class="col-12 form__group">
         <big-design-button>SIGN IN</big-design-button>
       </div>
@@ -77,8 +77,9 @@ export default {
   data() {
     return {
       form: {
-        username: "",
-        password: ""
+        username: "kaperskyguru",
+        password: "",
+        email: ""
       },
       show: false,
       overlay: true,
@@ -117,11 +118,6 @@ export default {
               });
             } else {
               this.alert = true;
-              // this.$notify({
-              //   text: "Username and password combination is wrong",
-              //   type: "error",
-              //   group: "alerts"
-              // });
             }
           }
         });

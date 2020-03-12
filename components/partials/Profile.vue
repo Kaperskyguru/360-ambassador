@@ -127,6 +127,7 @@ export default {
       await this.$store.dispatch("user/logout");
     },
     redirectByRole(role) {
+      console.log(role);
       const id = this.$auth.user._id;
       switch (role) {
         case "admin":

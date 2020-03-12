@@ -55,14 +55,11 @@
                 5,000
               </p>
               <p class="col-auto pt-3 pb-3 pl-0 pr-1 d-table-cell color-blue">
-                <button
-                  class="btn__square-curved--yellow p-0"
-                  id="modalBtn"
-                  data-toggle="modal"
-                  data-target="#exampleModalCenter"
-                >
-                  Join Program
-                </button>
+                <join-button
+                  :promotion="promotion"
+                  v-on:pop="pop = !pop"
+                  v-on:show="show = !show"
+                />
               </p>
             </div>
           </div>
@@ -153,6 +150,7 @@
 
 <script>
 import MenuBar from "~/components/commons/navs/DashboardNav";
+import JoinButton from "~/components/commons/buttons/JoinPromotionBtn";
 import Modal from "~/components/Modals";
 import Charts from "~/components/partials/affiliates/Charts";
 import BarChart from "~/components/commons/dashboard/BarChart";
@@ -173,7 +171,8 @@ export default {
     ShareableLink,
     Charts,
     Modal,
-    PromotionDetail
+    PromotionDetail,
+    JoinButton
   },
   mounted() {}
 };

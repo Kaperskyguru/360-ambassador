@@ -15,7 +15,7 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider
-            name="First Name"
+            name="Full Name"
             rules="alpha"
             v-slot="{ errors }"
           >
@@ -23,23 +23,23 @@
               <label
                 for=""
                 class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
-                >First Name *</label
+                >Full Name *</label
               >
               <div class="col-md-8 col-12 ml-md-5">
                 <input
                   autocomplete="on"
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="user.firstName"
+                  :placeholder="user.fullname"
                   disabled
-                  v-model="form.firstName"
+                  v-model="form.fullname"
                 />
                 <span class="input-error">{{ errors[0] }}</span>
               </div>
             </div>
           </validation-provider>
         </div>
-        <div class="col-12 form-2__container">
+        <!-- <div class="col-12 form-2__container">
           <validation-provider
             name="Last Name"
             rules="alpha"
@@ -64,7 +64,7 @@
               </div>
             </div>
           </validation-provider>
-        </div>
+        </div> -->
         <div class="col-12 form-2__container">
           <validation-provider name="Phone Number" rules="" v-slot="{ errors }">
             <field
@@ -561,12 +561,17 @@ export default {
   },
   data() {
     return {
-      form: {},
+      form: {
+        fullname: "Solomon Eseme"
+      },
       // profile_picture: [],
       show: false,
       label: "Updating...",
       overlay: true
     };
+  },
+  created() {
+    this.user.fullname = "Solomon Eseme";
   },
   methods: {
     async updateUser() {
