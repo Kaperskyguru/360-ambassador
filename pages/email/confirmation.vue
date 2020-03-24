@@ -1,9 +1,66 @@
 <template>
-  <div>You will be redirected in seconds...</div>
+  <div class="container-fluid confirmation">
+    <div class="col-12">
+      <brand />
+    </div>
+    <div class="row justify-content-center align-content-center">
+      <img
+        src="~assets/images/email.png"
+        alt=""
+        class="d-block text-center mb-5"
+      />
+      <h2 class="col-12 color-yellow confirmation__header text-center">
+        Email Verification
+      </h2>
+      <span class="col-12 col-md-5" v-if="show">
+        <p class="col-12 color-white text-center confirmation__text mb-4">
+          Your email verification is
+          <span class="text-success">processing</span>.<br />
+        </p>
+        <div class="col-12 mb-4 d-flex justify-content-center">
+          <curved-button to="#">Please wait...</curved-button>
+        </div>
+      </span>
+      <span class="col-12 col-md-5" v-if="verified">
+        <p class="col-12 color-white text-center confirmation__text mb-4">
+          Your email address has been verified
+          <span class="text-success">successfully</span>.<br />
+          <i>Please login to update your profile.</i>
+        </p>
+        <div class="col-12 mb-4 d-flex justify-content-center">
+          <curved-button to="/login">Login</curved-button>
+        </div>
+      </span>
+      <span class="col-12 col-md-5" v-if="failed">
+        <p class="col-12 color-white text-center confirmation__text mb-4">
+          Email verification
+          <span class="text-danger">Failed</span>. <br />
+          <i>Please consider resending email verication.</i>
+        </p>
+        <div class="col-12 mb-4 d-flex justify-content-center">
+          <curved-button to="#">Resend Email</curved-button>
+        </div>
+      </span>
+    </div>
+  </div>
 </template>
 
 <script>
+import Brand from "~/components/partials/Brand";
+import CurvedButton from "~/components/commons/buttons/CurvedButton";
 export default {
+  components: {
+    CurvedButton,
+    Brand
+  },
+
+  data() {
+    return {
+      verified: false,
+      show: true,
+      failed: false
+    };
+  },
   auth: false,
 
   created() {
@@ -12,32 +69,31 @@ export default {
       .then(res => {
         if (res.data.code == 200 || res.data.code == 204) {
           this.successAlert();
-          this.redirectByRole(res.data.data.role.name, res.data.data._id);
+          this.verified = true;
+          this.show = false;
+          // this.redirectByRole(res.data.data.role.name, res.data.data._id);
         }
       })
       .catch(err => {
-        console.log(err);
-
+        // console.log(err);
         this.errorAlert();
-        this.redirectByRole("");
+        this.failed = true;
+        this.show = false;
+        // this.redirectByRole("");
       });
   },
 
   methods: {
     successAlert() {
       this.$swal({
-        text: "Email confirmed successfully",
-        icon: "success",
-        confirmButtonText: "Ok",
-        showLoaderOnConfirm: true
+        text: "Email verified successfully",
+        icon: "success"
       });
     },
     errorAlert() {
       this.$swal({
-        text: "Email was not confirmed successfully",
-        icon: "error",
-        confirmButtonText: "Ok",
-        showLoaderOnConfirm: true
+        text: "Email was not verified successfully",
+        icon: "error"
       });
     },
 

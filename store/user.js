@@ -16,9 +16,9 @@ export const actions = {
     return await this.$auth.fetchUser();
   },
 
-  async login({ commit, dispatch }, { username, password }) {
+  async login({ commit, dispatch }, { email, password }) {
     return this.$auth.loginWith("local", {
-      data: { username, password }
+      data: { email, password }
     });
   },
 
@@ -30,6 +30,7 @@ export const actions = {
     const res = await this.$repositories.user.show(id);
     if (res.data.code == 200 && res.data.success) {
       commit("storeUser", res.data.data);
+      return res.data.data;
     }
   },
 

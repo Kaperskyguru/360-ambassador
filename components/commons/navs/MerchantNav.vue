@@ -9,6 +9,7 @@
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      @click="show = !show"
     >
       <span class="navbar-toggler-icon color-white"></span>
     </button>
@@ -16,6 +17,7 @@
     <div
       class="collapse navbar-collapse mt-5 mt-lg-0"
       id="navbarSupportedContent"
+      :class="{ show: show }"
     >
       <ul class="navbar-nav mr-auto">
         <li
@@ -51,7 +53,8 @@ export default {
   },
   data() {
     return {
-      activeClass: "active"
+      activeClass: "active",
+      show: false
     };
   },
   computed: {

@@ -1,16 +1,11 @@
 <template>
-  <main>
-    <promotion :promotion="promotion" />
-  </main>
+  <promotion :promotion="promotion" />
 </template>
 
 <script>
 import Promotion from "~/components/pages/affiliates/Running.promotion.vue";
 
 export default {
-  layout: "dashboard",
-  auth: true,
-  middleware: "affiliate",
   components: {
     Promotion
   },

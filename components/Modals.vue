@@ -1,13 +1,19 @@
 <template>
   <div
     class="my-promotion__modal modal fade"
+    :class="{ show: show }"
     id="exampleModalCenter"
     tabindex="-1"
     role="dialog"
     aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true"
+    :aria-hidden="show"
+    :style="[show ? { display: 'block' } : { display: 'none' }]"
   >
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div
+      class="modal-dialog modal-dialog-centered"
+      role="document"
+      :class="{ show: show }"
+    >
       <div class="modal-content">
         <div class="modal-body p-5">
           <div class="row justify-content-center">
@@ -20,9 +26,12 @@
             </p>
             <div class="col-12">
               <div class="row justify-content-center">
-                <!-- <btn class="my-promotion__pills--btn color-blue-2 col-9">
+                <btn
+                  v-on:click.native="$emit('close')"
+                  class="my-promotion__pills--btn color-blue-2 col-9"
+                >
                   Confirm
-                </btn> -->
+                </btn>
               </div>
             </div>
           </div>
@@ -33,12 +42,19 @@
 </template>
 
 <script>
-// import Btn from "~/components/commons/buttons/Btn";
+import Btn from "~/components/commons/buttons/Btn";
 
 export default {
   name: "Modal",
+  props: {
+    show: {
+      type: Boolean,
+      default: false
+    }
+  },
+
   components: {
-    // Btn
+    Btn
   }
 };
 </script>

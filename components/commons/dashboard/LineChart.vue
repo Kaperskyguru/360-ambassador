@@ -19,7 +19,6 @@
         </div>
       </div>
     </div>
-    <!-- <div id="myfirstchart" class="p-0" style="height: 220px; width: 100%"></div> -->
     <apexchart
       width="100%"
       height="220px"
@@ -31,13 +30,8 @@
 </template>
 
 <script>
-// import Vue from "vue";
-// import { LineChart } from "vue-morris";
 import { mapState } from "vuex";
 export default {
-  components: {
-    // LineChart
-  },
   data() {
     return {
       options: {
@@ -70,32 +64,9 @@ export default {
       ]
     };
   },
-  mounted() {
-    console.log(this.data);
-
-    // new Morris.Line({
-    //   // ID of the element in which to draw the chart.
-    //   element: "myfirstchart",
-    //   // Chart data records -- each entry in this array corresponds to a point on
-    //   // the chart.
-    //   data: this.data,
-    //   resize: true,
-    //   // The name of the data record attribute that contains x-values.
-    //   xkey: "Month",
-    //   // A list of names of data record attributes that contain y-values.
-    //   ykeys: ["value"],
-    //   // Labels for the ykeys -- will be displayed when you hover over the
-    //   // chart.
-    //   labels: ["Value"],
-    //   lineColors: ["#FECC0A"],
-    //   parseTime: false
-    // });
-  },
   computed: {
     ...mapState({
       data: state => {
-        console.log(state.insight.earningGraph);
-
         return state.insight.earningGraph;
       }
     })

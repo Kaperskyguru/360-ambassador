@@ -1,5 +1,5 @@
 <template>
-  <b-nav class="navbar navbar-expand-lg pt-3">
+  <nav class="navbar navbar-expand-lg navbar-light pt-3">
     <brand />
     <button
       class="navbar-toggler bg-white"
@@ -9,11 +9,17 @@
       aria-controls="navbarSupportedContent"
       aria-expanded="true"
       aria-label="Toggle navigation"
+      @click="mShow = !mShow"
     >
       <span class="navbar-toggler-icon color-white"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div
+      class="collapse navbar-collapse mt-3"
+      :class="{ show: mShow }"
+      style="z-index:1000"
+      id="navbarSupportedContent"
+    >
       <ul class="navbar-nav mr-auto">
         <li
           :class="[
@@ -113,14 +119,14 @@
         <li class="nav-item">
           <div class="nav-link mt-3 mt-lg-0">
             <Design-button :link="link">
-              <template v-if="$auth.loggedin"> Goto Dashboard</template>
+              <template v-if="$auth.loggedIn"> Goto Dashboard</template>
               <template v-else>sign in</template>
             </Design-button>
           </div>
         </li>
       </div>
     </div>
-  </b-nav>
+  </nav>
 </template>
 
 <script>
@@ -132,7 +138,8 @@ export default {
     return {
       link: "",
       activeClass: "active",
-      show: false
+      show: false,
+      mShow: false
     };
   },
   components: {

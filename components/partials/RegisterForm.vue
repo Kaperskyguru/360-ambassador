@@ -17,7 +17,7 @@
         class="col-12 align-self-center p-0"
       >
         <ValidationProvider
-          name="Firstname"
+          name="Fullname"
           rules="required"
           v-slot="{ errors }"
         >
@@ -25,39 +25,16 @@
             <input
               type="text"
               class="col-12 form__input"
-              id="firstname"
-              placeholder="First Name *"
+              id="fullname"
+              placeholder="Full Name *"
               required
-              name="firstname"
-              v-model="form.firstName"
+              name="fullname"
+              v-model="form.fullname"
             />
-            <span>{{ errors[0] }}</span>
-            <!-- <label for="firstname" class="form__label color-grey-1"
-              >First Name *</label
-            > -->
+            <span class="input-error">{{ errors[0] }}</span>
           </div>
         </ValidationProvider>
-        <ValidationProvider
-          name="Lastname"
-          rules="required"
-          v-slot="{ errors }"
-        >
-          <div class="col-12 form__group">
-            <input
-              type="text"
-              class="col-12 form__input"
-              id="lastname"
-              placeholder="Last Name *"
-              required
-              name="lastname"
-              v-model="form.lastName"
-            />
-            <span>{{ errors[0] }}</span>
-            <!-- <label for="lastname" class="form__label color-grey-1"
-              >Last Name *</label
-            > -->
-          </div>
-        </ValidationProvider>
+
         <ValidationProvider
           name="E-mail"
           rules="required|email"
@@ -76,6 +53,42 @@
 
             <!-- <label for="email" class="form__label color-grey-1">Email</label> -->
             <span class="input-error" id="email-error">{{ errors[0] }}</span>
+          </div>
+        </ValidationProvider>
+        <ValidationProvider
+          name="Password"
+          rules="required"
+          v-slot="{ errors }"
+        >
+          <div class="col-12 form__group">
+            <input
+              type="password"
+              class="col-12 form__input"
+              id="password"
+              placeholder="Password *"
+              required
+              name="password"
+              v-model="form.password"
+            />
+            <span class="input-error">{{ errors[0] }}</span>
+          </div>
+        </ValidationProvider>
+        <ValidationProvider
+          name="ConfirmPassword"
+          rules="required"
+          v-slot="{ errors }"
+        >
+          <div class="col-12 form__group">
+            <input
+              type="password"
+              class="col-12 form__input"
+              id="password"
+              placeholder="Confirm Password *"
+              required
+              name="confirm-password"
+              v-model="form.passwordConfirm"
+            />
+            <span class="input-error">{{ errors[0] }}</span>
           </div>
         </ValidationProvider>
         <div class="col-12 form__group">
@@ -116,6 +129,7 @@ export default {
   methods: {
     async register() {
       // Get Roles;
+
       this.show = true;
       this.form.role = this.role;
 

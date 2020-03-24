@@ -15,7 +15,7 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider
-            name="First Name"
+            name="Full Name"
             rules="alpha"
             v-slot="{ errors }"
           >
@@ -23,23 +23,23 @@
               <label
                 for=""
                 class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
-                >First Name *</label
+                >Full Name *</label
               >
               <div class="col-md-8 col-12 ml-md-5">
                 <input
                   autocomplete="on"
                   type="text"
                   class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="user.firstName"
+                  :placeholder="user.fullname"
                   disabled
-                  v-model="form.firstName"
+                  v-model="form.fullname"
                 />
                 <span class="input-error">{{ errors[0] }}</span>
               </div>
             </div>
           </validation-provider>
         </div>
-        <div class="col-12 form-2__container">
+        <!-- <div class="col-12 form-2__container">
           <validation-provider
             name="Last Name"
             rules="alpha"
@@ -64,10 +64,15 @@
               </div>
             </div>
           </validation-provider>
-        </div>
+        </div> -->
         <div class="col-12 form-2__container">
           <validation-provider name="Phone Number" rules="" v-slot="{ errors }">
-            <field :required="true" name="phone" v-model="form.phone">
+            <field
+              :required="true"
+              name="phone"
+              :placeholder="user.phone"
+              v-model="form.phone"
+            >
               <template slot="label">Phone</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -101,7 +106,12 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field :required="true" v-model="form.username" name="username">
+            <field
+              :required="true"
+              v-model="form.username"
+              :placeholder="user.username"
+              name="username"
+            >
               <template slot="label">Username</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -136,7 +146,12 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field :required="true" v-model="form.address" name="address">
+            <field
+              :required="true"
+              v-model="form.address"
+              :placeholder="user.address"
+              name="address"
+            >
               <template slot="label">Address</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -144,7 +159,12 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="City" rules="required" v-slot="{ errors }">
-            <field :required="true" v-model="form.city" name="city">
+            <field
+              :required="true"
+              v-model="form.city"
+              :placeholder="user.city"
+              name="city"
+            >
               <template slot="label">City</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -156,7 +176,12 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field :required="true" v-model="form.state" name="state">
+            <field
+              :required="true"
+              v-model="form.state"
+              :placeholder="user.state"
+              name="state"
+            >
               <template slot="label">State</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -164,7 +189,12 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="BVN" rules="required" v-slot="{ errors }">
-            <field :required="true" v-model="form.bvn" name="bvn">
+            <field
+              :required="true"
+              v-model="form.bvn"
+              :placeholder="user.bvn"
+              name="bvn"
+            >
               <template slot="label">BVN</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -180,6 +210,7 @@
               :required="true"
               v-model="form.AccountNumber"
               name="account_number"
+              :placeholder="user.AccountNumber"
             >
               <template slot="label">Account Number</template>
               <template slot="errors">{{ errors[0] }}</template>
@@ -276,7 +307,11 @@
         </h6>
         <div class="col-12 form-2__container">
           <validation-provider name="Facebook" v-slot="{ errors }">
-            <field v-model="form.facebook" name="facebook">
+            <field
+              v-model="form.facebook"
+              :placeholder="user.facebook"
+              name="facebook"
+            >
               <template slot="label">Facebook</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -284,7 +319,11 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="Twitter" v-slot="{ errors }">
-            <field v-model="form.twitter" name="twitter">
+            <field
+              v-model="form.twitter"
+              :placeholder="user.twitter"
+              name="twitter"
+            >
               <template slot="label">Twitter</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -292,7 +331,11 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="Instagram" v-slot="{ errors }">
-            <field v-model="form.instagram" name="instagram">
+            <field
+              v-model="form.instagram"
+              :placeholder="user.instagram"
+              name="instagram"
+            >
               <template slot="label">Instagram</template>
               <template slot="errors">{{ errors[0] }}</template>
             </field>
@@ -518,12 +561,17 @@ export default {
   },
   data() {
     return {
-      form: {},
+      form: {
+        fullname: ""
+      },
       // profile_picture: [],
       show: false,
       label: "Updating...",
       overlay: true
     };
+  },
+  created() {
+    this.user.fullname = "";
   },
   methods: {
     async updateUser() {

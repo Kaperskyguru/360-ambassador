@@ -4,10 +4,14 @@
       You are currently not connected to the internet
     </div>
     <client-only>
-      <notifications group="alerts" position="bottom right">
+      <notifications
+        group="alerts"
+        classes="vue-notification"
+        position="bottom right"
+      >
         <template slot="body" slot-scope="props">
           <b-alert
-            :show="props.item.duration || 3000"
+            :show="props.item.duration || 30000"
             dismissible
             :variant="props.item.type || 'info'"
             @dismissed="props.item.timer = 0"
@@ -17,7 +21,7 @@
               :variant="props.item.type"
               striped
               :animated="true"
-              :max="props.item.duration"
+              :max="props.item.duration || 30000"
               :value="props.item.timer"
               height="4px"
             >
@@ -34,7 +38,7 @@ export default {
   middleware: "defaultData"
 };
 </script>
-<style scoped>
+<style>
 </style>
 
 

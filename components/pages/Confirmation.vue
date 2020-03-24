@@ -31,7 +31,7 @@
         Wrong email address?<br />
         <span class="color-yellow">Start Over</span>
       </p>
-      <div class="col-12 d-flex justify-content-center">
+      <!-- <div class="col-12 d-flex justify-content-center">
         <nuxt-link
           to="#"
           v-on:click.native="redirect('affiliate')"
@@ -44,7 +44,7 @@
           class="color-white text-center ml-5 confirmation__link"
           >Go to <br /><span class="color-yellow">Advertiser</span></nuxt-link
         >
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

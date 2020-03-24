@@ -13,6 +13,7 @@
         :value="value"
         :name="name"
         :id="name"
+        :placeholder="placeholder"
         @input="$emit('input', $event.target.value)"
       />
       <span class="input-error"><slot name="errors"></slot></span>
@@ -34,7 +35,8 @@ export default {
     name: {
       type: String
     },
-    value: {}
+    value: {},
+    placeholder: {}
   }
 };
 </script>

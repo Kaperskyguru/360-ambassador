@@ -1,15 +1,10 @@
 <template>
-  <main>
-    <dashboard />
-  </main>
+  <dashboard />
 </template>
 
 <script>
 import Dashboard from "~/components/pages/merchant/dashboard";
 export default {
-  layout: "dashboard",
-  auth: true,
-  middleware: "merchant",
   components: {
     Dashboard
   }

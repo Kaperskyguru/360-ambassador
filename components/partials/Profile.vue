@@ -41,7 +41,7 @@
           @click.native="show = !show"
         >
           <profile-image />
-          <div class="col d-block m-0 p-0">
+          <div class="d-block m-0 p-0">
             <span
               class="dashboard__nav--profile-name col-12 d-block color-white"
               >Hi, {{ $auth.user.firstName || "" }}
@@ -63,6 +63,7 @@
             <nuxt-link
               class="dropdown-item color-white dashboard__nav--profile-dropdown-item"
               to="#"
+              @click.native="redirectByRole($auth.user.role.name)"
             >
               <edit-profile-icon />
               Edit Profile
@@ -116,9 +117,35 @@ export default {
       show: false
     };
   },
+  computed: {
+    link: () => {
+      return this.$auth.user.role == "merchant" ? "advertiser" : "affiliate";
+    }
+  },
   methods: {
     async logout() {
       await this.$store.dispatch("user/logout");
+    },
+    redirectByRole(role) {
+      console.log(role);
+      const id = this.$auth.user._id;
+      switch (role) {
+        case "admin":
+          this.$router.push(`/advertiser?user_id=${id}`);
+          break;
+
+        case "merchant":
+          this.$router.push(`/advertiser?user_id=${id}`);
+          break;
+
+        case "promoter":
+          this.$router.push(`/affiliate?user_id=${id}`);
+          break;
+
+        default:
+          this.$router.push("/");
+          break;
+      }
     }
   }
 };
