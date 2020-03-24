@@ -12,6 +12,15 @@
       <h2 class="col-12 color-yellow confirmation__header text-center">
         Email Verification
       </h2>
+      <span class="col-12 col-md-5" v-if="show">
+        <p class="col-12 color-white text-center confirmation__text mb-4">
+          Your email verification is
+          <span class="text-success">processing</span>.<br />
+        </p>
+        <div class="col-12 mb-4 d-flex justify-content-center">
+          <curved-button to="#">Please wait...</curved-button>
+        </div>
+      </span>
       <span class="col-12 col-md-5" v-if="verified">
         <p class="col-12 color-white text-center confirmation__text mb-4">
           Your email address has been verified
@@ -22,7 +31,7 @@
           <curved-button to="/login">Login</curved-button>
         </div>
       </span>
-      <span class="col-12 col-md-5" v-else>
+      <span class="col-12 col-md-5" v-if="failed">
         <p class="col-12 color-white text-center confirmation__text mb-4">
           Email verification
           <span class="text-danger">Failed</span>. <br />
@@ -47,7 +56,9 @@ export default {
 
   data() {
     return {
-      verified: false
+      verified: false,
+      show: true,
+      failed: false
     };
   },
   auth: false,
@@ -59,12 +70,15 @@ export default {
         if (res.data.code == 200 || res.data.code == 204) {
           this.successAlert();
           this.verified = true;
+          this.show = false;
           // this.redirectByRole(res.data.data.role.name, res.data.data._id);
         }
       })
       .catch(err => {
         // console.log(err);
         this.errorAlert();
+        this.failed = true;
+        this.show = false;
         // this.redirectByRole("");
       });
   },

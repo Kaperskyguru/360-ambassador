@@ -562,7 +562,7 @@ export default {
   data() {
     return {
       form: {
-        fullname: "Solomon Eseme"
+        fullname: ""
       },
       // profile_picture: [],
       show: false,
@@ -571,7 +571,7 @@ export default {
     };
   },
   created() {
-    this.user.fullname = "Solomon Eseme";
+    this.user.fullname = "";
   },
   methods: {
     async updateUser() {

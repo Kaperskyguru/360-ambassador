@@ -86,7 +86,7 @@
               placeholder="Confirm Password *"
               required
               name="confirm-password"
-              v-model="form.confirm_password"
+              v-model="form.passwordConfirm"
             />
             <span class="input-error">{{ errors[0] }}</span>
           </div>
@@ -129,8 +129,6 @@ export default {
   methods: {
     async register() {
       // Get Roles;
-      this.form.firstName = "Solomon";
-      this.form.lastName = "Eseme";
 
       this.show = true;
       this.form.role = this.role;
