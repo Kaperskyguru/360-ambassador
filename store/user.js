@@ -16,9 +16,9 @@ export const actions = {
     return await this.$auth.fetchUser();
   },
 
-  async login({ commit, dispatch }, { username, password }) {
+  async login({ commit, dispatch }, { email, password }) {
     return this.$auth.loginWith("local", {
-      data: { username, password }
+      data: { email, password }
     });
   },
 

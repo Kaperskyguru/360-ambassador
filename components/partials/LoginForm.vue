@@ -77,7 +77,7 @@ export default {
   data() {
     return {
       form: {
-        username: "kaperskyguru",
+        // username: "kaperskyguru",
         password: "",
         email: ""
       },
