@@ -5,7 +5,7 @@
     <div class="dashboard__promotions--card col-12">
       <div class="dashboard__summary--card-header">
         <div class="row pr-3">
-          <span class="color-blue mr-auto"><slot name="title"/></span>
+          <span class="color-blue mr-auto">{{ promotion.name || "" }}</span>
           <div class="dashboard__promotions--card--img-container ml-auto">
             <icon
               round="50"
@@ -21,26 +21,23 @@
           <h6
             class="dashboard__promotions--card-heading color-grey-3 col-12 p-0"
           >
-            <slot name="subtitle" />
+            {{ "Marketing" }}
           </h6>
           <p class="dashboard__promotions--card-text color-grey-7 col-12 p-0">
-            <slot name="content" />
+            {{ promotion.description || "" }}
           </p>
           <div class="col-12 p-md-0">
             <div class="row">
-              <div class="col-6 ml-auto">
+              <div class="col-6 pl-4 p-0">
                 <span class="dashboard__promotions--card-volume color-red"
-                  ><slot name="volume"/></span
-                ><br />
-                <span class="dashboard__promotions--card-text color-red mt-2"
-                  >comm.</span
+                  >{{ promotion.commission || "" }} com.</span
                 >
               </div>
               <div class="col-6">
                 <nuxt-link
                   :to="{
                     name: 'affiliates-promotions-id',
-                    params: { id: promotion_id }
+                    params: { id: promotion._id }
                   }"
                   class="dashboard__promotions--card-text color-blue-1 btn-transparent"
                   >View details</nuxt-link
@@ -60,12 +57,15 @@ export default {
   props: {
     icon: String,
     alt: String,
-    promotion_id: String,
+    promotion: [],
     width: String,
     height: String
   },
   components: {
     Icon
+  },
+  mounted() {
+    console.log(this.promotion);
   }
 };
 </script>

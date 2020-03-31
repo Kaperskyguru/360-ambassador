@@ -6,11 +6,11 @@
       :key="i"
     >
       <template slot="title">
-        {{ merchant.firstName }}
+        {{ merchant.fullname }}
       </template>
 
       <template slot="rate">
-        4.9
+        {{ merchant.rate || 4.9 }}
       </template>
     </merchant>
   </div>

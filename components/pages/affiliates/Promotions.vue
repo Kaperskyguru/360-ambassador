@@ -48,7 +48,7 @@
     <h6 class="dashboard__heading col-12 color-blue mt-5">
       All Promotions
     </h6>
-    <div class="row justify-content-center">
+    <div class="row justify-content-start">
       <card
         :promotion="promotion"
         v-for="(promotion, i) in promotions"
