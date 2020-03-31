@@ -4,27 +4,27 @@
       <div class="dashboard__general--card col-md-10 col-12">
         <form class="dashboard__general--card__form">
           <div class="form-row align-items-center">
-            <div class="col-auto m-2">
+            <div class="col-3 m-2">
               <label
                 class="dashboard__general--card__form--label color-blue"
                 for="inlineFormInput"
                 >Quick Dates</label
               >
-              <select class="dashboard__general--card__form--select ml-4">
+              <select class="dashboard__general--card__form--select ml-4 col-6">
                 <option value="1">Today</option>
-                <option value="1">Today</option>
-                <option value="1">Today</option>
-                <option value="1">Today</option>
+                <option value="1">Yesterday</option>
+                <option value="1">Monday</option>
+                <option value="1">Tuesday</option>
               </select>
             </div>
-            <div class="col-auto m-2">
+            <div class="col-auto">
               <div
                 class="dashboard__general--card__form--text color-blue p-1 ml-4 mr-4"
               >
                 OR
               </div>
             </div>
-            <div class="col-auto m-2">
+            <div class="col-3 m-2">
               <label class="dashboard__general--card__form--label color-blue"
                 >Start Date</label
               >
@@ -33,7 +33,7 @@
                 type="date"
               />
             </div>
-            <div class="col-auto m-2">
+            <div class="col-3 m-2">
               <label class="dashboard__general--card__form--label color-blue"
                 >End Date</label
               >
@@ -58,11 +58,11 @@
         :key="i"
         :promotion="promotion.promotion"
       />
-      <!-- <cards :promotion="test_promotion" />
-          <cards :promotion="test_promotion" />
-          <cards :promotion="test_promotion" />
-          <cards :promotion="test_promotion" />
-          <cards :promotion="test_promotion" /> -->
+      <cards :promotion="test_promotion" />
+      <cards :promotion="test_promotion" />
+      <cards :promotion="test_promotion" />
+      <cards :promotion="test_promotion" />
+      <cards :promotion="test_promotion" />
     </div>
   </div>
 </template>

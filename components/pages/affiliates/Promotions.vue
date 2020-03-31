@@ -4,7 +4,7 @@
       <div class="dashboard__general--card col-md-10 col-12">
         <form class="dashboard__general--card__form">
           <div class="form-row align-items-center">
-            <div class="col-auto">
+            <div class="col-3">
               <div class="form-check mb-2">
                 <input
                   v-model="terms.keyword"
@@ -14,18 +14,24 @@
                 />
               </div>
             </div>
-            <div class="col-auto">
-              <select
-                v-model="terms.category"
-                class="dashboard__general--card__form--select ml-4 col-12"
-              >
-                <option
-                  v-for="(category, i) in categories"
-                  :key="i"
-                  :value="category._id"
-                  >{{ category.name }}</option
+            <div class="col-3">
+              <div class="form-check mb-2">
+                <select
+                  id="cat"
+                  v-model="terms.category"
+                  class="dashboard__general--card__form--select ml-4 col-12"
                 >
-              </select>
+                  <option value="Category" selected="true" disabled
+                    >Category</option
+                  >
+                  <option
+                    v-for="(category, i) in categories"
+                    :key="i"
+                    :value="category._id"
+                    >{{ category.name }}</option
+                  >
+                </select>
+              </div>
             </div>
             <div class="col-auto ml-md-auto">
               <button
@@ -92,6 +98,9 @@ export default {
         return state.category.categories;
       }
     })
+  },
+  mounted() {
+    document.getElementById("cat").selectedIndex = "0";
   }
 };
 </script>

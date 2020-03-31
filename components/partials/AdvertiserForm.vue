@@ -15,45 +15,23 @@
           <image-field v-on:triggerChange="onFileChange($event)"></image-field>
         </div>
         <div class="col-12 form-2__container">
-          <validation-provider name="First name" rules="" v-slot="{ errors }">
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
-                >First name *</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <input
-                  type="text"
-                  class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="user.firstName"
-                  v-model="form.firstName"
-                />
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
+          <validation-provider
+            name="Full Name"
+            rules="alpha"
+            v-slot="{ errors }"
+          >
+            <field
+              :required="true"
+              name="Full Name"
+              :placeholder="user.fullname"
+              v-model="form.fullname"
+            >
+              <template slot="label">Full Name</template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </field>
           </validation-provider>
         </div>
-        <div class="col-12 form-2__container">
-          <validation-provider name="Last name" rules="" v-slot="{ errors }">
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
-                >Last name *</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <input
-                  type="text"
-                  class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="user.lastName"
-                  v-model="form.lastName"
-                />
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
-          </validation-provider>
-        </div>
+
         <div class="col-12 form-2__container">
           <validation-provider
             name="Phone Number"
@@ -578,6 +556,14 @@
       <div class="col-12 form-2__container pr-5">
         <div class="row justify-content-end">
           <design-button
+            type="button"
+            role="button"
+            @click.prevent="back()"
+            class="mr-4 btn__square-curved--yellow form-2__btn"
+          >
+            Cancel
+          </design-button>
+          <design-button
             type="submit"
             class="btn__square-curved--yellow form-2__btn"
           >
@@ -596,20 +582,23 @@ import { ValidationProvider, ValidationObserver } from "vee-validate";
 import { mapState } from "vuex";
 import Field from "~/components/commons/Field";
 import ImageField from "~/components/commons/ImageField";
-// import Loading from "vue-full-loading";
+import CancelButton from "~/components/commons/buttons/DesignButton";
+
 export default {
   components: {
     DesignButton,
     ValidationProvider,
     ValidationObserver,
     ImageField,
-    Field
+    Field,
+    CancelButton
     // Loading
   },
   data() {
     return {
-      form: {},
-      profile_picture: [],
+      form: {
+        fullname: ""
+      },
       show: false,
       label: "Updating...",
       overlay: true
@@ -618,36 +607,50 @@ export default {
   methods: {
     async updateUser() {
       this.show = true;
-      const formdata = new FormData();
-      const file = this.profile_picture;
-
-      formdata.append("profile_picture", file);
-      for (const key in this.form) {
-        if (this.form.hasOwnProperty(key)) {
-          const element = this.form[key];
-          formdata.append(key, element);
-        }
-      }
-
+      const formdata = this.generateFormData(this.form);
       const data = {
         form: formdata,
         id: this.user._id
       };
+      this.makeUpdateRequest(data);
+    },
 
+    generateFormData(data) {
+      const formdata = new FormData();
+      for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          const element = data[key];
+          formdata.append(key, element);
+        }
+      }
+      return formdata;
+    },
+
+    async makeUpdateRequest(data) {
       try {
-        const res = await this.$store.dispatch("user/updateMerchant", data);
+        // Updating User through Store
+        const res = await this.$store.dispatch("user/update", data);
         this.show = false;
-        this.$swal({
-          text: "Account updated successfully",
-          icon: "success"
-        });
-      } catch (error) {
-        console.log(error.response);
+
+        // NOTIFICATION HERE
+        this.successAlert();
+      } catch (err) {
+        console.log(err.response.data);
       }
     },
 
     onFileChange(e) {
-      this.profile_picture = e.target.files[0];
+      this.form.profile_picture = e.target.files[0];
+    },
+
+    successAlert() {
+      this.$swal({
+        text: "Account updated successfully",
+        icon: "success"
+      });
+    },
+    back() {
+      this.$router.go(-1);
     }
   },
 

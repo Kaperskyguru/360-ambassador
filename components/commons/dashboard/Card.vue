@@ -3,7 +3,7 @@
     <div class="dashboard__general--card col-12 pl-3 ">
       <div class="row p-0">
         <p class="text-small color-grey-3 col-12 mb-0">
-          {{ promotion.category ? promotion.category.name : "" }}
+          {{ category }}
         </p>
       </div>
       <div class="dashboard__general--card__body col-12 mb-3">
@@ -15,7 +15,7 @@
                 params: { id: promotion._id }
               }"
             >
-              <img :src="promotion.product_file[1]" alt="" class="img-fluid" />
+              <img :src="profileImage" alt="" class="img-fluid" />
             </nuxt-link>
           </div>
           <div class="col-6 pl-2">
@@ -106,6 +106,16 @@ export default {
       overlay: true,
       pop: false
     };
+  },
+  computed: {
+    profileImage() {
+      return this.promotion.product_file[1]
+        ? this.promotion.product_file[1]
+        : "http://res.cloudinary.com/djrrv398y/image/upload/v1580203495/carbon_1.png";
+    },
+    category() {
+      return this.promotion.category ? this.promotion.category.name : "";
+    }
   }
 };
 </script>

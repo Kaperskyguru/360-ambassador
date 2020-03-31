@@ -19,52 +19,18 @@
             rules="alpha"
             v-slot="{ errors }"
           >
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
-                >Full Name *</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <input
-                  autocomplete="on"
-                  type="text"
-                  class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="user.fullname"
-                  disabled
-                  v-model="form.fullname"
-                />
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
+            <field
+              :required="true"
+              name="Full Name"
+              :placeholder="user.fullname"
+              v-model="form.fullname"
+            >
+              <template slot="label">Full Name</template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </field>
           </validation-provider>
         </div>
-        <!-- <div class="col-12 form-2__container">
-          <validation-provider
-            name="Last Name"
-            rules="alpha"
-            v-slot="{ errors }"
-          >
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
-                >Last Name *</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <input
-                  autocomplete="on"
-                  type="text"
-                  class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="user.lastName"
-                  disabled
-                  v-model="form.lastName"
-                />
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
-          </validation-provider>
-        </div> -->
+
         <div class="col-12 form-2__container">
           <validation-provider name="Phone Number" rules="" v-slot="{ errors }">
             <field
@@ -536,9 +502,19 @@
       </div>
       <div class="col-12 form-2__container pr-5">
         <div class="row justify-content-end">
-          <button type="submit" class="btn__square-curved--yellow form-2__btn">
+          <design-button
+            role="button"
+            @click.prevent="back()"
+            class="mr-4 btn__square-curved--yellow form-2__btn"
+          >
+            Cancel
+          </design-button>
+          <design-button
+            type="submit"
+            class="btn__square-curved--yellow form-2__btn"
+          >
             ACCEPT & SUBMIT
-          </button>
+          </design-button>
         </div>
       </div>
     </form>
@@ -551,27 +527,28 @@ import { ValidationProvider, ValidationObserver } from "vee-validate";
 import { mapState } from "vuex";
 import Field from "~/components/commons/Field";
 import ImageField from "~/components/commons/ImageField";
+import DesignButton from "~/components/commons/buttons/SmallDesignButton";
 
 export default {
   components: {
     ValidationProvider,
     ValidationObserver,
     Field,
-    ImageField
+    ImageField,
+    DesignButton
   },
   data() {
     return {
       form: {
         fullname: ""
       },
-      // profile_picture: [],
       show: false,
       label: "Updating...",
       overlay: true
     };
   },
   created() {
-    this.user.fullname = "";
+    // this.user.fullname = "";
   },
   methods: {
     async updateUser() {
@@ -613,10 +590,6 @@ export default {
 
     generateFormData(data) {
       const formdata = new FormData();
-      // const file = this.profile_picture;
-
-      // converting all form inputs to FormData
-      // formdata.append("profile_picture", file);
       for (const key in data) {
         if (data.hasOwnProperty(key)) {
           const element = data[key];
@@ -624,6 +597,10 @@ export default {
         }
       }
       return formdata;
+    },
+
+    back() {
+      this.$router.go(-1);
     }
   },
 

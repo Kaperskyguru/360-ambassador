@@ -5,11 +5,15 @@
     v-slot="{ errors, validate }"
   >
     <label for="formControlFile1" class="custom-file-label">
+      <div id="preview" v-if="url">
+        <img :src="url" alt="Profile image here" />
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="23"
         height="22.999"
         viewBox="0 0 23 22.999"
+        v-else
       >
         <g transform="translate(0.004 0.001)">
           <g transform="translate(-0.004 -0.001)">
@@ -43,15 +47,29 @@
 import { ValidationProvider } from "vee-validate";
 
 export default {
+  data() {
+    return {
+      url: ""
+    };
+  },
   name: "ImageField",
   components: {
     ValidationProvider
   },
   methods: {
     applySelected(e) {
+      const image = e.target.files[0];
+      this.url = URL.createObjectURL(image);
       this.$emit("triggerChange", e);
     }
   }
 };
 </script>
+<style scoped>
+#preview img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+</style>
 
