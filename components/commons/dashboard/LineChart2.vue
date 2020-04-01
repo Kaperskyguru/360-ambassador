@@ -16,7 +16,10 @@ export default {
       options: {
         colors: ["#FECC0A"],
         chart: {
-          id: "vuechart-example"
+          id: "vuechart-example",
+          toolbar: {
+            show: false
+          }
         },
         xaxis: {
           categories: [

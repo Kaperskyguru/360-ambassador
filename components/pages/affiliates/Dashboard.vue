@@ -7,7 +7,7 @@
     <div class="row justify-content-center mt-5">
       <div class="col-md-12 col-lg-6 mb-3">
         <div class="row justify-content-center pl-md-4 pl-5 pr-0">
-          <h6 class="dashboard__heading col-9 mb-5">My Promotions</h6>
+          <h6 class="dashboard__heading col-9 mb-2">My Promotions</h6>
           <nuxt-link
             to="/affiliates/my-promotions"
             class="btn__transparent color-blue col-3 text-center"
@@ -16,7 +16,7 @@
           </nuxt-link>
         </div>
         <promotion-table :promotions="promotions" />
-        <h6 class="dashboard__heading col-12 mb-5 mt-5">
+        <h6 class="dashboard__heading col-12 mb-3 mt-5">
           Latest Promotions
         </h6>
         <div class="col-12 justify-content-start">
@@ -29,12 +29,12 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-12 col-md-6">
-            <h6 class="dashboard__heading col-12 mb-5">Top 5 Merchants</h6>
+            <h6 class="dashboard__heading col-12 mb-3">Top 5 Merchants</h6>
             <merchants />
           </div>
 
           <div class="col-12 col-md-6">
-            <h6 class="dashboard__heading col-12 mb-5">Messages</h6>
+            <h6 class="dashboard__heading col-12 mb-3">Messages</h6>
 
             <message v-for="(message, i) in messages" :key="i">
               <template slot="title">
@@ -46,7 +46,7 @@
               <template slot="content">{{ message.message }} </template>
             </message>
 
-            <h6 class="dashboard__heading col-12 mb-5">Tasks</h6>
+            <h6 class="dashboard__heading col-12 mb-3">Tasks</h6>
             <tasks />
           </div>
         </div>

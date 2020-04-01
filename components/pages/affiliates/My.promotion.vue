@@ -3,7 +3,7 @@
     <div class="row">
       <div class="dashboard__general--card col-md-10 col-12">
         <form class="dashboard__general--card__form">
-          <div class="form-row align-items-center">
+          <div class="form-row align-items-start">
             <div class="col-3 m-2">
               <label
                 class="dashboard__general--card__form--label color-blue"
@@ -51,7 +51,7 @@
       </div>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-start">
       <!-- CARD HERE -->
       <cards
         v-for="(promotion, i) in promotions"

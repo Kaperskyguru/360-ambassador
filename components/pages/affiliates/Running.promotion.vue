@@ -174,7 +174,10 @@ export default {
     PromotionDetail,
     JoinButton
   },
-  mounted() {}
+  mounted() {},
+  created() {
+    console.log(this.promotion);
+  }
 };
 </script>
 

@@ -1,14 +1,17 @@
 <template>
   <div
-    class="dashboard__promotions--card--container col-12 col-md-4 mb-5 mb-md-0 pl-0 pl-md-3 pr-0 pr-md-3"
+    class="dashboard__promotions--card--container col-12 col-md-4 mb-5 mb-md-0 pl-0 pr-0 pr-md-3"
   >
     <div class="dashboard__promotions--card col-12">
       <div class="dashboard__summary--card-header">
         <div class="row pr-3">
           <span class="color-blue mr-auto">{{ promotion.name || "" }}</span>
-          <div class="dashboard__promotions--card--img-container ml-auto">
+          <div
+            class="dashboard__promotions--card--img-container ml-auto p-2"
+            style="border:1px solid grey; border-radius:50%"
+          >
             <icon
-              round="50"
+              round="0"
               :icon="icon"
               :alt="alt"
               class="dashboard__promotions--card--img"
@@ -17,7 +20,7 @@
         </div>
       </div>
       <div class="dashboard__promotions--card-body">
-        <div class="row justify-content-center pr-3">
+        <div class="row justify-content-center pr-1">
           <h6
             class="dashboard__promotions--card-heading color-grey-3 col-12 p-0"
           >
@@ -29,11 +32,12 @@
           <div class="col-12 p-md-0">
             <div class="row">
               <div class="col-6 pl-4 p-0">
-                <span class="dashboard__promotions--card-volume color-red"
-                  >{{ promotion.commission || "" }} com.</span
-                >
+                <span class="dashboard__promotions--card-volume color-red">{{
+                  promotion.commission || ""
+                }}</span>
+                <span class="color-red">comm.</span>
               </div>
-              <div class="col-6">
+              <div class="col-6 dashboard__promotions--card-volume">
                 <nuxt-link
                   :to="{
                     name: 'affiliates-promotions-id',

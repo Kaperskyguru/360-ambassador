@@ -1,10 +1,12 @@
 <template>
   <div class="col-12 mb-4">
     <div class="row align-content-start">
-      <div class="col-4">
-        <icon round="50" :icon="icon" alt="" class="img-fluid" />
+      <div class="col-auto">
+        <div class="p-2" style="border:1px solid grey; border-radius:50%">
+          <icon :icon="icon" alt="" class="dashboard__promotions--card--img" />
+        </div>
       </div>
-      <div class="col-8 row">
+      <div class="col-9 row">
         <div class="dashboard__summary--card-header m-0 p-0">
           <span class="color-blue"><slot name="title"/></span>
         </div>

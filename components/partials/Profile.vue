@@ -1,6 +1,6 @@
 <template>
   <div class="navbar-nav my-2 my-lg-0">
-    <li class="nav-item">
+    <li class="nav-item" v-if="$auth.user.role.name == 'promoter'">
       <nuxt-link class="nav-link color-white dashboard__nav--balance" to="#"
         >Balance<br /><span style="font-size:16px !important"
           >11,000.00 NGN</span

@@ -1,7 +1,9 @@
 <template>
   <div class="dashboard__general--card mb-5">
     <merchant
-      :icon="merchant.profile_picture"
+      :icon="
+        merchant.profile_picture || require('~/assets/images/man-user.png')
+      "
       v-for="(merchant, i) in merchants"
       :key="i"
     >

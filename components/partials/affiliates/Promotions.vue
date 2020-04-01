@@ -1,7 +1,9 @@
 <template>
   <div class="row justify-content-start">
     <promotion
-      :icon="promotion.product_file[0]"
+      :icon="
+        promotion.product_file[0] || require('~/assets/images/man-user.png')
+      "
       :alt="promotion.name"
       :promotion_id="promotion._id"
       v-for="(promotion, i) in promotions"

@@ -3,7 +3,7 @@
     <p class="col-12 color-blue"><slot /></p>
     <apexchart
       width="100%"
-      height="220px"
+      height="200px"
       type="bar"
       :options="options"
       :series="series"
@@ -19,7 +19,10 @@ export default {
       options: {
         colors: ["#FECC0A"],
         chart: {
-          id: this.id
+          id: this.id,
+          toolbar: {
+            show: false
+          }
         },
         xaxis: {
           categories: [
