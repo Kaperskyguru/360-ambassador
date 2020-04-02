@@ -14,15 +14,12 @@
           <image-field v-on:triggerChange="onFileChange($event)"></image-field>
         </div>
         <div class="col-12 form-2__container">
-          <validation-provider
-            name="Full Name"
-            rules="alpha"
-            v-slot="{ errors }"
-          >
+          <validation-provider name="Full Name" rules="" v-slot="{ errors }">
             <field
               :required="true"
-              name="Full Name"
-              :placeholder="user.fullname"
+              name="fullname"
+              v-on:input-fullname="getValue('fullname', $event)"
+              :value="user.fullname"
               v-model="form.fullname"
             >
               <template slot="label">Full Name</template>
@@ -35,8 +32,9 @@
           <validation-provider name="Phone Number" rules="" v-slot="{ errors }">
             <field
               :required="true"
+              v-on:input-phone="getValue('phone', $event)"
               name="phone"
-              :placeholder="user.phone"
+              :value="user.phone"
               v-model="form.phone"
             >
               <template slot="label">Phone</template>
@@ -46,24 +44,18 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="E-mail" rules="" v-slot="{ errors }">
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
-                >E-mail *</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <input
-                  autocomplete="on"
-                  type="text"
-                  class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="user.email"
-                  v-model="form.email"
-                  disabled
-                />
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
+            <field
+              type="email"
+              v-on:input-email="getValue('email', $event)"
+              :disabled="true"
+              :required="true"
+              :value="user.email"
+              name="email"
+              v-model="form.email"
+            >
+              <template slot="label">E-mail</template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </field>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -74,9 +66,10 @@
           >
             <field
               :required="true"
-              v-model="form.username"
-              :placeholder="user.username"
+              v-on:input-username="getValue('username', $event)"
+              :value="user.username"
               name="username"
+              v-model="form.username"
             >
               <template slot="label">Username</template>
               <template slot="errors">{{ errors[0] }}</template>
@@ -93,7 +86,7 @@
             <field
               :required="true"
               type="password"
-              v-model="form.password"
+              v-on:input-password="getValue('password', $event)"
               name="password"
             >
               <template slot="label">Password</template>
@@ -114,8 +107,8 @@
           >
             <field
               :required="true"
-              v-model="form.address"
-              :placeholder="user.address"
+              v-on:input-address="getValue('address', $event)"
+              :value="user.address"
               name="address"
             >
               <template slot="label">Address</template>
@@ -127,8 +120,8 @@
           <validation-provider name="City" rules="required" v-slot="{ errors }">
             <field
               :required="true"
-              v-model="form.city"
-              :placeholder="user.city"
+              v-on:input-city="getValue('city', $event)"
+              :value="user.city"
               name="city"
             >
               <template slot="label">City</template>
@@ -144,8 +137,8 @@
           >
             <field
               :required="true"
-              v-model="form.state"
-              :placeholder="user.state"
+              v-on:input-state="getValue('state', $event)"
+              :value="user.state"
               name="state"
             >
               <template slot="label">State</template>
@@ -157,8 +150,8 @@
           <validation-provider name="BVN" rules="required" v-slot="{ errors }">
             <field
               :required="true"
-              v-model="form.bvn"
-              :placeholder="user.bvn"
+              v-on:input-bvn="getValue('bvn', $event)"
+              :value="user.bvn"
               name="bvn"
             >
               <template slot="label">BVN</template>
@@ -174,9 +167,9 @@
           >
             <field
               :required="true"
-              v-model="form.AccountNumber"
-              name="account_number"
-              :placeholder="user.AccountNumber"
+              v-on:input-AccountNumber="getValue('AccountNumber', $event)"
+              name="AccountNumber"
+              :value="user.AccountNumber"
             >
               <template slot="label">Account Number</template>
               <template slot="errors">{{ errors[0] }}</template>
@@ -188,7 +181,7 @@
             <div class="row">
               <label
                 for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
+                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2 text-font"
                 >Bank *</label
               >
               <div class="col-md-8 col-12 ml-md-5">
@@ -274,8 +267,8 @@
         <div class="col-12 form-2__container">
           <validation-provider name="Facebook" v-slot="{ errors }">
             <field
-              v-model="form.facebook"
-              :placeholder="user.facebook"
+              v-on:input-facebook="getValue('facebook', $event)"
+              :value="user.facebook"
               name="facebook"
             >
               <template slot="label">Facebook</template>
@@ -286,8 +279,8 @@
         <div class="col-12 form-2__container">
           <validation-provider name="Twitter" v-slot="{ errors }">
             <field
-              v-model="form.twitter"
-              :placeholder="user.twitter"
+              v-on:input-twitter="getValue('twitter', $event)"
+              :value="user.twitter"
               name="twitter"
             >
               <template slot="label">Twitter</template>
@@ -298,8 +291,8 @@
         <div class="col-12 form-2__container">
           <validation-provider name="Instagram" v-slot="{ errors }">
             <field
-              v-model="form.instagram"
-              :placeholder="user.instagram"
+              v-on:input-instagram="getValue('instagram', $event)"
+              :value="user.instagram"
               name="instagram"
             >
               <template slot="label">Instagram</template>
@@ -322,7 +315,7 @@
             <div class="row">
               <label
                 for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
+                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2 text-font"
                 >Category</label
               >
               <div class="col-md-8 col-12 ml-md-5">
@@ -331,6 +324,7 @@
                   v-model="form.category"
                   class="form-2__select col  color-grey-2"
                 >
+                  <option disabled selected>Select Category</option>
                   <option
                     :value="category._id"
                     v-for="(category, i) in categories"
@@ -348,13 +342,13 @@
         <h6 class="border-bottom-grey-3 col-12 color-blue p-0">
           Area of Interest
         </h6>
-        <p class="col-12 form-2__text color-grey-2">
+        <p class="col-12 form-2__text color-grey-2 text-font">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iste quae
           laborum dolor velit voluptatibus eius nam doloribus repellendus.
           Pariatur ea, fugiat officia aliquid fugit voluptatum perspiciatis.
           Quisquam, explicabo suscipit.
         </p>
-        <p class="col-12 form-2__text color-grey-2">
+        <p class="col-12 form-2__text color-grey-2 text-font">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iste quae
           laborum dolor velit voluptatibus eius nam doloribus repellendus.
           Pariatur ea, fugiat officia aliquid fugit voluptatum perspiciatis.
@@ -375,7 +369,7 @@
                 v-model="form.service_agreement"
               />
               <label
-                class="custom-control-label color-grey-2"
+                class="custom-control-label color-grey-2 text-font"
                 for="customCheck1"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -404,7 +398,7 @@
                 v-model="form.software_affiliate_policy"
               />
               <label
-                class="custom-control-label color-grey-2"
+                class="custom-control-label color-grey-2 text-font"
                 for="customCheck2"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -431,7 +425,7 @@
                 v-model="form.privacy_policy"
               />
               <label
-                class="custom-control-label color-grey-2"
+                class="custom-control-label color-grey-2 text-font"
                 for="customCheck3"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -458,7 +452,7 @@
                 v-model="form.age_certification"
               />
               <label
-                class="custom-control-label color-grey-2"
+                class="custom-control-label color-grey-2 text-font"
                 for="customCheck4"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -487,7 +481,7 @@
                 v-model="form.certificate_authority"
               />
               <label
-                class="custom-control-label color-grey-2"
+                class="custom-control-label color-grey-2 text-font"
                 for="customCheck5"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -539,6 +533,7 @@ export default {
   },
   data() {
     return {
+      f: {},
       form: {
         fullname: ""
       },
@@ -581,6 +576,10 @@ export default {
       }
     },
 
+    getValue(name, e) {
+      this.form[name] = e;
+    },
+
     successAlert() {
       this.$swal({
         text: "Account updated successfully",
@@ -616,4 +615,8 @@ export default {
   }
 };
 </script>
-
+<style scoped>
+.text-font {
+  font-size: 1.1rem !important;
+}
+</style>
