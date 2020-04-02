@@ -20,7 +20,6 @@
               name="fullname"
               v-on:input-fullname="getValue('fullname', $event)"
               :value="user.fullname"
-              v-model="form.fullname"
             >
               <template slot="label">Full Name</template>
               <template slot="errors">{{ errors[0] }}</template>
@@ -35,7 +34,6 @@
               v-on:input-phone="getValue('phone', $event)"
               name="phone"
               :value="user.phone"
-              v-model="form.phone"
             >
               <template slot="label">Phone</template>
               <template slot="errors">{{ errors[0] }}</template>
@@ -51,7 +49,6 @@
               :required="true"
               :value="user.email"
               name="email"
-              v-model="form.email"
             >
               <template slot="label">E-mail</template>
               <template slot="errors">{{ errors[0] }}</template>
@@ -69,7 +66,6 @@
               v-on:input-username="getValue('username', $event)"
               :value="user.username"
               name="username"
-              v-model="form.username"
             >
               <template slot="label">Username</template>
               <template slot="errors">{{ errors[0] }}</template>
