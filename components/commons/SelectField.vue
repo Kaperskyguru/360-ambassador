@@ -6,17 +6,15 @@
       ><slot name="label"></slot> <span v-show="required">*</span></label
     >
     <div class="col-md-8 col-12 ml-md-5">
-      <input
-        :autocomplete="auto ? 'on' : 'off'"
-        :type="type"
-        class="form-2__input col-12 color-grey-2"
-        :value="value"
+      <select
         :name="name"
         :id="name"
         :disabled="disabled"
-        :placeholder="placeholder"
-        @input="$emit('input-' + name, $event.target.value)"
-      />
+        class="form-2__select col-12 color-grey-2"
+        @change="$emit('select-' + name, $event.target.value)"
+      >
+        <slot name="content"></slot>
+      </select>
       <span class="input-error"><slot name="errors"></slot></span>
     </div>
   </div>
@@ -32,10 +30,6 @@ export default {
     required: {
       type: Boolean,
       default: false
-    },
-    auto: {
-      type: Boolean,
-      default: true
     },
     disabled: {
       type: Boolean,

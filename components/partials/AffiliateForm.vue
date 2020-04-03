@@ -81,6 +81,7 @@
           >
             <field
               :required="true"
+              :auto="false"
               type="password"
               v-on:input-password="getValue('password', $event)"
               name="password"
@@ -174,85 +175,76 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="Bank" rules="" v-slot="{ errors }">
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2 text-font"
-                >Bank *</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <select
-                  type="text"
-                  v-model="form.bank"
-                  class="form-2__select col-12 color-grey-2"
+            <select-field
+              name="bank"
+              :required="true"
+              v-on:select-bank="getValue('bank', $event)"
+            >
+              <template slot="label">Bank</template>
+              <template slot="content">
+                <option disabled selected>Select Bank</option>
+                <option value="Access Bank Plc">Access Bank Plc</option>
+                <option value="Fidelity Bank Plc">Fidelity Bank Plc</option>
+                <option value="irst City Monument Bank Limited"
+                  >First City Monument Bank Limited</option
                 >
-                  <option value="Access Bank Plc">Access Bank Plc</option>
-                  <option value="Fidelity Bank Plc">Fidelity Bank Plc</option>
-                  <option value="irst City Monument Bank Limited"
-                    >First City Monument Bank Limited</option
-                  >
-                  <option value="First Bank of Nigeria Limited"
-                    >First Bank of Nigeria Limited</option
-                  >
-                  <option value="Guaranty Trust Bank Plc"
-                    >Guaranty Trust Bank Plc</option
-                  >
-                  <option value="Union Bank of Nigeria Plc"
-                    >Union Bank of Nigeria Plc</option
-                  >
-                  <option value="United Bank for Africa Plc"
-                    >United Bank for Africa Plc</option
-                  >
-                  <option value="Zenith Bank Plc">Zenith Bank Plc</option>
-                  <option value="Citibank Nigeria Limited"
-                    >Citibank Nigeria Limited</option
-                  >
-                  <option value="Ecobank Nigeria Plc"
-                    >Ecobank Nigeria Plc</option
-                  >
-                  <option value="Heritage Banking Company Limited"
-                    >Heritage Banking Company Limited</option
-                  >
-                  <option value="Keystone Bank Limited"
-                    >Keystone Bank Limited</option
-                  >
-                  <option value="Polaris Bank Limited"
-                    >Polaris Bank Limited</option
-                  >
-                  <option value="Stanbic IBTC Bank Plc"
-                    >Stanbic IBTC Bank Plc</option
-                  >
-                  <option value="Standard Chartered">Standard Chartered</option>
-                  <option value="Sterling Bank Plc">Sterling Bank Plc</option>
-                  <option value="Titan Trust Bank Limited"
-                    >Titan Trust Bank Limited</option
-                  >
-                  <option value="Unity Bank Plc">Unity Bank Plc</option>
-                  <option value="Wema Bank Plc">Wema Bank Plc</option>
-                  <option value="Globus Bank Limited"
-                    >Globus Bank Limited</option
-                  >
-                  <option value="SunTrust Bank Nigeria Limited"
-                    >SunTrust Bank Nigeria Limited</option
-                  >
-                  <option value="Providus Bank Limited"
-                    >Providus Bank Limited</option
-                  >
-                  <option value="Jaiz Bank Plc">Jaiz Bank Plc</option>
-                  <option value="TAJBank Limited">TAJBank Limited</option>
-                  <option value="oronation Merchant Bank"
-                    >Coronation Merchant Bank</option
-                  >
-                  <option value="FBNQuest Merchant Bank"
-                    >FBNQuest Merchant Bank</option
-                  >
-                  <option value="FSDH Merchant Bank">FSDH Merchant Bank</option>
-                  <option value="Rand Merchant Bank">Rand Merchant Bank</option>
-                  <option value="Nova Merchant Bank">Nova Merchant Bank</option>
-                </select>
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
+                <option value="First Bank of Nigeria Limited"
+                  >First Bank of Nigeria Limited</option
+                >
+                <option value="Guaranty Trust Bank Plc"
+                  >Guaranty Trust Bank Plc</option
+                >
+                <option value="Union Bank of Nigeria Plc"
+                  >Union Bank of Nigeria Plc</option
+                >
+                <option value="United Bank for Africa Plc"
+                  >United Bank for Africa Plc</option
+                >
+                <option value="Zenith Bank Plc">Zenith Bank Plc</option>
+                <option value="Citibank Nigeria Limited"
+                  >Citibank Nigeria Limited</option
+                >
+                <option value="Ecobank Nigeria Plc">Ecobank Nigeria Plc</option>
+                <option value="Heritage Banking Company Limited"
+                  >Heritage Banking Company Limited</option
+                >
+                <option value="Keystone Bank Limited"
+                  >Keystone Bank Limited</option
+                >
+                <option value="Polaris Bank Limited"
+                  >Polaris Bank Limited</option
+                >
+                <option value="Stanbic IBTC Bank Plc"
+                  >Stanbic IBTC Bank Plc</option
+                >
+                <option value="Standard Chartered">Standard Chartered</option>
+                <option value="Sterling Bank Plc">Sterling Bank Plc</option>
+                <option value="Titan Trust Bank Limited"
+                  >Titan Trust Bank Limited</option
+                >
+                <option value="Unity Bank Plc">Unity Bank Plc</option>
+                <option value="Wema Bank Plc">Wema Bank Plc</option>
+                <option value="Globus Bank Limited">Globus Bank Limited</option>
+                <option value="SunTrust Bank Nigeria Limited"
+                  >SunTrust Bank Nigeria Limited</option
+                >
+                <option value="Providus Bank Limited"
+                  >Providus Bank Limited</option
+                >
+                <option value="Jaiz Bank Plc">Jaiz Bank Plc</option>
+                <option value="TAJBank Limited">TAJBank Limited</option>
+                <option value="oronation Merchant Bank"
+                  >Coronation Merchant Bank</option
+                >
+                <option value="FBNQuest Merchant Bank"
+                  >FBNQuest Merchant Bank</option
+                >
+                <option value="FSDH Merchant Bank">FSDH Merchant Bank</option>
+                <option value="Rand Merchant Bank">Rand Merchant Bank</option>
+                <option value="Nova Merchant Bank">Nova Merchant Bank</option>
+              </template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </select-field>
           </validation-provider>
         </div>
       </div>
@@ -308,29 +300,22 @@
         </h6>
         <div class="col-12 form-2__container">
           <validation-provider name="Category" v-slot="{ errors }">
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2 text-font"
-                >Category</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <select
-                  type="text"
-                  v-model="form.category"
-                  class="form-2__select col  color-grey-2"
+            <select-field
+              name="category"
+              v-on:select-category="getValue('category', $event)"
+            >
+              <template slot="label">Category</template>
+              <template slot="content">
+                <option disabled selected>Select Category</option>
+                <option
+                  :value="category._id"
+                  v-for="(category, i) in categories"
+                  :key="i"
+                  >{{ category.name }}</option
                 >
-                  <option disabled selected>Select Category</option>
-                  <option
-                    :value="category._id"
-                    v-for="(category, i) in categories"
-                    :key="i"
-                    >{{ category.name }}</option
-                  >
-                </select>
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
+              </template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </select-field>
           </validation-provider>
         </div>
       </div>
@@ -516,6 +501,7 @@
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 import { mapState } from "vuex";
 import Field from "~/components/commons/Field";
+import SelectField from "~/components/commons/SelectField";
 import ImageField from "~/components/commons/ImageField";
 import DesignButton from "~/components/commons/buttons/SmallDesignButton";
 
@@ -525,7 +511,8 @@ export default {
     ValidationObserver,
     Field,
     ImageField,
-    DesignButton
+    DesignButton,
+    SelectField
   },
   data() {
     return {
