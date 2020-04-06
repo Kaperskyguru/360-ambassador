@@ -17,7 +17,7 @@
         <div class="col-12 form-2__container">
           <validation-provider
             name="Full Name"
-            rules="alpha"
+            rules="required"
             v-slot="{ errors }"
           >
             <field
@@ -50,17 +50,23 @@
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
-          <field
-            type="email"
-            v-on:input-email="getValue('email', $event)"
-            :value="user.email"
-            :disabled="true"
-            :required="true"
-            name="email"
+          <validation-provider
+            name="Email"
+            rules="required|email"
+            v-slot="{ errors }"
           >
-            <template slot="label">E-mail</template>
-            <template slot="errors">{{ errors[0] }}</template>
-          </field>
+            <field
+              type="email"
+              v-on:input-email="getValue('email', $event)"
+              :value="user.email"
+              :disabled="true"
+              :required="true"
+              name="email"
+            >
+              <template slot="label">E-mail</template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </field>
+          </validation-provider>
         </div>
         <div class="col-12 form-2__container">
           <validation-provider
@@ -87,10 +93,10 @@
           >
             <field
               v-on:input-password="getValue('password', $event)"
-              :value="user.password"
               :required="true"
               name="password"
               type="password"
+              :auto="false"
             >
               <template slot="label">Password</template>
               <template slot="errors">{{ errors[0] }}</template>
@@ -338,31 +344,22 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="Category" v-slot="{ errors }">
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2 text-font"
-                >Category</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <select
-                  type="text"
-                  v-model="form.category"
-                  class="form-2__select col  color-grey-2"
+            <select-field
+              name="category"
+              v-on:select-category="getValue('category', $event)"
+            >
+              <template slot="label">Category</template>
+              <template slot="content">
+                <option disabled selected>Select Category</option>
+                <option
+                  :value="category._id"
+                  v-for="(category, i) in categories"
+                  :key="i"
+                  >{{ category.name }}</option
                 >
-                  <option disabled selected value=""
-                    >Select your category</option
-                  >
-                  <option
-                    v-for="(category, i) in categories"
-                    :key="i"
-                    :value="category._id"
-                    >{{ category.name || "" }}</option
-                  >
-                </select>
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
+              </template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </select-field>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -387,10 +384,12 @@
           Industry Information
         </h6>
         <div class="col-12 form-2__container">
-          <validation-provider name="Category" v-slot="{ errors }">
+          <validation-provider name="industryCategory" v-slot="{ errors }">
             <select-field
-              name="category"
-              v-on:select-category="getValue('category', $event)"
+              name="industryCategory"
+              v-on:select-industryCategory="
+                getValue('industryCategory', $event)
+              "
             >
               <template slot="label">Category</template>
               <template slot="content">
@@ -568,7 +567,7 @@
           <design-button
             type="button"
             role="button"
-            @click.prevent="back()"
+            @click.native="back()"
             class="mr-4 btn__square-curved--yellow form-2__btn"
           >
             Cancel
@@ -593,6 +592,7 @@ import { mapState } from "vuex";
 import Field from "~/components/commons/Field";
 import ImageField from "~/components/commons/ImageField";
 import CancelButton from "~/components/commons/buttons/DesignButton";
+import SelectField from "~/components/commons/SelectField";
 
 export default {
   components: {
@@ -601,8 +601,8 @@ export default {
     ValidationObserver,
     ImageField,
     Field,
-    CancelButton
-    // Loading
+    CancelButton,
+    SelectField
   },
   data() {
     return {

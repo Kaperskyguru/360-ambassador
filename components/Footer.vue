@@ -15,7 +15,7 @@
             </nuxt-link>
           </li>
           <li class="list__item">
-            <nuxt-link to="advertiser" class="list__link color-blue">
+            <nuxt-link to="merchant" class="list__link color-blue">
               Advertisers
             </nuxt-link>
           </li>

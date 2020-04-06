@@ -286,7 +286,6 @@ import { ValidationProvider, ValidationObserver } from "vee-validate";
 import Field from "~/components/commons/Field";
 import ImageField from "~/components/commons/ImageField";
 import FileUploadIcon from "~/components/commons/Icons/FileUpload";
-
 export default {
   components: {
     Card,
@@ -296,7 +295,6 @@ export default {
     ImageField,
     FileUploadIcon
   },
-
   data() {
     return {
       form: {},
@@ -306,31 +304,25 @@ export default {
       label: "Creating your promotion, please wait..."
     };
   },
-
   methods: {
     onFileChange(e) {
       this.profile_picture = e.target.files[0];
-
       // Upload file here or display
     },
-
     async addPromotion() {
       this.show = true;
       const formdata = new FormData();
       formdata.append("product_file", this.profile_picture);
       formdata.append("user", this.$auth.user._id);
       formdata.append("url", "https://www.example.com");
-
       for (const key in this.form) {
         if (this.form.hasOwnProperty(key)) {
           const element = this.form[key];
           formdata.append(key, element);
         }
       }
-
       try {
         const res = await this.$store.dispatch("promotion/add", formdata);
-        console.log(res);
         if (res) {
           const id = res._id;
           this.show = false;
@@ -345,7 +337,6 @@ export default {
       }
     }
   },
-
   computed: {
     ...mapState({
       categories: state => {

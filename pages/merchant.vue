@@ -2,20 +2,20 @@
   <section class="container-fluid">
     <div class="row justify-content-center">
       <sign-nav>Advertiser SIGN UP FORM</sign-nav>
-      <ad-form :user="user" />
+      <merchant-form :user="user" />
     </div>
   </section>
 </template>
 
 <script>
 import SignNav from "~/components/commons/SignNav";
-import AdForm from "~/components/partials/AdvertiserForm";
+import MerchantForm from "~/components/partials/MerchantForm";
 export default {
   auth: true,
   middleware: "merchant",
   components: {
     SignNav,
-    AdForm
+    MerchantForm
   },
 
   async asyncData({ store, param, route, query, error }) {

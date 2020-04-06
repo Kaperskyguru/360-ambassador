@@ -4,45 +4,48 @@
       <div class="dashboard__general--card col-md-10 col-12">
         <form class="dashboard__general--card__form">
           <div class="form-row align-items-start">
-            <div class="col-3 m-2">
+            <div class="col-auto m-1">
               <label
                 class="dashboard__general--card__form--label color-blue"
                 for="inlineFormInput"
                 >Quick Dates</label
               >
-              <select class="dashboard__general--card__form--select ml-4 col-6">
+              <select
+                class="dashboard__general--card__form--select ml-4 "
+                style="width: 150px;"
+              >
                 <option value="1">Today</option>
                 <option value="1">Yesterday</option>
                 <option value="1">Monday</option>
                 <option value="1">Tuesday</option>
               </select>
             </div>
-            <div class="col-auto">
-              <div
-                class="dashboard__general--card__form--text color-blue p-1 ml-4 mr-4"
-              >
+            <div class="d-sm-none d-none d-sm-block d-md-block ml-4 mr-4">
+              <div class="dashboard__general--card__form--text color-blue p-1">
                 OR
               </div>
             </div>
-            <div class="col-3 m-2">
+            <div class="col-auto m-1">
               <label class="dashboard__general--card__form--label color-blue"
                 >Start Date</label
               >
               <input
                 class="dashboard__general--card__form--input ml-4"
                 type="date"
+                style="width: 150px;"
               />
             </div>
-            <div class="col-3 m-2">
+            <div class="col-auto m-1">
               <label class="dashboard__general--card__form--label color-blue"
                 >End Date</label
               >
               <input
                 class="dashboard__general--card__form--input ml-4"
                 type="date"
+                style="width: 150px;"
               />
             </div>
-            <div class="col-auto m-2 ml-md-auto">
+            <div class="col-auto m-1 ml-md-auto">
               <!-- <button class="btn__curved--yellow">Refresh</button> -->
               <btn class="btn__curved--yellow">Refresh</btn>
             </div>

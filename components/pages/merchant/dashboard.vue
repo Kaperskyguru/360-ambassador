@@ -130,22 +130,29 @@
         <div class="col-12 mb-5 dashboard__chart--card">
           <div class="col-12 pt-3">
             <div class="row">
-              <div class="col-6 pl-0 pb-0">
-                <span class=" col-12 pl-2 color-grey-3">Conversions</span>
-              </div>
-              <div class="col-6">
-                <label class="" for="">Product</label>
-                <select
-                  name=""
-                  id=""
-                  class="dashboard__chart--card-select col-6"
+              <div class="col-3 pl-0 pb-0">
+                <span
+                  class=" col-12 pl-2  text-bold color-grey-3 text-uppercase"
+                  >Conversions</span
                 >
-                  <option value="1">Bukka Hut Fresto</option>
-                  <option value="1">Bukka Hut Fresto</option>
-                  <option value="1">Bukka Hut Fresto</option>
-                  <option value="1">Bukka Hut Fresto</option>
-                  <option value="1">Bukka Hut Fresto</option>
-                </select>
+              </div>
+              <div class="col-9">
+                <div class="row justify-content-end">
+                  <label class="col-5 text-bold text-right pt-2 m-0" for=""
+                    >Product</label
+                  >
+                  <select
+                    name=""
+                    id=""
+                    class="dashboard__chart--card-select col-5"
+                  >
+                    <option value="1">Bukka Hut Fresto</option>
+                    <option value="1">Bukka Hut Fresto</option>
+                    <option value="1">Bukka Hut Fresto</option>
+                    <option value="1">Bukka Hut Fresto</option>
+                    <option value="1">Bukka Hut Fresto</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
@@ -155,22 +162,28 @@
         <div class="col-12 mb-5 dashboard__chart--card">
           <div class="col-12 pt-3">
             <div class="row">
-              <div class="col-6 pl-0 pb-0">
-                <span class=" col-12 pl-2 color-grey-3">Affiliates</span>
-              </div>
-              <div class="col-6">
-                <label class="" for="">Product</label>
-                <select
-                  name=""
-                  id=""
-                  class="dashboard__chart--card-select col-6"
+              <div class="col-3 pl-0 pb-0">
+                <span class=" col-12 pl-2 text-bold color-grey-3 text-uppercase"
+                  >Affiliates</span
                 >
-                  <option value="1">Bukka Hut Fresto</option>
-                  <option value="1">Bukka Hut Fresto</option>
-                  <option value="1">Bukka Hut Fresto</option>
-                  <option value="1">Bukka Hut Fresto</option>
-                  <option value="1">Bukka Hut Fresto</option>
-                </select>
+              </div>
+              <div class="col-9">
+                <div class="row justify-content-end">
+                  <label class="col-5 text-bold text-right pt-2 m-0" for=""
+                    >Product</label
+                  >
+                  <select
+                    name=""
+                    id=""
+                    class="dashboard__chart--card-select col-5"
+                  >
+                    <option value="1">Bukka Hut Fresto</option>
+                    <option value="1">Bukka Hut Fresto</option>
+                    <option value="1">Bukka Hut Fresto</option>
+                    <option value="1">Bukka Hut Fresto</option>
+                    <option value="1">Bukka Hut Fresto</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
@@ -180,22 +193,28 @@
         <div class="col-12 mb-5 dashboard__chart--card">
           <div class="col-12 pt-3">
             <div class="row">
-              <div class="col-6 pl-0 pb-0">
-                <span class=" col-12 pl-2 color-grey-3">Sales</span>
-              </div>
-              <div class="col-6">
-                <label class="" for="">Product</label>
-                <select
-                  name=""
-                  id=""
-                  class="dashboard__chart--card-select col-6"
+              <div class="col-3 pl-0 pb-0">
+                <span class=" col-12 pl-2 text-bold color-grey-3 text-uppercase"
+                  >Sales</span
                 >
-                  <option value="1">Bukka Hut Fresto</option>
-                  <option value="1">Bukka Hut Fresto</option>
-                  <option value="1">Bukka Hut Fresto</option>
-                  <option value="1">Bukka Hut Fresto</option>
-                  <option value="1">Bukka Hut Fresto</option>
-                </select>
+              </div>
+              <div class="col-9">
+                <div class="row justify-content-end">
+                  <label class="col-5 text-bold text-right pt-2 m-0" for=""
+                    >Product</label
+                  >
+                  <select
+                    name=""
+                    id=""
+                    class="dashboard__chart--card-select col-5"
+                  >
+                    <option value="1">Bukka Hut Fresto</option>
+                    <option value="1">Bukka Hut Fresto</option>
+                    <option value="1">Bukka Hut Fresto</option>
+                    <option value="1">Bukka Hut Fresto</option>
+                    <option value="1">Bukka Hut Fresto</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
@@ -249,4 +268,6 @@ export default {
   }
 };
 </script>
+<style>
+</style>
 

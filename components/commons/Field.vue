@@ -15,6 +15,7 @@
         :id="name"
         :disabled="disabled"
         :placeholder="placeholder"
+        v-on:input="$emit('input', $event.target.value)"
         @input="$emit('input-' + name, $event.target.value)"
       />
       <span class="input-error"><slot name="errors"></slot></span>

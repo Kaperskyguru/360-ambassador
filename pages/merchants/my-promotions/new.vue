@@ -1,12 +1,12 @@
 <template>
-  <add-promotion />
+  <new-promotion />
 </template>
 
 <script>
-import AddPromotion from "~/components/pages/merchant/AddPromotion";
+import NewPromotion from "~/components/pages/merchant/NewPromotion";
 export default {
   components: {
-    AddPromotion
+    NewPromotion
   }
 };
 </script>

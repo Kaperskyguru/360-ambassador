@@ -120,7 +120,7 @@ export default {
   },
   computed: {
     link: () => {
-      return this.$auth.user.role == "merchant" ? "advertiser" : "affiliate";
+      return this.$auth.user.role == "merchant" ? "merchant" : "affiliate";
     }
   },
   methods: {
@@ -131,11 +131,11 @@ export default {
       const id = this.$auth.user._id;
       switch (role) {
         case "admin":
-          this.$router.push(`/advertiser?user_id=${id}`);
+          this.$router.push(`merchant?user_id=${id}`);
           break;
 
         case "merchant":
-          this.$router.push(`/advertiser?user_id=${id}`);
+          this.$router.push(`merchant?user_id=${id}`);
           break;
 
         case "promoter":

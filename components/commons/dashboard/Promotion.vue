@@ -1,11 +1,14 @@
 <template>
   <div
+    id="promotion"
     class="dashboard__promotions--card--container col-12 col-md-4 mb-5 mb-md-0 pl-0 pr-0 pr-md-3"
   >
     <div class="dashboard__promotions--card col-12">
       <div class="dashboard__summary--card-header">
         <div class="row pr-3">
-          <span class="color-blue mr-auto">{{ promotion.name || "" }}</span>
+          <span class="color-blue mr-auto text-capitalize">{{
+            promotion.name || ""
+          }}</span>
           <div
             class="dashboard__promotions--card--img-container ml-auto p-2"
             style="border:1px solid grey; border-radius:50%"
@@ -61,18 +64,20 @@ export default {
   props: {
     icon: String,
     alt: String,
-    promotion: [],
+    promotion: {
+      type: Object
+    },
     width: String,
     height: String
   },
   components: {
     Icon
-  },
-  mounted() {
-    console.log(this.promotion);
   }
 };
 </script>
 
 <style scoped>
+#promotion p::first-letter {
+  text-transform: uppercase !important;
+}
 </style>

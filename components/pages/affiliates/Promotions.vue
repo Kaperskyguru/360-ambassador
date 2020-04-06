@@ -4,7 +4,7 @@
       <div class="dashboard__general--card col-md-10 col-12">
         <form class="dashboard__general--card__form">
           <div class="form-row align-items-center">
-            <div class="col-3">
+            <div class="col-4">
               <div class="form-check mb-2">
                 <input
                   v-model="terms.keyword"
@@ -14,7 +14,7 @@
                 />
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="form-check mb-2">
                 <select
                   id="cat"
@@ -33,7 +33,7 @@
                 </select>
               </div>
             </div>
-            <div class="col-auto ml-md-auto">
+            <div class="col-auto ml-md-auto ml-5">
               <button
                 @click.prevent="search"
                 class="btn__curved--yellow btn btn-sm btn-warning"

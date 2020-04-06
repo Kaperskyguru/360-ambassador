@@ -1,5 +1,5 @@
 <template>
-  <promotion-details :finish="true" />
+  <promotion-details :promotion="promotion" :finish="true" />
 </template>
 
 <script>
@@ -9,12 +9,9 @@ export default {
     PromotionDetails
   },
 
-  async fetch({ store, params, auth, from }) {
-    let isInitialPageLoad = !from;
-
-    if (isInitialPageLoad) {
-      store.dispatch("promotion/find", params.id);
-    }
+  async asyncData({ store, params }) {
+    const promotion = await store.dispatch("promotion/find", params.id);
+    return { promotion };
   }
 };
 </script>

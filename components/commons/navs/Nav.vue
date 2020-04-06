@@ -85,7 +85,7 @@
                   <div class="col-12 mt-4 p-0">
                     <nuxt-link
                       class="btn__curved--yellow dropdown-btn color-blue"
-                      to="register-ad"
+                      to="register-merchant"
                       role="button"
                     >
                       GET STARTED

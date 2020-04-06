@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="col-lg-5 col-md-6 col-12 form__page-right">
-        <register-form :role="role" action="advertiser"
+        <register-form :role="role" action="merchant"
           >Register as an Advertiser</register-form
         >
         <div class="color-grey-2">

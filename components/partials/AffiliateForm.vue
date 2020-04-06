@@ -1,7 +1,7 @@
 <template>
-  <ValidationObserver v-slot="{ handleSubmit }">
+  <ValidationObserver ref="affiliateForm">
     <form
-      @submit.prevent="handleSubmit(updateUser)"
+      @submit.prevent="updateUser"
       method="post"
       class="col-12 col-md-10 mt-4 pl-5 form-2"
       enctype="multipart/form-data"
@@ -465,7 +465,7 @@
                 class="custom-control-label color-grey-2 text-font"
                 for="customCheck5"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Lorem ipsm dolor sit amet consectetur adipisicing elit.
                 Voluptatum maiores qui odit delectus nemo, tempora iure fugit
                 ipsam quidem iusto. Fugiat ipsa recusandae cupiditate nobis
                 molestiae iste quo deserunt obcaecati.
@@ -479,7 +479,7 @@
         <div class="row justify-content-end">
           <design-button
             role="button"
-            @click.prevent="back()"
+            @click.native="back()"
             class="mr-4 btn__square-curved--yellow form-2__btn"
           >
             Cancel
@@ -516,22 +516,21 @@ export default {
   },
   data() {
     return {
-      f: {},
-      form: {
-        fullname: ""
-      },
+      form: {},
       show: false,
       label: "Updating...",
       overlay: true
     };
   },
-  created() {
-    // this.user.fullname = "";
-  },
   methods: {
     async updateUser() {
       this.show = true;
-
+      // Validate form
+      const success = await this.$refs.affiliateForm.validate();
+      if (!success) {
+        this.show = false;
+        return;
+      }
       const formdata = this.generateFormData(this.form);
       // Sending all data including ID
       const data = {
@@ -542,7 +541,6 @@ export default {
     },
 
     onFileChange(e) {
-      // Upload file here or display
       this.form.profile_picture = e.target.files[0];
     },
 

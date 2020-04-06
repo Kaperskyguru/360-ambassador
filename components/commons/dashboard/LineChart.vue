@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="col-12 pt-2">
-      <div class="row pl-5">
+      <div class="row pl-4">
         <div class="dashboard__chart--card-text col-6 pl-0 pb-0">
           <span class="text-small col-12 pl-2 color-grey-3"
             >TOTAL EARNINGS</span
           >
           <p class="col-12 pl-2 color-blue">N11,000.00</p>
         </div>
-        <div class="col-6 pt-2">
+        <div class="col-6 pt-3">
           <select name="" id="" class="dashboard__chart--card-select col-6">
             <option value="1">By Year</option>
             <option value="1">By Year</option>
