@@ -156,9 +156,12 @@
         <div class="col-11" v-show="finish">
           <div class="col-6 mt-4 ml-auto">
             <div class="row justify-content-end">
-              <button type="submit" class="btn__curved--yellow col-12">
+              <nuxt-link
+                to="/merchants/my-promotions"
+                class="btn__curved--yellow col-12 text-center"
+              >
                 FINISH
-              </button>
+              </nuxt-link>
             </div>
           </div>
         </div>
@@ -176,7 +179,7 @@ export default {
     PromotionDetail,
     StatBox
   },
-  props: ["finish", "promotion"]
+  props: { finish: { type: Boolean }, promotion: { type: Object } }
 };
 </script>
 

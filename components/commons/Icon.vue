@@ -1,6 +1,6 @@
 <template>
   <img
-    :src="icon"
+    :src="icon || require('~/assets/images/man-user.png')"
     :alt="alt"
     :style="{ 'border-radius': round + '% !important;' }"
   />

@@ -317,8 +317,8 @@ p {
 
 .dashboard__promotions--card-heading {
   font-family: "Montserrat-Medium";
-  font-size: 1.4rem;
-  font-weight: bold;
+  font-size: 1rem;
+  /* font-weight: bold; */
 }
 
 .dashboard__promotions--card-text {
@@ -346,16 +346,21 @@ p {
 
 .dashboard__general--card__heading {
   font-family: "Montserrat-Bold";
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   letter-spacing: 0rem;
 }
 
 .dashboard__general--card__text {
-  font-family: "Montserrat-Medium";
-  font-size: 1.2rem;
+  font-family: "Montserrat";
   letter-spacing: 0rem;
 }
-
+.dashboard__general--card__text.desc {
+  text-align: left;
+  line-height: 15px;
+  font-size: 12px;
+  color: #707070;
+  opacity: 1;
+}
 .dashboard__general--card__text-small {
   font-family: "Montserrat-Medium";
   font-size: 0.7rem;
@@ -363,8 +368,8 @@ p {
 }
 
 .dashboard__general--card__text-bg {
-  font-family: "Montserrat-Medium";
-  font-size: 1.5rem;
+  font-family: "Montserrat-Bold";
+  font-size: 1.7rem;
   letter-spacing: 0rem;
 }
 
@@ -691,9 +696,9 @@ a:active {
 }
 
 .dropdown-btn {
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: bold;
-  padding: .7rem 1.1rem !important;
+  padding: 0.7rem 1.1rem !important;
 }
 
 .btn__bordered--yellow,
@@ -724,7 +729,7 @@ a:active {
 .btn__bordered-square-curved--yellow:hover {
   background-color: transparent;
   color: #ffffff;
-  padding: .8rem 2rem;
+  padding: 0.8rem 2rem;
   border: 0.13rem solid #fecc0a;
   border-radius: 5rem 5rem 0rem 5rem;
   text-decoration: none;
@@ -756,7 +761,7 @@ a:active {
 .btn__square-curved--yellow:hover {
   background-color: #fecc0a;
   color: #000000;
-  padding: .8rem 3rem !important;
+  padding: 0.8rem 3rem !important;
   border: 0.13rem solid #fecc0a;
   border-radius: 5rem 5rem 0rem 5rem;
   text-decoration: none;
@@ -796,7 +801,7 @@ a:active {
   content: "Upload your picture";
   position: absolute;
   top: 50%;
-  left: 15rem;
+  left: 12rem;
   width: 15rem;
   transform: translateY(-50%);
   font-size: 1.4rem;
@@ -811,9 +816,11 @@ a:active {
 }
 
 .form__page-left {
-  background-image: linear-gradient(to left,
+  background-image: linear-gradient(
+      to left,
       rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)),
+      rgba(0, 0, 0, 0.5)
+    ),
     url("../images/form-bg.webp");
   background-repeat: no-repeat;
   background-position: bottom center;
@@ -873,7 +880,7 @@ a:active {
   transform: translateY(-8.7rem);
 }
 
-.form__input:placeholder-shown+.form__label {
+.form__input:placeholder-shown + .form__label {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4.7rem);
@@ -992,9 +999,11 @@ a:active {
   width: 40rem;
   left: unset;
   right: 0;
-  background: linear-gradient(to left,
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.7));
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.7)
+  );
   border: none;
   border-bottom-left-radius: 2.3rem;
   border-bottom-right-radius: 2.3rem;
@@ -1006,7 +1015,7 @@ a:active {
 }
 
 .dropdown-toggle::after {
-  color: #ffffff !important
+  color: #ffffff !important;
 }
 
 .dropdown-text {
@@ -1058,9 +1067,11 @@ a:active {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(to left,
+  background-image: linear-gradient(
+      to left,
       rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)),
+      rgba(0, 0, 0, 0.5)
+    ),
     url("../images/banner.webp");
   background-repeat: no-repeat;
   /* background-position: bottom center; */
@@ -1072,19 +1083,17 @@ a:active {
 @media (min-width: 50em) {
   .header-text {
     bottom: 0;
-    position: absolute
+    position: absolute;
   }
 }
-
 
 @media (max-width: 75em) {
   .header-text {
     bottom: 0;
     position: absolute;
-    padding-top: 3rem !important
+    padding-top: 3rem !important;
   }
 }
-
 
 .header__text-box {
   color: #ffffff;
@@ -1110,9 +1119,11 @@ a:active {
 
 .banner {
   height: 60rem;
-  background-image: linear-gradient(to left,
+  background-image: linear-gradient(
+      to left,
       rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)),
+      rgba(0, 0, 0, 0.5)
+    ),
     url("../images/banner-2.webp");
   background-repeat: no-repeat;
   background-position: top center;
@@ -1140,9 +1151,11 @@ section,
 }
 
 .testimonial {
-  background-image: linear-gradient(to left,
-      rgba(0, 0, 0, 0.05),
-      rgba(0, 0, 0, 0.05));
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.05)
+  );
   padding-top: 10rem;
   padding-bottom: 10rem;
 }
@@ -1186,9 +1199,11 @@ section,
 }
 
 .dashboard {
-  background-image: linear-gradient(to left,
+  background-image: linear-gradient(
+      to left,
       rgba(255, 255, 255, 0.95),
-      rgba(255, 255, 255, 0.95)),
+      rgba(255, 255, 255, 0.95)
+    ),
     url("../images/banner.webp");
   background-repeat: no-repeat;
   background-position: bottom center;
@@ -1269,7 +1284,7 @@ section,
 }
 
 .dashboard__summary--card-header {
-  margin-bottom: 2.4rem;
+  margin-bottom: 0rem;
 }
 
 @media (max-width: 37.5em) {
@@ -1318,7 +1333,7 @@ section,
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 1rem;
   box-shadow: 0rem 0.3rem 0.6rem #00000029;
-  padding-top: 3rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
   padding-left: 2.5rem;
 }
@@ -1355,9 +1370,9 @@ section,
 .dashboard__chart--card-select {
   background-color: transparent;
   border: 0.15rem solid #fecc0a;
-  padding: 0.5rem;
+  padding: 0.8rem;
   border-radius: 3rem;
-  float: right;
+  /* float: right; */
   outline: none;
 }
 
@@ -1395,14 +1410,14 @@ section,
 .dashboard__general--card__text {
   color: rgba(18, 48, 217, 0.5);
   overflow: hidden;
-  max-height: 5rem;
+  max-height: 6rem;
   margin-right: -1.4rem;
-  padding-right: 1.4rem;
+  padding-right: 1rem;
   margin-bottom: 0.5rem;
 }
 
 .dashboard__general--card__text:before {
-  content: "...";
+  content: "";
   position: absolute;
   right: 0;
   bottom: 0;
@@ -1613,15 +1628,15 @@ section,
   }
 }
 
-.my-promotion__pills--switch input:checked[type="checkbox"]+.email {
+.my-promotion__pills--switch input:checked[type="checkbox"] + .email {
   display: none;
 }
 
-.my-promotion__pills--switch input:checked[type="checkbox"]~.sms {
+.my-promotion__pills--switch input:checked[type="checkbox"] ~ .sms {
   display: inline;
 }
 
-.my-promotion__pills--switch input[type="checkbox"]~.sms {
+.my-promotion__pills--switch input[type="checkbox"] ~ .sms {
   display: none;
 }
 
@@ -1648,8 +1663,12 @@ a {
 .btn__squared--disabled:hover {
   color: #ffffff !important;
   background-color: #707070;
-  padding: .8rem 3rem !important;
+  padding: 0.8rem 3rem !important;
   border: 0.13rem solid #707070;
   border-radius: 5rem 5rem 0rem 5rem;
   text-decoration: none;
+}
+
+.input-error {
+  color: red;
 }

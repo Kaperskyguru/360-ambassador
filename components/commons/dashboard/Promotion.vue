@@ -1,14 +1,20 @@
 <template>
   <div
-    class="dashboard__promotions--card--container col-12 col-md-4 mb-5 mb-md-0 pl-0 pl-md-3 pr-0 pr-md-3"
+    id="promotion"
+    class="dashboard__promotions--card--container col-12 col-md-4 mb-5 mb-md-0 pl-0 pr-0 pr-md-3"
   >
     <div class="dashboard__promotions--card col-12">
       <div class="dashboard__summary--card-header">
         <div class="row pr-3">
-          <span class="color-blue mr-auto"><slot name="title"/></span>
-          <div class="dashboard__promotions--card--img-container ml-auto">
+          <span class="color-blue mr-auto text-capitalize">{{
+            promotion.name || ""
+          }}</span>
+          <div
+            class="dashboard__promotions--card--img-container ml-auto p-2"
+            style="border:1px solid grey; border-radius:50%"
+          >
             <icon
-              round="50"
+              round="0"
               :icon="icon"
               :alt="alt"
               class="dashboard__promotions--card--img"
@@ -17,30 +23,28 @@
         </div>
       </div>
       <div class="dashboard__promotions--card-body">
-        <div class="row justify-content-center pr-3">
+        <div class="row justify-content-center pr-1">
           <h6
             class="dashboard__promotions--card-heading color-grey-3 col-12 p-0"
           >
-            <slot name="subtitle" />
+            {{ "Marketing" }}
           </h6>
           <p class="dashboard__promotions--card-text color-grey-7 col-12 p-0">
-            <slot name="content" />
+            {{ promotion.description || "" }}
           </p>
           <div class="col-12 p-md-0">
             <div class="row">
-              <div class="col-6 ml-auto">
-                <span class="dashboard__promotions--card-volume color-red"
-                  ><slot name="volume"/></span
-                ><br />
-                <span class="dashboard__promotions--card-text color-red mt-2"
-                  >comm.</span
-                >
+              <div class="col-6 pl-4 p-0">
+                <span class="dashboard__promotions--card-volume color-red">{{
+                  promotion.commission || ""
+                }}</span>
+                <span class="color-red">comm.</span>
               </div>
-              <div class="col-6">
+              <div class="col-6 dashboard__promotions--card-volume">
                 <nuxt-link
                   :to="{
                     name: 'affiliates-promotions-id',
-                    params: { id: promotion_id }
+                    params: { id: promotion._id }
                   }"
                   class="dashboard__promotions--card-text color-blue-1 btn-transparent"
                   >View details</nuxt-link
@@ -60,7 +64,9 @@ export default {
   props: {
     icon: String,
     alt: String,
-    promotion_id: String,
+    promotion: {
+      type: Object
+    },
     width: String,
     height: String
   },
@@ -71,4 +77,7 @@ export default {
 </script>
 
 <style scoped>
+#promotion p::first-letter {
+  text-transform: uppercase !important;
+}
 </style>

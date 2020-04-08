@@ -19,7 +19,7 @@ export default {
         group: "alerts",
         type: "warning",
         title: "Update profile",
-        text: `Hello ${this.$auth.user.firstName}! Please you need to update your profile`
+        text: `Hello ${this.$auth.user.fullname}! Please you need to update your profile`
       });
     }
   }

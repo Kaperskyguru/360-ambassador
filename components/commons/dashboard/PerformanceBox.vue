@@ -27,4 +27,8 @@ export default {
   }
 };
 </script>
-
+<style scoped>
+.dashboard__summary--card-body div {
+  font-size: 18px;
+}
+</style>

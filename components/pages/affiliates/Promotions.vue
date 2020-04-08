@@ -4,7 +4,7 @@
       <div class="dashboard__general--card col-md-10 col-12">
         <form class="dashboard__general--card__form">
           <div class="form-row align-items-center">
-            <div class="col-auto">
+            <div class="col-4">
               <div class="form-check mb-2">
                 <input
                   v-model="terms.keyword"
@@ -14,20 +14,26 @@
                 />
               </div>
             </div>
-            <div class="col-auto">
-              <select
-                v-model="terms.category"
-                class="dashboard__general--card__form--select ml-4 col-12"
-              >
-                <option
-                  v-for="(category, i) in categories"
-                  :key="i"
-                  :value="category._id"
-                  >{{ category.name }}</option
+            <div class="col-4">
+              <div class="form-check mb-2">
+                <select
+                  id="cat"
+                  v-model="terms.category"
+                  class="dashboard__general--card__form--select ml-4 col-12"
                 >
-              </select>
+                  <option value="Category" selected="true" disabled
+                    >Category</option
+                  >
+                  <option
+                    v-for="(category, i) in categories"
+                    :key="i"
+                    :value="category._id"
+                    >{{ category.name }}</option
+                  >
+                </select>
+              </div>
             </div>
-            <div class="col-auto ml-md-auto">
+            <div class="col-auto ml-md-auto ml-5">
               <button
                 @click.prevent="search"
                 class="btn__curved--yellow btn btn-sm btn-warning"
@@ -42,7 +48,7 @@
     <h6 class="dashboard__heading col-12 color-blue mt-5">
       All Promotions
     </h6>
-    <div class="row justify-content-center">
+    <div class="row justify-content-start">
       <card
         :promotion="promotion"
         v-for="(promotion, i) in promotions"
@@ -92,6 +98,9 @@ export default {
         return state.category.categories;
       }
     })
+  },
+  mounted() {
+    document.getElementById("cat").selectedIndex = "0";
   }
 };
 </script>

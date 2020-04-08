@@ -1,5 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light w-100 dashboard__nav">
+  <nav
+    class="navbar navbar-expand-lg navbar-light w-100 dashboard__nav affiliate"
+  >
     <brand />
     <button
       class="navbar-toggler bg-white"
@@ -82,4 +84,11 @@ export default {
   }
 };
 </script>
-
+<style scoped>
+.affiliate {
+  padding-top: 0.2rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  padding-bottom: 0.2rem !important;
+}
+</style>

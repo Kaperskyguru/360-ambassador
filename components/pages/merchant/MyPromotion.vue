@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-start">
       <card
         v-for="(promotion, i) in promotions"
         :key="i"

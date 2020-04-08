@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Register from "~/components/pages/Register.ad";
+import Register from "~/components/pages/RegisterMerchant";
 import { mapGetters } from "vuex";
 export default {
   auth: false,

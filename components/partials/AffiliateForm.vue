@@ -1,7 +1,7 @@
 <template>
-  <ValidationObserver v-slot="{ handleSubmit }">
+  <ValidationObserver ref="affiliateForm">
     <form
-      @submit.prevent="handleSubmit(updateUser)"
+      @submit.prevent="updateUser"
       method="post"
       class="col-12 col-md-10 mt-4 pl-5 form-2"
       enctype="multipart/form-data"
@@ -14,64 +14,26 @@
           <image-field v-on:triggerChange="onFileChange($event)"></image-field>
         </div>
         <div class="col-12 form-2__container">
-          <validation-provider
-            name="Full Name"
-            rules="alpha"
-            v-slot="{ errors }"
-          >
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
-                >Full Name *</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <input
-                  autocomplete="on"
-                  type="text"
-                  class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="user.fullname"
-                  disabled
-                  v-model="form.fullname"
-                />
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
+          <validation-provider name="Full Name" rules="" v-slot="{ errors }">
+            <field
+              :required="true"
+              name="fullname"
+              v-on:input-fullname="getValue('fullname', $event)"
+              :value="user.fullname"
+            >
+              <template slot="label">Full Name</template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </field>
           </validation-provider>
         </div>
-        <!-- <div class="col-12 form-2__container">
-          <validation-provider
-            name="Last Name"
-            rules="alpha"
-            v-slot="{ errors }"
-          >
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
-                >Last Name *</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <input
-                  autocomplete="on"
-                  type="text"
-                  class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="user.lastName"
-                  disabled
-                  v-model="form.lastName"
-                />
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
-          </validation-provider>
-        </div> -->
+
         <div class="col-12 form-2__container">
           <validation-provider name="Phone Number" rules="" v-slot="{ errors }">
             <field
               :required="true"
+              v-on:input-phone="getValue('phone', $event)"
               name="phone"
-              :placeholder="user.phone"
-              v-model="form.phone"
+              :value="user.phone"
             >
               <template slot="label">Phone</template>
               <template slot="errors">{{ errors[0] }}</template>
@@ -80,24 +42,17 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="E-mail" rules="" v-slot="{ errors }">
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
-                >E-mail *</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <input
-                  autocomplete="on"
-                  type="text"
-                  class="form-2__input-disabled col-12 color-grey-2"
-                  :placeholder="user.email"
-                  v-model="form.email"
-                  disabled
-                />
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
+            <field
+              type="email"
+              v-on:input-email="getValue('email', $event)"
+              :disabled="true"
+              :required="true"
+              :value="user.email"
+              name="email"
+            >
+              <template slot="label">E-mail</template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </field>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -108,8 +63,8 @@
           >
             <field
               :required="true"
-              v-model="form.username"
-              :placeholder="user.username"
+              v-on:input-username="getValue('username', $event)"
+              :value="user.username"
               name="username"
             >
               <template slot="label">Username</template>
@@ -126,8 +81,9 @@
           >
             <field
               :required="true"
+              :auto="false"
               type="password"
-              v-model="form.password"
+              v-on:input-password="getValue('password', $event)"
               name="password"
             >
               <template slot="label">Password</template>
@@ -148,8 +104,8 @@
           >
             <field
               :required="true"
-              v-model="form.address"
-              :placeholder="user.address"
+              v-on:input-address="getValue('address', $event)"
+              :value="user.address"
               name="address"
             >
               <template slot="label">Address</template>
@@ -161,8 +117,8 @@
           <validation-provider name="City" rules="required" v-slot="{ errors }">
             <field
               :required="true"
-              v-model="form.city"
-              :placeholder="user.city"
+              v-on:input-city="getValue('city', $event)"
+              :value="user.city"
               name="city"
             >
               <template slot="label">City</template>
@@ -178,8 +134,8 @@
           >
             <field
               :required="true"
-              v-model="form.state"
-              :placeholder="user.state"
+              v-on:input-state="getValue('state', $event)"
+              :value="user.state"
               name="state"
             >
               <template slot="label">State</template>
@@ -191,8 +147,8 @@
           <validation-provider name="BVN" rules="required" v-slot="{ errors }">
             <field
               :required="true"
-              v-model="form.bvn"
-              :placeholder="user.bvn"
+              v-on:input-bvn="getValue('bvn', $event)"
+              :value="user.bvn"
               name="bvn"
             >
               <template slot="label">BVN</template>
@@ -208,9 +164,9 @@
           >
             <field
               :required="true"
-              v-model="form.AccountNumber"
-              name="account_number"
-              :placeholder="user.AccountNumber"
+              v-on:input-AccountNumber="getValue('AccountNumber', $event)"
+              name="AccountNumber"
+              :value="user.AccountNumber"
             >
               <template slot="label">Account Number</template>
               <template slot="errors">{{ errors[0] }}</template>
@@ -219,85 +175,76 @@
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="Bank" rules="" v-slot="{ errors }">
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
-                >Bank *</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <select
-                  type="text"
-                  v-model="form.bank"
-                  class="form-2__select col-12 color-grey-2"
+            <select-field
+              name="bank"
+              :required="true"
+              v-on:select-bank="getValue('bank', $event)"
+            >
+              <template slot="label">Bank</template>
+              <template slot="content">
+                <option disabled selected>Select Bank</option>
+                <option value="Access Bank Plc">Access Bank Plc</option>
+                <option value="Fidelity Bank Plc">Fidelity Bank Plc</option>
+                <option value="irst City Monument Bank Limited"
+                  >First City Monument Bank Limited</option
                 >
-                  <option value="Access Bank Plc">Access Bank Plc</option>
-                  <option value="Fidelity Bank Plc">Fidelity Bank Plc</option>
-                  <option value="irst City Monument Bank Limited"
-                    >First City Monument Bank Limited</option
-                  >
-                  <option value="First Bank of Nigeria Limited"
-                    >First Bank of Nigeria Limited</option
-                  >
-                  <option value="Guaranty Trust Bank Plc"
-                    >Guaranty Trust Bank Plc</option
-                  >
-                  <option value="Union Bank of Nigeria Plc"
-                    >Union Bank of Nigeria Plc</option
-                  >
-                  <option value="United Bank for Africa Plc"
-                    >United Bank for Africa Plc</option
-                  >
-                  <option value="Zenith Bank Plc">Zenith Bank Plc</option>
-                  <option value="Citibank Nigeria Limited"
-                    >Citibank Nigeria Limited</option
-                  >
-                  <option value="Ecobank Nigeria Plc"
-                    >Ecobank Nigeria Plc</option
-                  >
-                  <option value="Heritage Banking Company Limited"
-                    >Heritage Banking Company Limited</option
-                  >
-                  <option value="Keystone Bank Limited"
-                    >Keystone Bank Limited</option
-                  >
-                  <option value="Polaris Bank Limited"
-                    >Polaris Bank Limited</option
-                  >
-                  <option value="Stanbic IBTC Bank Plc"
-                    >Stanbic IBTC Bank Plc</option
-                  >
-                  <option value="Standard Chartered">Standard Chartered</option>
-                  <option value="Sterling Bank Plc">Sterling Bank Plc</option>
-                  <option value="Titan Trust Bank Limited"
-                    >Titan Trust Bank Limited</option
-                  >
-                  <option value="Unity Bank Plc">Unity Bank Plc</option>
-                  <option value="Wema Bank Plc">Wema Bank Plc</option>
-                  <option value="Globus Bank Limited"
-                    >Globus Bank Limited</option
-                  >
-                  <option value="SunTrust Bank Nigeria Limited"
-                    >SunTrust Bank Nigeria Limited</option
-                  >
-                  <option value="Providus Bank Limited"
-                    >Providus Bank Limited</option
-                  >
-                  <option value="Jaiz Bank Plc">Jaiz Bank Plc</option>
-                  <option value="TAJBank Limited">TAJBank Limited</option>
-                  <option value="oronation Merchant Bank"
-                    >Coronation Merchant Bank</option
-                  >
-                  <option value="FBNQuest Merchant Bank"
-                    >FBNQuest Merchant Bank</option
-                  >
-                  <option value="FSDH Merchant Bank">FSDH Merchant Bank</option>
-                  <option value="Rand Merchant Bank">Rand Merchant Bank</option>
-                  <option value="Nova Merchant Bank">Nova Merchant Bank</option>
-                </select>
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
+                <option value="First Bank of Nigeria Limited"
+                  >First Bank of Nigeria Limited</option
+                >
+                <option value="Guaranty Trust Bank Plc"
+                  >Guaranty Trust Bank Plc</option
+                >
+                <option value="Union Bank of Nigeria Plc"
+                  >Union Bank of Nigeria Plc</option
+                >
+                <option value="United Bank for Africa Plc"
+                  >United Bank for Africa Plc</option
+                >
+                <option value="Zenith Bank Plc">Zenith Bank Plc</option>
+                <option value="Citibank Nigeria Limited"
+                  >Citibank Nigeria Limited</option
+                >
+                <option value="Ecobank Nigeria Plc">Ecobank Nigeria Plc</option>
+                <option value="Heritage Banking Company Limited"
+                  >Heritage Banking Company Limited</option
+                >
+                <option value="Keystone Bank Limited"
+                  >Keystone Bank Limited</option
+                >
+                <option value="Polaris Bank Limited"
+                  >Polaris Bank Limited</option
+                >
+                <option value="Stanbic IBTC Bank Plc"
+                  >Stanbic IBTC Bank Plc</option
+                >
+                <option value="Standard Chartered">Standard Chartered</option>
+                <option value="Sterling Bank Plc">Sterling Bank Plc</option>
+                <option value="Titan Trust Bank Limited"
+                  >Titan Trust Bank Limited</option
+                >
+                <option value="Unity Bank Plc">Unity Bank Plc</option>
+                <option value="Wema Bank Plc">Wema Bank Plc</option>
+                <option value="Globus Bank Limited">Globus Bank Limited</option>
+                <option value="SunTrust Bank Nigeria Limited"
+                  >SunTrust Bank Nigeria Limited</option
+                >
+                <option value="Providus Bank Limited"
+                  >Providus Bank Limited</option
+                >
+                <option value="Jaiz Bank Plc">Jaiz Bank Plc</option>
+                <option value="TAJBank Limited">TAJBank Limited</option>
+                <option value="oronation Merchant Bank"
+                  >Coronation Merchant Bank</option
+                >
+                <option value="FBNQuest Merchant Bank"
+                  >FBNQuest Merchant Bank</option
+                >
+                <option value="FSDH Merchant Bank">FSDH Merchant Bank</option>
+                <option value="Rand Merchant Bank">Rand Merchant Bank</option>
+                <option value="Nova Merchant Bank">Nova Merchant Bank</option>
+              </template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </select-field>
           </validation-provider>
         </div>
       </div>
@@ -308,8 +255,8 @@
         <div class="col-12 form-2__container">
           <validation-provider name="Facebook" v-slot="{ errors }">
             <field
-              v-model="form.facebook"
-              :placeholder="user.facebook"
+              v-on:input-facebook="getValue('facebook', $event)"
+              :value="user.facebook"
               name="facebook"
             >
               <template slot="label">Facebook</template>
@@ -320,8 +267,8 @@
         <div class="col-12 form-2__container">
           <validation-provider name="Twitter" v-slot="{ errors }">
             <field
-              v-model="form.twitter"
-              :placeholder="user.twitter"
+              v-on:input-twitter="getValue('twitter', $event)"
+              :value="user.twitter"
               name="twitter"
             >
               <template slot="label">Twitter</template>
@@ -332,8 +279,8 @@
         <div class="col-12 form-2__container">
           <validation-provider name="Instagram" v-slot="{ errors }">
             <field
-              v-model="form.instagram"
-              :placeholder="user.instagram"
+              v-on:input-instagram="getValue('instagram', $event)"
+              :value="user.instagram"
               name="instagram"
             >
               <template slot="label">Instagram</template>
@@ -353,28 +300,22 @@
         </h6>
         <div class="col-12 form-2__container">
           <validation-provider name="Category" v-slot="{ errors }">
-            <div class="row">
-              <label
-                for=""
-                class="text-md-right text-left col-md-3 col-12 form-2__label color-grey-2"
-                >Category</label
-              >
-              <div class="col-md-8 col-12 ml-md-5">
-                <select
-                  type="text"
-                  v-model="form.category"
-                  class="form-2__select col  color-grey-2"
+            <select-field
+              name="category"
+              v-on:select-category="getValue('category', $event)"
+            >
+              <template slot="label">Category</template>
+              <template slot="content">
+                <option disabled selected>Select Category</option>
+                <option
+                  :value="category._id"
+                  v-for="(category, i) in categories"
+                  :key="i"
+                  >{{ category.name }}</option
                 >
-                  <option
-                    :value="category._id"
-                    v-for="(category, i) in categories"
-                    :key="i"
-                    >{{ category.name }}</option
-                  >
-                </select>
-                <span class="input-error">{{ errors[0] }}</span>
-              </div>
-            </div>
+              </template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </select-field>
           </validation-provider>
         </div>
       </div>
@@ -382,13 +323,13 @@
         <h6 class="border-bottom-grey-3 col-12 color-blue p-0">
           Area of Interest
         </h6>
-        <p class="col-12 form-2__text color-grey-2">
+        <p class="col-12 form-2__text color-grey-2 text-font">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iste quae
           laborum dolor velit voluptatibus eius nam doloribus repellendus.
           Pariatur ea, fugiat officia aliquid fugit voluptatum perspiciatis.
           Quisquam, explicabo suscipit.
         </p>
-        <p class="col-12 form-2__text color-grey-2">
+        <p class="col-12 form-2__text color-grey-2 text-font">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iste quae
           laborum dolor velit voluptatibus eius nam doloribus repellendus.
           Pariatur ea, fugiat officia aliquid fugit voluptatum perspiciatis.
@@ -409,7 +350,7 @@
                 v-model="form.service_agreement"
               />
               <label
-                class="custom-control-label color-grey-2"
+                class="custom-control-label color-grey-2 text-font"
                 for="customCheck1"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -438,7 +379,7 @@
                 v-model="form.software_affiliate_policy"
               />
               <label
-                class="custom-control-label color-grey-2"
+                class="custom-control-label color-grey-2 text-font"
                 for="customCheck2"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -465,7 +406,7 @@
                 v-model="form.privacy_policy"
               />
               <label
-                class="custom-control-label color-grey-2"
+                class="custom-control-label color-grey-2 text-font"
                 for="customCheck3"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -492,7 +433,7 @@
                 v-model="form.age_certification"
               />
               <label
-                class="custom-control-label color-grey-2"
+                class="custom-control-label color-grey-2 text-font"
                 for="customCheck4"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -521,10 +462,10 @@
                 v-model="form.certificate_authority"
               />
               <label
-                class="custom-control-label color-grey-2"
+                class="custom-control-label color-grey-2 text-font"
                 for="customCheck5"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Lorem ipsm dolor sit amet consectetur adipisicing elit.
                 Voluptatum maiores qui odit delectus nemo, tempora iure fugit
                 ipsam quidem iusto. Fugiat ipsa recusandae cupiditate nobis
                 molestiae iste quo deserunt obcaecati.
@@ -536,9 +477,19 @@
       </div>
       <div class="col-12 form-2__container pr-5">
         <div class="row justify-content-end">
-          <button type="submit" class="btn__square-curved--yellow form-2__btn">
+          <design-button
+            role="button"
+            @click.native="back()"
+            class="mr-4 btn__square-curved--yellow form-2__btn"
+          >
+            Cancel
+          </design-button>
+          <design-button
+            type="submit"
+            class="btn__square-curved--yellow form-2__btn"
+          >
             ACCEPT & SUBMIT
-          </button>
+          </design-button>
         </div>
       </div>
     </form>
@@ -550,33 +501,36 @@
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 import { mapState } from "vuex";
 import Field from "~/components/commons/Field";
+import SelectField from "~/components/commons/SelectField";
 import ImageField from "~/components/commons/ImageField";
+import DesignButton from "~/components/commons/buttons/SmallDesignButton";
 
 export default {
   components: {
     ValidationProvider,
     ValidationObserver,
     Field,
-    ImageField
+    ImageField,
+    DesignButton,
+    SelectField
   },
   data() {
     return {
-      form: {
-        fullname: ""
-      },
-      // profile_picture: [],
+      form: {},
       show: false,
       label: "Updating...",
       overlay: true
     };
   },
-  created() {
-    this.user.fullname = "";
-  },
   methods: {
     async updateUser() {
       this.show = true;
-
+      // Validate form
+      const success = await this.$refs.affiliateForm.validate();
+      if (!success) {
+        this.show = false;
+        return;
+      }
       const formdata = this.generateFormData(this.form);
       // Sending all data including ID
       const data = {
@@ -587,7 +541,6 @@ export default {
     },
 
     onFileChange(e) {
-      // Upload file here or display
       this.form.profile_picture = e.target.files[0];
     },
 
@@ -604,6 +557,10 @@ export default {
       }
     },
 
+    getValue(name, e) {
+      this.form[name] = e;
+    },
+
     successAlert() {
       this.$swal({
         text: "Account updated successfully",
@@ -613,10 +570,6 @@ export default {
 
     generateFormData(data) {
       const formdata = new FormData();
-      // const file = this.profile_picture;
-
-      // converting all form inputs to FormData
-      // formdata.append("profile_picture", file);
       for (const key in data) {
         if (data.hasOwnProperty(key)) {
           const element = data[key];
@@ -624,6 +577,10 @@ export default {
         }
       }
       return formdata;
+    },
+
+    back() {
+      this.$router.go(-1);
     }
   },
 
@@ -639,4 +596,8 @@ export default {
   }
 };
 </script>
-
+<style scoped>
+.text-font {
+  font-size: 1.1rem !important;
+}
+</style>

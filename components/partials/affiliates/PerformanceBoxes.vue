@@ -1,6 +1,6 @@
 <template>
-  <div class="row justify-content-start mb-5">
-    <h6 class="dashboard__heading col-12 mb-5">Performance Summary</h6>
+  <div class="row justify-content-start ">
+    <h6 class="dashboard__heading col-12 mb-4">Performance Summary</h6>
 
     <box :icon="require('@/assets/images/Mask-Group-4.png')">
       <template slot="title">Commission</template>

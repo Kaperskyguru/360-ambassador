@@ -1,8 +1,10 @@
 <template>
   <div class="navbar-nav my-2 my-lg-0">
-    <li class="nav-item">
+    <li class="nav-item" v-if="$auth.user.role.name == 'promoter'">
       <nuxt-link class="nav-link color-white dashboard__nav--balance" to="#"
-        >Balance<br /><span>11,000.00 NGN</span></nuxt-link
+        >Balance<br /><span style="font-size:16px !important"
+          >11,000.00 NGN</span
+        ></nuxt-link
       >
     </li>
     <li class="nav-item">
@@ -44,8 +46,7 @@
           <div class="d-block m-0 p-0">
             <span
               class="dashboard__nav--profile-name col-12 d-block color-white"
-              >Hi, {{ $auth.user.firstName || "" }}
-              {{ $auth.user.lastName || "" }}</span
+              >Hi, {{ $auth.user.fullname || "" }}</span
             >
             <span
               class="dashboard__nav--profile-location col-12 d-block color-white text-muted"
@@ -119,7 +120,7 @@ export default {
   },
   computed: {
     link: () => {
-      return this.$auth.user.role == "merchant" ? "advertiser" : "affiliate";
+      return this.$auth.user.role == "merchant" ? "merchant" : "affiliate";
     }
   },
   methods: {
@@ -127,15 +128,14 @@ export default {
       await this.$store.dispatch("user/logout");
     },
     redirectByRole(role) {
-      console.log(role);
       const id = this.$auth.user._id;
       switch (role) {
         case "admin":
-          this.$router.push(`/advertiser?user_id=${id}`);
+          this.$router.push(`merchant?user_id=${id}`);
           break;
 
         case "merchant":
-          this.$router.push(`/advertiser?user_id=${id}`);
+          this.$router.push(`merchant?user_id=${id}`);
           break;
 
         case "promoter":

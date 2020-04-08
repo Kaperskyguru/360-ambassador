@@ -1,16 +1,18 @@
 <template>
   <div class="dashboard__general--card mb-5">
     <merchant
-      :icon="merchant.profile_picture"
+      :icon="
+        merchant.profile_picture || require('~/assets/images/man-user.png')
+      "
       v-for="(merchant, i) in merchants"
       :key="i"
     >
       <template slot="title">
-        {{ merchant.firstName }}
+        {{ merchant.fullname }}
       </template>
 
       <template slot="rate">
-        4.9
+        {{ merchant.rate || 4.9 }}
       </template>
     </merchant>
   </div>
