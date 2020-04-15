@@ -1,7 +1,7 @@
 <template>
-  <div class="row">
+  <div class="row p-0 m-0">
     <!-- <div class="row"> -->
-    <div class="col-1">
+    <div class="col-auto">
       <nuxt-link to="#" class="color-blue text-bold"
         ><img
           src="~/assets/images/left-arrow.png"
@@ -23,9 +23,11 @@
         </bar-chart>
         <bar-chart id="mythirdbarchart">
           Conversion Rate
+          <template slot="value">0.02%</template>
         </bar-chart>
-        <line-chart id="" class="bg-blue">
+        <line-chart id="myfourthbarchart" class="bg-linechart">
           <span class="text-white"> Product Sold </span>
+          <span class="text-white" slot="value"> 2 </span>
         </line-chart>
       </div>
     </div>
@@ -42,4 +44,8 @@ export default {
   }
 };
 </script>
-
+<style >
+.bg-linechart {
+  background-color: #003e5f !important;
+}
+</style>

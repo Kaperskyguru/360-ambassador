@@ -1,9 +1,17 @@
 <template>
   <div class="col-md-3 col-sm-12 col-xs-12 m-0 p-0">
-    <p class="col-12 color-blue"><slot /></p>
+    <div class="row">
+      <p class="col-6 color-blue text-bold"><slot /></p>
+      <p
+        class="col-6 color-blue text-bold justify-content-end pr-5 d-flex"
+        style="font-size:20px"
+      >
+        <slot name="value" />
+      </p>
+    </div>
     <apexchart
       width="100%"
-      height="200px"
+      height="150px"
       type="bar"
       :options="options"
       :series="series"
@@ -26,25 +34,25 @@ export default {
         },
         xaxis: {
           categories: [
-            "January",
-            "Febuary",
-            "March",
-            "Apriel",
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
             "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
+            "Jun"
+            // "Jul",
+            // "Aug",
+            // "Sep",
+            // "Oct",
+            // "Nov",
+            // "Dec"
           ]
         }
       },
       series: [
         {
           name: "Earnings",
-          data: [30, 40, 45, 50, 49, 60, 70, 91, 67, 23, 46, 98]
+          data: [30, 40, 45, 50, 49, 60] //, 70, 91, 67, 23, 46, 98
         }
       ]
     };
