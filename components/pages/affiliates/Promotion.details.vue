@@ -81,21 +81,11 @@
       </div>
     </div>
     <loading :show="show" :label="label" :overlay="overlay" />
-
-    <confirm-box :show="pop" v-on:close="pop = !pop">
-      <template slot="content">
-        You have opted to join the
-        <span class="text-bold">{{ promotion.name }}</span> promotion. Just a
-        step away from earning your income<br /><br />click the button below to
-        confirm
-      </template>
-    </confirm-box>
   </div>
 </template>
 
 <script>
 import JoinButton from "~/components/commons/buttons/JoinPromotionBtn";
-import ConfirmBox from "~/components/Modals.vue";
 import PromotionShareableLink from "~/components/commons/sidebar/ShareableLink";
 import PromotionDetail from "~/components/commons/dashboard/Details";
 import DesignButton from "~/components/commons/buttons/DesignButton";
@@ -106,7 +96,6 @@ export default {
     PromotionShareableLink,
     PromotionDetail,
     DesignButton,
-    ConfirmBox,
     JoinButton
   },
   props: ["promotion"],
@@ -114,8 +103,8 @@ export default {
     return {
       show: false,
       label: "Signing you up for this promotion, please wait...",
-      overlay: true,
-      pop: false
+      overlay: true
+      // pop: false
     };
   }
 };

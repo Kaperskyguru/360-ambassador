@@ -21,9 +21,7 @@
                   v-model="terms.category"
                   class="dashboard__general--card__form--select ml-4 col-12"
                 >
-                  <option value="Category" selected="true" disabled
-                    >Category</option
-                  >
+                  <option value="" selected="true">Category</option>
                   <option
                     v-for="(category, i) in categories"
                     :key="i"

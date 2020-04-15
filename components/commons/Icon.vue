@@ -3,6 +3,7 @@
     :src="icon || require('~/assets/images/man-user.png')"
     :alt="alt"
     :style="{ 'border-radius': round + '% !important;' }"
+    class="img-fluid"
   />
 </template>
 

@@ -40,7 +40,8 @@ export const actions = {
   async get({ commit }) {
     const res = await this.$repositories.promotion.index();
     if (res.status === 200 && res.data.success && res.data.code) {
-      commit("set", res.data.data);
+      const { data } = res.data;
+      commit("set", data);
     }
   },
   async find({ commit, state }, promotion) {
@@ -51,7 +52,7 @@ export const actions = {
         return res.data.data;
       }
     } catch (err) {
-      console.log(err);
+      console.log(err.response);
     }
   },
 
@@ -92,7 +93,9 @@ export const actions = {
   async joinedPromotions({ commit }, user) {
     const res = await this.$repositories.promotion.getJoinedPromotions(user);
     if (res.status === 200 && res.data.success && res.data.code) {
-      commit("setJoinedPromotions", res.data.data);
+      // Get avalaible promotions
+      const { data } = res.data;
+      commit("setJoinedPromotions", data);
     }
   },
 

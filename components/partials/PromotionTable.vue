@@ -13,37 +13,37 @@
     </thead>
     <tbody class="dashboard-table__tbody">
       <tr v-for="(promotion, i) in fpromotions" :key="i">
-        <td>
+        <td height="40">
           <nuxt-link to="#" class="color-blue">{{
             promotion.user ? promotion.user.username : ""
           }}</nuxt-link>
         </td>
-        <td>
+        <td height="40">
           <nuxt-link to="#" class="color-blue">{{
             promotion.name || ""
           }}</nuxt-link>
         </td>
-        <td>
+        <td height="40">
           <nuxt-link to="#" class="color-blue">{{
             promotion.commission || 0
           }}</nuxt-link>
         </td>
-        <td>
+        <td height="40">
           <nuxt-link to="#" class="color-blue">{{
             promotion.click || 0
           }}</nuxt-link>
         </td>
-        <td>
+        <td height="40">
           <nuxt-link to="#" class="color-blue">{{
             promotion.impressions || 0
           }}</nuxt-link>
         </td>
-        <td>
+        <td height="40">
           <nuxt-link to="#" class="color-blue">{{
             promotion.conv || 0
           }}</nuxt-link>
         </td>
-        <td>
+        <td height="40">
           <nuxt-link to="#" class="color-blue"
             >N{{ promotion.price || 0 }}</nuxt-link
           >
@@ -71,6 +71,39 @@ export default {
           }
         },
 
+        {
+          name: "Fake Promotion",
+          commission: "10%",
+          click: 10,
+          impressions: 1000,
+          conv: 0.5,
+          price: "10.98",
+          user: {
+            username: "kaperskyguru"
+          }
+        },
+        {
+          name: "Fake Promotion",
+          commission: "10%",
+          click: 10,
+          impressions: 1000,
+          conv: 0.5,
+          price: "10.98",
+          user: {
+            username: "kaperskyguru"
+          }
+        },
+        {
+          name: "Fake Promotion",
+          commission: "10%",
+          click: 10,
+          impressions: 1000,
+          conv: 0.5,
+          price: "10.98",
+          user: {
+            username: "kaperskyguru"
+          }
+        },
         {
           name: "Fake Promotion",
           commission: "10%",

@@ -742,7 +742,7 @@ a:active {
   color: #000000;
   border: none !important;
   border-radius: 5rem;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   text-decoration: none;
 }
 
@@ -1372,7 +1372,7 @@ section,
   border: 0.15rem solid #fecc0a;
   padding: 0.8rem;
   border-radius: 3rem;
-  /* float: right; */
+  float: right;
   outline: none;
 }
 

@@ -10,10 +10,6 @@
       :promotion="promotion"
       :key="i"
     >
-      <!-- <template slot="title">{{ promotion.name || "" }}</template>
-      <template slot="subtitle">Marketing</template>
-      <template slot="content">{{ promotion.description || "" }}</template>
-      <template slot="volume">{{ promotion.commission || "" }}</template> -->
     </promotion>
   </div>
 </template>

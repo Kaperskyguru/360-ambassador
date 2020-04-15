@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard__general--card__rating border-grey-3 col p-0 ml-2">
+  <div class="dashboard__general--card__rating border-grey-3 col p-1 ml-2">
     <small
       class="dashboard__general--card__text-small col-12 color-blue text-center d-block"
       ><slot name="title"
