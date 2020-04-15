@@ -102,7 +102,6 @@ export default {
     "~/plugins/repositories",
     "~/plugins/vee-validate",
     "~/plugins/vue-swal",
-    "~/plugins/vue-moment",
     { src: "~/plugins/vue-notification", ssr: false },
     { src: "~/plugins/vue-full-loading", ssr: false },
     { src: "~/plugins/apexcharts", ssr: false }
@@ -111,7 +110,14 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: [
+    '@nuxtjs/moment',
+
+  ],
+
+  moment: {
+    defaultTimezone: 'America/Los_Angeles'
+  },
 
   router: {
     middleware: ["auth"],

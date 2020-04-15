@@ -12,6 +12,7 @@ export default {
 
   async asyncData({ store, params }) {
     const promotion = await store.dispatch("promotion/find", params.id);
+    console.log(promotion, params.id);
     return { promotion };
   }
 };

@@ -1,16 +1,40 @@
 <template>
-  <button
-    class=" p-0"
-    :class="[joined ? 'btn__squared--disabled' : 'btn__square-curved--yellow']"
-    @click="joinPromotion"
-  >
-    Join Program
-  </button>
+  <div>
+    <button
+      :disabled="disabled"
+      class=" p-0"
+      :class="[
+        joined ? 'btn__squared--disabled' : 'btn__square-curved--yellow'
+      ]"
+      @click="pop = !pop"
+    >
+      Join Program
+    </button>
+
+    <confirm-box :show="pop" v-on:close="processPromotion()">
+      <template slot="content">
+        You have opted to join the
+        <span class="text-bold">{{ promotion.name }}</span> promotion. Just a
+        step away from earning your income<br /><br />click the button below to
+        confirm
+      </template>
+    </confirm-box>
+  </div>
 </template>
 
 <script>
+import ConfirmBox from "~/components/Modals.vue";
 export default {
   props: ["promotion"],
+  components: {
+    ConfirmBox
+  },
+  data() {
+    return {
+      pop: false,
+      disabled: false
+    };
+  },
   computed: {
     joined() {
       if (this.promotion.user) {
@@ -20,6 +44,11 @@ export default {
   },
 
   methods: {
+    async processPromotion() {
+      this.pop = !this.pop;
+      this.joinPromotion();
+    },
+
     async joinPromotion() {
       if (this.joined) return;
       this.$emit("show", true);
@@ -28,7 +57,7 @@ export default {
         data.promoter_id = this.$auth.user._id;
         data.promotion = this.promotion._id;
         await this.$store.dispatch("promotion/joinPromotion", data);
-        this.$emit("pop", true);
+        this.disabled = true;
         this.$emit("show", false);
       } catch (error) {
         const { response } = error;

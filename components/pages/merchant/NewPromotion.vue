@@ -204,6 +204,7 @@
               </h6>
               <div class="col-12 col-md-6 custom-file-input-container">
                 <label for="formControlFile2" class="custom-file-label-square">
+                  Upload a picture / video
                   <file-upload-icon />
                 </label>
                 <input

@@ -24,9 +24,9 @@
         <bar-chart id="mythirdbarchart">
           Conversion Rate
         </bar-chart>
-        <bar-chart id="mysecondchart" class="bg-blue">
+        <line-chart id="" class="bg-blue">
           <span class="text-white"> Product Sold </span>
-        </bar-chart>
+        </line-chart>
       </div>
     </div>
   </div>
@@ -34,7 +34,7 @@
 
 <script>
 import BarChart from "~/components/commons/dashboard/BarChart";
-import LineChart from "~/components/commons/dashboard/LineChart2";
+import LineChart from "~/components/partials/affiliates/LineChart";
 export default {
   components: {
     BarChart,

@@ -83,6 +83,9 @@ export default {
         return state.promotion.myPromotions;
       }
     })
+  },
+  created() {
+    console.log(this.$store);
   }
 };
 </script>

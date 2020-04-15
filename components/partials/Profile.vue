@@ -11,19 +11,23 @@
       <nuxt-link
         class="nav-link color-white dashboard__nav--notification"
         to="#"
+        @click.native="showDialog('mShow')"
       >
         <message-icon />
         <span class="badge color-yellow bg-blue">1</span>
       </nuxt-link>
+      <dropdown title="Messages" :show="mShow" />
     </li>
     <li class="nav-item">
       <nuxt-link
+        @click.native="showDialog('nShow')"
         class="nav-link color-white dashboard__nav--notification"
         to="#"
       >
         <notification-icon />
         <span class="badge color-yellow bg-blue">10</span>
       </nuxt-link>
+      <dropdown title="Notifications" :show="nShow" />
     </li>
     <li class="nav-item">
       <nuxt-link class="nav-link color-white" to="#">
@@ -103,6 +107,8 @@ import SettingsIcon from "~/components/commons/Icons/Settings";
 import EditProfileIcon from "~/components/commons/Icons/EditProfile";
 import HelpIcon from "~/components/commons/Icons/Help";
 
+import Dropdown from "~/components/commons/modals/Notification";
+
 export default {
   components: {
     ProfileImage,
@@ -111,11 +117,14 @@ export default {
     LogoutIcon,
     SettingsIcon,
     EditProfileIcon,
-    HelpIcon
+    HelpIcon,
+    Dropdown
   },
   data() {
     return {
-      show: false
+      show: false,
+      nShow: false,
+      mShow: false
     };
   },
   computed: {
@@ -145,6 +154,15 @@ export default {
         default:
           this.$router.push("/");
           break;
+      }
+    },
+    showDialog(type) {
+      if (type == "mShow") {
+        this.mShow = !this.mShow;
+        this.nShow = false;
+      } else {
+        this.nShow = !this.nShow;
+        this.mShow = false;
       }
     }
   }
