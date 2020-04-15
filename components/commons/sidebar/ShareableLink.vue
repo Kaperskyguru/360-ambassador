@@ -84,7 +84,7 @@
               <div class="col-12">
                 <div class="row justify-content-end">
                   <button class="my-promotion__pills--btn color-blue-2 col-4">
-                    send sms
+                    Send sms
                   </button>
                 </div>
               </div>

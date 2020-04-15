@@ -79,8 +79,7 @@ export default {
 
     script: [
       {
-        src: "~/assets/js/main.js",
-        async: true
+        src: "/main.js"
       }
     ]
   },
@@ -110,13 +109,10 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    '@nuxtjs/moment',
-
-  ],
+  buildModules: ["@nuxtjs/moment"],
 
   moment: {
-    defaultTimezone: 'America/Los_Angeles'
+    defaultTimezone: "America/Los_Angeles"
   },
 
   router: {
