@@ -36,7 +36,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 mt-5 pl-2">
+        <div class="col-12 mt-5 pl-2 pt-2">
           <div class="row justify-content-center">
             <div class="stat-box col-2 p-0 m-1 mr-2">
               <stat-box>

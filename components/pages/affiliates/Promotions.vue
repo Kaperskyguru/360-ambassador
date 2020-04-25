@@ -52,6 +52,9 @@
         v-for="(promotion, i) in promotions"
         :key="i"
       ></card>
+      <div v-if="isEmpty" class="p-3">
+        <p>No promotion created yet</p>
+      </div>
     </div>
   </div>
 </template>
@@ -95,7 +98,10 @@ export default {
       categories: state => {
         return state.category.categories;
       }
-    })
+    }),
+    isEmpty() {
+      return Object.entries(this.promotions).length === 0;
+    }
   },
   mounted() {
     document.getElementById("cat").selectedIndex = "0";

@@ -15,6 +15,7 @@
         {{ merchant.rate || 4.9 }}
       </template>
     </merchant>
+    <div v-if="isEmpty"><p>No top 5 merchants yet</p></div>
   </div>
 </template>
 
@@ -30,7 +31,10 @@ export default {
       merchants: state => {
         return state.user.topMerchants;
       }
-    })
+    }),
+    isEmpty() {
+      return Object.entries(this.merchants).length === 0;
+    }
   }
 };
 </script>

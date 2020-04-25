@@ -49,6 +49,7 @@
           >
         </td>
       </tr>
+      <div v-if="isEmpty"><p>No Promotions yet</p></div>
     </tbody>
   </table>
 </template>
@@ -146,6 +147,9 @@ export default {
     },
     fpromotions() {
       return this.promotions ? this.fakePromotions : this.fakePromotions;
+    },
+    isEmpty() {
+      return Object.entries(this.promotions).length === 0;
     }
   }
 };
