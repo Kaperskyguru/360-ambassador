@@ -1,13 +1,14 @@
 <template>
-  <div class="col-12 row" id="shareable">
+  <div class="row" id="shareable">
     <h6 class="col-12 text text-bold color-blue bg-grey-8 pt-4 pb-3 pl-3 pr-3">
       Promotion sharable Link
     </h6>
-    <b-card no-body class="b-0 p-0 m-0">
+    <b-card no-body class="col-12 b-0 p-0 m-0 d-block">
       <b-tabs
-        class="my-promotion__pills mb-3 col-12"
+        class="my-promotion__pills mb-3 col-12 d-block"
         id="pills-tab"
         role="tablist"
+        fill
       >
         <b-tab class="my-promotion__pills--item" title="URL">
           <div class="col-12 text text-bold text-center color-blue mt-4 mb-3">
@@ -27,7 +28,7 @@
               width="20"
             />
           </div>
-          <button class="my-promotion__pills--btn color-blue-2 col-12">
+          <button class="my-promotion__pills--btn color-blue-2 col-12 d-block">
             Copy Sharing URL
           </button>
         </b-tab>
@@ -158,6 +159,12 @@ export default {
     FacebookIcon,
     InstagramIcon,
     YoutubeIcon
+  },
+  props: {
+    promotion: {
+      type: [Object, Array],
+      default: () => {}
+    }
   }
 };
 </script>

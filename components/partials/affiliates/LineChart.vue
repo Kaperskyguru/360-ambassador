@@ -3,10 +3,20 @@
     <div class="row">
       <p class="col-6 color-blue text-bold pl-5 pt-2"><slot /></p>
       <p
-        class="col-6 color-blue text-bold justify-content-end pr-5 d-flex"
+        class="col-6 color-blue text-bold justify-cotent-end d-flex "
         style="font-size:20px"
       >
-        <slot name="value" />
+        <span class="ml-auto p-1"><slot name="value"/></span>
+        <span class="pr-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+          >
+            <path d="M24 22h-24l12-20z" style="fill: white !important" />
+          </svg>
+        </span>
       </p>
     </div>
     <apexchart
@@ -15,6 +25,7 @@
       type="line"
       :options="options"
       :series="series"
+      class="text-white"
     ></apexchart>
   </div>
 </template>
@@ -35,9 +46,13 @@ export default {
           toolbar: {
             show: false
           },
-          dataLabels: {
-            enabled: false
-          }
+          foreColor: "white"
+        },
+        tooltip: {
+          theme: "dark"
+        },
+        dataLabels: {
+          enabled: false
         },
         xaxis: {
           categories: [

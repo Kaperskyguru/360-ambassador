@@ -411,7 +411,7 @@ p {
 
 .status-card--title {
   font-family: "Montserrat-Medium";
-  font-size: 1.3rem;
+  /* font-size: 1.3rem; */
 }
 
 .status-card--value {

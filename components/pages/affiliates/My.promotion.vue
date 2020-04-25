@@ -47,7 +47,7 @@
             </div>
             <div class="col-auto m-1 ml-md-auto">
               <!-- <button class="btn__curved--yellow">Refresh</button> -->
-              <btn class="btn__curved--yellow">Refresh</btn>
+              <btn class="btn__curved--yellow text-uppercase">Refresh</btn>
             </div>
           </div>
         </form>

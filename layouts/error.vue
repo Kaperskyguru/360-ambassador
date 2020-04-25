@@ -16,6 +16,7 @@ export default {
   },
   computed: {
     errorPage() {
+      console.log(this.error);
       if (this.error.statusCode === 404) {
         return error404;
       }

@@ -34,7 +34,7 @@
             <div class="col-auto ml-md-auto ml-5">
               <button
                 @click.prevent="search"
-                class="btn__curved--yellow btn btn-sm btn-warning"
+                class="btn__curved--yellow btn btn-sm btn-warning text-uppercase"
               >
                 Search
               </button>

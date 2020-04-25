@@ -5,8 +5,8 @@
     v-slot="{ errors, validate }"
   >
     <label for="formControlFile1" class="custom-file-label">
-      <div id="preview" v-if="url">
-        <img :src="url" alt="Profile image here" />
+      <div id="preview" v-if="src">
+        <img :src="src" alt="Profile image here" />
       </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -47,11 +47,18 @@
 import { ValidationProvider } from "vee-validate";
 
 export default {
-  data() {
-    return {
-      url: ""
-    };
+  props: {
+    src: {
+      type: String,
+      default: ""
+    }
   },
+
+  // data() {
+  //   return {
+  //     url: ""
+  //   };
+  // },
   name: "ImageField",
   components: {
     ValidationProvider
@@ -59,7 +66,7 @@ export default {
   methods: {
     applySelected(e) {
       const image = e.target.files[0];
-      this.url = URL.createObjectURL(image);
+      this.src = URL.createObjectURL(image);
       this.$emit("triggerChange", e);
     }
   }
