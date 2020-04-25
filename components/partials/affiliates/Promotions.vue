@@ -11,6 +11,7 @@
       :key="i"
     >
     </promotion>
+    <div v-if="isEmpty"><p>No latest promotions</p></div>
   </div>
 </template>
 
@@ -31,7 +32,10 @@ export default {
       promotions: state => {
         return state.promotion.latestPromotions;
       }
-    })
+    }),
+    isEmpty() {
+      return Object.entries(this.promotions).length === 0;
+    }
   }
 };
 </script>

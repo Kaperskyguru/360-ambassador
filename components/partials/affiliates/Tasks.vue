@@ -4,6 +4,7 @@
       <task>{{ task.name }}</task>
       <hr />
     </span>
+    <div v-if="isEmpty"><p>No tasks yet</p></div>
   </div>
 </template>
 
@@ -19,7 +20,10 @@ export default {
       tasks: state => {
         return state.task.tasks;
       }
-    })
+    }),
+    isEmpty() {
+      return Object.entries(this.tasks).length === 0;
+    }
   }
 };
 </script>

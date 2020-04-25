@@ -20,15 +20,10 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field
-              :required="true"
-              name="fullname"
-              v-on:input-fullname="getValue('fullname', $event)"
-              :value="user.fullname"
-            >
+            <base-input required name="fullname" v-model="form.fullname">
               <template slot="label">Full Name</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
 
@@ -38,15 +33,10 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field
-              v-on:input-phone="getValue('phone', $event)"
-              :value="user.phone"
-              :required="true"
-              name="phone"
-            >
+            <base-input required name="phone" v-model="form.phone">
               <template slot="label">Phone</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -55,17 +45,16 @@
             rules="required|email"
             v-slot="{ errors }"
           >
-            <field
+            <base-input
               type="email"
-              v-on:input-email="getValue('email', $event)"
-              :value="user.email"
-              :disabled="true"
-              :required="true"
+              disabled
+              required
+              v-model="form.email"
               name="email"
             >
               <template slot="label">E-mail</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -74,33 +63,24 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field
-              v-on:input-username="getValue('username', $event)"
-              :value="user.username"
-              :required="true"
-              name="username"
-            >
+            <base-input required v-model="form.username" name="username">
               <template slot="label">Username</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
-          <validation-provider
-            name="Password"
-            rules="required"
-            v-slot="{ errors }"
-          >
-            <field
-              v-on:input-password="getValue('password', $event)"
-              :required="true"
-              name="password"
+          <validation-provider name="Password" rules="" v-slot="{ errors }">
+            <base-input
+              required
+              autocomplete="off"
               type="password"
-              :auto="false"
+              v-model="form.password"
+              name="password"
             >
               <template slot="label">Password</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
       </div>
@@ -114,28 +94,18 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field
-              v-on:input-address="getValue('address', $event)"
-              :value="user.address"
-              :required="true"
-              name="address"
-            >
+            <base-input required v-model="form.address" name="address">
               <template slot="label">Address</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="City" rules="required" v-slot="{ errors }">
-            <field
-              v-on:input-city="getValue('city', $event)"
-              :value="user.city"
-              :required="true"
-              name="city"
-            >
+            <base-input :required="true" v-model="form.city" name="city">
               <template slot="label">City</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -144,15 +114,10 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field
-              v-on:input-state="getValue('state', $event)"
-              :value="user.state"
-              :required="true"
-              name="state"
-            >
+            <base-input :required="true" v-model="form.state" name="state">
               <template slot="label">State</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -161,16 +126,10 @@
             rules="required|min:9"
             v-slot="{ errors }"
           >
-            <field
-              :required="true"
-              name="bvn"
-              v-on:input-bvn="getValue('bvn', $event)"
-              :value="user.bvn"
-              type="number"
-            >
+            <base-input :required="true" v-model="form.bvn" name="bvn">
               <template slot="label">BVN</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -179,17 +138,14 @@
             rules="required|min:10"
             v-slot="{ errors }"
           >
-            <field
-              :required="true"
+            <base-input
+              required
               name="AccountNumber"
-              v-on:input-AccountNumber="getValue('AccountNumber', $event)"
-              :value="user.AccountNumber"
-              type="number"
-              min="1"
+              v-model="form.AccountNumber"
             >
               <template slot="label">Account Number</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -277,15 +233,10 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field
-              :required="true"
-              name="company_name"
-              v-on:input-company_name="getValue('company_name', $event)"
-              :value="user.company_name"
-            >
+            <base-input v-model="form.company_name" name="company_name">
               <template slot="label">Company Name</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -294,15 +245,10 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field
-              :required="true"
-              name="website_name"
-              v-on:input-website_name="getValue('website_name', $event)"
-              :value="user.website_name"
-            >
+            <base-input v-model="form.website_name" name="website_name">
               <template slot="label">Website or Newsletter name</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -311,16 +257,10 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field
-              :required="true"
-              name="Website URL"
-              type="url"
-              v-on:input-website="getValue('website', $event)"
-              :value="user.website"
-            >
+            <base-input v-model="form.website" name="website" type="url">
               <template slot="label">Website URL</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -606,9 +546,7 @@ export default {
   },
   data() {
     return {
-      form: {
-        fullname: ""
-      },
+      form: {},
       show: false,
       label: "Updating...",
       overlay: true
@@ -646,6 +584,8 @@ export default {
         this.successAlert();
       } catch (err) {
         console.log(err.response.data);
+        this.failedAlert(err.response.data.message);
+        this.show = false;
       }
     },
 
@@ -657,6 +597,13 @@ export default {
       this.$swal({
         text: "Account updated successfully",
         icon: "success"
+      });
+    },
+
+    failedAlert(message = "") {
+      this.$swal({
+        text: message ? message : "Something happened, please try again",
+        icon: "error"
       });
     },
     back() {
@@ -676,6 +623,25 @@ export default {
         return state.category.categories;
       }
     })
+  },
+  created() {
+    this.form.password = "";
+    this.form.fullname = this.user.fullname;
+    this.form.phone = this.user.phone;
+    this.form.username = this.user.username;
+    this.form.email = this.user.email;
+    this.form.address = this.user.address;
+    this.form.city = this.user.city;
+    this.form.state = this.user.state;
+    this.form.bvn = this.user.bvn;
+    this.form.AccountNumber = this.user.AccountNumber;
+    this.form.bank = this.user.bank;
+    this.form.company_name = this.user.company_name;
+    this.form.website = this.user.website;
+    this.form.web_description = this.user.web_description;
+    this.form.visitors = this.user.visitors;
+    // this.form.fullname = this.user.fullname;
+    // this.form.fullname = this.user.fullname;
   }
 };
 </script>

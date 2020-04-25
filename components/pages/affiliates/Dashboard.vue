@@ -45,6 +45,7 @@
               </template>
               <template slot="content">{{ message.message }} </template>
             </message>
+            <div v-if="isEmpty" class="p-3"><p>No Messages yet</p></div>
 
             <h6 class="dashboard__heading col-12 mb-3">Tasks</h6>
             <tasks />
@@ -82,10 +83,10 @@ export default {
       promotions: state => {
         return state.promotion.myPromotions;
       }
-    })
-  },
-  created() {
-    console.log(this.$store);
+    }),
+    isEmpty() {
+      return Object.entries(this.messages).length === 0;
+    }
   }
 };
 </script>

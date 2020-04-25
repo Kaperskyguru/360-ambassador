@@ -5,6 +5,7 @@
       method="post"
       class="col-12 col-md-10 mt-4 pl-5 form-2"
       enctype="multipart/form-data"
+      autocomplete="off"
     >
       <div class="col-12 mb-3">
         <h6 class="border-bottom-grey-3 col-12 color-blue p-0">
@@ -14,45 +15,46 @@
           <image-field v-on:triggerChange="onFileChange($event)"></image-field>
         </div>
         <div class="col-12 form-2__container">
-          <validation-provider name="Full Name" rules="" v-slot="{ errors }">
-            <field
-              :required="true"
-              name="fullname"
-              v-on:input-fullname="getValue('fullname', $event)"
-              :value="user.fullname"
-            >
+          <validation-provider
+            name="Full Name"
+            rules="required"
+            v-slot="{ errors }"
+          >
+            <base-input required name="fullname" v-model="form.fullname">
               <template slot="label">Full Name</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
 
         <div class="col-12 form-2__container">
-          <validation-provider name="Phone Number" rules="" v-slot="{ errors }">
-            <field
-              :required="true"
-              v-on:input-phone="getValue('phone', $event)"
-              name="phone"
-              :value="user.phone"
-            >
+          <validation-provider
+            name="Phone Number"
+            rules="required"
+            v-slot="{ errors }"
+          >
+            <base-input required name="phone" v-model="form.phone">
               <template slot="label">Phone</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
-          <validation-provider name="E-mail" rules="" v-slot="{ errors }">
-            <field
+          <validation-provider
+            name="E-mail"
+            rules="required"
+            v-slot="{ errors }"
+          >
+            <base-input
               type="email"
-              v-on:input-email="getValue('email', $event)"
-              :disabled="true"
-              :required="true"
-              :value="user.email"
+              disabled
+              required
+              v-model="form.email"
               name="email"
             >
               <template slot="label">E-mail</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -61,15 +63,10 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field
-              :required="true"
-              v-on:input-username="getValue('username', $event)"
-              :value="user.username"
-              name="username"
-            >
+            <base-input required v-model="form.username" name="username">
               <template slot="label">Username</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -79,16 +76,16 @@
             v-slot="{ errors }"
             class="col-12 form-2__container"
           >
-            <field
-              :required="true"
-              :auto="false"
+            <base-input
+              required
+              autocomplete="off"
               type="password"
-              v-on:input-password="getValue('password', $event)"
+              v-model="form.password"
               name="password"
             >
               <template slot="label">Password</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
       </div>
@@ -102,28 +99,18 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field
-              :required="true"
-              v-on:input-address="getValue('address', $event)"
-              :value="user.address"
-              name="address"
-            >
+            <base-input required v-model="form.address" name="address">
               <template slot="label">Address</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="City" rules="required" v-slot="{ errors }">
-            <field
-              :required="true"
-              v-on:input-city="getValue('city', $event)"
-              :value="user.city"
-              name="city"
-            >
+            <base-input :required="true" v-model="form.city" name="city">
               <template slot="label">City</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -132,28 +119,18 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field
-              :required="true"
-              v-on:input-state="getValue('state', $event)"
-              :value="user.state"
-              name="state"
-            >
+            <base-input :required="true" v-model="form.state" name="state">
               <template slot="label">State</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="BVN" rules="required" v-slot="{ errors }">
-            <field
-              :required="true"
-              v-on:input-bvn="getValue('bvn', $event)"
-              :value="user.bvn"
-              name="bvn"
-            >
+            <base-input :required="true" v-model="form.bvn" name="bvn">
               <template slot="label">BVN</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -162,15 +139,14 @@
             rules="required"
             v-slot="{ errors }"
           >
-            <field
-              :required="true"
-              v-on:input-AccountNumber="getValue('AccountNumber', $event)"
+            <base-input
+              required
               name="AccountNumber"
-              :value="user.AccountNumber"
+              v-model="form.AccountNumber"
             >
               <template slot="label">Account Number</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -254,38 +230,26 @@
         </h6>
         <div class="col-12 form-2__container">
           <validation-provider name="Facebook" v-slot="{ errors }">
-            <field
-              v-on:input-facebook="getValue('facebook', $event)"
-              :value="user.facebook"
-              name="facebook"
-            >
+            <base-input v-model="form.facebook" name="facebook" type="url">
               <template slot="label">Facebook</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="Twitter" v-slot="{ errors }">
-            <field
-              v-on:input-twitter="getValue('twitter', $event)"
-              :value="user.twitter"
-              name="twitter"
-            >
+            <base-input v-model="form.twitter" name="twitter" type="url">
               <template slot="label">Twitter</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
           <validation-provider name="Instagram" v-slot="{ errors }">
-            <field
-              v-on:input-instagram="getValue('instagram', $event)"
-              :value="user.instagram"
-              name="instagram"
-            >
+            <base-input v-model="form.instagram" name="instagram" type="url">
               <template slot="label">Instagram</template>
               <template slot="errors">{{ errors[0] }}</template>
-            </field>
+            </base-input>
           </validation-provider>
         </div>
         <div class="col-12 form-2__container">
@@ -500,7 +464,7 @@
 <script>
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 import { mapState } from "vuex";
-import Field from "~/components/commons/Field";
+import BaseInput from "~/components/commons/BaseInput";
 import SelectField from "~/components/commons/SelectField";
 import ImageField from "~/components/commons/ImageField";
 import DesignButton from "~/components/commons/buttons/SmallDesignButton";
@@ -509,10 +473,10 @@ export default {
   components: {
     ValidationProvider,
     ValidationObserver,
-    Field,
     ImageField,
     DesignButton,
-    SelectField
+    SelectField,
+    BaseInput
   },
   data() {
     return {
@@ -535,7 +499,7 @@ export default {
       // Sending all data including ID
       const data = {
         form: formdata,
-        id: this.user.id
+        id: this.user._id
       };
       this.makeUpdateRequest(data);
     },
@@ -554,6 +518,8 @@ export default {
         this.successAlert();
       } catch (err) {
         console.log(err.response.data);
+        this.failedAlert(err.response.data.message);
+        this.show = false;
       }
     },
 
@@ -565,6 +531,12 @@ export default {
       this.$swal({
         text: "Account updated successfully",
         icon: "success"
+      });
+    },
+    failedAlert(message = "") {
+      this.$swal({
+        text: message ? message : "Something happened, please try again",
+        icon: "error"
       });
     },
 
@@ -593,6 +565,25 @@ export default {
         return state.category.categories;
       }
     })
+  },
+  created() {
+    this.form.password = "";
+    this.form.fullname = this.user.fullname;
+    this.form.phone = this.user.phone;
+    this.form.username = this.user.username;
+    this.form.email = this.user.email;
+    this.form.address = this.user.address;
+    this.form.city = this.user.city;
+    this.form.state = this.user.state;
+    this.form.bvn = this.user.bvn;
+    this.form.AccountNumber = this.user.AccountNumber;
+    this.form.bank = this.user.bank;
+    this.form.twitter = this.user.twitter;
+    this.form.instagram = this.user.instagram;
+    this.form.facebook = this.user.facebook;
+    // this.form.fullname = this.user.fullname;
+    // this.form.fullname = this.user.fullname;
+    // this.form.fullname = this.user.fullname;
   }
 };
 </script>

@@ -61,11 +61,15 @@
         :key="i"
         :promotion="promotion.promotion"
       />
+
       <cards :promotion="test_promotion" />
       <cards :promotion="test_promotion" />
       <cards :promotion="test_promotion" />
       <cards :promotion="test_promotion" />
       <cards :promotion="test_promotion" />
+    </div>
+    <div v-if="isEmpty" class="p-3">
+      <p>You haven't joined any promotion yet</p>
     </div>
   </div>
 </template>
@@ -91,7 +95,7 @@ export default {
         product_file: [
           "http://res.cloudinary.com/djrrv398y/image/upload/v1580203495/carbon_1.png"
         ],
-        name: "What is Lorem Ipsum?",
+        name: "What is Lorem Ipsum? [Fake]",
         description:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
       }
@@ -103,7 +107,10 @@ export default {
       promotions: state => {
         return state.promotion.joinedPromotions;
       }
-    })
+    }),
+    isEmpty() {
+      return Object.entries(this.promotions).length === 0;
+    }
   }
 };
 </script>

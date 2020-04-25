@@ -52,7 +52,9 @@ export const actions = {
   },
 
   async update({ commit }, { form, id }) {
-    return await this.$repositories.user.updateAffiliate(id, form);
+    const res = await this.$repositories.user.updateAffiliate(id, form);
+    console.log(res);
+    return res;
   },
 
   async updateMerchant({ commit }, { form, id }) {
