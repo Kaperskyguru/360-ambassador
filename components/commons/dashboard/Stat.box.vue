@@ -4,13 +4,13 @@
     class="col-12 mb-3"
   >
     <div
-      :class="[fill ? 'color-blue' : 'color-grey-5']"
+      :class="[fill ? 'color-blue text-bold' : 'color-grey-5 text-bold']"
       class="status-card--title"
     >
       <slot name="title" />
     </div>
     <div
-      :class="[fill ? 'color-blue' : 'color-grey-8']"
+      :class="[fill ? 'color-blue text-bold' : 'color-grey-8 text-bold']"
       class="status-card--value"
     >
       <slot name="amount" />

@@ -32,6 +32,10 @@ export default {
             show: false
           }
         },
+        dataLabels: {
+          enabled: false
+          // enabledOnSeries: [0]
+        },
         xaxis: {
           categories: [
             "Jan",

@@ -68,80 +68,8 @@
       </div>
 
       <div class="col-md-4 col-12">
-        <div class="col-12 row">
-          <h6
-            class="col-12 text text-bold color-blue bg-grey-8 pt-4 pb-3 pl-3 pr-3"
-          >
-            Promotion Stats
-          </h6>
-          <div class="col-12">
-            <div class="row">
-              <div class="col-4">
-                <!-- STAT BOX HERE -->
-
-                <stat-box>
-                  <template slot="title">
-                    clicks
-                  </template>
-                  <template slot="amount">
-                    {{ promotion.clicks || 0 }}
-                  </template>
-                </stat-box>
-              </div>
-              <div class="col-4">
-                <stat-box>
-                  <template slot="title">
-                    visitors
-                  </template>
-                  <template slot="amount">
-                    {{ promotion.visitors || 0 }}
-                  </template>
-                </stat-box>
-              </div>
-              <div class="col-4">
-                <stat-box>
-                  <template slot="title">
-                    sales
-                  </template>
-                  <template slot="amount">
-                    {{ promotion.sales || 0 }}
-                  </template>
-                </stat-box>
-              </div>
-              <div class="col-4">
-                <stat-box>
-                  <template slot="title">
-                    conv
-                  </template>
-                  <template slot="amount">
-                    0.02%
-                  </template>
-                </stat-box>
-              </div>
-              <div class="col-4">
-                <stat-box>
-                  <template slot="title">
-                    n per sale
-                  </template>
-                  <template slot="amount">
-                    5.00
-                  </template>
-                </stat-box>
-              </div>
-              <div class="col-4">
-                <stat-box :fill="fill" class="bg-yellow color-black">
-                  <template slot="title" class="color-black">
-                    total earned
-                  </template>
-                  <template slot="amount">
-                    10.00
-                  </template>
-                </stat-box>
-              </div>
-            </div>
-          </div>
-        </div>
-        <shareable-link />
+        <promotion-stats :promotion="promotion" />
+        <shareable-link :promotion="promotion" />
       </div>
     </div>
     <modal />
@@ -153,8 +81,8 @@ import MenuBar from "~/components/commons/navs/DashboardNav";
 import JoinButton from "~/components/commons/buttons/JoinPromotionBtn";
 import Modal from "~/components/Modals";
 import Charts from "~/components/partials/affiliates/Charts";
-import BarChart from "~/components/commons/dashboard/BarChart";
-import StatBox from "~/components/commons/dashboard/Stat.box";
+// import BarChart from "~/components/commons/dashboard/BarChart";
+import PromotionStats from "~/components/commons/sidebar/PromotionStats";
 import ShareableLink from "~/components/commons/sidebar/ShareableLink";
 import PromotionDetail from "~/components/commons/dashboard/Details";
 export default {
@@ -166,8 +94,7 @@ export default {
   },
   components: {
     MenuBar,
-    BarChart,
-    StatBox,
+    PromotionStats,
     ShareableLink,
     Charts,
     Modal,

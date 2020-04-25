@@ -12,7 +12,10 @@
           Contact Information
         </h6>
         <div class="col-12 col-md-6 custom-file-input-container">
-          <image-field v-on:triggerChange="onFileChange($event)"></image-field>
+          <image-field
+            v-on:triggerChange="onFileChange($event)"
+            :src="form.profile_picture"
+          ></image-field>
         </div>
         <div class="col-12 form-2__container">
           <validation-provider
@@ -640,7 +643,7 @@ export default {
     this.form.website = this.user.website;
     this.form.web_description = this.user.web_description;
     this.form.visitors = this.user.visitors;
-    // this.form.fullname = this.user.fullname;
+    this.form.profile_picture = this.user.profile_picture;
     // this.form.fullname = this.user.fullname;
   }
 };

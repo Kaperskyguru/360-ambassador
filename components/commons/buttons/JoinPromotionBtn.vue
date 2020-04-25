@@ -4,7 +4,7 @@
       :disabled="disabled"
       class=" p-0"
       :class="[
-        joined ? 'btn__squared--disabled' : 'btn__square-curved--yellow'
+        disabled ? 'btn__squared--disabled' : 'btn__square-curved--yellow'
       ]"
       @click="pop = !pop"
     >
@@ -60,10 +60,10 @@ export default {
         this.disabled = true;
         this.$emit("show", false);
       } catch (error) {
+        this.$emit("show", false);
         const { response } = error;
         if (response !== undefined) {
           if (response.data.code == 409) {
-            this.$emit("show", false);
             this.$swal({
               text: response.data.message,
               icon: "error"

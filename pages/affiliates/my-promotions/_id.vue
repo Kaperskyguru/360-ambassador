@@ -3,17 +3,21 @@
 </template>
 
 <script>
-import Promotion from "~/components/pages/affiliates/Running.promotion.vue";
+import Promotion from "~/components/pages/affiliates/RunningPromotion.vue";
 
 export default {
   components: {
     Promotion
   },
 
-  async asyncData({ store, params }) {
-    const promotion = await store.dispatch("promotion/find", params.id);
-    console.log(promotion, params.id);
-    return { promotion };
+  async asyncData({ store, params, error }) {
+    try {
+      const promotion = await store.dispatch("promotion/find", params.id);
+      return { promotion };
+    } catch (err) {
+      console.log(err);
+      error({ statusCode: 404, message: "Promotion not found" });
+    }
   }
 };
 </script>
