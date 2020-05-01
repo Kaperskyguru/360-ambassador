@@ -16,7 +16,7 @@
         <message-icon />
         <span class="badge color-yellow bg-blue">1</span>
       </nuxt-link>
-      <dropdown title="Messages" :show="mShow" />
+      <dropdown title="Messages" :show="mShow" :data="messages" />
     </li>
     <li class="nav-item">
       <nuxt-link
@@ -27,7 +27,7 @@
         <notification-icon />
         <span class="badge color-yellow bg-blue">10</span>
       </nuxt-link>
-      <dropdown title="Notifications" :show="nShow" />
+      <dropdown title="Notifications" :show="nShow" :data="notifications" />
     </li>
     <li class="nav-item">
       <nuxt-link class="nav-link color-white" to="#">
@@ -99,6 +99,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import ProfileImage from "~/components/commons/dashboard/ProfileImage";
 import MessageIcon from "~/components/commons/Icons/Message";
 import NotificationIcon from "~/components/commons/Icons/Notification";
@@ -130,7 +131,15 @@ export default {
   computed: {
     link: () => {
       return this.$auth.user.role == "merchant" ? "merchant" : "affiliate";
-    }
+    },
+    ...mapState({
+      notifications: state => {
+        return state.notification.notifications;
+      },
+      messages: state => {
+        return state.message.messages;
+      }
+    })
   },
   methods: {
     async logout() {

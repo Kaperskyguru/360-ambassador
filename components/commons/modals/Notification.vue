@@ -194,7 +194,7 @@ export default {
     },
 
     data: {
-      type: Object
+      type: [Object, Array]
     },
     title: {
       type: String,
