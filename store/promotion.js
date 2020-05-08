@@ -52,7 +52,7 @@ export const actions = {
         return res.data.data;
       }
     } catch (err) {
-      console.log(err.response);
+      console.log("error");
     }
   },
 
@@ -91,11 +91,14 @@ export const actions = {
   },
 
   async joinedPromotions({ commit }, user) {
-    const res = await this.$repositories.promotion.getJoinedPromotions(user);
-    if (res.status === 200 && res.data.success && res.data.code) {
-      // Get avalaible promotions
-      const { data } = res.data;
-      commit("setJoinedPromotions", data);
+    try {
+      const res = await this.$repositories.promotion.getJoinedPromotions(user);
+      if (res.status === 200 && res.data.success && res.data.code) {
+        commit("setJoinedPromotions", res.data.data);
+      } else {
+      }
+    } catch (err) {
+      console.log("error");
     }
   },
 

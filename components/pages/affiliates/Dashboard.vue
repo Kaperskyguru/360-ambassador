@@ -15,7 +15,7 @@
             See all
           </nuxt-link>
         </div>
-        <promotion-table :promotions="promotions" />
+        <promotion-table :promotions="joinedPromotions" />
         <h6 class="dashboard__heading col-12 mb-3 mt-5">
           Latest Promotions
         </h6>
@@ -81,7 +81,11 @@ export default {
         return state.message.messages;
       },
       promotions: state => {
-        return state.promotion.myPromotions;
+        return state.promotion.promotions;
+      },
+
+      joinedPromotions: state => {
+        return state.promotion.joinedPromotions;
       }
     }),
     isEmpty() {

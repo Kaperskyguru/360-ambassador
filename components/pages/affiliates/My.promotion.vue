@@ -11,8 +11,8 @@
                 >Quick Dates</label
               >
               <select
-                class="dashboard__general--card__form--select ml-4 "
-                style="width: 150px;"
+                class="dashboard__general--card__form--input ml-4"
+                style="width: 160px;"
               >
                 <option value="1">Today</option>
                 <option value="1">Yesterday</option>
@@ -46,7 +46,6 @@
               />
             </div>
             <div class="col-auto m-1 ml-md-auto">
-              <!-- <button class="btn__curved--yellow">Refresh</button> -->
               <btn class="btn__curved--yellow text-uppercase">Refresh</btn>
             </div>
           </div>

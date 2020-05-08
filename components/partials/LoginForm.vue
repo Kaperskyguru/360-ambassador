@@ -108,7 +108,6 @@ export default {
         })
         .catch(err => {
           this.show = false;
-          console.log(err);
           const { response } = err;
           if (response !== undefined) {
             if (response.data.code == 403) {

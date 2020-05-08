@@ -75,7 +75,6 @@ export default {
         }
       })
       .catch(err => {
-        // console.log(err);
         this.errorAlert();
         this.failed = true;
         this.show = false;

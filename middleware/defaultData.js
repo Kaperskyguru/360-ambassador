@@ -5,8 +5,6 @@ export default async function({ store, from }) {
   if (isInitialPageLoad) {
     try {
       await RSVP.all([store.dispatch("role/get")]);
-    } catch (erro) {
-      console.log(erro);
-    }
+    } catch (erro) {}
   }
 }

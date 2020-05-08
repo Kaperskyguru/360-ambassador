@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard__summary--card-container col-12 col-md-2 mb-5 mb-md-0">
     <div class="dashboard__summary--card col-12">
-      <div class="dashboard__summary--card-header">
+      <div class="dashboard__summary--card-header mb-3">
         <div class="row">
           <span class="color-blue mr-auto">
             <slot name="title" />

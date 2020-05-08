@@ -53,7 +53,6 @@ export const actions = {
 
   async update({ commit }, { form, id }) {
     const res = await this.$repositories.user.updateAffiliate(id, form);
-    console.log(res);
     return res;
   },
 

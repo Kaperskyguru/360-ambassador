@@ -37,7 +37,9 @@ export default {
         return state.promotion.myPromotions;
       }
     })
-  }
+  },
+
+  created() {}
 };
 </script>
 

@@ -1,6 +1,10 @@
-const resource = "/notifications";
+const resource = "/notification";
 export default $axios => ({
-  get(user) {
+  get() {
+    return $axios.get(`${resource}`);
+  },
+
+  getByUser(user) {
     return $axios.get(`${resource}/${user}`);
   }
 });

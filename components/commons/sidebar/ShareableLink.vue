@@ -20,7 +20,7 @@
           <div
             class="col-12 my-promotion__pills--square text-sm-light color-blue mt-4 mb-3"
           >
-            <span class="col-10">https://codelikemad.com</span>
+            <span class="col-10" id="textToCopy">https://codelikemad.com</span>
             <img
               src="~assets/images/undraw_schedule.png"
               alt=""
@@ -28,7 +28,10 @@
               width="20"
             />
           </div>
-          <button class="my-promotion__pills--btn color-blue-2 col-12 d-block">
+          <button
+            class="my-promotion__pills--btn color-blue-2 col-12 d-block"
+            @click="copyText()"
+          >
             Copy Sharing URL
           </button>
         </b-tab>
@@ -99,16 +102,24 @@
           <div class="col-12">
             <div class="row">
               <div class="col-auto">
-                <twitter-icon color="#0e163d" width="18.462" height="15" />
+                <a :href="twitterLink" target="_blank">
+                  <twitter-icon color="#0e163d" width="18.462" height="15" />
+                </a>
               </div>
               <div class="col-auto">
-                <facebook-icon color="#0e163d" width="7.5" height="15" />
+                <a href="">
+                  <facebook-icon color="#0e163d" width="7.5" height="15" />
+                </a>
               </div>
               <div class="col-auto">
-                <instagram-icon color="#0e163d" width="15" height="15" />
+                <a href="https://google.com">
+                  <instagram-icon color="#0e163d" width="15" height="15" />
+                </a>
               </div>
               <div class="col-auto">
-                <youtube-icon color="#0e163d" width="15" height="15" />
+                <a href="">
+                  <youtube-icon color="#0e163d" width="15" height="15" />
+                </a>
               </div>
             </div>
           </div>
@@ -160,10 +171,34 @@ export default {
     InstagramIcon,
     YoutubeIcon
   },
+  computed: {
+    twitterLink() {
+      return `https://twitter.com/intent/tweet?url=${this.promotion.twitter}&title=${this.promotion.name}`;
+    }
+  },
   props: {
     promotion: {
       type: [Object, Array],
       default: () => {}
+    }
+  },
+  methods: {
+    copyText() {
+      var copyText = document.querySelector("#textToCopy").textContent;
+
+      const el = document.createElement("textarea");
+      el.value = copyText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+      this.$notify({
+        group: "alerts",
+        type: "success",
+        title: "Text Copied",
+        text: `Text Copied to Clipboard`
+      });
+      // alert("Text copied");
     }
   }
 };

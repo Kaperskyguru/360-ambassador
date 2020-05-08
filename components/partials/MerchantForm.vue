@@ -586,7 +586,6 @@ export default {
         // NOTIFICATION HERE
         this.successAlert();
       } catch (err) {
-        console.log(err.response.data);
         this.failedAlert(err.response.data.message);
         this.show = false;
       }
