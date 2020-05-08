@@ -15,7 +15,6 @@ export default {
       const promotion = await store.dispatch("promotion/find", params.id);
       return { promotion };
     } catch (err) {
-      console.log(err);
       error({ statusCode: 404, message: "Promotion not found" });
     }
   }

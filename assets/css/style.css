@@ -980,7 +980,7 @@ a:active {
   font-size: 1.2rem;
   letter-spacing: 0rem;
   text-transform: uppercase;
-  /* margin-bottom: 1rem; */
+  margin-bottom: 0.7rem;
 }
 
 .dropdown-item.active {
@@ -1513,8 +1513,8 @@ section,
   align-items: center;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
+  /* padding-top: 0.3rem; */
+  /* padding-bottom: 0.3rem; */
 }
 
 .my-promotion__pills--square span {

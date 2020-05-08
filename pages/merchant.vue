@@ -27,8 +27,7 @@ export default {
       // const { code, response } = err;
       // if (code && response) {
       //   error({ statusCode: err.code, message: err.response });
-      // } else console.log(err);
-      console.log(err);
+      // } else;
     }
   }
 };

@@ -22,9 +22,7 @@ export default {
     try {
       await store.dispatch("category/get");
       await store.dispatch("user/find", query.user_id);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   }
 };
 </script>

@@ -12,40 +12,40 @@
       </tr>
     </thead>
     <tbody class="dashboard-table__tbody">
-      <tr v-for="(promotion, i) in fpromotions" :key="i">
+      <tr v-for="(data, i) in fpromotions" :key="i">
         <td height="40">
           <nuxt-link to="#" class="color-blue">{{
-            promotion.user ? promotion.user.username : ""
+            data.promotion.user ? data.promotion.user.username : "Fake Name"
           }}</nuxt-link>
         </td>
         <td height="40">
           <nuxt-link to="#" class="color-blue">{{
-            promotion.name || ""
+            data.promotion.name || ""
           }}</nuxt-link>
         </td>
         <td height="40">
           <nuxt-link to="#" class="color-blue">{{
-            promotion.commission || 0
+            data.promotion.commission || 0
           }}</nuxt-link>
         </td>
         <td height="40">
           <nuxt-link to="#" class="color-blue">{{
-            promotion.click || 0
+            data.promotion.click || 0
           }}</nuxt-link>
         </td>
         <td height="40">
           <nuxt-link to="#" class="color-blue">{{
-            promotion.impressions || 0
+            data.promotion.impressions || 0
           }}</nuxt-link>
         </td>
         <td height="40">
           <nuxt-link to="#" class="color-blue">{{
-            promotion.conv || 0
+            data.promotion.conv || 0
           }}</nuxt-link>
         </td>
         <td height="40">
           <nuxt-link to="#" class="color-blue"
-            >N{{ promotion.price || 0 }}</nuxt-link
+            >N{{ data.promotion.price || 0 }}</nuxt-link
           >
         </td>
       </tr>
@@ -142,11 +142,10 @@ export default {
     };
   },
   computed: {
-    username() {
-      return vm.promotion.user !== null ? vm.promotion.user.username : "";
-    },
     fpromotions() {
-      return this.promotions ? this.fakePromotions : this.fakePromotions;
+      return Object.entries(this.promotions).length !== 0
+        ? this.promotions
+        : this.fakePromotions;
     },
     isEmpty() {
       return Object.entries(this.promotions).length === 0;

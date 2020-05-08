@@ -1,41 +1,43 @@
 <template>
   <div class="navbar-nav my-2 my-lg-0">
     <li class="nav-item" v-if="$auth.user.role.name == 'promoter'">
-      <nuxt-link class="nav-link color-white dashboard__nav--balance" to="#"
-        >Balance<br /><span style="font-size:16px !important"
-          >11,000.00 NGN</span
-        ></nuxt-link
-      >
+      <nuxt-link class="nav-link color-white dashboard__nav--balance" to="#">
+        <span class="d-block" style="margin-top: -5px;">Balance</span>
+        <span style="font-size:16px !important">11,000.00 NGN</span>
+      </nuxt-link>
     </li>
     <li class="nav-item">
       <nuxt-link
-        class="nav-link color-white dashboard__nav--notification"
+        class="nav-link color-white dashboard__nav--notification mt-3"
         to="#"
         @click.native="showDialog('mShow')"
       >
         <message-icon />
         <span class="badge color-yellow bg-blue">1</span>
       </nuxt-link>
-      <dropdown title="Messages" :show="mShow" :data="messages" />
+      <message-notification title="Messages" :show="mShow" :data="messages" />
     </li>
     <li class="nav-item">
       <nuxt-link
         @click.native="showDialog('nShow')"
-        class="nav-link color-white dashboard__nav--notification"
+        class="nav-link color-white dashboard__nav--notification mt-3"
         to="#"
       >
         <notification-icon />
         <span class="badge color-yellow bg-blue">10</span>
       </nuxt-link>
-      <dropdown title="Notifications" :show="nShow" :data="notifications" />
+      <notification title="Notifications" :show="nShow" :data="notifications" />
     </li>
     <li class="nav-item">
-      <nuxt-link class="nav-link color-white" to="#">
+      <nuxt-link
+        class="nav-link color-white dashboard__nav--notification mt-3"
+        to="#"
+      >
         <help-icon />
       </nuxt-link>
     </li>
     <li class="nav-item dropdown">
-      <div class="nav-link" :class="{ show: show }">
+      <div class="nav-link" :class="{ show: pShow }">
         <nuxt-link
           class="dropdown-toggle dashboard__nav--profile d-flex"
           to="#"
@@ -44,7 +46,7 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
-          @click.native="show = !show"
+          @click.native="showDialog('pShow')"
         >
           <profile-image />
           <div class="d-block m-0 p-0">
@@ -61,7 +63,7 @@
         </nuxt-link>
         <div
           class="dropdown-menu dropdown-menu-right dashboard__nav--profile-dropdown bg-grey-3"
-          :class="{ show: show }"
+          :class="{ show: pShow }"
           aria-labelledby="navbarDropdown"
         >
           <div class="row align-content-start">
@@ -108,7 +110,8 @@ import SettingsIcon from "~/components/commons/Icons/Settings";
 import EditProfileIcon from "~/components/commons/Icons/EditProfile";
 import HelpIcon from "~/components/commons/Icons/Help";
 
-import Dropdown from "~/components/commons/modals/Notification";
+import Notification from "~/components/commons/modals/Notification";
+import MessageNotification from "~/components/commons/modals/Message";
 
 export default {
   components: {
@@ -119,11 +122,12 @@ export default {
     SettingsIcon,
     EditProfileIcon,
     HelpIcon,
-    Dropdown
+    Notification,
+    MessageNotification
   },
   data() {
     return {
-      show: false,
+      pShow: false,
       nShow: false,
       mShow: false
     };
@@ -169,11 +173,25 @@ export default {
       if (type == "mShow") {
         this.mShow = !this.mShow;
         this.nShow = false;
-      } else {
+        this.pShow = false;
+      } else if (type == "nShow") {
         this.nShow = !this.nShow;
+        this.mShow = false;
+        this.pShow = false;
+      } else {
+        this.pShow = !this.pShow;
+        this.nShow = false;
         this.mShow = false;
       }
     }
+  },
+
+  updated() {
+    document.addEventListener("click", function() {
+      this.nShow = false;
+      this.mShow = false;
+      this.pShow = false;
+    });
   }
 };
 </script>

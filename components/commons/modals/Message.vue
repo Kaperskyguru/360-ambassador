@@ -1,7 +1,7 @@
 <template >
-  <span id="notification">
+  <span id="message">
     <div
-      class="dropdown-menu home-notification__"
+      class="dropdown-menu home-notification__ "
       :class="{ show: show }"
       aria-labelledby="navbarDropdown"
     >
@@ -25,8 +25,9 @@
           <div class="col-10">
             <p class="color-blue notification-text col-12 p-0 m-0">
               <span class="text-bold">{{ message.user_name }}</span>
-              has joinned the promotion <br />
-              <span class="text-uppercase">{{ message.promotion_joined }}</span>
+              <span class="text-uppercase"
+                >{{ message.message.substr(0, 35) }} ...</span
+              >
             </p>
             <div class="col-12 p-0">
               <span class="color-blue">
@@ -59,12 +60,19 @@ export default {
   },
   components: {
     Icon
+  },
+  computed: {
+    message(message) {
+      return this.data.map(message => {
+        console.log(message);
+      });
+    }
   }
 };
 </script>
 
 <style>
-#notification .home-notification__ {
+#message .home-notification__ {
   width: 45rem;
   left: unset;
   right: 0;
@@ -75,24 +83,24 @@ export default {
   max-height: 350px;
   padding: 1rem;
 }
-#notification .home-notification__text {
+#message .home-notification__text {
   white-space: normal;
   text-transform: none;
-  padding-left: 0.8rem;
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
-  margin-left: 0.8rem;
-  margin-top: 0.8rem;
-  margin-bottom: 0.8rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   font-size: 1rem;
 }
 
-#notification .home-notification__item {
+#message .home-notification__item {
   white-space: normal;
   text-transform: none;
   font-size: 1.5rem;
 }
-#notification .home-notification__text img {
+#message .home-notification__text img {
   width: 100%;
   height: 4rem;
   border-radius: 50%;
