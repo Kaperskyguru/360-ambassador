@@ -20,6 +20,7 @@
                   id="cat"
                   v-model="terms.category"
                   class="dashboard__general--card__form--select ml-4 col-12"
+                  style="padding: .45rem 1rem"
                 >
                   <option value="" selected="true">Category</option>
                   <option

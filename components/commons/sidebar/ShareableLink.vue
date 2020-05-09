@@ -179,7 +179,7 @@ export default {
   props: {
     promotion: {
       type: [Object, Array],
-      default: () => {}
+      required: true
     }
   },
   methods: {
@@ -198,7 +198,6 @@ export default {
         title: "Text Copied",
         text: `Text Copied to Clipboard`
       });
-      // alert("Text copied");
     }
   }
 };

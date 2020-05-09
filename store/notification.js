@@ -4,7 +4,6 @@ export const state = () => ({
 
 export const mutations = {
   set(state, notifications) {
-    console.log(notifications);
     state.notifications = notifications;
   }
 };

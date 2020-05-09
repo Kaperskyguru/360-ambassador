@@ -8,7 +8,7 @@
       ]"
       @click="pop = !pop"
     >
-      Join Program
+      {{ btnText }}
     </button>
 
     <confirm-box :show="pop" v-on:close="processPromotion()">
@@ -59,24 +59,38 @@ export default {
         await this.$store.dispatch("promotion/joinPromotion", data);
         this.disabled = true;
         this.$emit("show", false);
+        const message = "You have successfully joined the promotion";
+        this.showSuccess(message);
       } catch (error) {
         this.$emit("show", false);
         const { response } = error;
         if (response !== undefined) {
-          if (response.data.code == 409) {
-            this.$swal({
-              text: response.data.message,
-              icon: "error"
-            });
-          }
+          this.showError(response.data.message);
         } else {
           this.$emit("show", false);
-          this.$swal({
-            text: "An error occurred, Don't panic just try again",
-            icon: "error"
-          });
+          const message = "An error occurred, Don't panic just try again";
+          this.showError(message);
         }
       }
+    },
+
+    showError(message) {
+      this.$swal({
+        text: message,
+        icon: "error"
+      });
+    },
+    showSuccess(message) {
+      this.$swal({
+        text: message,
+        icon: "success"
+      });
+    }
+  },
+
+  computed: {
+    btnText() {
+      return this.disabled ? "Joined Program" : "Join Program";
     }
   }
 };

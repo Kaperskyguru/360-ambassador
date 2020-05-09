@@ -29,7 +29,7 @@ export default {
   computed: {
     ...mapState({
       merchants: state => {
-        return state.user.topMerchants;
+        return [...state.user.topMerchants].slice(0, 5);
       }
     }),
     isEmpty() {

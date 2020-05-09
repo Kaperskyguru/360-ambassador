@@ -13,7 +13,7 @@
         @click.native="showDialog('mShow')"
       >
         <message-icon />
-        <span class="badge color-yellow bg-blue">1</span>
+        <span class="badge color-yellow bg-blue">{{ totalMessages }}</span>
       </nuxt-link>
       <message-notification title="Messages" :show="mShow" :data="messages" />
     </li>
@@ -24,7 +24,7 @@
         to="#"
       >
         <notification-icon />
-        <span class="badge color-yellow bg-blue">10</span>
+        <span class="badge color-yellow bg-blue">{{ totalNotifications }}</span>
       </nuxt-link>
       <notification title="Notifications" :show="nShow" :data="notifications" />
     </li>
@@ -143,7 +143,15 @@ export default {
       messages: state => {
         return state.message.messages;
       }
-    })
+    }),
+
+    totalMessages() {
+      return this.messages.length;
+    },
+
+    totalNotifications() {
+      return this.notifications.length;
+    }
   },
   methods: {
     async logout() {

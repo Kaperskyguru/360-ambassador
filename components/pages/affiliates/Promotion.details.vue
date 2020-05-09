@@ -1,7 +1,4 @@
 <template>
-  <!-- <div class="container-fluid my-promotion">
-    <div class="row">
-      <menu-bar /> -->
   <div class="my-promotion__container col-12">
     <div class="row justify-content-center">
       <p class="col-12">
@@ -72,12 +69,10 @@
             </tr>
           </tbody>
         </table>
-        <!-- </div> -->
-
         <promotion-detail :promotion="promotion" />
       </div>
       <div class="col-md-4 col-12">
-        <promotion-shareable-link />
+        <promotion-shareable-link :promotion="promotion" />
       </div>
     </div>
     <loading :show="show" :label="label" :overlay="overlay" />
@@ -92,7 +87,6 @@ import DesignButton from "~/components/commons/buttons/DesignButton";
 
 export default {
   components: {
-    // MenuBar,
     PromotionShareableLink,
     PromotionDetail,
     DesignButton,
@@ -104,7 +98,6 @@ export default {
       show: false,
       label: "Signing you up for this promotion, please wait...",
       overlay: true
-      // pop: false
     };
   }
 };
