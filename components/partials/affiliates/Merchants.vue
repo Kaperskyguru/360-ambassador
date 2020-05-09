@@ -29,11 +29,13 @@ export default {
   computed: {
     ...mapState({
       merchants: state => {
-        return [...state.user.topMerchants].slice(0, 5);
+        if (state.user.topMerchants)
+          return [...state.user.topMerchants].slice(0, 5);
       }
     }),
     isEmpty() {
-      return Object.entries(this.merchants).length === 0;
+      if (this.merchants) return Object.entries(this.merchants).length === 0;
+      return true;
     }
   }
 };

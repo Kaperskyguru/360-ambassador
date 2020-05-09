@@ -31,28 +31,38 @@
           <div class="mt-2 p-0"></div>
           <div class="col-12 d-table-body">
             <div class="d-table-row bg-grey-6">
-              <p class="col-auto pt-3 pb-3 pl-2 d-table-cell color-blue">
+              <p class="col-auto pt-2 pb-2 pl-2 d-table-cell color-blue">
                 <img
-                  src="~assets/images/Access_Bank_Logo.png"
-                  alt=""
-                  width="100"
+                  :src="
+                    promotion.user
+                      ? promotion.user.profile_picture
+                      : require('~/assets/images/man-user.png')
+                  "
+                  :alt="
+                    promotion.user ? promotion.user.name : 'Profile picture'
+                  "
+                  width="80"
+                  height="80"
+                  style="object-fit:contain"
                 />
               </p>
               <p class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
-                <span class="color-blue">Bukka Hut Festo</span>
+                <span class="color-blue">{{ promotion.name || "" }}</span>
                 <span class="color-blue-3 text-small"
                   >(512345)<br />
-                  <span class="text-small color-grey-3">FOOD</span></span
+                  <span class="text-small color-grey-3">{{
+                    promotion.category ? promotion.category.name : ""
+                  }}</span></span
                 >
               </p>
               <p class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
                 11/01/2019
               </p>
               <p class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
-                10%
+                {{ promotion.commission || 0 }}
               </p>
               <p class="col-auto pt-3 pb-3 pl-1 pr-1 d-table-cell color-blue">
-                5,000
+                {{ promotion.price || 0 }}
               </p>
               <p class="col-auto pt-3 pb-3 pl-0 pr-1 d-table-cell color-blue">
                 <join-button

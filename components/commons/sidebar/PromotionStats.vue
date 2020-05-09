@@ -23,7 +23,7 @@
               visitors
             </template>
             <template slot="amount">
-              {{ promotion.visitors || 0 }}
+              {{ promotion.visitor || 0 }}
             </template>
           </stat-box>
         </div>
@@ -43,7 +43,7 @@
               conv
             </template>
             <template slot="amount">
-              0.02%
+              {{ promotion.conversion || 0 }}%
             </template>
           </stat-box>
         </div>
@@ -53,7 +53,7 @@
               n per sale
             </template>
             <template slot="amount">
-              5.00
+              {{ promotion.in_per_sale || 0 }}
             </template>
           </stat-box>
         </div>
@@ -63,7 +63,7 @@
               total earned
             </template>
             <template slot="amount">
-              10.00
+              {{ promotion.total_earn || 0 }}
             </template>
           </stat-box>
         </div>

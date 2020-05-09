@@ -76,7 +76,8 @@ export default {
   computed: {
     ...mapState({
       messages: state => {
-        return [...state.message.messages].slice(0, 1);
+        if (state.message.messages)
+          return [...state.message.messages].slice(0, 1);
       },
       promotions: state => {
         return state.promotion.promotions;
@@ -87,7 +88,8 @@ export default {
       }
     }),
     isEmpty() {
-      return Object.entries(this.messages).length === 0;
+      if (this.messages) return Object.entries(this.messages).length === 0;
+      return true;
     }
   }
 };
