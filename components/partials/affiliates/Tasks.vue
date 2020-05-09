@@ -18,7 +18,7 @@ export default {
   computed: {
     ...mapState({
       tasks: state => {
-        return state.task.tasks;
+        return [...state.task.tasks].slice(0, 2);
       }
     }),
     isEmpty() {

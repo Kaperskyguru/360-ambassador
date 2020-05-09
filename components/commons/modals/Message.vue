@@ -60,13 +60,6 @@ export default {
   },
   components: {
     Icon
-  },
-  computed: {
-    message(message) {
-      return this.data.map(message => {
-        console.log(message);
-      });
-    }
   }
 };
 </script>

@@ -14,7 +14,7 @@ export default async function({ store, from }) {
             store.dispatch("message/get"),
             store.dispatch("promotion/get"),
             store.dispatch("insight/earningsGraph", _id),
-            store.dispatch("promotion/promotionsByUserID", _id),
+            // store.dispatch("promotion/promotionsByUserID", _id),
             store.dispatch("promotion/joinedPromotions", _id),
             store.dispatch("notification/get")
             // store.dispatch("message/get", store.$auth.user._id)

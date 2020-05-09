@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody class="dashboard-table__tbody">
-      <tr v-for="(data, i) in fpromotions" :key="i">
+      <tr v-for="(data, i) in fpromotions.slice(0, 10)" :key="i">
         <td height="40">
           <nuxt-link to="#" class="color-blue">{{
             data.promotion.user ? data.promotion.user.username : "Fake Name"

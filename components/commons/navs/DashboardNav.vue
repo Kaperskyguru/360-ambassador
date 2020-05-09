@@ -35,7 +35,7 @@
           </li>
           <li
             :class="[
-              currentPage === 'affiliates-my-promotions' ? activeClass : '',
+              myPromotionLinks(currentPage) ? activeClass : '',
               'nav-item'
             ]"
           >
@@ -47,7 +47,7 @@
           </li>
           <li
             :class="[
-              currentPage === 'affiliates-promotions' ? activeClass : '',
+              PromotionLinks(currentPage) ? activeClass : '',
               'nav-item'
             ]"
           >
@@ -87,6 +87,26 @@ export default {
   computed: {
     currentPage() {
       return this.$route.name;
+    }
+  },
+
+  methods: {
+    myPromotionLinks(link) {
+      if (
+        link === "affiliates-my-promotions" ||
+        link === "affiliates-my-promotions-id"
+      )
+        return true;
+      return false;
+    },
+
+    PromotionLinks(link) {
+      if (
+        link === "affiliates-promotions" ||
+        link === "affiliates-promotions-id"
+      )
+        return true;
+      return false;
     }
   }
 };

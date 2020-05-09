@@ -37,11 +37,9 @@
             <h6 class="dashboard__heading col-12 mb-3">Messages</h6>
 
             <message v-for="(message, i) in messages" :key="i">
-              <template slot="title">
-                Imagine Production
-              </template>
+              <template slot="title"> {{ message.title || "" }} </template>
               <template slot="subtitle">
-                Upload your Placement Opportunities Today!
+                {{ message.subtitle || "" }}
               </template>
               <template slot="content">{{ message.message }} </template>
             </message>
@@ -78,7 +76,7 @@ export default {
   computed: {
     ...mapState({
       messages: state => {
-        return state.message.messages;
+        return [...state.message.messages].slice(0, 1);
       },
       promotions: state => {
         return state.promotion.promotions;
