@@ -34,7 +34,8 @@ export default {
       }
     }),
     isEmpty() {
-      return Object.entries(this.promotions).length === 0;
+      if (this.promotions) return Object.entries(this.promotions).length === 0;
+      return true;
     }
   }
 };

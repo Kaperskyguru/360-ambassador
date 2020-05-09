@@ -60,12 +60,11 @@
         :key="i"
         :promotion="promotion.promotion"
       />
-
+      <!-- <cards :promotion="test_promotion" />
       <cards :promotion="test_promotion" />
       <cards :promotion="test_promotion" />
       <cards :promotion="test_promotion" />
-      <cards :promotion="test_promotion" />
-      <cards :promotion="test_promotion" />
+      <cards :promotion="test_promotion" /> -->
     </div>
     <div v-if="isEmpty" class="p-3">
       <p>You haven't joined any promotion yet</p>
@@ -108,7 +107,8 @@ export default {
       }
     }),
     isEmpty() {
-      return Object.entries(this.promotions).length === 0;
+      if (this.promotions) return Object.entries(this.promotions).length === 0;
+      return true;
     }
   }
 };

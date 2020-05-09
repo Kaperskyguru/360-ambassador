@@ -18,11 +18,12 @@ export default {
   computed: {
     ...mapState({
       tasks: state => {
-        return [...state.task.tasks].slice(0, 2);
+        if (state.task.tasks) return [...state.task.tasks].slice(0, 2);
       }
     }),
     isEmpty() {
-      return Object.entries(this.tasks).length === 0;
+      if (this.tasks) return Object.entries(this.tasks).length === 0;
+      return true;
     }
   }
 };

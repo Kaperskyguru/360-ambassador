@@ -6,7 +6,7 @@
         >TOTAL EARNED</small
       >
       <p class="dashboard__general--card__text-bg color-blue text-center">
-        10.00
+        <slot />
       </p>
     </div>
   </div>
@@ -17,5 +17,4 @@ export default {};
 </script>
 
 <style scoped>
-
 </style>

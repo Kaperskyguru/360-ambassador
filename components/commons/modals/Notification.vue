@@ -96,5 +96,6 @@ export default {
   width: 100%;
   height: 4rem;
   border-radius: 50%;
+  object-fit: contain;
 }
 </style>

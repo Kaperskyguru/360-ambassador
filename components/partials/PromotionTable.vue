@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody class="dashboard-table__tbody">
-      <tr v-for="(data, i) in fpromotions.slice(0, 10)" :key="i">
+      <tr v-for="(data, i) in allPromotions" :key="i">
         <td height="40">
           <nuxt-link to="#" class="color-blue">{{
             data.promotion.user ? data.promotion.user.username : "Fake Name"
@@ -30,7 +30,7 @@
         </td>
         <td height="40">
           <nuxt-link to="#" class="color-blue">{{
-            data.promotion.click || 0
+            data.promotion.clicks || 0
           }}</nuxt-link>
         </td>
         <td height="40">
@@ -40,7 +40,7 @@
         </td>
         <td height="40">
           <nuxt-link to="#" class="color-blue">{{
-            data.promotion.conv || 0
+            data.promotion.conversion || 0
           }}</nuxt-link>
         </td>
         <td height="40">
@@ -57,98 +57,18 @@
 <script>
 export default {
   props: ["promotions"],
-  data() {
-    return {
-      fakePromotions: [
-        {
-          name: "Fake Promotion",
-          commission: "10%",
-          click: 10,
-          impressions: 1000,
-          conv: 0.5,
-          price: "10.98",
-          user: {
-            username: "kaperskyguru"
-          }
-        },
-
-        {
-          name: "Fake Promotion",
-          commission: "10%",
-          click: 10,
-          impressions: 1000,
-          conv: 0.5,
-          price: "10.98",
-          user: {
-            username: "kaperskyguru"
-          }
-        },
-        {
-          name: "Fake Promotion",
-          commission: "10%",
-          click: 10,
-          impressions: 1000,
-          conv: 0.5,
-          price: "10.98",
-          user: {
-            username: "kaperskyguru"
-          }
-        },
-        {
-          name: "Fake Promotion",
-          commission: "10%",
-          click: 10,
-          impressions: 1000,
-          conv: 0.5,
-          price: "10.98",
-          user: {
-            username: "kaperskyguru"
-          }
-        },
-        {
-          name: "Fake Promotion",
-          commission: "10%",
-          click: 10,
-          impressions: 1000,
-          conv: 0.5,
-          price: "10.98",
-          user: {
-            username: "kaperskyguru"
-          }
-        },
-        {
-          name: "Fake Promotion",
-          commission: "10%",
-          click: 10,
-          impressions: 1000,
-          conv: 0.5,
-          price: "10.98",
-          user: {
-            username: "kaperskyguru"
-          }
-        },
-        {
-          name: "Fake Promotion",
-          commission: "10%",
-          click: 10,
-          impressions: 1000,
-          conv: 0.5,
-          price: "10.98",
-          user: {
-            username: "kaperskyguru"
-          }
-        }
-      ]
-    };
-  },
   computed: {
-    fpromotions() {
-      return Object.entries(this.promotions).length !== 0
-        ? this.promotions
-        : this.fakePromotions;
+    allPromotions() {
+      if (this.promotions) {
+        return this.promotions.slice(0, 10);
+      }
     },
     isEmpty() {
-      return Object.entries(this.promotions).length === 0;
+      console.log(this.promotions);
+      if (this.promotions) {
+        return Object.entries(this.promotions).length === 0;
+      }
+      return true;
     }
   }
 };

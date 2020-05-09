@@ -31,7 +31,9 @@
                 <p class="dashboard__general--card__text col-8">
                   {{ promotion.description || "" }}
                 </p>
-                <card-button class="p-0 ml-3" />
+                <card-button class="p-0 ml-3">
+                  {{ promotion.total_earn || 0 }}
+                </card-button>
               </div>
             </div>
           </div>
@@ -41,31 +43,35 @@
             <div class="stat-box col-2 p-0 m-1 mr-2">
               <stat-box>
                 <template slot="title">CLICKS</template>
-                <template slot="value">200</template>
+                <template slot="value">{{ promotion.clicks || 0 }}</template>
               </stat-box>
             </div>
             <div class="stat-box col-2 p-0 m-1 mr-2">
               <stat-box>
                 <template slot="title">VISITORS</template>
-                <template slot="value">100</template>
+                <template slot="value">{{ promotion.visitor || 0 }}</template>
               </stat-box>
             </div>
             <div class="stat-box  col-2 p-0 m-1 mr-2">
               <stat-box>
                 <template slot="title">SALES</template>
-                <template slot="value">2</template>
+                <template slot="value"> {{ promotion.sales || 0 }}</template>
               </stat-box>
             </div>
             <div class="stat-box  col-2 p-0 m-1 mr-2">
               <stat-box>
                 <template slot="title">CONV.</template>
-                <template slot="value">0.02%</template>
+                <template slot="value"
+                  >{{ promotion.conversion || 0 }}%</template
+                >
               </stat-box>
             </div>
             <div class="stat-box  col-2 p-0 m-1 mr-2">
               <stat-box>
                 <template slot="title">N PER SALE</template>
-                <template slot="value">5.00 </template>
+                <template slot="value"
+                  >{{ promotion.in_per_sale || 0 }}
+                </template>
               </stat-box>
             </div>
           </div>
