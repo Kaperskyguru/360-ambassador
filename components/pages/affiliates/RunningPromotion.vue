@@ -69,6 +69,7 @@
                   :promotion="promotion"
                   v-on:pop="pop = !pop"
                   v-on:show="show = !show"
+                  v-on:joined="join"
                 />
               </p>
             </div>
@@ -79,7 +80,7 @@
 
       <div class="col-md-4 col-12">
         <promotion-stats :promotion="promotion" />
-        <shareable-link :promotion="promotion" />
+        <shareable-link :joined="joined" :promotion="promotion" />
       </div>
     </div>
     <modal />
@@ -99,7 +100,8 @@ export default {
   props: ["promotion"],
   data() {
     return {
-      fill: true
+      fill: true,
+      joined: false
     };
   },
   components: {
@@ -111,10 +113,11 @@ export default {
     PromotionDetail,
     JoinButton
   },
-  mounted() {},
-  created() {},
-
-  computed: {}
+  methods: {
+    join(joined) {
+      this.joined = joined;
+    }
+  }
 };
 </script>
 

@@ -64,6 +64,7 @@
                   :promotion="promotion"
                   v-on:pop="pop = !pop"
                   v-on:show="show = !show"
+                  v-on:joined="join"
                 />
               </td>
             </tr>
@@ -72,7 +73,7 @@
         <promotion-detail :promotion="promotion" />
       </div>
       <div class="col-md-4 col-12">
-        <promotion-shareable-link :promotion="promotion" />
+        <promotion-shareable-link :joined="joined" :promotion="promotion" />
       </div>
     </div>
     <loading :show="show" :label="label" :overlay="overlay" />
@@ -97,8 +98,16 @@ export default {
     return {
       show: false,
       label: "Signing you up for this promotion, please wait...",
-      overlay: true
+      overlay: true,
+      disabled: false,
+      joined: false
     };
+  },
+  methods: {
+    join(e) {
+      console.log(e);
+      this.joined = e;
+    }
   }
 };
 </script>
