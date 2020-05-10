@@ -161,11 +161,11 @@ export default {
       const id = this.$auth.user._id;
       switch (role) {
         case "admin":
-          this.$router.push(`merchant?user_id=${id}`);
+          this.$router.push(`/merchant?user_id=${id}`);
           break;
 
         case "merchant":
-          this.$router.push(`merchant?user_id=${id}`);
+          this.$router.push(`/merchant?user_id=${id}`);
           break;
 
         case "promoter":

@@ -12,10 +12,7 @@
           Contact Information
         </h6>
         <div class="col-12 col-md-6 custom-file-input-container">
-          <image-field
-            v-on:triggerChange="onFileChange($event)"
-            :src="form.profile_picture"
-          ></image-field>
+          <image-field v-on:triggerChange="onFileChange($event)"></image-field>
         </div>
         <div class="col-12 form-2__container">
           <validation-provider

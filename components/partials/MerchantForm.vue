@@ -12,10 +12,7 @@
           Contact Information
         </h6>
         <div class="col-12 col-md-6 custom-file-input-container">
-          <image-field
-            v-on:triggerChange="onFileChange($event)"
-            :src="form.profile_picture"
-          ></image-field>
+          <image-field v-on:triggerChange="onFileChange($event)"></image-field>
         </div>
         <div class="col-12 form-2__container">
           <validation-provider
@@ -351,6 +348,67 @@
       </div>
       <div class="col-12 mt-5 mb-3">
         <h6 class="border-bottom-grey-3 col-12 color-blue p-0">
+          Social Media information
+        </h6>
+        <div class="col-12 form-2__container">
+          <validation-provider
+            rules="required"
+            name="Facebook"
+            v-slot="{ errors }"
+          >
+            <base-input
+              :required="true"
+              v-model="form.facebook"
+              name="facebook"
+              type="url"
+            >
+              <template slot="label">Facebook</template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </base-input>
+          </validation-provider>
+        </div>
+        <div class="col-12 form-2__container">
+          <validation-provider
+            rules="required"
+            name="Twitter"
+            v-slot="{ errors }"
+          >
+            <base-input
+              :required="true"
+              v-model="form.twitter"
+              name="twitter"
+              type="url"
+            >
+              <template slot="label">Twitter</template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </base-input>
+          </validation-provider>
+        </div>
+        <div class="col-12 form-2__container">
+          <validation-provider
+            rules="required"
+            name="Instagram"
+            v-slot="{ errors }"
+          >
+            <base-input
+              :required="true"
+              v-model="form.instagram"
+              name="instagram"
+              type="url"
+            >
+              <template slot="label">Instagram</template>
+              <template slot="errors">{{ errors[0] }}</template>
+            </base-input>
+          </validation-provider>
+        </div>
+        <div class="col-12 form-2__container">
+          <div class="row justify-content-end">
+            <button class="btn__transparent">+ Add more</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mt-5 mb-3">
+        <h6 class="border-bottom-grey-3 col-12 color-blue p-0">
           Area of Interest
         </h6>
         <p class="col-12 form-2__text color-grey-2 text-font">
@@ -593,6 +651,8 @@ export default {
     },
 
     onFileChange(e) {
+      console.log(e.target.files[0]);
+
       this.form.profile_picture = e.target.files[0];
     },
 
@@ -644,7 +704,9 @@ export default {
     this.form.web_description = this.user.web_description;
     this.form.visitors = this.user.visitors;
     this.form.profile_picture = this.user.profile_picture;
-    // this.form.fullname = this.user.fullname;
+    this.form.twitter = this.user.twitter;
+    this.form.instagram = this.user.instagram;
+    this.form.facebook = this.user.facebook;
   }
 };
 </script>
