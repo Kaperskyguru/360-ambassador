@@ -47,18 +47,12 @@
 import { ValidationProvider } from "vee-validate";
 
 export default {
-  props: {
-    src: {
-      type: String,
-      default: ""
-    }
+  data() {
+    return {
+      src: ""
+    };
   },
 
-  // data() {
-  //   return {
-  //     url: ""
-  //   };
-  // },
   name: "ImageField",
   components: {
     ValidationProvider
