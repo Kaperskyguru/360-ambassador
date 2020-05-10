@@ -35,12 +35,8 @@ export default {
       disabled: false
     };
   },
-  computed: {
-    joined() {
-      if (this.promotion.user) {
-        return this.promotion.user._id == this.$auth.user._id;
-      }
-    }
+  created() {
+    this.joined();
   },
 
   methods: {
@@ -85,6 +81,20 @@ export default {
         text: message,
         icon: "success"
       });
+    },
+
+    joined() {
+      if (this.promotion.joined_users) {
+        const joined =
+          this.promotion.joined_users.filter(
+            user => user._id == this.$auth.user._id
+          ).length > 0;
+
+        if (joined) {
+          this.$emit("joined", true);
+          this.disabled = true;
+        }
+      }
     }
   },
 
