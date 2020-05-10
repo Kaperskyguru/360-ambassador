@@ -67,7 +67,7 @@
               <div
                 class="col-12 my-promotion__pills--square text-sm-light color-blue mt-4 mb-3"
               >
-                <span class="col-10">{{ promotion.url }}</span>
+                <span class="col-10">{{ promotion.url || "" }}</span>
                 <img
                   src="~assets/images/undraw_schedule.png"
                   alt=""
@@ -106,7 +106,7 @@
                     visitors
                   </template>
                   <template slot="amount">
-                    {{ promotion.Visitors || 0 }}
+                    {{ promotion.visitor || 0 }}
                   </template>
                 </stat-box>
               </div>
@@ -116,7 +116,7 @@
                     sales
                   </template>
                   <template slot="amount">
-                    {{ promotion.Sales || 0 }}
+                    {{ promotion.sales || 0 }}
                   </template>
                 </stat-box>
               </div>
@@ -126,7 +126,7 @@
                     conv
                   </template>
                   <template slot="amount">
-                    {{ promotion.Convertion_rate || 0.0 }}
+                    {{ promotion.conversion || 0.0 }}
                   </template>
                 </stat-box>
               </div>
@@ -136,7 +136,7 @@
                     n per sale
                   </template>
                   <template slot="amount">
-                    5.00
+                    {{ promotion.in_per_sale || 0.0 }}
                   </template>
                 </stat-box>
               </div>
@@ -146,7 +146,7 @@
                     affiliates
                   </template>
                   <template slot="amount" class="color-blue">
-                    20
+                    {{ promotion.no_of_promoter || 0 }}
                   </template>
                 </stat-box>
               </div>

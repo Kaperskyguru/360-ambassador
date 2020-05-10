@@ -9,7 +9,7 @@
       <div class="dashboard__general--card col-12 pl-2 pr-2">
         <div class="row p-0">
           <p class="text-small color-grey-3 col-12 mb-0">
-            {{ promotion.category !== null ? promotion.category.name : "" }}
+            {{ promotion.category ? promotion.category.name : "" }}
           </p>
         </div>
         <div class="dashboard__general--card__body col-12 mb-3">
@@ -70,7 +70,7 @@
               <p
                 class="dashboard__general--card__text-bg color-blue text-center col-12 mb-0 p-0"
               >
-                {{ promotion.Visitors || 0 }}
+                {{ promotion.visitor || 0 }}
               </p>
             </div>
             <div
@@ -83,7 +83,7 @@
               <p
                 class="dashboard__general--card__text-bg color-blue text-center col-12 mb-0 p-0"
               >
-                {{ promotion.Sales || 0 }}
+                {{ promotion.sales || 0 }}
               </p>
             </div>
             <div
@@ -96,7 +96,7 @@
               <p
                 class="dashboard__general--card__text-bg color-blue text-center col-12 mb-0 p-0"
               >
-                {{ promotion.Convertion_rate || "0.00%" }}
+                {{ promotion.conversion || "0.00" }}%
               </p>
             </div>
 
@@ -110,7 +110,7 @@
               <p
                 class="dashboard__general--card__text-bg color-blue text-center col-12 mb-0 p-0"
               >
-                {{ promotion.Number_per_sale || 0 }}
+                {{ promotion.in_per_sale || 0 }}
               </p>
             </div>
           </div>
@@ -128,7 +128,7 @@
                   <p
                     class="dashboard__general--card__text-bg color-blue text-center text-bolder col-12 mb-0 p-0"
                   >
-                    {{ promotion.Affiliates || 0 }}
+                    {{ promotion.no_of_promoter || 0 }}
                   </p>
                 </div>
               </div>
