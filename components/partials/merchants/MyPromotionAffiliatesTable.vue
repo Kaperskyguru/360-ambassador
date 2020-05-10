@@ -11,8 +11,8 @@
       </tr>
     </thead>
     <tbody class="dashboard-table__tbody">
-      <tr>
-        <td class="color-blue">Seun Adepoju</td>
+      <tr v-for="affiliate in affiliates" :key="affiliate._id">
+        <td class="color-blue">{{ affiliate.fullname || "" }}</td>
         <td class="color-blue">01/03/2019</td>
         <td class="color-blue">Bukka Hut Fresto</td>
         <td class="color-blue">10</td>
@@ -49,7 +49,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["promotions"],
+
+  computed: {
+    affiliates() {
+      // Loop through all my Promotions and return an array of all joined Users
+      return this.promotions.map(promotion => {
+        return promotion.joined_users;
+      });
+    }
+  }
+};
 </script>
 
 <style>

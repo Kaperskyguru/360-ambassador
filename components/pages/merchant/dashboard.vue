@@ -21,7 +21,7 @@
             See all
           </button>
         </div>
-        <my-promotion-affiliates-table />
+        <my-promotion-affiliates-table :promotions="promotions" />
       </div>
       <div class="col-md-12 col-lg-4 mt-2">
         <div class="col-12 mb-5 dashboard__chart--card">
@@ -158,7 +158,7 @@ export default {
     ...mapState({
       messages: state => {
         if (state.message.messages)
-          return [...state.message.messages].slice(0, 1);
+          return [...state.message.messages].slice(0, 3);
       },
       promotions: state => {
         return state.promotion.myPromotions.promotion;
