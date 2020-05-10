@@ -536,7 +536,7 @@ import Field from "~/components/commons/Field";
 import ImageField from "~/components/commons/ImageField";
 import CancelButton from "~/components/commons/buttons/DesignButton";
 import SelectField from "~/components/commons/SelectField";
-
+import BaseInput from "~/components/commons/BaseInput";
 export default {
   components: {
     DesignButton,
@@ -545,6 +545,7 @@ export default {
     ImageField,
     Field,
     CancelButton,
+    BaseInput,
     SelectField
   },
   data() {

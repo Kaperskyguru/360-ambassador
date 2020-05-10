@@ -20,6 +20,9 @@
         :promotion="promotion"
       />
     </div>
+    <div v-if="isEmpty" class="p-3">
+      <p>No promotion created yet</p>
+    </div>
   </div>
 </template>
 
@@ -34,12 +37,14 @@ export default {
   computed: {
     ...mapState({
       promotions: state => {
-        return state.promotion.myPromotions;
+        return state.promotion.myPromotions.promotion;
       }
-    })
-  },
-
-  created() {}
+    }),
+    isEmpty() {
+      if (this.promotions) return Object.entries(this.promotions).length === 0;
+      return true;
+    }
+  }
 };
 </script>
 

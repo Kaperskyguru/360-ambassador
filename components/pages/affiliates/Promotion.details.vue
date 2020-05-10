@@ -111,4 +111,11 @@ export default {
   }
 };
 </script>
+<style scoped>
+img {
+  vertical-align: middle;
+  /* width: 100px;
+  height: 100px; */
+}
+</style>
 

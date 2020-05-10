@@ -12,62 +12,7 @@
             See all
           </button>
         </div>
-        <table
-          class="table table-responsive-sm table-borderless dashboard-table"
-        >
-          <thead class="dashboard-table__thead">
-            <tr>
-              <th scope="col">Product</th>
-              <th scope="col">Affiliates</th>
-              <th scope="col">Clicks</th>
-              <th scope="col">Impressions</th>
-              <th scope="col">Conv.</th>
-              <th scope="col">Price</th>
-              <th scope="col">Total Sales</th>
-            </tr>
-          </thead>
-          <tbody class="dashboard-table__tbody">
-            <tr v-for="(promotion, i) in promotions" :key="i">
-              <td class="color-blue">{{ promotion.name || "" }}</td>
-              <td class="color-blue">{{ promotion.Affiliates || 0 }}</td>
-              <td class="color-blue">{{ promotion.Clicks || 0 }}</td>
-              <td class="color-blue">{{ promotion.Impressions || 0 }}</td>
-              <td class="color-blue">
-                {{ promotion.Convertion_rate || 0 }}
-              </td>
-              <td class="color-blue">N{{ promotion.price || 0 }}</td>
-              <td class="color-blue">N90.00</td>
-            </tr>
-
-            <tr>
-              <td class="color-blue">Seun Adepoju</td>
-              <td class="color-blue">30</td>
-              <td class="color-blue">449</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">N30.00</td>
-            </tr>
-            <tr>
-              <td class="color-blue">Seun Adepoju</td>
-              <td class="color-blue">30</td>
-              <td class="color-blue">449</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">N30.00</td>
-            </tr>
-            <tr>
-              <td class="color-blue">Seun Adepoju</td>
-              <td class="color-blue">30</td>
-              <td class="color-blue">449</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">N30.00</td>
-            </tr>
-          </tbody>
-        </table>
+        <my-promotion-table :promotions="promotions" />
         <div class="row justify-content-center pl-md-4 pl-5 pr-0 mt-5">
           <h6 class="dashboard__heading col-9 mb-3">
             My Promotions Affiliates
@@ -76,55 +21,7 @@
             See all
           </button>
         </div>
-        <table
-          class="table table-responsive-sm table-borderless dashboard-table"
-        >
-          <thead class="dashboard-table__thead">
-            <tr>
-              <th scope="col">Affiliates</th>
-              <th scope="col">Date Joined</th>
-              <th scope="col">Product</th>
-              <th scope="col">Conv.</th>
-              <th scope="col">Total Sales</th>
-              <th scope="col">Comm. earned</th>
-            </tr>
-          </thead>
-          <tbody class="dashboard-table__tbody">
-            <tr>
-              <td class="color-blue">Seun Adepoju</td>
-              <td class="color-blue">01/03/2019</td>
-              <td class="color-blue">Bukka Hut Fresto</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">N30.00</td>
-            </tr>
-
-            <tr>
-              <td class="color-blue">Maria Njoku</td>
-              <td class="color-blue">01/03/2019</td>
-              <td class="color-blue">Bukka Hut Fresto</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">N30.00</td>
-            </tr>
-            <tr>
-              <td class="color-blue">Maria Njoku</td>
-              <td class="color-blue">01/03/2019</td>
-              <td class="color-blue">Bukka Hut Fresto</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">N30.00</td>
-            </tr>
-            <tr>
-              <td class="color-blue">Maria Njoku</td>
-              <td class="color-blue">01/03/2019</td>
-              <td class="color-blue">Bukka Hut Fresto</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">10</td>
-              <td class="color-blue">N30.00</td>
-            </tr>
-          </tbody>
-        </table>
+        <my-promotion-affiliates-table />
       </div>
       <div class="col-md-12 col-lg-4 mt-2">
         <div class="col-12 mb-5 dashboard__chart--card">
@@ -241,6 +138,8 @@
 </template>
 
 <script>
+import MyPromotionTable from "~/components/partials/merchants/MyPromotionTable";
+import MyPromotionAffiliatesTable from "~/components/partials/merchants/MyPromotionAffiliatesTable";
 import PerformanceBoxes from "~/components/partials/merchants/PerformanceBoxes";
 import LineChart from "~/components/commons/dashboard/LineChart2";
 import BarChart from "~/components/commons/dashboard/BarChart2"; // Convert LineChart and BarChart to one
@@ -251,15 +150,18 @@ export default {
     PerformanceBoxes,
     LineChart,
     BarChart,
-    Message
+    Message,
+    MyPromotionTable,
+    MyPromotionAffiliatesTable
   },
   computed: {
     ...mapState({
       messages: state => {
-        return state.message.messages;
+        if (state.message.messages)
+          return [...state.message.messages].slice(0, 1);
       },
       promotions: state => {
-        return state.promotion.myPromotions;
+        return state.promotion.myPromotions.promotion;
       },
       chartData: state => {
         return state.insight.earningGraph;

@@ -1,7 +1,7 @@
 export const state = () => ({
   promotions: {},
   promotion: {},
-  myPromotions: {},
+  myPromotions: [],
   joinedPromotions: {},
   joinedPromotion: {},
   latestPromotions: {},

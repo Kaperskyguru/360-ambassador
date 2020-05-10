@@ -26,15 +26,7 @@
       <tbody class="dashboard-table__tbody bg-grey-6">
         <tr>
           <td class="color-blue">
-            <img
-              :src="
-                promotion.user
-                  ? promotion.user.profile_picture
-                  : require('@/assets/images/Access_Bank_Logo.png')
-              "
-              alt=""
-              width="100"
-            />
+            <img :src="profile_image" alt="" width="100" />
           </td>
           <td class="color-blue">
             <span class="color-blue">{{ promotion.name || "" }}</span>
@@ -64,8 +56,24 @@ export default {
   components: {
     PromotionDetails
   },
-  props: ["promotion"]
+  props: ["promotion"],
+  computed: {
+    profile_image() {
+      if (this.promotion.user) {
+        const { profile_picture } = this.promotion.user;
+        if (profile_picture) {
+          return profile_picture;
+        }
+      }
+      return require("~/assets/images/man-user.png");
+    }
+  }
 };
 </script>
 <style>
+img {
+  vertical-align: middle;
+  /* width: 100px;
+  height: 100px; */
+}
 </style>

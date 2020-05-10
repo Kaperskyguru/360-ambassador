@@ -16,7 +16,7 @@ export default {
       type: String
     },
     data: {
-      type: Array
+      type: [Array, Object]
     }
   },
 
